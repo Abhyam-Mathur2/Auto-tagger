@@ -81,6 +81,98 @@ class AuthorityResolver {
 
   /**
    * Resolve authorities for a given complaint
+   */
+  /**
+   * Normalize freely identified department to canonical category
+   */
+  normalizeDepartment(freeDepartment) {
+    if (!freeDepartment) return 'general';
+
+    const lower = freeDepartment.toLowerCase();
+    
+    const mappings = {
+      // Water related
+      'water supply': 'water', 'no water': 'water', 'water pipeline': 'water',
+      'water leakage': 'water', 'dirty water': 'water', 'water board': 'water',
+      'jal board': 'water', 'jal shakti': 'water', 'water crisis': 'water',
+      
+      // Roads related  
+      'roads & potholes': 'roads', 'roads potholes': 'roads',
+      'pothole': 'roads', 'road damage': 'roads',
+      'broken road': 'roads', 'road construction': 'roads', 'speed breaker': 'roads',
+      'highway': 'roads', 'street': 'roads',
+      
+      // Electricity
+      'electricity': 'electricity', 'power cut': 'electricity', 'power outage': 'electricity',
+      'no electricity': 'electricity', 'electric wire': 'electricity', 'transformer': 'electricity',
+      'street light': 'electricity', 'streetlight': 'electricity', 'street lights': 'electricity',
+      
+      // Sanitation
+      'garbage': 'sanitation', 'waste': 'sanitation', 'garbage collection': 'sanitation',
+      'waste collection': 'sanitation', 'open defecation': 'sanitation', 'public toilet': 'sanitation',
+      'sewage': 'drainage', 'drainage': 'drainage', 'gutter': 'drainage',
+      
+      // Animals
+      'stray animals': 'animal_control', 'stray dogs': 'animal_control', 'stray': 'animal_control',
+      'dog': 'animal_control', 'animal': 'animal_control', 'street animals': 'animal_control',
+      
+      // Building/Construction
+      'illegal construction': 'building_dept', 'construction': 'building_dept',
+      'encroachment': 'building_dept', 'land encroachment': 'building_dept',
+      
+      // Flooding/Waterlogging
+      'waterlogging': 'drainage', 'flooding': 'drainage', 'flood': 'drainage',
+      'waterlog': 'drainage',
+      
+      // Pollution
+      'noise pollution': 'pollution', 'air pollution': 'pollution', 'pollution': 'pollution',
+      'smoke': 'pollution', 'air quality': 'pollution',
+      
+      // Traffic
+      'traffic': 'traffic', 'traffic jam': 'traffic', 'signal': 'traffic', 
+      'parking': 'traffic', 'vehicle': 'traffic',
+      
+      // Crime
+      'crime': 'crime', 'theft': 'crime', 'harassment': 'crime', 'assault': 'crime',
+      'robbery': 'crime', 'violence': 'crime', 'cyber crime': 'crime', 'cybercrime': 'crime',
+      
+      // Health
+      'hospital': 'health', 'health': 'health', 'ambulance': 'health', 
+      'medicine': 'health', 'emergency': 'health', 'medical': 'health',
+      
+      // Education
+      'school': 'education', 'college': 'education', 'education': 'education',
+      'teacher': 'education', 'university': 'education',
+      
+      // Vigilance/Corruption
+      'corruption': 'vigilance', 'bribe': 'vigilance', 'vigilance': 'vigilance',
+      
+      // Fire
+      'fire': 'fire_dept', 'fire safety': 'fire_dept', 'fire hazard': 'fire_dept',
+      
+      // Horticulture
+      'tree': 'horticulture', 'park': 'horticulture', 'garden': 'horticulture',
+      'trees': 'horticulture', 'tree falling': 'horticulture', 'tree fall': 'horticulture',
+      
+      // Railways
+      'railway': 'railways', 'train': 'railways', 'station': 'railways',
+      'metro': 'transport', 'metrorail': 'transport',
+      
+      // Transport (Public)
+      'transport': 'transport', 'bus': 'transport', 'auto': 'transport',
+      'public transport': 'transport'
+    };
+    
+    // Try to find a match
+    for (const [key, value] of Object.entries(mappings)) {
+      if (lower.includes(key)) return value;
+    }
+    
+    return 'general';
+  }
+
+  /**
+   * Resolve authorities for a given complaint
    * @param {Object} classification - Classification result from classifier
    * @param {Object} location - Resolved location {state, city, district, zone}
    * @returns {Array} Array of suggested authority handles
@@ -91,7 +183,8 @@ class AuthorityResolver {
     }
 
     const suggestions = [];
-    const category = classification.category;
+    const department = classification.department || 'General';
+    const category = this.normalizeDepartment(department);
     const urgency = classification.urgency;
 
     // Load state database

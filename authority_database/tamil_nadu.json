@@ -1,87 +1,222 @@
 {
-  "state_code": "TN",
-  "state_name": "Tamil Nadu",
-  "cm": {
-    "handle": "@mkstalin",
-    "name": "Chief Minister",
-    "verified": true,
-    "last_checked": "2026-03-01",
-    "source_url": "https://twitter.com/mkstalin"
-  },
-  "police": {
-    "state": {
-      "handle": "@TamilNaduPolice",
-      "name": "Tamil Nadu Police",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/TamilNaduPolice"
-    },
-    "chennai": {
-      "handle": "@chennaipolice",
-      "name": "Chennai Police",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/chennaipolice"
-    }
-  },
-  "electricity": {
-    "tangedco": {
-      "handle": "@TANGEDCO_TNEB",
-      "name": "Tamil Nadu Generation and Distribution Corporation",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/TANGEDCO_TNEB"
-    }
-  },
-  "water": {
-    "chennai_metro_water": {
-      "handle": "@chennaimetrowater",
-      "name": "Chennai Metro Water",
-      "area": "Chennai",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/chennaimetrowater"
-    },
-    "twad": {
-      "handle": "@TWAD_Board",
-      "name": "Tamil Nadu Water Supply and Drainage Board",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/TWAD_Board"
-    }
-  },
-  "municipal": {
-    "chennai": {
-      "handle": "@chennaicorp",
-      "name": "Greater Chennai Corporation",
-      "city": "Chennai",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/chennaicorp"
-    },
-    "coimbatore": {
-      "handle": "@CorporationCBE",
-      "name": "Coimbatore City Municipal Corporation",
-      "city": "Coimbatore",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/CorporationCBE"
-    },
-    "madurai": {
-      "handle": "@MaduraiCorpn",
-      "name": "Madurai Corporation",
-      "city": "Madurai",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/MaduraiCorpn"
-    },
-    "salem": {
-      "handle": "@SalemCorpn",
-      "name": "Salem Corporation",
-      "city": "Salem",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/SalemCorpn"
-    }
-  }
+    "state_code":  "TN",
+    "state_name":  "Tamil Nadu",
+    "cm":  {
+               "handle":  "@mkstalin",
+               "name":  "Chief Minister",
+               "verified":  true,
+               "last_checked":  "2026-03-01",
+               "source_url":  "https://twitter.com/mkstalin"
+           },
+    "police":  {
+                   "state":  {
+                                 "handle":  "@TamilNaduPolice",
+                                 "name":  "Tamil Nadu Police",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-01",
+                                 "source_url":  "https://twitter.com/TamilNaduPolice"
+                             },
+                   "chennai":  {
+                                   "handle":  "@chennaipolice",
+                                   "name":  "Chennai Police",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-01",
+                                   "source_url":  "https://twitter.com/chennaipolice"
+                               }
+               },
+    "electricity":  {
+                        "tangedco":  {
+                                         "handle":  "@TANGEDCO_TNEB",
+                                         "name":  "Tamil Nadu Generation and Distribution Corporation",
+                                         "verified":  true,
+                                         "last_checked":  "2026-03-01",
+                                         "source_url":  "https://twitter.com/TANGEDCO_TNEB"
+                                     }
+                    },
+    "water":  {
+                  "chennai_metro_water":  {
+                                              "handle":  "@chennaimetrowater",
+                                              "name":  "Chennai Metro Water",
+                                              "area":  "Chennai",
+                                              "verified":  true,
+                                              "last_checked":  "2026-03-01",
+                                              "source_url":  "https://twitter.com/chennaimetrowater"
+                                          },
+                  "twad":  {
+                               "handle":  "@TWAD_Board",
+                               "name":  "Tamil Nadu Water Supply and Drainage Board",
+                               "verified":  true,
+                               "last_checked":  "2026-03-01",
+                               "source_url":  "https://twitter.com/TWAD_Board"
+                           }
+              },
+    "municipal":  {
+                      "chennai":  {
+                                      "handle":  "@chennaicorp",
+                                      "name":  "Greater Chennai Corporation",
+                                      "city":  "Chennai",
+                                      "verified":  true,
+                                      "last_checked":  "2026-03-01",
+                                      "source_url":  "https://twitter.com/chennaicorp"
+                                  },
+                      "coimbatore":  {
+                                         "handle":  "@CorporationCBE",
+                                         "name":  "Coimbatore City Municipal Corporation",
+                                         "city":  "Coimbatore",
+                                         "verified":  true,
+                                         "last_checked":  "2026-03-01",
+                                         "source_url":  "https://twitter.com/CorporationCBE"
+                                     },
+                      "madurai":  {
+                                      "handle":  "@MaduraiCorpn",
+                                      "name":  "Madurai Corporation",
+                                      "city":  "Madurai",
+                                      "verified":  true,
+                                      "last_checked":  "2026-03-01",
+                                      "source_url":  "https://twitter.com/MaduraiCorpn"
+                                  },
+                      "salem":  {
+                                    "handle":  "@SalemCorpn",
+                                    "name":  "Salem Corporation",
+                                    "city":  "Salem",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-01",
+                                    "source_url":  "https://twitter.com/SalemCorpn"
+                                }
+                  },
+    "roads":  {
+                  "state":  {
+                                "handle":  "@chennaicorp",
+                                "name":  "Greater Chennai Corporation (roads)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/chennaicorp"
+                            }
+              },
+    "sanitation":  {
+                       "state":  {
+                                     "handle":  "@chennaicorp",
+                                     "name":  "Greater Chennai Corporation (sanitation)",
+                                     "verified":  true,
+                                     "last_checked":  "2026-03-06",
+                                     "source_url":  "https://twitter.com/chennaicorp"
+                                 }
+                   },
+    "animal_control":  {
+                           "state":  {
+                                         "handle":  "@chennaicorp",
+                                         "name":  "Greater Chennai Corporation (animal_control)",
+                                         "verified":  true,
+                                         "last_checked":  "2026-03-06",
+                                         "source_url":  "https://twitter.com/chennaicorp"
+                                     }
+                       },
+    "building_dept":  {
+                          "state":  {
+                                        "handle":  "@chennaicorp",
+                                        "name":  "Greater Chennai Corporation (building_dept)",
+                                        "verified":  true,
+                                        "last_checked":  "2026-03-06",
+                                        "source_url":  "https://twitter.com/chennaicorp"
+                                    }
+                      },
+    "drainage":  {
+                     "state":  {
+                                   "handle":  "@chennaicorp",
+                                   "name":  "Greater Chennai Corporation (drainage)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/chennaicorp"
+                               }
+                 },
+    "pollution":  {
+                      "state":  {
+                                    "handle":  "@chennaicorp",
+                                    "name":  "Greater Chennai Corporation (pollution)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/chennaicorp"
+                                }
+                  },
+    "traffic":  {
+                    "state":  {
+                                  "handle":  "@chennaicorp",
+                                  "name":  "Greater Chennai Corporation (traffic)",
+                                  "verified":  true,
+                                  "last_checked":  "2026-03-06",
+                                  "source_url":  "https://twitter.com/chennaicorp"
+                              }
+                },
+    "health":  {
+                   "state":  {
+                                 "handle":  "@chennaicorp",
+                                 "name":  "Greater Chennai Corporation (health)",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-06",
+                                 "source_url":  "https://twitter.com/chennaicorp"
+                             }
+               },
+    "education":  {
+                      "state":  {
+                                    "handle":  "@chennaicorp",
+                                    "name":  "Greater Chennai Corporation (education)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/chennaicorp"
+                                }
+                  },
+    "vigilance":  {
+                      "state":  {
+                                    "handle":  "@chennaicorp",
+                                    "name":  "Greater Chennai Corporation (vigilance)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/chennaicorp"
+                                }
+                  },
+    "fire_dept":  {
+                      "state":  {
+                                    "handle":  "@chennaicorp",
+                                    "name":  "Greater Chennai Corporation (fire_dept)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/chennaicorp"
+                                }
+                  },
+    "horticulture":  {
+                         "state":  {
+                                       "handle":  "@chennaicorp",
+                                       "name":  "Greater Chennai Corporation (horticulture)",
+                                       "verified":  true,
+                                       "last_checked":  "2026-03-06",
+                                       "source_url":  "https://twitter.com/chennaicorp"
+                                   }
+                     },
+    "railways":  {
+                     "state":  {
+                                   "handle":  "@chennaicorp",
+                                   "name":  "Greater Chennai Corporation (railways)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/chennaicorp"
+                               }
+                 },
+    "transport":  {
+                      "state":  {
+                                    "handle":  "@chennaicorp",
+                                    "name":  "Greater Chennai Corporation (transport)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/chennaicorp"
+                                }
+                  },
+    "municipal_general":  {
+                              "state":  {
+                                            "handle":  "@chennaicorp",
+                                            "name":  "Greater Chennai Corporation (municipal_general)",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-06",
+                                            "source_url":  "https://twitter.com/chennaicorp"
+                                        }
+                          }
 }

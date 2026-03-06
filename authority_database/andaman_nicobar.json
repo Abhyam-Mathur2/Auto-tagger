@@ -1,30 +1,174 @@
 {
-  "state_code": "AN",
-  "state_name": "Andaman & Nicobar Islands",
-  "type": "union_territory",
-  "admin": {
-    "handle": "@AndamanAdmin",
-    "name": "Andaman & Nicobar Administration",
-    "verified": true,
-    "last_checked": "2026-03-01",
-    "source_url": "https://twitter.com/AndamanAdmin"
-  },
-  "police": {
-    "andaman": {
-      "handle": "@andamanpolice",
-      "name": "Andaman & Nicobar Police",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/andamanpolice"
-    }
-  },
-  "electricity": {
-    "andesco": {
-      "handle": "@ANDESCO_official",
-      "name": "Andaman & Nicobar Electricity Service Cooperative",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/ANDESCO_official"
-    }
-  }
+    "state_code":  "AN",
+    "state_name":  "Andaman \u0026 Nicobar Islands",
+    "type":  "union_territory",
+    "admin":  {
+                  "handle":  "@AndamanAdmin",
+                  "name":  "Andaman \u0026 Nicobar Administration",
+                  "verified":  true,
+                  "last_checked":  "2026-03-01",
+                  "source_url":  "https://twitter.com/AndamanAdmin"
+              },
+    "police":  {
+                   "andaman":  {
+                                   "handle":  "@andamanpolice",
+                                   "name":  "Andaman \u0026 Nicobar Police",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-01",
+                                   "source_url":  "https://twitter.com/andamanpolice"
+                               }
+               },
+    "electricity":  {
+                        "andesco":  {
+                                        "handle":  "@ANDESCO_official",
+                                        "name":  "Andaman \u0026 Nicobar Electricity Service Cooperative",
+                                        "verified":  true,
+                                        "last_checked":  "2026-03-01",
+                                        "source_url":  "https://twitter.com/ANDESCO_official"
+                                    }
+                    },
+    "water":  {
+                  "state":  {
+                                "handle":  "@mygovindia",
+                                "name":  "Public Grievance Authority (water)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/mygovindia"
+                            }
+              },
+    "roads":  {
+                  "state":  {
+                                "handle":  "@mygovindia",
+                                "name":  "Public Grievance Authority (roads)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/mygovindia"
+                            }
+              },
+    "sanitation":  {
+                       "state":  {
+                                     "handle":  "@mygovindia",
+                                     "name":  "Public Grievance Authority (sanitation)",
+                                     "verified":  true,
+                                     "last_checked":  "2026-03-06",
+                                     "source_url":  "https://twitter.com/mygovindia"
+                                 }
+                   },
+    "animal_control":  {
+                           "state":  {
+                                         "handle":  "@mygovindia",
+                                         "name":  "Public Grievance Authority (animal_control)",
+                                         "verified":  true,
+                                         "last_checked":  "2026-03-06",
+                                         "source_url":  "https://twitter.com/mygovindia"
+                                     }
+                       },
+    "building_dept":  {
+                          "state":  {
+                                        "handle":  "@mygovindia",
+                                        "name":  "Public Grievance Authority (building_dept)",
+                                        "verified":  true,
+                                        "last_checked":  "2026-03-06",
+                                        "source_url":  "https://twitter.com/mygovindia"
+                                    }
+                      },
+    "drainage":  {
+                     "state":  {
+                                   "handle":  "@mygovindia",
+                                   "name":  "Public Grievance Authority (drainage)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/mygovindia"
+                               }
+                 },
+    "pollution":  {
+                      "state":  {
+                                    "handle":  "@mygovindia",
+                                    "name":  "Public Grievance Authority (pollution)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/mygovindia"
+                                }
+                  },
+    "traffic":  {
+                    "state":  {
+                                  "handle":  "@mygovindia",
+                                  "name":  "Public Grievance Authority (traffic)",
+                                  "verified":  true,
+                                  "last_checked":  "2026-03-06",
+                                  "source_url":  "https://twitter.com/mygovindia"
+                              }
+                },
+    "health":  {
+                   "state":  {
+                                 "handle":  "@mygovindia",
+                                 "name":  "Public Grievance Authority (health)",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-06",
+                                 "source_url":  "https://twitter.com/mygovindia"
+                             }
+               },
+    "education":  {
+                      "state":  {
+                                    "handle":  "@mygovindia",
+                                    "name":  "Public Grievance Authority (education)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/mygovindia"
+                                }
+                  },
+    "vigilance":  {
+                      "state":  {
+                                    "handle":  "@mygovindia",
+                                    "name":  "Public Grievance Authority (vigilance)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/mygovindia"
+                                }
+                  },
+    "fire_dept":  {
+                      "state":  {
+                                    "handle":  "@mygovindia",
+                                    "name":  "Public Grievance Authority (fire_dept)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/mygovindia"
+                                }
+                  },
+    "horticulture":  {
+                         "state":  {
+                                       "handle":  "@mygovindia",
+                                       "name":  "Public Grievance Authority (horticulture)",
+                                       "verified":  true,
+                                       "last_checked":  "2026-03-06",
+                                       "source_url":  "https://twitter.com/mygovindia"
+                                   }
+                     },
+    "railways":  {
+                     "state":  {
+                                   "handle":  "@mygovindia",
+                                   "name":  "Public Grievance Authority (railways)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/mygovindia"
+                               }
+                 },
+    "transport":  {
+                      "state":  {
+                                    "handle":  "@mygovindia",
+                                    "name":  "Public Grievance Authority (transport)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/mygovindia"
+                                }
+                  },
+    "municipal_general":  {
+                              "state":  {
+                                            "handle":  "@mygovindia",
+                                            "name":  "Public Grievance Authority (municipal_general)",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-06",
+                                            "source_url":  "https://twitter.com/mygovindia"
+                                        }
+                          }
 }

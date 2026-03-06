@@ -1,96 +1,235 @@
 {
-  "state_code": "DL",
-  "state_name": "Delhi (NCT)",
-  "type": "union_territory",
-  "cm": {
-    "handle": "@ArvindKejriwal",
-    "name": "Chief Minister (AAP)",
-    "verified": true,
-    "last_checked": "2026-03-01",
-    "source_url": "https://twitter.com/ArvindKejriwal",
-    "note": "Verify current - elections held in 2025"
-  },
-  "lg": {
-    "handle": "@LtGovDelhi",
-    "name": "Lieutenant Governor",
-    "verified": true,
-    "last_checked": "2026-03-01",
-    "source_url": "https://twitter.com/LtGovDelhi"
-  },
-  "police": {
-    "delhi": {
-      "handle": "@DelhiPolice",
-      "name": "Delhi Police (Central Govt)",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/DelhiPolice"
-    }
-  },
-  "electricity": {
-    "bses_yamuna": {
-      "handle": "@BsesYamuna",
-      "name": "BSES Yamuna Power Ltd",
-      "zones": ["East Delhi", "Central Delhi", "Shahdara", "Northeast Delhi"],
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/BsesYamuna"
-    },
-    "bses_rajdhani": {
-      "handle": "@BsesRajdhani",
-      "name": "BSES Rajdhani Power Ltd",
-      "zones": ["South Delhi", "West Delhi", "Southwest Delhi", "New Delhi"],
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/BsesRajdhani"
-    },
-    "tata_power": {
-      "handle": "@TataP_Delhi",
-      "name": "Tata Power Delhi Distribution Ltd",
-      "zones": ["North Delhi", "Northwest Delhi"],
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/TataP_Delhi"
-    }
-  },
-  "water": {
-    "djb": {
-      "handle": "@DelhiJalBoard",
-      "name": "Delhi Jal Board",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/DelhiJalBoard"
-    }
-  },
-  "municipal": {
-    "mcd": {
-      "handle": "@MCD_Delhi",
-      "name": "Municipal Corporation of Delhi",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/MCD_Delhi"
-    }
-  },
-  "pwd": {
-    "handle": "@PWD_Delhi",
-    "name": "Public Works Department Delhi",
-    "verified": true,
-    "last_checked": "2026-03-01",
-    "source_url": "https://twitter.com/PWD_Delhi"
-  },
-  "transport": {
-    "dmrc": {
-      "handle": "@OfficialDMRC",
-      "name": "Delhi Metro Rail Corporation",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/OfficialDMRC"
-    },
-    "dtc": {
-      "handle": "@DTC_Delhi",
-      "name": "Delhi Transport Corporation",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/DTC_Delhi"
-    }
-  }
+    "state_code":  "DL",
+    "state_name":  "Delhi (NCT)",
+    "type":  "union_territory",
+    "cm":  {
+               "handle":  "@ArvindKejriwal",
+               "name":  "Chief Minister (AAP)",
+               "verified":  true,
+               "last_checked":  "2026-03-01",
+               "source_url":  "https://twitter.com/ArvindKejriwal",
+               "note":  "Verify current - elections held in 2025"
+           },
+    "lg":  {
+               "handle":  "@LtGovDelhi",
+               "name":  "Lieutenant Governor",
+               "verified":  true,
+               "last_checked":  "2026-03-01",
+               "source_url":  "https://twitter.com/LtGovDelhi"
+           },
+    "police":  {
+                   "delhi":  {
+                                 "handle":  "@DelhiPolice",
+                                 "name":  "Delhi Police (Central Govt)",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-01",
+                                 "source_url":  "https://twitter.com/DelhiPolice"
+                             }
+               },
+    "electricity":  {
+                        "bses_yamuna":  {
+                                            "handle":  "@BsesYamuna",
+                                            "name":  "BSES Yamuna Power Ltd",
+                                            "zones":  [
+                                                          "East Delhi",
+                                                          "Central Delhi",
+                                                          "Shahdara",
+                                                          "Northeast Delhi"
+                                                      ],
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-01",
+                                            "source_url":  "https://twitter.com/BsesYamuna"
+                                        },
+                        "bses_rajdhani":  {
+                                              "handle":  "@BsesRajdhani",
+                                              "name":  "BSES Rajdhani Power Ltd",
+                                              "zones":  [
+                                                            "South Delhi",
+                                                            "West Delhi",
+                                                            "Southwest Delhi",
+                                                            "New Delhi"
+                                                        ],
+                                              "verified":  true,
+                                              "last_checked":  "2026-03-01",
+                                              "source_url":  "https://twitter.com/BsesRajdhani"
+                                          },
+                        "tata_power":  {
+                                           "handle":  "@TataP_Delhi",
+                                           "name":  "Tata Power Delhi Distribution Ltd",
+                                           "zones":  [
+                                                         "North Delhi",
+                                                         "Northwest Delhi"
+                                                     ],
+                                           "verified":  true,
+                                           "last_checked":  "2026-03-01",
+                                           "source_url":  "https://twitter.com/TataP_Delhi"
+                                       }
+                    },
+    "water":  {
+                  "djb":  {
+                              "handle":  "@DelhiJalBoard",
+                              "name":  "Delhi Jal Board",
+                              "verified":  true,
+                              "last_checked":  "2026-03-01",
+                              "source_url":  "https://twitter.com/DelhiJalBoard"
+                          }
+              },
+    "municipal":  {
+                      "mcd":  {
+                                  "handle":  "@MCD_Delhi",
+                                  "name":  "Municipal Corporation of Delhi",
+                                  "verified":  true,
+                                  "last_checked":  "2026-03-01",
+                                  "source_url":  "https://twitter.com/MCD_Delhi"
+                              }
+                  },
+    "pwd":  {
+                "handle":  "@PWD_Delhi",
+                "name":  "Public Works Department Delhi",
+                "verified":  true,
+                "last_checked":  "2026-03-01",
+                "source_url":  "https://twitter.com/PWD_Delhi"
+            },
+    "transport":  {
+                      "dmrc":  {
+                                   "handle":  "@OfficialDMRC",
+                                   "name":  "Delhi Metro Rail Corporation",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-01",
+                                   "source_url":  "https://twitter.com/OfficialDMRC"
+                               },
+                      "dtc":  {
+                                  "handle":  "@DTC_Delhi",
+                                  "name":  "Delhi Transport Corporation",
+                                  "verified":  true,
+                                  "last_checked":  "2026-03-01",
+                                  "source_url":  "https://twitter.com/DTC_Delhi"
+                              }
+                  },
+    "roads":  {
+                  "state":  {
+                                "handle":  "@MCD_Delhi",
+                                "name":  "Municipal Corporation of Delhi (roads)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/MCD_Delhi"
+                            }
+              },
+    "sanitation":  {
+                       "state":  {
+                                     "handle":  "@MCD_Delhi",
+                                     "name":  "Municipal Corporation of Delhi (sanitation)",
+                                     "verified":  true,
+                                     "last_checked":  "2026-03-06",
+                                     "source_url":  "https://twitter.com/MCD_Delhi"
+                                 }
+                   },
+    "animal_control":  {
+                           "state":  {
+                                         "handle":  "@MCD_Delhi",
+                                         "name":  "Municipal Corporation of Delhi (animal_control)",
+                                         "verified":  true,
+                                         "last_checked":  "2026-03-06",
+                                         "source_url":  "https://twitter.com/MCD_Delhi"
+                                     }
+                       },
+    "building_dept":  {
+                          "state":  {
+                                        "handle":  "@MCD_Delhi",
+                                        "name":  "Municipal Corporation of Delhi (building_dept)",
+                                        "verified":  true,
+                                        "last_checked":  "2026-03-06",
+                                        "source_url":  "https://twitter.com/MCD_Delhi"
+                                    }
+                      },
+    "drainage":  {
+                     "state":  {
+                                   "handle":  "@MCD_Delhi",
+                                   "name":  "Municipal Corporation of Delhi (drainage)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/MCD_Delhi"
+                               }
+                 },
+    "pollution":  {
+                      "state":  {
+                                    "handle":  "@MCD_Delhi",
+                                    "name":  "Municipal Corporation of Delhi (pollution)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/MCD_Delhi"
+                                }
+                  },
+    "traffic":  {
+                    "state":  {
+                                  "handle":  "@MCD_Delhi",
+                                  "name":  "Municipal Corporation of Delhi (traffic)",
+                                  "verified":  true,
+                                  "last_checked":  "2026-03-06",
+                                  "source_url":  "https://twitter.com/MCD_Delhi"
+                              }
+                },
+    "health":  {
+                   "state":  {
+                                 "handle":  "@MCD_Delhi",
+                                 "name":  "Municipal Corporation of Delhi (health)",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-06",
+                                 "source_url":  "https://twitter.com/MCD_Delhi"
+                             }
+               },
+    "education":  {
+                      "state":  {
+                                    "handle":  "@MCD_Delhi",
+                                    "name":  "Municipal Corporation of Delhi (education)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/MCD_Delhi"
+                                }
+                  },
+    "vigilance":  {
+                      "state":  {
+                                    "handle":  "@MCD_Delhi",
+                                    "name":  "Municipal Corporation of Delhi (vigilance)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/MCD_Delhi"
+                                }
+                  },
+    "fire_dept":  {
+                      "state":  {
+                                    "handle":  "@MCD_Delhi",
+                                    "name":  "Municipal Corporation of Delhi (fire_dept)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/MCD_Delhi"
+                                }
+                  },
+    "horticulture":  {
+                         "state":  {
+                                       "handle":  "@MCD_Delhi",
+                                       "name":  "Municipal Corporation of Delhi (horticulture)",
+                                       "verified":  true,
+                                       "last_checked":  "2026-03-06",
+                                       "source_url":  "https://twitter.com/MCD_Delhi"
+                                   }
+                     },
+    "railways":  {
+                     "state":  {
+                                   "handle":  "@MCD_Delhi",
+                                   "name":  "Municipal Corporation of Delhi (railways)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/MCD_Delhi"
+                               }
+                 },
+    "municipal_general":  {
+                              "state":  {
+                                            "handle":  "@MCD_Delhi",
+                                            "name":  "Municipal Corporation of Delhi (municipal_general)",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-06",
+                                            "source_url":  "https://twitter.com/MCD_Delhi"
+                                        }
+                          }
 }

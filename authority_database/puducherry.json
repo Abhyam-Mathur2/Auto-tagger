@@ -1,30 +1,174 @@
 {
-  "state_code": "PY",
-  "state_name": "Puducherry",
-  "type": "union_territory",
-  "cm": {
-    "handle": "@CMOPuducherry",
-    "name": "Chief Minister's Office",
-    "verified": true,
-    "last_checked": "2026-03-01",
-    "source_url": "https://twitter.com/CMOPuducherry"
-  },
-  "police": {
-    "puducherry": {
-      "handle": "@Pondicherrypolice",
-      "name": "Puducherry Police",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/Pondicherrypolice"
-    }
-  },
-  "electricity": {
-    "ppcl": {
-      "handle": "@PPCL_Puducherry",
-      "name": "Puducherry Power Corporation Limited",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/PPCL_Puducherry"
-    }
-  }
+    "state_code":  "PY",
+    "state_name":  "Puducherry",
+    "type":  "union_territory",
+    "cm":  {
+               "handle":  "@CMOPuducherry",
+               "name":  "Chief Minister\u0027s Office",
+               "verified":  true,
+               "last_checked":  "2026-03-01",
+               "source_url":  "https://twitter.com/CMOPuducherry"
+           },
+    "police":  {
+                   "puducherry":  {
+                                      "handle":  "@Pondicherrypolice",
+                                      "name":  "Puducherry Police",
+                                      "verified":  true,
+                                      "last_checked":  "2026-03-01",
+                                      "source_url":  "https://twitter.com/Pondicherrypolice"
+                                  }
+               },
+    "electricity":  {
+                        "ppcl":  {
+                                     "handle":  "@PPCL_Puducherry",
+                                     "name":  "Puducherry Power Corporation Limited",
+                                     "verified":  true,
+                                     "last_checked":  "2026-03-01",
+                                     "source_url":  "https://twitter.com/PPCL_Puducherry"
+                                 }
+                    },
+    "water":  {
+                  "state":  {
+                                "handle":  "@CMOPuducherry",
+                                "name":  "Chief Minister\u0027s Office (water)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/CMOPuducherry"
+                            }
+              },
+    "roads":  {
+                  "state":  {
+                                "handle":  "@CMOPuducherry",
+                                "name":  "Chief Minister\u0027s Office (roads)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/CMOPuducherry"
+                            }
+              },
+    "sanitation":  {
+                       "state":  {
+                                     "handle":  "@CMOPuducherry",
+                                     "name":  "Chief Minister\u0027s Office (sanitation)",
+                                     "verified":  true,
+                                     "last_checked":  "2026-03-06",
+                                     "source_url":  "https://twitter.com/CMOPuducherry"
+                                 }
+                   },
+    "animal_control":  {
+                           "state":  {
+                                         "handle":  "@CMOPuducherry",
+                                         "name":  "Chief Minister\u0027s Office (animal_control)",
+                                         "verified":  true,
+                                         "last_checked":  "2026-03-06",
+                                         "source_url":  "https://twitter.com/CMOPuducherry"
+                                     }
+                       },
+    "building_dept":  {
+                          "state":  {
+                                        "handle":  "@CMOPuducherry",
+                                        "name":  "Chief Minister\u0027s Office (building_dept)",
+                                        "verified":  true,
+                                        "last_checked":  "2026-03-06",
+                                        "source_url":  "https://twitter.com/CMOPuducherry"
+                                    }
+                      },
+    "drainage":  {
+                     "state":  {
+                                   "handle":  "@CMOPuducherry",
+                                   "name":  "Chief Minister\u0027s Office (drainage)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/CMOPuducherry"
+                               }
+                 },
+    "pollution":  {
+                      "state":  {
+                                    "handle":  "@CMOPuducherry",
+                                    "name":  "Chief Minister\u0027s Office (pollution)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/CMOPuducherry"
+                                }
+                  },
+    "traffic":  {
+                    "state":  {
+                                  "handle":  "@CMOPuducherry",
+                                  "name":  "Chief Minister\u0027s Office (traffic)",
+                                  "verified":  true,
+                                  "last_checked":  "2026-03-06",
+                                  "source_url":  "https://twitter.com/CMOPuducherry"
+                              }
+                },
+    "health":  {
+                   "state":  {
+                                 "handle":  "@CMOPuducherry",
+                                 "name":  "Chief Minister\u0027s Office (health)",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-06",
+                                 "source_url":  "https://twitter.com/CMOPuducherry"
+                             }
+               },
+    "education":  {
+                      "state":  {
+                                    "handle":  "@CMOPuducherry",
+                                    "name":  "Chief Minister\u0027s Office (education)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/CMOPuducherry"
+                                }
+                  },
+    "vigilance":  {
+                      "state":  {
+                                    "handle":  "@CMOPuducherry",
+                                    "name":  "Chief Minister\u0027s Office (vigilance)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/CMOPuducherry"
+                                }
+                  },
+    "fire_dept":  {
+                      "state":  {
+                                    "handle":  "@CMOPuducherry",
+                                    "name":  "Chief Minister\u0027s Office (fire_dept)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/CMOPuducherry"
+                                }
+                  },
+    "horticulture":  {
+                         "state":  {
+                                       "handle":  "@CMOPuducherry",
+                                       "name":  "Chief Minister\u0027s Office (horticulture)",
+                                       "verified":  true,
+                                       "last_checked":  "2026-03-06",
+                                       "source_url":  "https://twitter.com/CMOPuducherry"
+                                   }
+                     },
+    "railways":  {
+                     "state":  {
+                                   "handle":  "@CMOPuducherry",
+                                   "name":  "Chief Minister\u0027s Office (railways)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/CMOPuducherry"
+                               }
+                 },
+    "transport":  {
+                      "state":  {
+                                    "handle":  "@CMOPuducherry",
+                                    "name":  "Chief Minister\u0027s Office (transport)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/CMOPuducherry"
+                                }
+                  },
+    "municipal_general":  {
+                              "state":  {
+                                            "handle":  "@CMOPuducherry",
+                                            "name":  "Chief Minister\u0027s Office (municipal_general)",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-06",
+                                            "source_url":  "https://twitter.com/CMOPuducherry"
+                                        }
+                          }
 }

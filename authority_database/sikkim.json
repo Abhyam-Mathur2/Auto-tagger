@@ -1,29 +1,173 @@
 {
-  "state_code": "SK",
-  "state_name": "Sikkim",
-  "cm": {
-    "handle": "@PSSGoSikkim",
-    "name": "Chief Minister",
-    "verified": true,
-    "last_checked": "2026-03-01",
-    "source_url": "https://twitter.com/PSSGoSikkim"
-  },
-  "police": {
-    "state": {
-      "handle": "@SikkimPolice",
-      "name": "Sikkim Police",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/SikkimPolice"
-    }
-  },
-  "electricity": {
-    "energy_dept": {
-      "handle": "@energySikkim",
-      "name": "Energy & Power Department Sikkim",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/energySikkim"
-    }
-  }
+    "state_code":  "SK",
+    "state_name":  "Sikkim",
+    "cm":  {
+               "handle":  "@PSSGoSikkim",
+               "name":  "Chief Minister",
+               "verified":  true,
+               "last_checked":  "2026-03-01",
+               "source_url":  "https://twitter.com/PSSGoSikkim"
+           },
+    "police":  {
+                   "state":  {
+                                 "handle":  "@SikkimPolice",
+                                 "name":  "Sikkim Police",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-01",
+                                 "source_url":  "https://twitter.com/SikkimPolice"
+                             }
+               },
+    "electricity":  {
+                        "energy_dept":  {
+                                            "handle":  "@energySikkim",
+                                            "name":  "Energy \u0026 Power Department Sikkim",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-01",
+                                            "source_url":  "https://twitter.com/energySikkim"
+                                        }
+                    },
+    "water":  {
+                  "state":  {
+                                "handle":  "@PSSGoSikkim",
+                                "name":  "Chief Minister (water)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/PSSGoSikkim"
+                            }
+              },
+    "roads":  {
+                  "state":  {
+                                "handle":  "@PSSGoSikkim",
+                                "name":  "Chief Minister (roads)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/PSSGoSikkim"
+                            }
+              },
+    "sanitation":  {
+                       "state":  {
+                                     "handle":  "@PSSGoSikkim",
+                                     "name":  "Chief Minister (sanitation)",
+                                     "verified":  true,
+                                     "last_checked":  "2026-03-06",
+                                     "source_url":  "https://twitter.com/PSSGoSikkim"
+                                 }
+                   },
+    "animal_control":  {
+                           "state":  {
+                                         "handle":  "@PSSGoSikkim",
+                                         "name":  "Chief Minister (animal_control)",
+                                         "verified":  true,
+                                         "last_checked":  "2026-03-06",
+                                         "source_url":  "https://twitter.com/PSSGoSikkim"
+                                     }
+                       },
+    "building_dept":  {
+                          "state":  {
+                                        "handle":  "@PSSGoSikkim",
+                                        "name":  "Chief Minister (building_dept)",
+                                        "verified":  true,
+                                        "last_checked":  "2026-03-06",
+                                        "source_url":  "https://twitter.com/PSSGoSikkim"
+                                    }
+                      },
+    "drainage":  {
+                     "state":  {
+                                   "handle":  "@PSSGoSikkim",
+                                   "name":  "Chief Minister (drainage)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/PSSGoSikkim"
+                               }
+                 },
+    "pollution":  {
+                      "state":  {
+                                    "handle":  "@PSSGoSikkim",
+                                    "name":  "Chief Minister (pollution)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/PSSGoSikkim"
+                                }
+                  },
+    "traffic":  {
+                    "state":  {
+                                  "handle":  "@PSSGoSikkim",
+                                  "name":  "Chief Minister (traffic)",
+                                  "verified":  true,
+                                  "last_checked":  "2026-03-06",
+                                  "source_url":  "https://twitter.com/PSSGoSikkim"
+                              }
+                },
+    "health":  {
+                   "state":  {
+                                 "handle":  "@PSSGoSikkim",
+                                 "name":  "Chief Minister (health)",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-06",
+                                 "source_url":  "https://twitter.com/PSSGoSikkim"
+                             }
+               },
+    "education":  {
+                      "state":  {
+                                    "handle":  "@PSSGoSikkim",
+                                    "name":  "Chief Minister (education)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/PSSGoSikkim"
+                                }
+                  },
+    "vigilance":  {
+                      "state":  {
+                                    "handle":  "@PSSGoSikkim",
+                                    "name":  "Chief Minister (vigilance)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/PSSGoSikkim"
+                                }
+                  },
+    "fire_dept":  {
+                      "state":  {
+                                    "handle":  "@PSSGoSikkim",
+                                    "name":  "Chief Minister (fire_dept)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/PSSGoSikkim"
+                                }
+                  },
+    "horticulture":  {
+                         "state":  {
+                                       "handle":  "@PSSGoSikkim",
+                                       "name":  "Chief Minister (horticulture)",
+                                       "verified":  true,
+                                       "last_checked":  "2026-03-06",
+                                       "source_url":  "https://twitter.com/PSSGoSikkim"
+                                   }
+                     },
+    "railways":  {
+                     "state":  {
+                                   "handle":  "@PSSGoSikkim",
+                                   "name":  "Chief Minister (railways)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/PSSGoSikkim"
+                               }
+                 },
+    "transport":  {
+                      "state":  {
+                                    "handle":  "@PSSGoSikkim",
+                                    "name":  "Chief Minister (transport)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/PSSGoSikkim"
+                                }
+                  },
+    "municipal_general":  {
+                              "state":  {
+                                            "handle":  "@PSSGoSikkim",
+                                            "name":  "Chief Minister (municipal_general)",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-06",
+                                            "source_url":  "https://twitter.com/PSSGoSikkim"
+                                        }
+                          }
 }

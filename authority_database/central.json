@@ -1,144 +1,306 @@
 {
-  "central_government": {
-    "pmo": {
-      "handle": "@PMOIndia",
-      "name": "Prime Minister's Office",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/PMOIndia"
-    },
-    "pm_personal": {
-      "handle": "@narendramodi",
-      "name": "Prime Minister",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/narendramodi"
-    },
-    "home_ministry": {
-      "handle": "@HMOIndia",
-      "name": "Ministry of Home Affairs",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/HMOIndia"
-    },
-    "water_ministry": {
-      "handle": "@MoJSDoWRRDGR",
-      "name": "Ministry of Jal Shakti",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/MoJSDoWRRDGR"
-    },
-    "power_ministry": {
-      "handle": "@MinOfPower",
-      "name": "Ministry of Power",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/MinOfPower"
-    },
-    "road_ministry": {
-      "handle": "@MORTHIndia",
-      "name": "Ministry of Road Transport & Highways",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/MORTHIndia"
-    },
-    "health_ministry": {
-      "handle": "@MoHFW_INDIA",
-      "name": "Ministry of Health",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/MoHFW_INDIA"
-    },
-    "environment_ministry": {
-      "handle": "@moefcc",
-      "name": "Ministry of Environment",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/moefcc"
-    },
-    "railways": {
-      "handle": "@RailMinIndia",
-      "name": "Ministry of Railways",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/RailMinIndia"
-    },
-    "urban_development": {
-      "handle": "@MoHUA_India",
-      "name": "Ministry of Housing & Urban Affairs",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/MoHUA_India"
-    },
-    "women_child": {
-      "handle": "@wcdgoi",
-      "name": "Ministry of Women and Child Development",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/wcdgoi"
-    },
-    "education": {
-      "handle": "@EduMinOfIndia",
-      "name": "Ministry of Education",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/EduMinOfIndia"
-    },
-    "grievance_portal": {
-      "handle": "@DARPG_GoI",
-      "name": "Department of Administrative Reforms",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/DARPG_GoI"
-    },
-    "cyber_crime": {
-      "handle": "@CyberDost",
-      "name": "Cyber Crime Helpline",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/CyberDost"
-    },
-    "nhrc": {
-      "handle": "@nhrc_india",
-      "name": "National Human Rights Commission",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/nhrc_india"
-    },
-    "nhai": {
-      "handle": "@NHAI_Official",
-      "name": "National Highways Authority",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/NHAI_Official"
-    },
-    "swachh_bharat": {
-      "handle": "@SwachhBharat",
-      "name": "Swachh Bharat Mission",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/SwachhBharat"
-    },
-    "cpcb": {
-      "handle": "@CPCB_OFFICIAL",
-      "name": "Central Pollution Control Board",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/CPCB_OFFICIAL"
-    },
-    "ndma": {
-      "handle": "@NDMA_India",
-      "name": "National Disaster Management Authority",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/NDMA_India"
-    },
-    "pg_portal": {
-      "handle": "@pgportal",
-      "name": "PM Grievance Portal",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/pgportal"
-    }
-  }
+    "central_government":  {
+                               "pmo":  {
+                                           "handle":  "@PMOIndia",
+                                           "name":  "Prime Minister\u0027s Office",
+                                           "verified":  true,
+                                           "last_checked":  "2026-03-01",
+                                           "source_url":  "https://twitter.com/PMOIndia"
+                                       },
+                               "pm_personal":  {
+                                                   "handle":  "@narendramodi",
+                                                   "name":  "Prime Minister",
+                                                   "verified":  true,
+                                                   "last_checked":  "2026-03-01",
+                                                   "source_url":  "https://twitter.com/narendramodi"
+                                               },
+                               "home_ministry":  {
+                                                     "handle":  "@HMOIndia",
+                                                     "name":  "Ministry of Home Affairs",
+                                                     "verified":  true,
+                                                     "last_checked":  "2026-03-01",
+                                                     "source_url":  "https://twitter.com/HMOIndia"
+                                                 },
+                               "water_ministry":  {
+                                                      "handle":  "@MoJSDoWRRDGR",
+                                                      "name":  "Ministry of Jal Shakti",
+                                                      "verified":  true,
+                                                      "last_checked":  "2026-03-01",
+                                                      "source_url":  "https://twitter.com/MoJSDoWRRDGR"
+                                                  },
+                               "power_ministry":  {
+                                                      "handle":  "@MinOfPower",
+                                                      "name":  "Ministry of Power",
+                                                      "verified":  true,
+                                                      "last_checked":  "2026-03-01",
+                                                      "source_url":  "https://twitter.com/MinOfPower"
+                                                  },
+                               "road_ministry":  {
+                                                     "handle":  "@MORTHIndia",
+                                                     "name":  "Ministry of Road Transport \u0026 Highways",
+                                                     "verified":  true,
+                                                     "last_checked":  "2026-03-01",
+                                                     "source_url":  "https://twitter.com/MORTHIndia"
+                                                 },
+                               "health_ministry":  {
+                                                       "handle":  "@MoHFW_INDIA",
+                                                       "name":  "Ministry of Health",
+                                                       "verified":  true,
+                                                       "last_checked":  "2026-03-01",
+                                                       "source_url":  "https://twitter.com/MoHFW_INDIA"
+                                                   },
+                               "environment_ministry":  {
+                                                            "handle":  "@moefcc",
+                                                            "name":  "Ministry of Environment",
+                                                            "verified":  true,
+                                                            "last_checked":  "2026-03-01",
+                                                            "source_url":  "https://twitter.com/moefcc"
+                                                        },
+                               "railways":  {
+                                                "handle":  "@RailMinIndia",
+                                                "name":  "Ministry of Railways",
+                                                "verified":  true,
+                                                "last_checked":  "2026-03-01",
+                                                "source_url":  "https://twitter.com/RailMinIndia"
+                                            },
+                               "urban_development":  {
+                                                         "handle":  "@MoHUA_India",
+                                                         "name":  "Ministry of Housing \u0026 Urban Affairs",
+                                                         "verified":  true,
+                                                         "last_checked":  "2026-03-01",
+                                                         "source_url":  "https://twitter.com/MoHUA_India"
+                                                     },
+                               "women_child":  {
+                                                   "handle":  "@wcdgoi",
+                                                   "name":  "Ministry of Women and Child Development",
+                                                   "verified":  true,
+                                                   "last_checked":  "2026-03-01",
+                                                   "source_url":  "https://twitter.com/wcdgoi"
+                                               },
+                               "education":  {
+                                                 "handle":  "@EduMinOfIndia",
+                                                 "name":  "Ministry of Education",
+                                                 "verified":  true,
+                                                 "last_checked":  "2026-03-01",
+                                                 "source_url":  "https://twitter.com/EduMinOfIndia"
+                                             },
+                               "grievance_portal":  {
+                                                        "handle":  "@DARPG_GoI",
+                                                        "name":  "Department of Administrative Reforms",
+                                                        "verified":  true,
+                                                        "last_checked":  "2026-03-01",
+                                                        "source_url":  "https://twitter.com/DARPG_GoI"
+                                                    },
+                               "cyber_crime":  {
+                                                   "handle":  "@CyberDost",
+                                                   "name":  "Cyber Crime Helpline",
+                                                   "verified":  true,
+                                                   "last_checked":  "2026-03-01",
+                                                   "source_url":  "https://twitter.com/CyberDost"
+                                               },
+                               "nhrc":  {
+                                            "handle":  "@nhrc_india",
+                                            "name":  "National Human Rights Commission",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-01",
+                                            "source_url":  "https://twitter.com/nhrc_india"
+                                        },
+                               "nhai":  {
+                                            "handle":  "@NHAI_Official",
+                                            "name":  "National Highways Authority",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-01",
+                                            "source_url":  "https://twitter.com/NHAI_Official"
+                                        },
+                               "swachh_bharat":  {
+                                                     "handle":  "@SwachhBharat",
+                                                     "name":  "Swachh Bharat Mission",
+                                                     "verified":  true,
+                                                     "last_checked":  "2026-03-01",
+                                                     "source_url":  "https://twitter.com/SwachhBharat"
+                                                 },
+                               "cpcb":  {
+                                            "handle":  "@CPCB_OFFICIAL",
+                                            "name":  "Central Pollution Control Board",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-01",
+                                            "source_url":  "https://twitter.com/CPCB_OFFICIAL"
+                                        },
+                               "ndma":  {
+                                            "handle":  "@NDMA_India",
+                                            "name":  "National Disaster Management Authority",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-01",
+                                            "source_url":  "https://twitter.com/NDMA_India"
+                                        },
+                               "pg_portal":  {
+                                                 "handle":  "@pgportal",
+                                                 "name":  "PM Grievance Portal",
+                                                 "verified":  true,
+                                                 "last_checked":  "2026-03-01",
+                                                 "source_url":  "https://twitter.com/pgportal"
+                                             }
+                           },
+    "water":  {
+                  "state":  {
+                                "handle":  "@mygovindia",
+                                "name":  "Public Grievance Authority (water)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/mygovindia"
+                            }
+              },
+    "electricity":  {
+                        "state":  {
+                                      "handle":  "@mygovindia",
+                                      "name":  "Public Grievance Authority (electricity)",
+                                      "verified":  true,
+                                      "last_checked":  "2026-03-06",
+                                      "source_url":  "https://twitter.com/mygovindia"
+                                  }
+                    },
+    "roads":  {
+                  "state":  {
+                                "handle":  "@mygovindia",
+                                "name":  "Public Grievance Authority (roads)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/mygovindia"
+                            }
+              },
+    "sanitation":  {
+                       "state":  {
+                                     "handle":  "@mygovindia",
+                                     "name":  "Public Grievance Authority (sanitation)",
+                                     "verified":  true,
+                                     "last_checked":  "2026-03-06",
+                                     "source_url":  "https://twitter.com/mygovindia"
+                                 }
+                   },
+    "animal_control":  {
+                           "state":  {
+                                         "handle":  "@mygovindia",
+                                         "name":  "Public Grievance Authority (animal_control)",
+                                         "verified":  true,
+                                         "last_checked":  "2026-03-06",
+                                         "source_url":  "https://twitter.com/mygovindia"
+                                     }
+                       },
+    "building_dept":  {
+                          "state":  {
+                                        "handle":  "@mygovindia",
+                                        "name":  "Public Grievance Authority (building_dept)",
+                                        "verified":  true,
+                                        "last_checked":  "2026-03-06",
+                                        "source_url":  "https://twitter.com/mygovindia"
+                                    }
+                      },
+    "drainage":  {
+                     "state":  {
+                                   "handle":  "@mygovindia",
+                                   "name":  "Public Grievance Authority (drainage)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/mygovindia"
+                               }
+                 },
+    "pollution":  {
+                      "state":  {
+                                    "handle":  "@mygovindia",
+                                    "name":  "Public Grievance Authority (pollution)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/mygovindia"
+                                }
+                  },
+    "traffic":  {
+                    "state":  {
+                                  "handle":  "@mygovindia",
+                                  "name":  "Public Grievance Authority (traffic)",
+                                  "verified":  true,
+                                  "last_checked":  "2026-03-06",
+                                  "source_url":  "https://twitter.com/mygovindia"
+                              }
+                },
+    "police":  {
+                   "state":  {
+                                 "handle":  "@mygovindia",
+                                 "name":  "Public Grievance Authority (police)",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-06",
+                                 "source_url":  "https://twitter.com/mygovindia"
+                             }
+               },
+    "health":  {
+                   "state":  {
+                                 "handle":  "@mygovindia",
+                                 "name":  "Public Grievance Authority (health)",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-06",
+                                 "source_url":  "https://twitter.com/mygovindia"
+                             }
+               },
+    "education":  {
+                      "state":  {
+                                    "handle":  "@mygovindia",
+                                    "name":  "Public Grievance Authority (education)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/mygovindia"
+                                }
+                  },
+    "vigilance":  {
+                      "state":  {
+                                    "handle":  "@mygovindia",
+                                    "name":  "Public Grievance Authority (vigilance)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/mygovindia"
+                                }
+                  },
+    "fire_dept":  {
+                      "state":  {
+                                    "handle":  "@mygovindia",
+                                    "name":  "Public Grievance Authority (fire_dept)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/mygovindia"
+                                }
+                  },
+    "horticulture":  {
+                         "state":  {
+                                       "handle":  "@mygovindia",
+                                       "name":  "Public Grievance Authority (horticulture)",
+                                       "verified":  true,
+                                       "last_checked":  "2026-03-06",
+                                       "source_url":  "https://twitter.com/mygovindia"
+                                   }
+                     },
+    "railways":  {
+                     "state":  {
+                                   "handle":  "@mygovindia",
+                                   "name":  "Public Grievance Authority (railways)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/mygovindia"
+                               }
+                 },
+    "transport":  {
+                      "state":  {
+                                    "handle":  "@mygovindia",
+                                    "name":  "Public Grievance Authority (transport)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/mygovindia"
+                                }
+                  },
+    "municipal_general":  {
+                              "state":  {
+                                            "handle":  "@mygovindia",
+                                            "name":  "Public Grievance Authority (municipal_general)",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-06",
+                                            "source_url":  "https://twitter.com/mygovindia"
+                                        }
+                          }
 }

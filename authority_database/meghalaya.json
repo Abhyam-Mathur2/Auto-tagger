@@ -1,29 +1,173 @@
 {
-  "state_code": "ML",
-  "state_name": "Meghalaya",
-  "cm": {
-    "handle": "@SangmaConrad",
-    "name": "Chief Minister",
-    "verified": true,
-    "last_checked": "2026-03-01",
-    "source_url": "https://twitter.com/SangmaConrad"
-  },
-  "police": {
-    "state": {
-      "handle": "@MeghalayaPolice",
-      "name": "Meghalaya Police",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/MeghalayaPolice"
-    }
-  },
-  "electricity": {
-    "meecl": {
-      "handle": "@MeECL_official",
-      "name": "Meghalaya Energy Corporation Limited",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/MeECL_official"
-    }
-  }
+    "state_code":  "ML",
+    "state_name":  "Meghalaya",
+    "cm":  {
+               "handle":  "@SangmaConrad",
+               "name":  "Chief Minister",
+               "verified":  true,
+               "last_checked":  "2026-03-01",
+               "source_url":  "https://twitter.com/SangmaConrad"
+           },
+    "police":  {
+                   "state":  {
+                                 "handle":  "@MeghalayaPolice",
+                                 "name":  "Meghalaya Police",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-01",
+                                 "source_url":  "https://twitter.com/MeghalayaPolice"
+                             }
+               },
+    "electricity":  {
+                        "meecl":  {
+                                      "handle":  "@MeECL_official",
+                                      "name":  "Meghalaya Energy Corporation Limited",
+                                      "verified":  true,
+                                      "last_checked":  "2026-03-01",
+                                      "source_url":  "https://twitter.com/MeECL_official"
+                                  }
+                    },
+    "water":  {
+                  "state":  {
+                                "handle":  "@SangmaConrad",
+                                "name":  "Chief Minister (water)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/SangmaConrad"
+                            }
+              },
+    "roads":  {
+                  "state":  {
+                                "handle":  "@SangmaConrad",
+                                "name":  "Chief Minister (roads)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/SangmaConrad"
+                            }
+              },
+    "sanitation":  {
+                       "state":  {
+                                     "handle":  "@SangmaConrad",
+                                     "name":  "Chief Minister (sanitation)",
+                                     "verified":  true,
+                                     "last_checked":  "2026-03-06",
+                                     "source_url":  "https://twitter.com/SangmaConrad"
+                                 }
+                   },
+    "animal_control":  {
+                           "state":  {
+                                         "handle":  "@SangmaConrad",
+                                         "name":  "Chief Minister (animal_control)",
+                                         "verified":  true,
+                                         "last_checked":  "2026-03-06",
+                                         "source_url":  "https://twitter.com/SangmaConrad"
+                                     }
+                       },
+    "building_dept":  {
+                          "state":  {
+                                        "handle":  "@SangmaConrad",
+                                        "name":  "Chief Minister (building_dept)",
+                                        "verified":  true,
+                                        "last_checked":  "2026-03-06",
+                                        "source_url":  "https://twitter.com/SangmaConrad"
+                                    }
+                      },
+    "drainage":  {
+                     "state":  {
+                                   "handle":  "@SangmaConrad",
+                                   "name":  "Chief Minister (drainage)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/SangmaConrad"
+                               }
+                 },
+    "pollution":  {
+                      "state":  {
+                                    "handle":  "@SangmaConrad",
+                                    "name":  "Chief Minister (pollution)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/SangmaConrad"
+                                }
+                  },
+    "traffic":  {
+                    "state":  {
+                                  "handle":  "@SangmaConrad",
+                                  "name":  "Chief Minister (traffic)",
+                                  "verified":  true,
+                                  "last_checked":  "2026-03-06",
+                                  "source_url":  "https://twitter.com/SangmaConrad"
+                              }
+                },
+    "health":  {
+                   "state":  {
+                                 "handle":  "@SangmaConrad",
+                                 "name":  "Chief Minister (health)",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-06",
+                                 "source_url":  "https://twitter.com/SangmaConrad"
+                             }
+               },
+    "education":  {
+                      "state":  {
+                                    "handle":  "@SangmaConrad",
+                                    "name":  "Chief Minister (education)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/SangmaConrad"
+                                }
+                  },
+    "vigilance":  {
+                      "state":  {
+                                    "handle":  "@SangmaConrad",
+                                    "name":  "Chief Minister (vigilance)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/SangmaConrad"
+                                }
+                  },
+    "fire_dept":  {
+                      "state":  {
+                                    "handle":  "@SangmaConrad",
+                                    "name":  "Chief Minister (fire_dept)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/SangmaConrad"
+                                }
+                  },
+    "horticulture":  {
+                         "state":  {
+                                       "handle":  "@SangmaConrad",
+                                       "name":  "Chief Minister (horticulture)",
+                                       "verified":  true,
+                                       "last_checked":  "2026-03-06",
+                                       "source_url":  "https://twitter.com/SangmaConrad"
+                                   }
+                     },
+    "railways":  {
+                     "state":  {
+                                   "handle":  "@SangmaConrad",
+                                   "name":  "Chief Minister (railways)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/SangmaConrad"
+                               }
+                 },
+    "transport":  {
+                      "state":  {
+                                    "handle":  "@SangmaConrad",
+                                    "name":  "Chief Minister (transport)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/SangmaConrad"
+                                }
+                  },
+    "municipal_general":  {
+                              "state":  {
+                                            "handle":  "@SangmaConrad",
+                                            "name":  "Chief Minister (municipal_general)",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-06",
+                                            "source_url":  "https://twitter.com/SangmaConrad"
+                                        }
+                          }
 }

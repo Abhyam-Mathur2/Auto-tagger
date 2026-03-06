@@ -1,20 +1,173 @@
 {
-  "state_code": "NL",
-  "state_name": "Nagaland",
-  "cm": {
-    "handle": "@Neiphiu_Rio",
-    "name": "Chief Minister",
-    "verified": true,
-    "last_checked": "2026-03-01",
-    "source_url": "https://twitter.com/Neiphiu_Rio"
-  },
-  "police": {
-    "state": {
-      "handle": "@NagalandPolice",
-      "name": "Nagaland Police",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/NagalandPolice"
-    }
-  }
+    "state_code":  "NL",
+    "state_name":  "Nagaland",
+    "cm":  {
+               "handle":  "@Neiphiu_Rio",
+               "name":  "Chief Minister",
+               "verified":  true,
+               "last_checked":  "2026-03-01",
+               "source_url":  "https://twitter.com/Neiphiu_Rio"
+           },
+    "police":  {
+                   "state":  {
+                                 "handle":  "@NagalandPolice",
+                                 "name":  "Nagaland Police",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-01",
+                                 "source_url":  "https://twitter.com/NagalandPolice"
+                             }
+               },
+    "water":  {
+                  "state":  {
+                                "handle":  "@Neiphiu_Rio",
+                                "name":  "Chief Minister (water)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/Neiphiu_Rio"
+                            }
+              },
+    "electricity":  {
+                        "state":  {
+                                      "handle":  "@Neiphiu_Rio",
+                                      "name":  "Chief Minister (electricity)",
+                                      "verified":  true,
+                                      "last_checked":  "2026-03-06",
+                                      "source_url":  "https://twitter.com/Neiphiu_Rio"
+                                  }
+                    },
+    "roads":  {
+                  "state":  {
+                                "handle":  "@Neiphiu_Rio",
+                                "name":  "Chief Minister (roads)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/Neiphiu_Rio"
+                            }
+              },
+    "sanitation":  {
+                       "state":  {
+                                     "handle":  "@Neiphiu_Rio",
+                                     "name":  "Chief Minister (sanitation)",
+                                     "verified":  true,
+                                     "last_checked":  "2026-03-06",
+                                     "source_url":  "https://twitter.com/Neiphiu_Rio"
+                                 }
+                   },
+    "animal_control":  {
+                           "state":  {
+                                         "handle":  "@Neiphiu_Rio",
+                                         "name":  "Chief Minister (animal_control)",
+                                         "verified":  true,
+                                         "last_checked":  "2026-03-06",
+                                         "source_url":  "https://twitter.com/Neiphiu_Rio"
+                                     }
+                       },
+    "building_dept":  {
+                          "state":  {
+                                        "handle":  "@Neiphiu_Rio",
+                                        "name":  "Chief Minister (building_dept)",
+                                        "verified":  true,
+                                        "last_checked":  "2026-03-06",
+                                        "source_url":  "https://twitter.com/Neiphiu_Rio"
+                                    }
+                      },
+    "drainage":  {
+                     "state":  {
+                                   "handle":  "@Neiphiu_Rio",
+                                   "name":  "Chief Minister (drainage)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/Neiphiu_Rio"
+                               }
+                 },
+    "pollution":  {
+                      "state":  {
+                                    "handle":  "@Neiphiu_Rio",
+                                    "name":  "Chief Minister (pollution)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/Neiphiu_Rio"
+                                }
+                  },
+    "traffic":  {
+                    "state":  {
+                                  "handle":  "@Neiphiu_Rio",
+                                  "name":  "Chief Minister (traffic)",
+                                  "verified":  true,
+                                  "last_checked":  "2026-03-06",
+                                  "source_url":  "https://twitter.com/Neiphiu_Rio"
+                              }
+                },
+    "health":  {
+                   "state":  {
+                                 "handle":  "@Neiphiu_Rio",
+                                 "name":  "Chief Minister (health)",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-06",
+                                 "source_url":  "https://twitter.com/Neiphiu_Rio"
+                             }
+               },
+    "education":  {
+                      "state":  {
+                                    "handle":  "@Neiphiu_Rio",
+                                    "name":  "Chief Minister (education)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/Neiphiu_Rio"
+                                }
+                  },
+    "vigilance":  {
+                      "state":  {
+                                    "handle":  "@Neiphiu_Rio",
+                                    "name":  "Chief Minister (vigilance)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/Neiphiu_Rio"
+                                }
+                  },
+    "fire_dept":  {
+                      "state":  {
+                                    "handle":  "@Neiphiu_Rio",
+                                    "name":  "Chief Minister (fire_dept)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/Neiphiu_Rio"
+                                }
+                  },
+    "horticulture":  {
+                         "state":  {
+                                       "handle":  "@Neiphiu_Rio",
+                                       "name":  "Chief Minister (horticulture)",
+                                       "verified":  true,
+                                       "last_checked":  "2026-03-06",
+                                       "source_url":  "https://twitter.com/Neiphiu_Rio"
+                                   }
+                     },
+    "railways":  {
+                     "state":  {
+                                   "handle":  "@Neiphiu_Rio",
+                                   "name":  "Chief Minister (railways)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/Neiphiu_Rio"
+                               }
+                 },
+    "transport":  {
+                      "state":  {
+                                    "handle":  "@Neiphiu_Rio",
+                                    "name":  "Chief Minister (transport)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/Neiphiu_Rio"
+                                }
+                  },
+    "municipal_general":  {
+                              "state":  {
+                                            "handle":  "@Neiphiu_Rio",
+                                            "name":  "Chief Minister (municipal_general)",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-06",
+                                            "source_url":  "https://twitter.com/Neiphiu_Rio"
+                                        }
+                          }
 }

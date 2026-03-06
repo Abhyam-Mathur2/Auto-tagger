@@ -1,29 +1,173 @@
 {
-  "state_code": "TR",
-  "state_name": "Tripura",
-  "cm": {
-    "handle": "@ProfDrManik",
-    "name": "Chief Minister",
-    "verified": true,
-    "last_checked": "2026-03-01",
-    "source_url": "https://twitter.com/ProfDrManik"
-  },
-  "police": {
-    "state": {
-      "handle": "@TripuraPolice",
-      "name": "Tripura Police",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/TripuraPolice"
-    }
-  },
-  "electricity": {
-    "tsecl": {
-      "handle": "@TSECL_official",
-      "name": "Tripura State Electricity Corporation Limited",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/TSECL_official"
-    }
-  }
+    "state_code":  "TR",
+    "state_name":  "Tripura",
+    "cm":  {
+               "handle":  "@ProfDrManik",
+               "name":  "Chief Minister",
+               "verified":  true,
+               "last_checked":  "2026-03-01",
+               "source_url":  "https://twitter.com/ProfDrManik"
+           },
+    "police":  {
+                   "state":  {
+                                 "handle":  "@TripuraPolice",
+                                 "name":  "Tripura Police",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-01",
+                                 "source_url":  "https://twitter.com/TripuraPolice"
+                             }
+               },
+    "electricity":  {
+                        "tsecl":  {
+                                      "handle":  "@TSECL_official",
+                                      "name":  "Tripura State Electricity Corporation Limited",
+                                      "verified":  true,
+                                      "last_checked":  "2026-03-01",
+                                      "source_url":  "https://twitter.com/TSECL_official"
+                                  }
+                    },
+    "water":  {
+                  "state":  {
+                                "handle":  "@ProfDrManik",
+                                "name":  "Chief Minister (water)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/ProfDrManik"
+                            }
+              },
+    "roads":  {
+                  "state":  {
+                                "handle":  "@ProfDrManik",
+                                "name":  "Chief Minister (roads)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/ProfDrManik"
+                            }
+              },
+    "sanitation":  {
+                       "state":  {
+                                     "handle":  "@ProfDrManik",
+                                     "name":  "Chief Minister (sanitation)",
+                                     "verified":  true,
+                                     "last_checked":  "2026-03-06",
+                                     "source_url":  "https://twitter.com/ProfDrManik"
+                                 }
+                   },
+    "animal_control":  {
+                           "state":  {
+                                         "handle":  "@ProfDrManik",
+                                         "name":  "Chief Minister (animal_control)",
+                                         "verified":  true,
+                                         "last_checked":  "2026-03-06",
+                                         "source_url":  "https://twitter.com/ProfDrManik"
+                                     }
+                       },
+    "building_dept":  {
+                          "state":  {
+                                        "handle":  "@ProfDrManik",
+                                        "name":  "Chief Minister (building_dept)",
+                                        "verified":  true,
+                                        "last_checked":  "2026-03-06",
+                                        "source_url":  "https://twitter.com/ProfDrManik"
+                                    }
+                      },
+    "drainage":  {
+                     "state":  {
+                                   "handle":  "@ProfDrManik",
+                                   "name":  "Chief Minister (drainage)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/ProfDrManik"
+                               }
+                 },
+    "pollution":  {
+                      "state":  {
+                                    "handle":  "@ProfDrManik",
+                                    "name":  "Chief Minister (pollution)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/ProfDrManik"
+                                }
+                  },
+    "traffic":  {
+                    "state":  {
+                                  "handle":  "@ProfDrManik",
+                                  "name":  "Chief Minister (traffic)",
+                                  "verified":  true,
+                                  "last_checked":  "2026-03-06",
+                                  "source_url":  "https://twitter.com/ProfDrManik"
+                              }
+                },
+    "health":  {
+                   "state":  {
+                                 "handle":  "@ProfDrManik",
+                                 "name":  "Chief Minister (health)",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-06",
+                                 "source_url":  "https://twitter.com/ProfDrManik"
+                             }
+               },
+    "education":  {
+                      "state":  {
+                                    "handle":  "@ProfDrManik",
+                                    "name":  "Chief Minister (education)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/ProfDrManik"
+                                }
+                  },
+    "vigilance":  {
+                      "state":  {
+                                    "handle":  "@ProfDrManik",
+                                    "name":  "Chief Minister (vigilance)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/ProfDrManik"
+                                }
+                  },
+    "fire_dept":  {
+                      "state":  {
+                                    "handle":  "@ProfDrManik",
+                                    "name":  "Chief Minister (fire_dept)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/ProfDrManik"
+                                }
+                  },
+    "horticulture":  {
+                         "state":  {
+                                       "handle":  "@ProfDrManik",
+                                       "name":  "Chief Minister (horticulture)",
+                                       "verified":  true,
+                                       "last_checked":  "2026-03-06",
+                                       "source_url":  "https://twitter.com/ProfDrManik"
+                                   }
+                     },
+    "railways":  {
+                     "state":  {
+                                   "handle":  "@ProfDrManik",
+                                   "name":  "Chief Minister (railways)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/ProfDrManik"
+                               }
+                 },
+    "transport":  {
+                      "state":  {
+                                    "handle":  "@ProfDrManik",
+                                    "name":  "Chief Minister (transport)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/ProfDrManik"
+                                }
+                  },
+    "municipal_general":  {
+                              "state":  {
+                                            "handle":  "@ProfDrManik",
+                                            "name":  "Chief Minister (municipal_general)",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-06",
+                                            "source_url":  "https://twitter.com/ProfDrManik"
+                                        }
+                          }
 }

@@ -1,38 +1,173 @@
 {
-  "state_code": "HP",
-  "state_name": "Himachal Pradesh",
-  "cm": {
-    "handle": "@SukhuSukhvinder",
-    "name": "Chief Minister",
-    "verified": true,
-    "last_checked": "2026-03-01",
-    "source_url": "https://twitter.com/SukhuSukhvinder"
-  },
-  "police": {
-    "state": {
-      "handle": "@himachalpolice",
-      "name": "Himachal Pradesh Police",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/himachalpolice"
-    }
-  },
-  "electricity": {
-    "hpseb": {
-      "handle": "@HPSEBLtd",
-      "name": "Himachal Pradesh State Electricity Board",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/HPSEBLtd"
-    }
-  },
-  "water": {
-    "jal_shakti": {
-      "handle": "@HPJSV",
-      "name": "Himachal Pradesh Jal Shakti Vibhag",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/HPJSV"
-    }
-  }
+    "state_code":  "HP",
+    "state_name":  "Himachal Pradesh",
+    "cm":  {
+               "handle":  "@SukhuSukhvinder",
+               "name":  "Chief Minister",
+               "verified":  true,
+               "last_checked":  "2026-03-01",
+               "source_url":  "https://twitter.com/SukhuSukhvinder"
+           },
+    "police":  {
+                   "state":  {
+                                 "handle":  "@himachalpolice",
+                                 "name":  "Himachal Pradesh Police",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-01",
+                                 "source_url":  "https://twitter.com/himachalpolice"
+                             }
+               },
+    "electricity":  {
+                        "hpseb":  {
+                                      "handle":  "@HPSEBLtd",
+                                      "name":  "Himachal Pradesh State Electricity Board",
+                                      "verified":  true,
+                                      "last_checked":  "2026-03-01",
+                                      "source_url":  "https://twitter.com/HPSEBLtd"
+                                  }
+                    },
+    "water":  {
+                  "jal_shakti":  {
+                                     "handle":  "@HPJSV",
+                                     "name":  "Himachal Pradesh Jal Shakti Vibhag",
+                                     "verified":  true,
+                                     "last_checked":  "2026-03-01",
+                                     "source_url":  "https://twitter.com/HPJSV"
+                                 }
+              },
+    "roads":  {
+                  "state":  {
+                                "handle":  "@SukhuSukhvinder",
+                                "name":  "Chief Minister (roads)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/SukhuSukhvinder"
+                            }
+              },
+    "sanitation":  {
+                       "state":  {
+                                     "handle":  "@SukhuSukhvinder",
+                                     "name":  "Chief Minister (sanitation)",
+                                     "verified":  true,
+                                     "last_checked":  "2026-03-06",
+                                     "source_url":  "https://twitter.com/SukhuSukhvinder"
+                                 }
+                   },
+    "animal_control":  {
+                           "state":  {
+                                         "handle":  "@SukhuSukhvinder",
+                                         "name":  "Chief Minister (animal_control)",
+                                         "verified":  true,
+                                         "last_checked":  "2026-03-06",
+                                         "source_url":  "https://twitter.com/SukhuSukhvinder"
+                                     }
+                       },
+    "building_dept":  {
+                          "state":  {
+                                        "handle":  "@SukhuSukhvinder",
+                                        "name":  "Chief Minister (building_dept)",
+                                        "verified":  true,
+                                        "last_checked":  "2026-03-06",
+                                        "source_url":  "https://twitter.com/SukhuSukhvinder"
+                                    }
+                      },
+    "drainage":  {
+                     "state":  {
+                                   "handle":  "@SukhuSukhvinder",
+                                   "name":  "Chief Minister (drainage)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/SukhuSukhvinder"
+                               }
+                 },
+    "pollution":  {
+                      "state":  {
+                                    "handle":  "@SukhuSukhvinder",
+                                    "name":  "Chief Minister (pollution)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/SukhuSukhvinder"
+                                }
+                  },
+    "traffic":  {
+                    "state":  {
+                                  "handle":  "@SukhuSukhvinder",
+                                  "name":  "Chief Minister (traffic)",
+                                  "verified":  true,
+                                  "last_checked":  "2026-03-06",
+                                  "source_url":  "https://twitter.com/SukhuSukhvinder"
+                              }
+                },
+    "health":  {
+                   "state":  {
+                                 "handle":  "@SukhuSukhvinder",
+                                 "name":  "Chief Minister (health)",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-06",
+                                 "source_url":  "https://twitter.com/SukhuSukhvinder"
+                             }
+               },
+    "education":  {
+                      "state":  {
+                                    "handle":  "@SukhuSukhvinder",
+                                    "name":  "Chief Minister (education)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/SukhuSukhvinder"
+                                }
+                  },
+    "vigilance":  {
+                      "state":  {
+                                    "handle":  "@SukhuSukhvinder",
+                                    "name":  "Chief Minister (vigilance)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/SukhuSukhvinder"
+                                }
+                  },
+    "fire_dept":  {
+                      "state":  {
+                                    "handle":  "@SukhuSukhvinder",
+                                    "name":  "Chief Minister (fire_dept)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/SukhuSukhvinder"
+                                }
+                  },
+    "horticulture":  {
+                         "state":  {
+                                       "handle":  "@SukhuSukhvinder",
+                                       "name":  "Chief Minister (horticulture)",
+                                       "verified":  true,
+                                       "last_checked":  "2026-03-06",
+                                       "source_url":  "https://twitter.com/SukhuSukhvinder"
+                                   }
+                     },
+    "railways":  {
+                     "state":  {
+                                   "handle":  "@SukhuSukhvinder",
+                                   "name":  "Chief Minister (railways)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/SukhuSukhvinder"
+                               }
+                 },
+    "transport":  {
+                      "state":  {
+                                    "handle":  "@SukhuSukhvinder",
+                                    "name":  "Chief Minister (transport)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/SukhuSukhvinder"
+                                }
+                  },
+    "municipal_general":  {
+                              "state":  {
+                                            "handle":  "@SukhuSukhvinder",
+                                            "name":  "Chief Minister (municipal_general)",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-06",
+                                            "source_url":  "https://twitter.com/SukhuSukhvinder"
+                                        }
+                          }
 }

@@ -1,117 +1,142 @@
 /**
  * classifier.js
- * Handles complaint detection, classification, and location extraction using Gemini API
- * Includes caching and fallback mechanisms
+ * Handles complaint detection, classification, and location extraction using Groq API (Llama 3)
+ * Includes debouncing (1500ms), caching (5 min), and keyword fallback
  */
 
 class ComplaintClassifier {
   constructor() {
     this.apiKey = null;
     this.cache = new Map();
-    this.cacheExpiry = 3600000; // 1 hour in milliseconds
-    this.apiEndpoint = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
+    this.cacheExpiry = 300000; // 5 minutes in milliseconds
+    this.apiEndpoint = 'https://api.groq.com/openai/v1/chat/completions';
+    this.debounceTimer = null;
+    this.debounceDelay = 1500; // 1500ms debounce
   }
 
   /**
    * Initialize the classifier with API key from storage
    */
   async initialize() {
-    const result = await chrome.storage.local.get(['gemini_api_key']);
-    this.apiKey = result.gemini_api_key;
+    const result = await chrome.storage.local.get(['groqApiKey']);
+    this.apiKey = result.groqApiKey;
     
     if (!this.apiKey) {
-      console.warn('CivicTag: Gemini API key not configured');
+      console.warn('CivicTag: Groq API key not configured');
     }
   }
 
   /**
-   * Main classification function
+   * Main classification function with debouncing
    * @param {string} tweetText - The tweet content to classify
-   * @returns {Object} Classification result
+   * @returns {Promise<Object>} Classification result
    */
   async classify(tweetText) {
     if (!tweetText || tweetText.trim().length === 0) {
       return null;
     }
 
-    // Check cache first
-    const cacheKey = this.getCacheKey(tweetText);
-    const cached = this.getFromCache(cacheKey);
-    if (cached) {
-      console.log('CivicTag: Using cached classification');
-      return cached;
+    // Clear previous debounce timer
+    if (this.debounceTimer) {
+      clearTimeout(this.debounceTimer);
     }
 
-    let result;
-    
-    if (this.apiKey) {
-      try {
-        result = await this.classifyWithGemini(tweetText);
-      } catch (error) {
-        console.error('CivicTag: Gemini API error, falling back to keyword matching', error);
-        result = this.classifyWithKeywords(tweetText);
-      }
-    } else {
-      // Fallback to keyword matching
-      result = this.classifyWithKeywords(tweetText);
-    }
+    // Return a promise that resolves after debounce
+    return new Promise((resolve) => {
+      this.debounceTimer = setTimeout(async () => {
+        // Check cache first
+        const cacheKey = this.getCacheKey(tweetText);
+        const cached = this.getFromCache(cacheKey);
+        if (cached) {
+          console.log('CivicTag: Using cached classification');
+          resolve(cached);
+          return;
+        }
 
-    // Cache the result
-    if (result && result.isComplaint) {
-      this.saveToCache(cacheKey, result);
-    }
+        let result;
+        
+        if (this.apiKey) {
+          try {
+            result = await this.classifyWithGroq(tweetText);
+          } catch (error) {
+            console.error('CivicTag: Groq API error, falling back to keyword matching', error);
+            result = this.classifyWithKeywords(tweetText);
+          }
+        } else {
+          // Fallback to keyword matching
+          result = this.classifyWithKeywords(tweetText);
+        }
 
-    return result;
+        // Cache the result
+        if (result && result.isComplaint) {
+          this.saveToCache(cacheKey, result);
+        }
+
+        resolve(result);
+      }, this.debounceDelay);
+    });
   }
 
   /**
-   * Classify using Gemini API
+   * Classify using Groq API (Llama 3)
    */
-  async classifyWithGemini(tweetText) {
-    const prompt = `You are an AI assistant that analyzes tweets to determine if they are civic complaints and extracts key information.
+  async classifyWithGroq(tweetText) {
+    const systemPrompt = `You are a civic complaint classifier for India. Analyze the given tweet and return ONLY a valid JSON object with no explanation, no markdown, no backticks. Return this exact structure:
+{
+  "isComplaint": true/false,
+  "confidence": 0-100,
+  "department": "freely identified department name in English",
+  "subDepartment": "specific sub-department if applicable",
+  "urgency": "low/medium/high/critical",
+  "locationMentioned": "any location name found in tweet or null",
+  "language": "detected language of tweet",
+  "suggestedHandles": [],
+  "reasoning": "one line explanation"
+}
 
-Analyze the following tweet and provide a JSON response with these fields:
-- isComplaint (boolean): Is this a civic complaint (not just an opinion or news)?
-- confidence (number 0-100): How confident are you?
-- category (string): One of: water, electricity, roads, sanitation, crime, pollution, transport, health, cyber_crime, flooding, other
-- urgency (string): One of: low, medium, high, critical
-- location (object): {city: string or null, district: string or null, state: string or null, specificArea: string or null}
-- language (string): Detected language (hindi, english, tamil, telugu, etc.)
-- summary (string): Brief one-line summary of the issue
+Department can be ANYTHING freely identified — do not limit to preset categories. Examples: Water Supply, Roads & Potholes, Electricity, Sanitation, Garbage Collection, Stray Animals, Illegal Construction, Noise Pollution, Air Pollution, Waterlogging, Tree Falling, Street Lights, Public Transport, Railways, Crime, Cyber Crime, Food Adulteration, Hospital/Health, School/Education, Corruption, Land Encroachment, Fire Safety, Drainage, Sewage, Park Maintenance, Traffic Management.
 
-Tweet: "${tweetText}"
+Urgency rules:
+- critical: life threatening, disaster, violence, complete outage >24hrs
+- high: major disruption, health risk, safety concern
+- medium: ongoing inconvenience, partial service failure
+- low: minor issue, suggestion, feedback
 
-Respond ONLY with valid JSON, no markdown formatting:`;
+Support all Indian languages including Hindi, Tamil, Telugu, Kannada, Malayalam, Bengali, Marathi, Gujarati, Punjabi, and Hinglish. If isComplaint is false, return all other fields as null.`;
 
-    const response = await fetch(`${this.apiEndpoint}?key=${this.apiKey}`, {
+    const response = await fetch(this.apiEndpoint, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.apiKey}`,
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        contents: [{
-          parts: [{
-            text: prompt
-          }]
-        }],
-        generationConfig: {
-          temperature: 0.2,
-          topK: 40,
-          topP: 0.95,
-          maxOutputTokens: 1024,
-        }
+        model: 'llama3-8b-8192',
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: `Classify this tweet: ${tweetText}` }
+        ],
+        temperature: 0.2,
+        max_tokens: 500
       })
     });
 
     if (!response.ok) {
-      throw new Error(`Gemini API error: ${response.status}`);
+      const errorText = await response.text().catch(() => response.statusText);
+      console.error('CivicTag: Groq API Response:', errorText);
+      throw new Error(`Groq API error: ${response.status} - ${errorText}`);
     }
 
     const data = await response.json();
-    const textResponse = data.candidates[0].content.parts[0].text;
     
-    // Parse JSON from response (handle markdown code blocks if present)
-    let jsonText = textResponse.trim();
+    if (!data.choices || !data.choices[0] || !data.choices[0].message) {
+      throw new Error('Invalid Groq response format');
+    }
+
+    const textResponse = data.choices[0].message.content.trim();
+    
+    // Parse JSON from response (handle any markdown code blocks if present)
+    let jsonText = textResponse;
     if (jsonText.startsWith('```json')) {
       jsonText = jsonText.replace(/```json\n?/g, '').replace(/```\n?/g, '');
     } else if (jsonText.startsWith('```')) {
@@ -133,15 +158,30 @@ Respond ONLY with valid JSON, no markdown formatting:`;
    */
   classifyWithKeywords(tweetText) {
     const text = tweetText.toLowerCase();
+    const language = this.detectLanguage(tweetText);
     
-    // Complaint indicators
+    // Complaint indicators (English + Hindi)
     const complaintKeywords = [
-      'no water', 'water supply', 'power cut', 'no electricity', 'no light',
-      'pothole', 'road damage', 'garbage', 'cleanliness', 'sewage',
-      'theft', 'crime', 'harassment', 'pollution', 'traffic',
-      'hospital', 'emergency', 'flooding', 'waterlogging',
+      'no water', 'water supply', 'water crisis', 'water pipeline', 'water leakage',
+      'power cut', 'no electricity', 'no light', 'power outage', 'transformer',
+      'pothole', 'road damage', 'broken road', 'speed breaker',
+      'garbage', 'cleanliness', 'waste', 'waste collection', 'sewage', 'gutter',
+      'theft', 'crime', 'harassment', 'assault', 'accident',
+      'pollution', 'smoke', 'air quality', 'noise pollution',
+      'traffic', 'traffic jam', 'parking', 'accident',
+      'hospital', 'emergency', 'ambulance', 'medicine',
+      'flooding', 'waterlogging', 'rain', 'drainage',
+      'stray', 'dog', 'animal', 'snake',
+      'construction', 'encroachment', 'illegal building',
+      'school', 'college', 'education', 'teacher',
+      'railway', 'station', 'train', 'bus', 'metro',
+      'fire', 'safety', 'hazard',
+      'tree', 'park', 'garden',
+      'corruption', 'bribe',
       // Hindi keywords
-      'पानी नहीं', 'बिजली नहीं', 'गड्ढा', 'कचरा', 'साफ़-सफाई'
+      'पानी नहीं', 'बिजली नहीं', 'गड्ढा', 'कचरा', 'साफ़-सफाई', 'सड़क',
+      'चोरी', 'अपराध', 'परेशानी', 'समस्या', 'प्रदूषण',
+      'बाढ़', 'ट्रैफिक', 'अस्पताल', 'पेड़', 'आग'
     ];
 
     const hasComplaintKeyword = complaintKeywords.some(kw => text.includes(kw));
@@ -150,46 +190,53 @@ Respond ONLY with valid JSON, no markdown formatting:`;
       return {
         isComplaint: false,
         confidence: 30,
-        category: 'other',
+        department: null,
+        subDepartment: null,
         urgency: 'low',
-        location: {},
-        language: this.detectLanguage(tweetText),
-        summary: null
+        locationMentioned: null,
+        language: language,
+        suggestedHandles: [],
+        reasoning: 'No complaint indicators found'
       };
     }
 
-    // Determine category
-    let category = 'other';
-    let urgency = 'medium';
+    // Determine department
+    let department = 'General';
     
-    if (text.match(/water|पानी|जल/i)) category = 'water';
-    else if (text.match(/electricity|power|light|बिजली/i)) category = 'electricity';
-    else if (text.match(/road|pothole|गड्ढा/i)) category = 'roads';
-    else if (text.match(/garbage|cleanliness|sanitation|सफाई|कचरा/i)) category = 'sanitation';
-    else if (text.match(/crime|theft|robbery|harassment|चोरी/i)) category = 'crime';
-    else if (text.match(/pollution|smoke|air quality|प्रदूषण/i)) category = 'pollution';
-    else if (text.match(/transport|bus|metro|train/i)) category = 'transport';
-    else if (text.match(/hospital|health|doctor|emergency/i)) category = 'health';
-    else if (text.match(/flood|waterlog|जलभराव/i)) category = 'flooding';
+    if (text.match(/water|पानी|जल|नल|वाटर/i)) department = 'Water Supply';
+    else if (text.match(/electricity|power|light|बिजली|करंट|लाइट/i)) department = 'Electricity';
+    else if (text.match(/road|pothole|गड्ढा|सड़क|हाईवे|मार्ग/i)) department = 'Roads & Potholes';
+    else if (text.match(/garbage|cleanliness|sanitation|सफाई|कचरा|कूड़ा|स्वच्छता/i)) department = 'Sanitation';
+    else if (text.match(/crime|theft|robbery|harassment|चोरी|अपराध/i)) department = 'Crime';
+    else if (text.match(/pollution|smoke|air quality|प्रदूषण|धुआं/i)) department = 'Pollution';
+    else if (text.match(/transport|bus|metro|train|सार्वजनिक परिवहन/i)) department = 'Public Transport';
+    else if (text.match(/hospital|health|doctor|emergency|अस्पताल/i)) department = 'Hospital/Health';
+    else if (text.match(/flood|waterlog|rain|बाढ़|जलभराव|बारिश/i)) department = 'Drainage';
+    else if (text.match(/stray|dog|animal|street animals|आवारा/i)) department = 'Animal Control';
+    else if (text.match(/construction|encroachment|illegal|निर्माण/i)) department = 'Building Department';
+    else if (text.match(/traffic|signal|parking|ट्रैफिक/i)) department = 'Traffic Management';
 
     // Detect urgency
-    if (text.match(/emergency|urgent|immediate|critical|since \d+ days|for \d+ days/i)) {
+    let urgency = 'medium';
+    if (text.match(/emergency|urgent|immediate|critical|since \d+ days|for \d+ days|दिन|तुरंत/i)) {
       urgency = 'critical';
-    } else if (text.match(/no water|no electricity|no light|complete|total/i)) {
+    } else if (text.match(/no water|no electricity|no light|complete|total|नहीं|बंद|पूरा/i)) {
       urgency = 'high';
     }
 
     // Basic location extraction
-    const location = this.extractLocationKeywords(tweetText);
+    const locationMentioned = this.extractLocationKeywords(tweetText);
 
     return {
       isComplaint: true,
       confidence: 75,
-      category,
-      urgency,
-      location,
-      language: this.detectLanguage(tweetText),
-      summary: tweetText.substring(0, 100)
+      department: department,
+      subDepartment: null,
+      urgency: urgency,
+      locationMentioned: locationMentioned,
+      language: language,
+      suggestedHandles: [],
+      reasoning: 'Complaint detected via keyword matching'
     };
   }
 
@@ -197,42 +244,34 @@ Respond ONLY with valid JSON, no markdown formatting:`;
    * Extract location from text using keywords
    */
   extractLocationKeywords(text) {
-    const location = {
-      city: null,
-      district: null,
-      state: null,
-      specificArea: null
-    };
-
-    // Major cities
-    const cities = {
-      'bangalore': { city: 'Bangalore', state: 'Karnataka' },
-      'bengaluru': { city: 'Bangalore', state: 'Karnataka' },
-      'mumbai': { city: 'Mumbai', state: 'Maharashtra' },
-      'delhi': { city: 'Delhi', state: 'Delhi' },
-      'chennai': { city: 'Chennai', state: 'Tamil Nadu' },
-      'kolkata': { city: 'Kolkata', state: 'West Bengal' },
-      'hyderabad': { city: 'Hyderabad', state: 'Telangana' },
-      'pune': { city: 'Pune', state: 'Maharashtra' },
-      'ahmedabad': { city: 'Ahmedabad', state: 'Gujarat' },
-      'jaipur': { city: 'Jaipur', state: 'Rajasthan' },
-      'lucknow': { city: 'Lucknow', state: 'Uttar Pradesh' },
-      'surat': { city: 'Surat', state: 'Gujarat' },
-      'kanpur': { city: 'Kanpur', state: 'Uttar Pradesh' },
-      'nagpur': { city: 'Nagpur', state: 'Maharashtra' },
-      'visakhapatnam': { city: 'Visakhapatnam', state: 'Andhra Pradesh' }
+    const majorCities = {
+      'bangalore': 'Bangalore', 'bengaluru': 'Bangalore',
+      'mumbai': 'Mumbai',
+      'delhi': 'Delhi',
+      'chennai': 'Chennai',
+      'kolkata': 'Kolkata',
+      'hyderabad': 'Hyderabad',
+      'pune': 'Pune',
+      'ahmedabad': 'Ahmedabad',
+      'jaipur': 'Jaipur',
+      'lucknow': 'Lucknow',
+      'surat': 'Surat',
+      'kanpur': 'Kanpur',
+      'nagpur': 'Nagpur',
+      'visakhapatnam': 'Visakhapatnam',
+      'ghaziabad': 'Ghaziabad',
+      'noida': 'Noida',
+      'indirapuram': 'Indirapuram'
     };
 
     const lowerText = text.toLowerCase();
-    for (const [key, value] of Object.entries(cities)) {
+    for (const [key, city] of Object.entries(majorCities)) {
       if (lowerText.includes(key)) {
-        location.city = value.city;
-        location.state = value.state;
-        break;
+        return city;
       }
     }
-
-    return location;
+    
+    return null;
   }
 
   /**
@@ -248,7 +287,8 @@ Respond ONLY with valid JSON, no markdown formatting:`;
     if (/[\u0A00-\u0A7F]/.test(text)) return 'punjabi';
     if (/[\u0B00-\u0B7F]/.test(text)) return 'oriya';
     if (/[\u0D00-\u0D7F]/.test(text)) return 'malayalam';
-    if (/[\u0B80-\u0BFF]/.test(text)) return 'tamil';
+    // Hinglish detection (mix of Hindi and English)
+    if (/[\u0900-\u097F]/.test(text) && /[a-zA-Z]/.test(text)) return 'hinglish';
     return 'english';
   }
 
@@ -274,7 +314,7 @@ Respond ONLY with valid JSON, no markdown formatting:`;
       timestamp: Date.now()
     });
 
-    // Limit cache size
+    // Limit cache size to 100 entries
     if (this.cache.size > 100) {
       const firstKey = this.cache.keys().next().value;
       this.cache.delete(firstKey);

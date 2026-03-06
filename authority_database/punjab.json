@@ -1,64 +1,199 @@
 {
-  "state_code": "PB",
-  "state_name": "Punjab",
-  "cm": {
-    "handle": "@BhagwantMann",
-    "name": "Chief Minister (AAP)",
-    "verified": true,
-    "last_checked": "2026-03-01",
-    "source_url": "https://twitter.com/BhagwantMann"
-  },
-  "police": {
-    "state": {
-      "handle": "@PunjabPoliceInd",
-      "name": "Punjab Police",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/PunjabPoliceInd"
-    }
-  },
-  "electricity": {
-    "pspcl": {
-      "handle": "@PSPCL_Official",
-      "name": "Punjab State Power Corporation Limited",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/PSPCL_Official"
-    }
-  },
-  "water": {
-    "pwssb": {
-      "handle": "@PWSSB_Official",
-      "name": "Punjab Water Supply & Sewerage Board",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/PWSSB_Official"
-    }
-  },
-  "municipal": {
-    "chandigarh": {
-      "handle": "@chandigarh_mc",
-      "name": "Chandigarh Municipal Corporation",
-      "city": "Chandigarh",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/chandigarh_mc"
-    },
-    "ludhiana": {
-      "handle": "@LudhianaMC",
-      "name": "Ludhiana Municipal Corporation",
-      "city": "Ludhiana",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/LudhianaMC"
-    },
-    "amritsar": {
-      "handle": "@MCAmritsar",
-      "name": "Amritsar Municipal Corporation",
-      "city": "Amritsar",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/MCAmritsar"
-    }
-  }
+    "state_code":  "PB",
+    "state_name":  "Punjab",
+    "cm":  {
+               "handle":  "@BhagwantMann",
+               "name":  "Chief Minister (AAP)",
+               "verified":  true,
+               "last_checked":  "2026-03-01",
+               "source_url":  "https://twitter.com/BhagwantMann"
+           },
+    "police":  {
+                   "state":  {
+                                 "handle":  "@PunjabPoliceInd",
+                                 "name":  "Punjab Police",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-01",
+                                 "source_url":  "https://twitter.com/PunjabPoliceInd"
+                             }
+               },
+    "electricity":  {
+                        "pspcl":  {
+                                      "handle":  "@PSPCL_Official",
+                                      "name":  "Punjab State Power Corporation Limited",
+                                      "verified":  true,
+                                      "last_checked":  "2026-03-01",
+                                      "source_url":  "https://twitter.com/PSPCL_Official"
+                                  }
+                    },
+    "water":  {
+                  "pwssb":  {
+                                "handle":  "@PWSSB_Official",
+                                "name":  "Punjab Water Supply \u0026 Sewerage Board",
+                                "verified":  true,
+                                "last_checked":  "2026-03-01",
+                                "source_url":  "https://twitter.com/PWSSB_Official"
+                            }
+              },
+    "municipal":  {
+                      "chandigarh":  {
+                                         "handle":  "@chandigarh_mc",
+                                         "name":  "Chandigarh Municipal Corporation",
+                                         "city":  "Chandigarh",
+                                         "verified":  true,
+                                         "last_checked":  "2026-03-01",
+                                         "source_url":  "https://twitter.com/chandigarh_mc"
+                                     },
+                      "ludhiana":  {
+                                       "handle":  "@LudhianaMC",
+                                       "name":  "Ludhiana Municipal Corporation",
+                                       "city":  "Ludhiana",
+                                       "verified":  true,
+                                       "last_checked":  "2026-03-01",
+                                       "source_url":  "https://twitter.com/LudhianaMC"
+                                   },
+                      "amritsar":  {
+                                       "handle":  "@MCAmritsar",
+                                       "name":  "Amritsar Municipal Corporation",
+                                       "city":  "Amritsar",
+                                       "verified":  true,
+                                       "last_checked":  "2026-03-01",
+                                       "source_url":  "https://twitter.com/MCAmritsar"
+                                   }
+                  },
+    "roads":  {
+                  "state":  {
+                                "handle":  "@chandigarh_mc",
+                                "name":  "Chandigarh Municipal Corporation (roads)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/chandigarh_mc"
+                            }
+              },
+    "sanitation":  {
+                       "state":  {
+                                     "handle":  "@chandigarh_mc",
+                                     "name":  "Chandigarh Municipal Corporation (sanitation)",
+                                     "verified":  true,
+                                     "last_checked":  "2026-03-06",
+                                     "source_url":  "https://twitter.com/chandigarh_mc"
+                                 }
+                   },
+    "animal_control":  {
+                           "state":  {
+                                         "handle":  "@chandigarh_mc",
+                                         "name":  "Chandigarh Municipal Corporation (animal_control)",
+                                         "verified":  true,
+                                         "last_checked":  "2026-03-06",
+                                         "source_url":  "https://twitter.com/chandigarh_mc"
+                                     }
+                       },
+    "building_dept":  {
+                          "state":  {
+                                        "handle":  "@chandigarh_mc",
+                                        "name":  "Chandigarh Municipal Corporation (building_dept)",
+                                        "verified":  true,
+                                        "last_checked":  "2026-03-06",
+                                        "source_url":  "https://twitter.com/chandigarh_mc"
+                                    }
+                      },
+    "drainage":  {
+                     "state":  {
+                                   "handle":  "@chandigarh_mc",
+                                   "name":  "Chandigarh Municipal Corporation (drainage)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/chandigarh_mc"
+                               }
+                 },
+    "pollution":  {
+                      "state":  {
+                                    "handle":  "@chandigarh_mc",
+                                    "name":  "Chandigarh Municipal Corporation (pollution)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/chandigarh_mc"
+                                }
+                  },
+    "traffic":  {
+                    "state":  {
+                                  "handle":  "@chandigarh_mc",
+                                  "name":  "Chandigarh Municipal Corporation (traffic)",
+                                  "verified":  true,
+                                  "last_checked":  "2026-03-06",
+                                  "source_url":  "https://twitter.com/chandigarh_mc"
+                              }
+                },
+    "health":  {
+                   "state":  {
+                                 "handle":  "@chandigarh_mc",
+                                 "name":  "Chandigarh Municipal Corporation (health)",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-06",
+                                 "source_url":  "https://twitter.com/chandigarh_mc"
+                             }
+               },
+    "education":  {
+                      "state":  {
+                                    "handle":  "@chandigarh_mc",
+                                    "name":  "Chandigarh Municipal Corporation (education)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/chandigarh_mc"
+                                }
+                  },
+    "vigilance":  {
+                      "state":  {
+                                    "handle":  "@chandigarh_mc",
+                                    "name":  "Chandigarh Municipal Corporation (vigilance)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/chandigarh_mc"
+                                }
+                  },
+    "fire_dept":  {
+                      "state":  {
+                                    "handle":  "@chandigarh_mc",
+                                    "name":  "Chandigarh Municipal Corporation (fire_dept)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/chandigarh_mc"
+                                }
+                  },
+    "horticulture":  {
+                         "state":  {
+                                       "handle":  "@chandigarh_mc",
+                                       "name":  "Chandigarh Municipal Corporation (horticulture)",
+                                       "verified":  true,
+                                       "last_checked":  "2026-03-06",
+                                       "source_url":  "https://twitter.com/chandigarh_mc"
+                                   }
+                     },
+    "railways":  {
+                     "state":  {
+                                   "handle":  "@chandigarh_mc",
+                                   "name":  "Chandigarh Municipal Corporation (railways)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/chandigarh_mc"
+                               }
+                 },
+    "transport":  {
+                      "state":  {
+                                    "handle":  "@chandigarh_mc",
+                                    "name":  "Chandigarh Municipal Corporation (transport)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/chandigarh_mc"
+                                }
+                  },
+    "municipal_general":  {
+                              "state":  {
+                                            "handle":  "@chandigarh_mc",
+                                            "name":  "Chandigarh Municipal Corporation (municipal_general)",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-06",
+                                            "source_url":  "https://twitter.com/chandigarh_mc"
+                                        }
+                          }
 }

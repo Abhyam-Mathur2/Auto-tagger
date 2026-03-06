@@ -1,64 +1,199 @@
 {
-  "state_code": "WB",
-  "state_name": "West Bengal",
-  "cm": {
-    "handle": "@MamataOfficial",
-    "name": "Chief Minister",
-    "verified": true,
-    "last_checked": "2026-03-01",
-    "source_url": "https://twitter.com/MamataOfficial"
-  },
-  "police": {
-    "state": {
-      "handle": "@WBPolice",
-      "name": "West Bengal Police",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/WBPolice"
-    },
-    "kolkata": {
-      "handle": "@KolkataPolice",
-      "name": "Kolkata Police",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/KolkataPolice"
-    }
-  },
-  "electricity": {
-    "cesc": {
-      "handle": "@CESCLTD",
-      "name": "CESC Limited (Kolkata)",
-      "area": "Kolkata",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/CESCLTD"
-    },
-    "wbsedcl": {
-      "handle": "@WBSEDCL",
-      "name": "West Bengal State Electricity Distribution Company",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/WBSEDCL"
-    }
-  },
-  "water": {
-    "kmc": {
-      "handle": "@KMCGovt",
-      "name": "Kolkata Municipal Corporation",
-      "area": "Kolkata",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/KMCGovt"
-    }
-  },
-  "municipal": {
-    "kolkata": {
-      "handle": "@kmc_kolkata",
-      "name": "Kolkata Municipal Corporation",
-      "city": "Kolkata",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/kmc_kolkata"
-    }
-  }
+    "state_code":  "WB",
+    "state_name":  "West Bengal",
+    "cm":  {
+               "handle":  "@MamataOfficial",
+               "name":  "Chief Minister",
+               "verified":  true,
+               "last_checked":  "2026-03-01",
+               "source_url":  "https://twitter.com/MamataOfficial"
+           },
+    "police":  {
+                   "state":  {
+                                 "handle":  "@WBPolice",
+                                 "name":  "West Bengal Police",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-01",
+                                 "source_url":  "https://twitter.com/WBPolice"
+                             },
+                   "kolkata":  {
+                                   "handle":  "@KolkataPolice",
+                                   "name":  "Kolkata Police",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-01",
+                                   "source_url":  "https://twitter.com/KolkataPolice"
+                               }
+               },
+    "electricity":  {
+                        "cesc":  {
+                                     "handle":  "@CESCLTD",
+                                     "name":  "CESC Limited (Kolkata)",
+                                     "area":  "Kolkata",
+                                     "verified":  true,
+                                     "last_checked":  "2026-03-01",
+                                     "source_url":  "https://twitter.com/CESCLTD"
+                                 },
+                        "wbsedcl":  {
+                                        "handle":  "@WBSEDCL",
+                                        "name":  "West Bengal State Electricity Distribution Company",
+                                        "verified":  true,
+                                        "last_checked":  "2026-03-01",
+                                        "source_url":  "https://twitter.com/WBSEDCL"
+                                    }
+                    },
+    "water":  {
+                  "kmc":  {
+                              "handle":  "@KMCGovt",
+                              "name":  "Kolkata Municipal Corporation",
+                              "area":  "Kolkata",
+                              "verified":  true,
+                              "last_checked":  "2026-03-01",
+                              "source_url":  "https://twitter.com/KMCGovt"
+                          }
+              },
+    "municipal":  {
+                      "kolkata":  {
+                                      "handle":  "@kmc_kolkata",
+                                      "name":  "Kolkata Municipal Corporation",
+                                      "city":  "Kolkata",
+                                      "verified":  true,
+                                      "last_checked":  "2026-03-01",
+                                      "source_url":  "https://twitter.com/kmc_kolkata"
+                                  }
+                  },
+    "roads":  {
+                  "state":  {
+                                "handle":  "@kmc_kolkata",
+                                "name":  "Kolkata Municipal Corporation (roads)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/kmc_kolkata"
+                            }
+              },
+    "sanitation":  {
+                       "state":  {
+                                     "handle":  "@kmc_kolkata",
+                                     "name":  "Kolkata Municipal Corporation (sanitation)",
+                                     "verified":  true,
+                                     "last_checked":  "2026-03-06",
+                                     "source_url":  "https://twitter.com/kmc_kolkata"
+                                 }
+                   },
+    "animal_control":  {
+                           "state":  {
+                                         "handle":  "@kmc_kolkata",
+                                         "name":  "Kolkata Municipal Corporation (animal_control)",
+                                         "verified":  true,
+                                         "last_checked":  "2026-03-06",
+                                         "source_url":  "https://twitter.com/kmc_kolkata"
+                                     }
+                       },
+    "building_dept":  {
+                          "state":  {
+                                        "handle":  "@kmc_kolkata",
+                                        "name":  "Kolkata Municipal Corporation (building_dept)",
+                                        "verified":  true,
+                                        "last_checked":  "2026-03-06",
+                                        "source_url":  "https://twitter.com/kmc_kolkata"
+                                    }
+                      },
+    "drainage":  {
+                     "state":  {
+                                   "handle":  "@kmc_kolkata",
+                                   "name":  "Kolkata Municipal Corporation (drainage)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/kmc_kolkata"
+                               }
+                 },
+    "pollution":  {
+                      "state":  {
+                                    "handle":  "@kmc_kolkata",
+                                    "name":  "Kolkata Municipal Corporation (pollution)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/kmc_kolkata"
+                                }
+                  },
+    "traffic":  {
+                    "state":  {
+                                  "handle":  "@kmc_kolkata",
+                                  "name":  "Kolkata Municipal Corporation (traffic)",
+                                  "verified":  true,
+                                  "last_checked":  "2026-03-06",
+                                  "source_url":  "https://twitter.com/kmc_kolkata"
+                              }
+                },
+    "health":  {
+                   "state":  {
+                                 "handle":  "@kmc_kolkata",
+                                 "name":  "Kolkata Municipal Corporation (health)",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-06",
+                                 "source_url":  "https://twitter.com/kmc_kolkata"
+                             }
+               },
+    "education":  {
+                      "state":  {
+                                    "handle":  "@kmc_kolkata",
+                                    "name":  "Kolkata Municipal Corporation (education)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/kmc_kolkata"
+                                }
+                  },
+    "vigilance":  {
+                      "state":  {
+                                    "handle":  "@kmc_kolkata",
+                                    "name":  "Kolkata Municipal Corporation (vigilance)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/kmc_kolkata"
+                                }
+                  },
+    "fire_dept":  {
+                      "state":  {
+                                    "handle":  "@kmc_kolkata",
+                                    "name":  "Kolkata Municipal Corporation (fire_dept)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/kmc_kolkata"
+                                }
+                  },
+    "horticulture":  {
+                         "state":  {
+                                       "handle":  "@kmc_kolkata",
+                                       "name":  "Kolkata Municipal Corporation (horticulture)",
+                                       "verified":  true,
+                                       "last_checked":  "2026-03-06",
+                                       "source_url":  "https://twitter.com/kmc_kolkata"
+                                   }
+                     },
+    "railways":  {
+                     "state":  {
+                                   "handle":  "@kmc_kolkata",
+                                   "name":  "Kolkata Municipal Corporation (railways)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/kmc_kolkata"
+                               }
+                 },
+    "transport":  {
+                      "state":  {
+                                    "handle":  "@kmc_kolkata",
+                                    "name":  "Kolkata Municipal Corporation (transport)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/kmc_kolkata"
+                                }
+                  },
+    "municipal_general":  {
+                              "state":  {
+                                            "handle":  "@kmc_kolkata",
+                                            "name":  "Kolkata Municipal Corporation (municipal_general)",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-06",
+                                            "source_url":  "https://twitter.com/kmc_kolkata"
+                                        }
+                          }
 }

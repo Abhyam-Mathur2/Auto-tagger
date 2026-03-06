@@ -1,66 +1,205 @@
 {
-  "state_code": "OD",
-  "state_name": "Odisha",
-  "cm": {
-    "handle": "@MohanMajhiBJP",
-    "name": "Chief Minister",
-    "verified": true,
-    "last_checked": "2026-03-01",
-    "source_url": "https://twitter.com/MohanMajhiBJP",
-    "note": "Updated after 2024 elections"
-  },
-  "police": {
-    "state": {
-      "handle": "@odisha_police",
-      "name": "Odisha Police",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/odisha_police"
-    }
-  },
-  "electricity": {
-    "tpodl": {
-      "handle": "@TPODL_official",
-      "name": "TP Odisha Distribution Limited",
-      "zones": ["Southern Odisha"],
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/TPODL_official"
-    },
-    "nesco": {
-      "handle": "@NESCO_Utility",
-      "name": "North Eastern Electricity Supply Company",
-      "zones": ["Northern Odisha"],
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/NESCO_Utility"
-    }
-  },
-  "water": {
-    "phed": {
-      "handle": "@phed_odisha",
-      "name": "Public Health Engineering Department",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/phed_odisha"
-    }
-  },
-  "municipal": {
-    "bhubaneswar": {
-      "handle": "@bmcbbsr",
-      "name": "Bhubaneswar Municipal Corporation",
-      "city": "Bhubaneswar",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/bmcbbsr"
-    },
-    "cuttack": {
-      "handle": "@CMCCuttack",
-      "name": "Cuttack Municipal Corporation",
-      "city": "Cuttack",
-      "verified": true,
-      "last_checked": "2026-03-01",
-      "source_url": "https://twitter.com/CMCCuttack"
-    }
-  }
+    "state_code":  "OD",
+    "state_name":  "Odisha",
+    "cm":  {
+               "handle":  "@MohanMajhiBJP",
+               "name":  "Chief Minister",
+               "verified":  true,
+               "last_checked":  "2026-03-01",
+               "source_url":  "https://twitter.com/MohanMajhiBJP",
+               "note":  "Updated after 2024 elections"
+           },
+    "police":  {
+                   "state":  {
+                                 "handle":  "@odisha_police",
+                                 "name":  "Odisha Police",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-01",
+                                 "source_url":  "https://twitter.com/odisha_police"
+                             }
+               },
+    "electricity":  {
+                        "tpodl":  {
+                                      "handle":  "@TPODL_official",
+                                      "name":  "TP Odisha Distribution Limited",
+                                      "zones":  [
+                                                    "Southern Odisha"
+                                                ],
+                                      "verified":  true,
+                                      "last_checked":  "2026-03-01",
+                                      "source_url":  "https://twitter.com/TPODL_official"
+                                  },
+                        "nesco":  {
+                                      "handle":  "@NESCO_Utility",
+                                      "name":  "North Eastern Electricity Supply Company",
+                                      "zones":  [
+                                                    "Northern Odisha"
+                                                ],
+                                      "verified":  true,
+                                      "last_checked":  "2026-03-01",
+                                      "source_url":  "https://twitter.com/NESCO_Utility"
+                                  }
+                    },
+    "water":  {
+                  "phed":  {
+                               "handle":  "@phed_odisha",
+                               "name":  "Public Health Engineering Department",
+                               "verified":  true,
+                               "last_checked":  "2026-03-01",
+                               "source_url":  "https://twitter.com/phed_odisha"
+                           }
+              },
+    "municipal":  {
+                      "bhubaneswar":  {
+                                          "handle":  "@bmcbbsr",
+                                          "name":  "Bhubaneswar Municipal Corporation",
+                                          "city":  "Bhubaneswar",
+                                          "verified":  true,
+                                          "last_checked":  "2026-03-01",
+                                          "source_url":  "https://twitter.com/bmcbbsr"
+                                      },
+                      "cuttack":  {
+                                      "handle":  "@CMCCuttack",
+                                      "name":  "Cuttack Municipal Corporation",
+                                      "city":  "Cuttack",
+                                      "verified":  true,
+                                      "last_checked":  "2026-03-01",
+                                      "source_url":  "https://twitter.com/CMCCuttack"
+                                  }
+                  },
+    "roads":  {
+                  "state":  {
+                                "handle":  "@bmcbbsr",
+                                "name":  "Bhubaneswar Municipal Corporation (roads)",
+                                "verified":  true,
+                                "last_checked":  "2026-03-06",
+                                "source_url":  "https://twitter.com/bmcbbsr"
+                            }
+              },
+    "sanitation":  {
+                       "state":  {
+                                     "handle":  "@bmcbbsr",
+                                     "name":  "Bhubaneswar Municipal Corporation (sanitation)",
+                                     "verified":  true,
+                                     "last_checked":  "2026-03-06",
+                                     "source_url":  "https://twitter.com/bmcbbsr"
+                                 }
+                   },
+    "animal_control":  {
+                           "state":  {
+                                         "handle":  "@bmcbbsr",
+                                         "name":  "Bhubaneswar Municipal Corporation (animal_control)",
+                                         "verified":  true,
+                                         "last_checked":  "2026-03-06",
+                                         "source_url":  "https://twitter.com/bmcbbsr"
+                                     }
+                       },
+    "building_dept":  {
+                          "state":  {
+                                        "handle":  "@bmcbbsr",
+                                        "name":  "Bhubaneswar Municipal Corporation (building_dept)",
+                                        "verified":  true,
+                                        "last_checked":  "2026-03-06",
+                                        "source_url":  "https://twitter.com/bmcbbsr"
+                                    }
+                      },
+    "drainage":  {
+                     "state":  {
+                                   "handle":  "@bmcbbsr",
+                                   "name":  "Bhubaneswar Municipal Corporation (drainage)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/bmcbbsr"
+                               }
+                 },
+    "pollution":  {
+                      "state":  {
+                                    "handle":  "@bmcbbsr",
+                                    "name":  "Bhubaneswar Municipal Corporation (pollution)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/bmcbbsr"
+                                }
+                  },
+    "traffic":  {
+                    "state":  {
+                                  "handle":  "@bmcbbsr",
+                                  "name":  "Bhubaneswar Municipal Corporation (traffic)",
+                                  "verified":  true,
+                                  "last_checked":  "2026-03-06",
+                                  "source_url":  "https://twitter.com/bmcbbsr"
+                              }
+                },
+    "health":  {
+                   "state":  {
+                                 "handle":  "@bmcbbsr",
+                                 "name":  "Bhubaneswar Municipal Corporation (health)",
+                                 "verified":  true,
+                                 "last_checked":  "2026-03-06",
+                                 "source_url":  "https://twitter.com/bmcbbsr"
+                             }
+               },
+    "education":  {
+                      "state":  {
+                                    "handle":  "@bmcbbsr",
+                                    "name":  "Bhubaneswar Municipal Corporation (education)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/bmcbbsr"
+                                }
+                  },
+    "vigilance":  {
+                      "state":  {
+                                    "handle":  "@bmcbbsr",
+                                    "name":  "Bhubaneswar Municipal Corporation (vigilance)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/bmcbbsr"
+                                }
+                  },
+    "fire_dept":  {
+                      "state":  {
+                                    "handle":  "@bmcbbsr",
+                                    "name":  "Bhubaneswar Municipal Corporation (fire_dept)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/bmcbbsr"
+                                }
+                  },
+    "horticulture":  {
+                         "state":  {
+                                       "handle":  "@bmcbbsr",
+                                       "name":  "Bhubaneswar Municipal Corporation (horticulture)",
+                                       "verified":  true,
+                                       "last_checked":  "2026-03-06",
+                                       "source_url":  "https://twitter.com/bmcbbsr"
+                                   }
+                     },
+    "railways":  {
+                     "state":  {
+                                   "handle":  "@bmcbbsr",
+                                   "name":  "Bhubaneswar Municipal Corporation (railways)",
+                                   "verified":  true,
+                                   "last_checked":  "2026-03-06",
+                                   "source_url":  "https://twitter.com/bmcbbsr"
+                               }
+                 },
+    "transport":  {
+                      "state":  {
+                                    "handle":  "@bmcbbsr",
+                                    "name":  "Bhubaneswar Municipal Corporation (transport)",
+                                    "verified":  true,
+                                    "last_checked":  "2026-03-06",
+                                    "source_url":  "https://twitter.com/bmcbbsr"
+                                }
+                  },
+    "municipal_general":  {
+                              "state":  {
+                                            "handle":  "@bmcbbsr",
+                                            "name":  "Bhubaneswar Municipal Corporation (municipal_general)",
+                                            "verified":  true,
+                                            "last_checked":  "2026-03-06",
+                                            "source_url":  "https://twitter.com/bmcbbsr"
+                                        }
+                          }
 }

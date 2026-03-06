@@ -379,16 +379,18 @@
       <div class="settings-section">
         <h3>API Configuration</h3>
         <div class="form-group">
-          <label for="api-key">Gemini API Key</label>
-          <input type="password" id="api-key" placeholder="Enter your Gemini API key">
-          <div class="form-hint">Get your free API key from <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a></div>
+          <label for="api-key">Groq API Key</label>
+          <input type="password" id="api-key" placeholder="Enter your Groq API key">
+          <div class="form-hint">Get your free API key from <a href="https://console.groq.com/keys" target="_blank">Groq Console</a></div>
         </div>
-        <button class="btn btn-primary" id="save-api-key">Save API Key</button>
+        <button class="btn btn-secondary" id="test-connection">Test Connection</button>
+        <button class="btn btn-primary" id="save-api-key" style="margin-top: 8px;">Save API Key</button>
       </div>
 
       <div class="settings-section">
-        <h3>Default Location</h3>
-        <div class="form-group">
+        <h3>Location Settings</h3>
+        <button class="btn btn-secondary" id="use-current-location">Use My Current Location</button>
+        <div class="form-group" style="margin-top: 8px;">
           <label for="default-state">State</label>
           <select id="default-state">
             <option value="">Select State</option>
@@ -398,7 +400,29 @@
           <label for="default-city">City</label>
           <input type="text" id="default-city" placeholder="Enter your city">
         </div>
+        <div class="form-group">
+          <label for="default-district">District (Optional)</label>
+          <input type="text" id="default-district" placeholder="Enter your district">
+        </div>
         <button class="btn btn-primary" id="save-location">Save Location</button>
+      </div>
+
+      <div class="settings-section">
+        <h3>Tweet Rewriter Settings</h3>
+        <div class="form-group">
+          <label><input type="checkbox" id="enable-tweet-rewriter" checked> Enable AI tweet improvement suggestions</label>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <h3>Notification Settings</h3>
+        <div class="form-group">
+          <label><input type="checkbox" id="enable-48h-reminder" checked> 48-hour follow-up reminders</label>
+        </div>
+        <div class="form-group">
+          <label><input type="checkbox" id="enable-7d-reminder" checked> 7-day escalation reminders</label>
+        </div>
+        <button class="btn btn-primary" id="save-preferences">Save Preferences</button>
       </div>
 
       <div class="settings-section">
@@ -410,7 +434,7 @@
       <div class="settings-section">
         <h3>About</h3>
         <p style="font-size: 13px; line-height: 1.5; color: #536471;">
-          <strong>CivicTag v1.0.0</strong><br>
+          <strong>CivicTag v2.0.0</strong><br>
           Empowering citizens to hold authorities accountable.<br>
           <a href="https://github.com/YOUR_USERNAME/civictag" target="_blank">GitHub</a> | 
           <a href="#" id="report-issue">Report Issue</a>
