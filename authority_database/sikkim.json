@@ -1,0 +1,29 @@
+{
+  "state_code": "SK",
+  "state_name": "Sikkim",
+  "cm": {
+    "handle": "@PSSGoSikkim",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/PSSGoSikkim"
+  },
+  "police": {
+    "state": {
+      "handle": "@SikkimPolice",
+      "name": "Sikkim Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/SikkimPolice"
+    }
+  },
+  "electricity": {
+    "energy_dept": {
+      "handle": "@energySikkim",
+      "name": "Energy & Power Department Sikkim",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/energySikkim"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "state_code": "LA",
+  "state_name": "Ladakh",
+  "type": "union_territory",
+  "admin": {
+    "handle": "@LAHDC_LEH",
+    "name": "Ladakh Autonomous Hill Development Council - Leh",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/LAHDC_LEH"
+  },
+  "police": {
+    "ladakh": {
+      "handle": "@LadakhPolice",
+      "name": "Ladakh Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/LadakhPolice"
+    }
+  }
+}

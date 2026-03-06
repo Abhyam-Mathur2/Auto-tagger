@@ -1,0 +1,48 @@
+{
+  "state_code": "AS",
+  "state_name": "Assam",
+  "cm": {
+    "handle": "@himantabiswa",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/himantabiswa"
+  },
+  "police": {
+    "state": {
+      "handle": "@assampolice",
+      "name": "Assam Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/assampolice"
+    }
+  },
+  "electricity": {
+    "apdcl": {
+      "handle": "@APDCL_Assam",
+      "name": "Assam Power Distribution Company Limited",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/APDCL_Assam"
+    }
+  },
+  "water": {
+    "phe": {
+      "handle": "@PHEAssam",
+      "name": "Public Health Engineering Assam",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PHEAssam"
+    }
+  },
+  "municipal": {
+    "guwahati": {
+      "handle": "@GuwahatiMC",
+      "name": "Guwahati Municipal Corporation",
+      "city": "Guwahati",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/GuwahatiMC"
+    }
+  }
+}

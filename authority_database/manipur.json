@@ -1,0 +1,29 @@
+{
+  "state_code": "MN",
+  "state_name": "Manipur",
+  "cm": {
+    "handle": "@NBirenSingh",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/NBirenSingh"
+  },
+  "police": {
+    "state": {
+      "handle": "@manipur_police",
+      "name": "Manipur Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/manipur_police"
+    }
+  },
+  "electricity": {
+    "mspdcl": {
+      "handle": "@MSPDCL_official",
+      "name": "Manipur State Power Distribution Company",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MSPDCL_official"
+    }
+  }
+}

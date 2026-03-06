@@ -1,0 +1,157 @@
+{
+  "state_code": "UP",
+  "state_name": "Uttar Pradesh",
+  "cm": {
+    "handle": "@myogiadityanath",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/myogiadityanath"
+  },
+  "police": {
+    "state": {
+      "handle": "@UPPolice",
+      "name": "Uttar Pradesh Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/UPPolice"
+    },
+    "dgp": {
+      "handle": "@dgpup",
+      "name": "DGP Uttar Pradesh",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/dgpup"
+    },
+    "lucknow": {
+      "handle": "@lkopolice",
+      "name": "Lucknow Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/lkopolice"
+    },
+    "noida": {
+      "handle": "@noidapolice",
+      "name": "Noida Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/noidapolice"
+    }
+  },
+  "electricity": {
+    "uppcl": {
+      "handle": "@UPPCL_Official",
+      "name": "Uttar Pradesh Power Corporation Ltd",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/UPPCL_Official"
+    },
+    "pvvnl": {
+      "handle": "@PVVNLOfficial",
+      "name": "Paschimanchal Vidyut Vitran Nigam (West UP)",
+      "zones": ["Meerut", "Ghaziabad", "Hapur", "Baghpat", "Muzaffarnagar"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PVVNLOfficial"
+    },
+    "mvvnl": {
+      "handle": "@MVVNLOfficial",
+      "name": "Madhyanchal Vidyut Vitran Nigam (Central UP)",
+      "zones": ["Lucknow", "Kanpur", "Unnao", "Sitapur"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MVVNLOfficial"
+    },
+    "puvvnl": {
+      "handle": "@PuVVNLofficial",
+      "name": "Purvanchal Vidyut Vitran Nigam (East UP)",
+      "zones": ["Varanasi", "Gorakhpur", "Azamgarh"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PuVVNLofficial"
+    },
+    "kesco": {
+      "handle": "@KESCOLtd",
+      "name": "Kanpur Electricity Supply Company",
+      "zones": ["Kanpur"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/KESCOLtd"
+    }
+  },
+  "water": {
+    "upjal": {
+      "handle": "@UPJalNigam",
+      "name": "Uttar Pradesh Jal Nigam",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/UPJalNigam"
+    }
+  },
+  "municipal": {
+    "lucknow": {
+      "handle": "@lmclucknow",
+      "name": "Lucknow Municipal Corporation",
+      "city": "Lucknow",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/lmclucknow"
+    },
+    "noida": {
+      "handle": "@NoidaAuthority",
+      "name": "Noida Authority",
+      "city": "Noida",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/NoidaAuthority"
+    },
+    "kanpur": {
+      "handle": "@KMC_Kanpur",
+      "name": "Kanpur Municipal Corporation",
+      "city": "Kanpur",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/KMC_Kanpur"
+    },
+    "agra": {
+      "handle": "@AgraNagarNigam",
+      "name": "Agra Nagar Nigam",
+      "city": "Agra",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/AgraNagarNigam"
+    },
+    "varanasi": {
+      "handle": "@VNS_NagarNigam",
+      "name": "Varanasi Nagar Nigam",
+      "city": "Varanasi",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/VNS_NagarNigam"
+    },
+    "ghaziabad": {
+      "handle": "@GhaziabadNagar",
+      "name": "Ghaziabad Nagar Nigam",
+      "city": "Ghaziabad",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/GhaziabadNagar"
+    },
+    "meerut": {
+      "handle": "@MeerutNagarNigam",
+      "name": "Meerut Nagar Nigam",
+      "city": "Meerut",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MeerutNagarNigam"
+    },
+    "prayagraj": {
+      "handle": "@PrayagrajNagar",
+      "name": "Prayagraj Nagar Nigam",
+      "city": "Prayagraj/Allahabad",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PrayagrajNagar"
+    }
+  }
+}

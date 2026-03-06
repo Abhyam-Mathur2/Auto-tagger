@@ -1,0 +1,205 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-03-01",
+  "states": [
+    {
+      "name": "Andhra Pradesh",
+      "code": "AP",
+      "file": "andhra_pradesh.json"
+    },
+    {
+      "name": "Arunachal Pradesh",
+      "code": "AR",
+      "file": "arunachal_pradesh.json"
+    },
+    {
+      "name": "Assam",
+      "code": "AS",
+      "file": "assam.json"
+    },
+    {
+      "name": "Bihar",
+      "code": "BR",
+      "file": "bihar.json"
+    },
+    {
+      "name": "Chhattisgarh",
+      "code": "CT",
+      "file": "chhattisgarh.json"
+    },
+    {
+      "name": "Goa",
+      "code": "GA",
+      "file": "goa.json"
+    },
+    {
+      "name": "Gujarat",
+      "code": "GJ",
+      "file": "gujarat.json"
+    },
+    {
+      "name": "Haryana",
+      "code": "HR",
+      "file": "haryana.json"
+    },
+    {
+      "name": "Himachal Pradesh",
+      "code": "HP",
+      "file": "himachal_pradesh.json"
+    },
+    {
+      "name": "Jharkhand",
+      "code": "JH",
+      "file": "jharkhand.json"
+    },
+    {
+      "name": "Karnataka",
+      "code": "KA",
+      "file": "karnataka.json"
+    },
+    {
+      "name": "Kerala",
+      "code": "KL",
+      "file": "kerala.json"
+    },
+    {
+      "name": "Madhya Pradesh",
+      "code": "MP",
+      "file": "madhya_pradesh.json"
+    },
+    {
+      "name": "Maharashtra",
+      "code": "MH",
+      "file": "maharashtra.json"
+    },
+    {
+      "name": "Manipur",
+      "code": "MN",
+      "file": "manipur.json"
+    },
+    {
+      "name": "Meghalaya",
+      "code": "ML",
+      "file": "meghalaya.json"
+    },
+    {
+      "name": "Mizoram",
+      "code": "MZ",
+      "file": "mizoram.json"
+    },
+    {
+      "name": "Nagaland",
+      "code": "NL",
+      "file": "nagaland.json"
+    },
+    {
+      "name": "Odisha",
+      "code": "OD",
+      "file": "odisha.json"
+    },
+    {
+      "name": "Punjab",
+      "code": "PB",
+      "file": "punjab.json"
+    },
+    {
+      "name": "Rajasthan",
+      "code": "RJ",
+      "file": "rajasthan.json"
+    },
+    {
+      "name": "Sikkim",
+      "code": "SK",
+      "file": "sikkim.json"
+    },
+    {
+      "name": "Tamil Nadu",
+      "code": "TN",
+      "file": "tamil_nadu.json"
+    },
+    {
+      "name": "Telangana",
+      "code": "TG",
+      "file": "telangana.json"
+    },
+    {
+      "name": "Tripura",
+      "code": "TR",
+      "file": "tripura.json"
+    },
+    {
+      "name": "Uttar Pradesh",
+      "code": "UP",
+      "file": "uttar_pradesh.json"
+    },
+    {
+      "name": "Uttarakhand",
+      "code": "UK",
+      "file": "uttarakhand.json"
+    },
+    {
+      "name": "West Bengal",
+      "code": "WB",
+      "file": "west_bengal.json"
+    }
+  ],
+  "union_territories": [
+    {
+      "name": "Andaman & Nicobar Islands",
+      "code": "AN",
+      "file": "andaman_nicobar.json"
+    },
+    {
+      "name": "Chandigarh",
+      "code": "CH",
+      "file": "chandigarh.json"
+    },
+    {
+      "name": "Dadra & Nagar Haveli and Daman & Diu",
+      "code": "DD",
+      "file": "dnh_dd.json"
+    },
+    {
+      "name": "Delhi (NCT)",
+      "code": "DL",
+      "file": "delhi.json"
+    },
+    {
+      "name": "Jammu & Kashmir",
+      "code": "JK",
+      "file": "jammu_kashmir.json"
+    },
+    {
+      "name": "Ladakh",
+      "code": "LA",
+      "file": "ladakh.json"
+    },
+    {
+      "name": "Lakshadweep",
+      "code": "LD",
+      "file": "lakshadweep.json"
+    },
+    {
+      "name": "Puducherry",
+      "code": "PY",
+      "file": "puducherry.json"
+    }
+  ],
+  "central": {
+    "name": "Central Government",
+    "file": "central.json"
+  },
+  "issue_categories": [
+    "water",
+    "electricity",
+    "roads",
+    "sanitation",
+    "crime",
+    "pollution",
+    "transport",
+    "health",
+    "cyber_crime",
+    "flooding",
+    "other"
+  ]
+}

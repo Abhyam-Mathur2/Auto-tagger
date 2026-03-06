@@ -1,0 +1,64 @@
+{
+  "state_code": "KL",
+  "state_name": "Kerala",
+  "cm": {
+    "handle": "@vijayanpinarayi",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/vijayanpinarayi"
+  },
+  "police": {
+    "state": {
+      "handle": "@KeralaPolice",
+      "name": "Kerala Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/KeralaPolice"
+    }
+  },
+  "electricity": {
+    "kseb": {
+      "handle": "@KSEB_LTD",
+      "name": "Kerala State Electricity Board",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/KSEB_LTD"
+    }
+  },
+  "water": {
+    "kwa": {
+      "handle": "@KWA_Jal",
+      "name": "Kerala Water Authority",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/KWA_Jal"
+    }
+  },
+  "municipal": {
+    "thiruvananthapuram": {
+      "handle": "@CorporationTvm",
+      "name": "Thiruvananthapuram Corporation",
+      "city": "Thiruvananthapuram",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/CorporationTvm"
+    },
+    "kochi": {
+      "handle": "@Kochi_Corp",
+      "name": "Kochi Corporation",
+      "city": "Kochi",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/Kochi_Corp"
+    },
+    "kozhikode": {
+      "handle": "@KozhikodeCorp",
+      "name": "Kozhikode Corporation",
+      "city": "Kozhikode",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/KozhikodeCorp"
+    }
+  }
+}

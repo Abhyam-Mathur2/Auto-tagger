@@ -1,0 +1,351 @@
+/* content.css - CivicTag UI Styles */
+
+/* Button */
+#civictag-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #FF9933, #138808);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 8px;
+  box-shadow: 0 2px 8px rgba(255, 153, 51, 0.3);
+}
+
+#civictag-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 153, 51, 0.5);
+}
+
+#civictag-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Sidebar */
+#civictag-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  #civictag-sidebar {
+    background: #15202b;
+    color: #ffffff;
+  }
+  
+  .civictag-section {
+    border-bottom-color: #38444d !important;
+  }
+  
+  .civictag-authority-item,
+  .civictag-hashtag-item {
+    background: #192734 !important;
+  }
+  
+  .civictag-authority-item:hover,
+  .civictag-hashtag-item:hover {
+    background: #22303c !important;
+  }
+}
+
+.civictag-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e1e8ed;
+  background: linear-gradient(135deg, #FF9933, #138808);
+  color: white;
+}
+
+.civictag-sidebar-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.civictag-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.civictag-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.civictag-sidebar-content {
+  padding: 0;
+}
+
+.civictag-section {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e1e8ed;
+}
+
+.civictag-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #536471;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.civictag-count {
+  background: #1d9bf0;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.civictag-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.civictag-badge-low {
+  background: #e8f5f2;
+  color: #27ae60;
+}
+
+.civictag-badge-medium {
+  background: #fff3e0;
+  color: #f39c12;
+}
+
+.civictag-badge-high {
+  background: #ffe6e6;
+  color: #e74c3c;
+}
+
+.civictag-badge-critical {
+  background: #c0392b;
+  color: white;
+  animation: pulseCritical 2s infinite;
+}
+
+@keyframes pulseCritical {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.civictag-summary {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #0f1419;
+}
+
+.civictag-authorities,
+.civictag-hashtags {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.civictag-authority-item,
+.civictag-hashtag-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background: #f7f9f9;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.civictag-authority-item:hover,
+.civictag-hashtag-item:hover {
+  background: #e8f5f2;
+  transform: translateX(2px);
+}
+
+.civictag-authority-item input[type="checkbox"],
+.civictag-hashtag-item input[type="checkbox"] {
+  margin-top: 2px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #138808;
+}
+
+.civictag-authority-item div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.civictag-authority-item strong {
+  color: #1d9bf0;
+  font-size: 14px;
+}
+
+.civictag-authority-item small,
+.civictag-hashtag-item small {
+  color: #536471;
+  font-size: 12px;
+}
+
+.civictag-note {
+  color: #f39c12 !important;
+  font-style: italic;
+}
+
+.civictag-consolidation {
+  background: #fff3e0;
+  border-left: 4px solid #f39c12;
+}
+
+.civictag-warning {
+  background: #ffe6e6;
+  border-left: 4px solid #e74c3c;
+}
+
+.civictag-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.civictag-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.civictag-btn-primary {
+  background: linear-gradient(135deg, #FF9933, #138808);
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 153, 51, 0.3);
+}
+
+.civictag-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 153, 51, 0.4);
+}
+
+.civictag-btn-secondary {
+  background: white;
+  color: #0f1419;
+  border: 2px solid #cfd9de;
+}
+
+.civictag-btn-secondary:hover {
+  background: #f7f9f9;
+  border-color: #0f1419;
+}
+
+/* Notifications */
+.civictag-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 10001;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+  transition: opacity 0.3s;
+  max-width: 400px;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.civictag-notification-success {
+  background: #27ae60;
+}
+
+.civictag-notification-error {
+  background: #e74c3c;
+}
+
+.civictag-notification-warning {
+  background: #f39c12;
+}
+
+.civictag-notification-info {
+  background: #3498db;
+}
+
+/* Character count */
+#civictag-char-count {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 8px 0 0 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #civictag-sidebar {
+    width: 100%;
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "state_code": "CH",
+  "state_name": "Chandigarh",
+  "type": "union_territory",
+  "admin": {
+    "handle": "@Chandigarh_Admn",
+    "name": "Chandigarh Administration",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/Chandigarh_Admn"
+  },
+  "police": {
+    "chandigarh": {
+      "handle": "@ChandigarhPolice",
+      "name": "Chandigarh Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/ChandigarhPolice"
+    }
+  },
+  "municipal": {
+    "mc": {
+      "handle": "@chandigarh_mc",
+      "name": "Chandigarh Municipal Corporation",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/chandigarh_mc"
+    }
+  },
+  "electricity": {
+    "chandigarh_elec": {
+      "handle": "@ChandigarhElec",
+      "name": "Chandigarh Electricity Department",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/ChandigarhElec"
+    }
+  }
+}

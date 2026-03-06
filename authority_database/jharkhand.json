@@ -1,0 +1,39 @@
+{
+  "state_code": "JH",
+  "state_name": "Jharkhand",
+  "cm": {
+    "handle": "@HemantSorenJMM",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/HemantSorenJMM"
+  },
+  "police": {
+    "state": {
+      "handle": "@JharkhandPolice",
+      "name": "Jharkhand Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/JharkhandPolice"
+    }
+  },
+  "electricity": {
+    "jbvnl": {
+      "handle": "@JBVNL_official",
+      "name": "Jharkhand Bijli Vitran Nigam Limited",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/JBVNL_official"
+    }
+  },
+  "municipal": {
+    "ranchi": {
+      "handle": "@RanchiMunicipal",
+      "name": "Ranchi Municipal Corporation",
+      "city": "Ranchi",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/RanchiMunicipal"
+    }
+  }
+}

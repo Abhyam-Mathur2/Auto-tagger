@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to CivicTag</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 50%, #138808 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #FF9933, #FF6600);
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .header p {
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    .content {
+      padding: 40px;
+    }
+
+    .step {
+      margin-bottom: 30px;
+      padding: 24px;
+      background: #f7f9f9;
+      border-radius: 12px;
+      border-left: 4px solid #FF9933;
+    }
+
+    .step h2 {
+      color: #FF9933;
+      font-size: 20px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: #FF9933;
+      color: white;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .step p {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .step code {
+      background: white;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: #d73a49;
+    }
+
+    .step a {
+      color: #FF6600;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .step a:hover {
+      text-decoration: underline;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 30px 0;
+    }
+
+    .feature {
+      padding: 16px;
+      background: white;
+      border-radius: 8px;
+      border: 2px solid #e1e4e8;
+      text-align: center;
+    }
+
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .feature h3 {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    .feature p {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 2px solid #e1e4e8;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #FF9933, #FF6600);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 102, 0, 0.4);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #FF6600;
+      border: 2px solid #FF6600;
+      margin-left: 10px;
+    }
+
+    .btn-secondary:hover {
+      background: #fff5f0;
+    }
+
+    .important-note {
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 20px 0;
+    }
+
+    .important-note strong {
+      color: #856404;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🇮🇳 Welcome to CivicTag!</h1>
+      <p>Tag the right authorities for your civic complaints</p>
+    </div>
+
+    <div class="content">
+      <div class="feature-list">
+        <div class="feature">
+          <div class="feature-icon">🤖</div>
+          <h3>AI-Powered</h3>
+          <p>Gemini AI detects complaints automatically</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📍</div>
+          <h3>Location-Smart</h3>
+          <p>Finds the right local authorities</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🎯</div>
+          <h3>All States & UTs</h3>
+          <p>Complete coverage across India</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📊</div>
+          <h3>Track Progress</h3>
+          <p>Follow up automatically</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <h2><span class="step-number">1</span> Get Your API Key</h2>
+        <p>CivicTag uses Google's Gemini AI to understand your complaints.</p>
+        <p><strong>Steps:</strong></p>
+        <ol style="margin-left: 20px; margin-top: 10px;">
+          <li>Visit <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a></li>
+          <li>Sign in with your Google account</li>
+          <li>Click "Create API Key"</li>
+          <li>Copy the key</li>
+        </ol>
+        <div class="important-note" style="margin-top: 15px;">
+          <strong>⚠️ Important:</strong> Keep your API key private! Don't share it publicly.
+        </div>
+      </div>
+
+      <div class="step">
+        <h2><span class="step-number">2</span> Configure the Extension</h2>
+        <p>Click the CivicTag icon in your browser toolbar and:</p>
+        <ol style="margin-left: 20px; margin-top: 10px;">
+          <li>Go to the <strong>Settings</strong> tab</li>
+          <li>Paste your Gemini API key</li>
+          <li>Set your default state and city</li>
+          <li>Click <strong>Save</strong></li>
+        </ol>
+      </div>
+
+      <div class="step">
+        <h2><span class="step-number">3</span> Start Tagging Authorities!</h2>
+        <p>Head to Twitter/X and compose a complaint tweet. CivicTag will:</p>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+          <li>✅ Automatically detect your complaint</li>
+          <li>✅ Suggest relevant government handles</li>
+          <li>✅ Track responses and remind you to follow up</li>
+        </ul>
+      </div>
+
+      <div style="background: #e8f5e9; padding: 20px; border-radius: 12px; margin: 30px 0;">
+        <h2 style="color: #138808; margin-bottom: 12px;">💡 Pro Tips</h2>
+        <ul style="margin-left: 20px; color: #2e7d32; line-height: 1.8;">
+          <li><strong>Be specific:</strong> Mention your city, area, or landmark</li>
+          <li><strong>Add photos:</strong> Visual evidence gets better responses</li>
+          <li><strong>Follow up:</strong> Check the Dashboard tab for updates</li>
+          <li><strong>Stay respectful:</strong> Professional tone gets better engagement</li>
+        </ul>
+      </div>
+
+      <div class="cta">
+        <button class="btn" onclick="openTwitter()">Go to Twitter/X</button>
+        <button class="btn btn-secondary" onclick="openSettings()">Configure Settings</button>
+      </div>
+
+      <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e1e4e8; color: #666; font-size: 14px;">
+        <p>Made with ❤️ for a better India</p>
+        <p style="margin-top: 8px;">
+          <a href="https://github.com/yourusername/civictag" target="_blank" style="color: #666; text-decoration: none;">
+            GitHub
+          </a> • 
+          <a href="https://github.com/yourusername/civictag/issues" target="_blank" style="color: #666; text-decoration: none;">
+            Report Issue
+          </a> • 
+          <a href="https://github.com/yourusername/civictag#contributing" target="_blank" style="color: #666; text-decoration: none;">
+            Contribute
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openTwitter() {
+      chrome.tabs.create({ url: 'https://twitter.com' });
+      window.close();
+    }
+
+    function openSettings() {
+      const popupPath = chrome.runtime.getURL('popup.html');
+      chrome.tabs.create({ url: popupPath });
+    }
+  </script>
+</body>
+</html>

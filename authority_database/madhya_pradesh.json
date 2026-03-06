@@ -1,0 +1,73 @@
+{
+  "state_code": "MP",
+  "state_name": "Madhya Pradesh",
+  "cm": {
+    "handle": "@DrMohanYadav_",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/DrMohanYadav_"
+  },
+  "police": {
+    "state": {
+      "handle": "@mppolice",
+      "name": "Madhya Pradesh Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/mppolice"
+    }
+  },
+  "electricity": {
+    "mpez": {
+      "handle": "@MPEZ_Jabalpur",
+      "name": "MP Poorv Kshetra Vidyut Vitaran Company",
+      "zones": ["Jabalpur", "Rewa", "Satna"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MPEZ_Jabalpur"
+    },
+    "mpmkvvcl": {
+      "handle": "@MPMKVVCL",
+      "name": "MP Madhya Kshetra Vidyut Vitaran Company",
+      "zones": ["Bhopal", "Indore", "Gwalior"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MPMKVVCL"
+    }
+  },
+  "water": {
+    "phe": {
+      "handle": "@PHE_MP",
+      "name": "Public Health Engineering MP",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PHE_MP"
+    }
+  },
+  "municipal": {
+    "bhopal": {
+      "handle": "@BMC_Bhopal",
+      "name": "Bhopal Municipal Corporation",
+      "city": "Bhopal",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/BMC_Bhopal"
+    },
+    "indore": {
+      "handle": "@IMCIndore",
+      "name": "Indore Municipal Corporation",
+      "city": "Indore",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/IMCIndore"
+    },
+    "jabalpur": {
+      "handle": "@JabalpurMC",
+      "name": "Jabalpur Municipal Corporation",
+      "city": "Jabalpur",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/JabalpurMC"
+    }
+  }
+}

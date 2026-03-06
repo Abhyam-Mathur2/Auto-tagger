@@ -1,0 +1,29 @@
+{
+  "state_code": "ML",
+  "state_name": "Meghalaya",
+  "cm": {
+    "handle": "@SangmaConrad",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/SangmaConrad"
+  },
+  "police": {
+    "state": {
+      "handle": "@MeghalayaPolice",
+      "name": "Meghalaya Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MeghalayaPolice"
+    }
+  },
+  "electricity": {
+    "meecl": {
+      "handle": "@MeECL_official",
+      "name": "Meghalaya Energy Corporation Limited",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MeECL_official"
+    }
+  }
+}

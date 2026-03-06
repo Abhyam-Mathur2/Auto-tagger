@@ -1,0 +1,36 @@
+{
+  "state_code": "GA",
+  "state_name": "Goa",
+  "cm": {
+    "handle": "@DrPramodPSawant",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/DrPramodPSawant"
+  },
+  "police": {
+    "state": {
+      "handle": "@GoaPolice",
+      "name": "Goa Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/GoaPolice"
+    }
+  },
+  "electricity": {
+    "goa_power": {
+      "handle": "@GoaPowerDept",
+      "name": "Goa Electricity Department",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/GoaPowerDept"
+    }
+  },
+  "pwd": {
+    "handle": "@PWDGoa",
+    "name": "Public Works Department Goa",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/PWDGoa"
+  }
+}

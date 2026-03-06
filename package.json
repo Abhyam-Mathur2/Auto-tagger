@@ -1,0 +1,22 @@
+{
+  "name": "civictag-validation",
+  "version": "1.0.0",
+  "description": "Validation scripts for CivicTag authority database",
+  "private": true,
+  "scripts": {
+    "validate": "node scripts/validate_handles.js",
+    "test": "echo \"No tests configured yet\" && exit 0"
+  },
+  "keywords": [
+    "civic",
+    "twitter",
+    "government",
+    "india"
+  ],
+  "author": "CivicTag Contributors",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {}
+}

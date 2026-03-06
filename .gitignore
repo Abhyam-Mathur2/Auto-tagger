@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment variables
+.env
+.env.local
+
+# API keys (never commit these!)
+**/api_key*.txt
+**/*token*.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+logs/
+
+# Reports
+scripts/invalid_handles_report.json
+scripts/*.log
+
+# Build artifacts (if any)
+dist/
+build/
+
+# Chrome extension packaging
+*.crx
+*.pem
+*.zip
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# User data (testing)
+test_data/
+user_complaints_*.json

@@ -1,0 +1,30 @@
+{
+  "state_code": "JK",
+  "state_name": "Jammu & Kashmir",
+  "type": "union_territory",
+  "lg": {
+    "handle": "@OfficeOfLGJandK",
+    "name": "Lieutenant Governor J&K",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/OfficeOfLGJandK"
+  },
+  "police": {
+    "jk": {
+      "handle": "@JmuKmrPolice",
+      "name": "Jammu & Kashmir Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/JmuKmrPolice"
+    }
+  },
+  "electricity": {
+    "jkpdd": {
+      "handle": "@JKPDDJK",
+      "name": "Jammu & Kashmir Power Development Department",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/JKPDDJK"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "state_code": "MZ",
+  "state_name": "Mizoram",
+  "cm": {
+    "handle": "@LalduhomaCM",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/LalduhomaCM"
+  },
+  "police": {
+    "state": {
+      "handle": "@MizoramPolice",
+      "name": "Mizoram Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MizoramPolice"
+    }
+  },
+  "electricity": {
+    "power_dept": {
+      "handle": "@PandDMizoram",
+      "name": "Power & Electricity Department Mizoram",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PandDMizoram"
+    }
+  }
+}

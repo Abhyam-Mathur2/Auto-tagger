@@ -1,0 +1,87 @@
+{
+  "state_code": "TN",
+  "state_name": "Tamil Nadu",
+  "cm": {
+    "handle": "@mkstalin",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/mkstalin"
+  },
+  "police": {
+    "state": {
+      "handle": "@TamilNaduPolice",
+      "name": "Tamil Nadu Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/TamilNaduPolice"
+    },
+    "chennai": {
+      "handle": "@chennaipolice",
+      "name": "Chennai Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/chennaipolice"
+    }
+  },
+  "electricity": {
+    "tangedco": {
+      "handle": "@TANGEDCO_TNEB",
+      "name": "Tamil Nadu Generation and Distribution Corporation",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/TANGEDCO_TNEB"
+    }
+  },
+  "water": {
+    "chennai_metro_water": {
+      "handle": "@chennaimetrowater",
+      "name": "Chennai Metro Water",
+      "area": "Chennai",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/chennaimetrowater"
+    },
+    "twad": {
+      "handle": "@TWAD_Board",
+      "name": "Tamil Nadu Water Supply and Drainage Board",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/TWAD_Board"
+    }
+  },
+  "municipal": {
+    "chennai": {
+      "handle": "@chennaicorp",
+      "name": "Greater Chennai Corporation",
+      "city": "Chennai",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/chennaicorp"
+    },
+    "coimbatore": {
+      "handle": "@CorporationCBE",
+      "name": "Coimbatore City Municipal Corporation",
+      "city": "Coimbatore",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/CorporationCBE"
+    },
+    "madurai": {
+      "handle": "@MaduraiCorpn",
+      "name": "Madurai Corporation",
+      "city": "Madurai",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MaduraiCorpn"
+    },
+    "salem": {
+      "handle": "@SalemCorpn",
+      "name": "Salem Corporation",
+      "city": "Salem",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/SalemCorpn"
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "state_code": "KA",
+  "state_name": "Karnataka",
+  "cm": {
+    "handle": "@siddaramaiah",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/siddaramaiah"
+  },
+  "police": {
+    "state": {
+      "handle": "@KarnatakaPolice",
+      "name": "Karnataka Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/KarnatakaPolice"
+    },
+    "bangalore": {
+      "handle": "@BlrCityPolice",
+      "name": "Bangalore City Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/BlrCityPolice"
+    }
+  },
+  "electricity": {
+    "bescom": {
+      "handle": "@BESCOM_OFFICIAL",
+      "name": "Bangalore Electricity Supply Company",
+      "zones": ["Bangalore Urban", "Bangalore Rural", "Chitradurga", "Davanagere", "Kolar", "Ramanagara", "Tumkur"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/BESCOM_OFFICIAL"
+    },
+    "mescom": {
+      "handle": "@MESCOM_official",
+      "name": "Mangalore Electricity Supply Company",
+      "zones": ["Dakshina Kannada", "Udupi", "Kodagu", "Chikkamagaluru", "Hassan", "Shivamogga", "Uttara Kannada"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MESCOM_official"
+    },
+    "hescom": {
+      "handle": "@HESCOM_official",
+      "name": "Hubli Electricity Supply Company",
+      "zones": ["Bagalkot", "Belagavi", "Dharwad", "Gadag", "Haveri", "Uttara Kannada"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/HESCOM_official"
+    },
+    "gescom": {
+      "handle": "@GESCOM_official",
+      "name": "Gulbarga Electricity Supply Company",
+      "zones": ["Ballari", "Bidar", "Kalaburagi", "Koppal", "Raichur", "Yadgir", "Vijayanagara"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/GESCOM_official"
+    },
+    "cesc": {
+      "handle": "@CESC_Mysuru",
+      "name": "Chamundeshwari Electricity Supply Corporation",
+      "zones": ["Chamarajanagar", "Mandya", "Mysuru"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/CESC_Mysuru"
+    }
+  },
+  "water": {
+    "bwssb": {
+      "handle": "@BWSSB_OFFICIAL",
+      "name": "Bangalore Water Supply and Sewerage Board",
+      "area": "Bangalore",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/BWSSB_OFFICIAL"
+    }
+  },
+  "municipal": {
+    "bbmp": {
+      "handle": "@BBMP_MAYOR",
+      "name": "Bruhat Bengaluru Mahanagara Palike",
+      "city": "Bangalore",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/BBMP_MAYOR"
+    },
+    "bbmp_comm": {
+      "handle": "@bbmpcomm",
+      "name": "BBMP Commissioner",
+      "city": "Bangalore",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/bbmpcomm"
+    },
+    "mysuru": {
+      "handle": "@MysuruCC",
+      "name": "Mysuru City Corporation",
+      "city": "Mysuru",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MysuruCC"
+    },
+    "mangalore": {
+      "handle": "@MCC_Mangaluru",
+      "name": "Mangalore City Corporation",
+      "city": "Mangalore",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MCC_Mangaluru"
+    },
+    "hubli_dharwad": {
+      "handle": "@HDMC_Official",
+      "name": "Hubli-Dharwad Municipal Corporation",
+      "city": "Hubli-Dharwad",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/HDMC_Official"
+    }
+  },
+  "transport": {
+    "bmtc": {
+      "handle": "@BMTCMYRIDE",
+      "name": "Bangalore Metropolitan Transport Corporation",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/BMTCMYRIDE"
+    }
+  }
+}

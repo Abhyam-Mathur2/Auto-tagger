@@ -1,0 +1,144 @@
+{
+  "state_code": "MH",
+  "state_name": "Maharashtra",
+  "cm": {
+    "handle": "@Dev_Fadnavis",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/Dev_Fadnavis",
+    "note": "Updated after 2024 elections"
+  },
+  "deputy_cm": [
+    {
+      "handle": "@mieknathshinde",
+      "name": "Deputy Chief Minister (Eknath Shinde)",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/mieknathshinde"
+    },
+    {
+      "handle": "@AjitPawarSpeaks",
+      "name": "Deputy Chief Minister (Ajit Pawar)",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/AjitPawarSpeaks"
+    }
+  ],
+  "police": {
+    "state": {
+      "handle": "@MaharashtraPolice",
+      "name": "Maharashtra Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MaharashtraPolice"
+    },
+    "mumbai": {
+      "handle": "@MumbaiPolice",
+      "name": "Mumbai Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MumbaiPolice"
+    },
+    "pune": {
+      "handle": "@PunePolice",
+      "name": "Pune Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PunePolice"
+    }
+  },
+  "electricity": {
+    "msedcl": {
+      "handle": "@MahaVitaran",
+      "name": "Maharashtra State Electricity Distribution Co Ltd",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MahaVitaran"
+    },
+    "best": {
+      "handle": "@BestBrihanmumbai",
+      "name": "BEST Undertaking Mumbai",
+      "area": "Mumbai",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/BestBrihanmumbai"
+    },
+    "mahatransco": {
+      "handle": "@MahaTransco",
+      "name": "Maharashtra State Electricity Transmission Co",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MahaTransco"
+    }
+  },
+  "water": {
+    "mumbai": {
+      "handle": "@mybmc",
+      "name": "Brihanmumbai Municipal Corporation",
+      "area": "Mumbai",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/mybmc"
+    },
+    "pune": {
+      "handle": "@PMC_Pune",
+      "name": "Pune Municipal Corporation",
+      "area": "Pune",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PMC_Pune"
+    }
+  },
+  "municipal": {
+    "mumbai": {
+      "handle": "@mybmc",
+      "name": "Brihanmumbai Municipal Corporation",
+      "city": "Mumbai",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/mybmc"
+    },
+    "pune": {
+      "handle": "@PMC_Pune",
+      "name": "Pune Municipal Corporation",
+      "city": "Pune",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PMC_Pune"
+    },
+    "nagpur": {
+      "handle": "@NMCNagpur",
+      "name": "Nagpur Municipal Corporation",
+      "city": "Nagpur",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/NMCNagpur"
+    },
+    "nashik": {
+      "handle": "@NashikMC",
+      "name": "Nashik Municipal Corporation",
+      "city": "Nashik",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/NashikMC"
+    },
+    "aurangabad": {
+      "handle": "@MAHAAURANGABAD",
+      "name": "Aurangabad Municipal Corporation",
+      "city": "Aurangabad",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MAHAAURANGABAD"
+    }
+  },
+  "transport": {
+    "best": {
+      "handle": "@BestBrihanmumbai",
+      "name": "BEST Mumbai",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/BestBrihanmumbai"
+    }
+  }
+}

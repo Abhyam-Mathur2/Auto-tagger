@@ -1,0 +1,83 @@
+{
+  "state_code": "AP",
+  "state_name": "Andhra Pradesh",
+  "cm": {
+    "handle": "@ncbn",
+    "name": "Chief Minister (N Chandrababu Naidu - TDP)",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/ncbn",
+    "note": "Updated after 2024 elections - TDP won"
+  },
+  "police": {
+    "state": {
+      "handle": "@APPOLICE100",
+      "name": "Andhra Pradesh Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/APPOLICE100"
+    }
+  },
+  "electricity": {
+    "apepdcl": {
+      "handle": "@APEPDCL",
+      "name": "AP Eastern Power Distribution Company",
+      "zones": ["Visakhapatnam", "East Godavari", "West Godavari", "Srikakulam", "Vizianagaram"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/APEPDCL"
+    },
+    "apspdcl": {
+      "handle": "@APSPDCL",
+      "name": "AP Southern Power Distribution Company",
+      "zones": ["Tirupati", "Chittoor", "Nellore", "Kadapa", "Anantapur", "Kurnool"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/APSPDCL"
+    }
+  },
+  "water": {
+    "ap_water": {
+      "handle": "@apmissionwater",
+      "name": "AP Mission for Water",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/apmissionwater"
+    }
+  },
+  "roads": {
+    "aprdc": {
+      "handle": "@APRDC_official",
+      "name": "AP Road Development Corporation",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/APRDC_official"
+    }
+  },
+  "municipal": {
+    "visakhapatnam": {
+      "handle": "@GVMC_official",
+      "name": "Greater Visakhapatnam Municipal Corporation",
+      "city": "Visakhapatnam",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/GVMC_official"
+    },
+    "vijayawada": {
+      "handle": "@VijayawadaMCorp",
+      "name": "Vijayawada Municipal Corporation",
+      "city": "Vijayawada",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/VijayawadaMCorp"
+    },
+    "tirupati": {
+      "handle": "@TimcTirupati",
+      "name": "Tirupati Municipal Corporation",
+      "city": "Tirupati",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/TimcTirupati"
+    }
+  }
+}

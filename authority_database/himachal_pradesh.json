@@ -1,0 +1,38 @@
+{
+  "state_code": "HP",
+  "state_name": "Himachal Pradesh",
+  "cm": {
+    "handle": "@SukhuSukhvinder",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/SukhuSukhvinder"
+  },
+  "police": {
+    "state": {
+      "handle": "@himachalpolice",
+      "name": "Himachal Pradesh Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/himachalpolice"
+    }
+  },
+  "electricity": {
+    "hpseb": {
+      "handle": "@HPSEBLtd",
+      "name": "Himachal Pradesh State Electricity Board",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/HPSEBLtd"
+    }
+  },
+  "water": {
+    "jal_shakti": {
+      "handle": "@HPJSV",
+      "name": "Himachal Pradesh Jal Shakti Vibhag",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/HPJSV"
+    }
+  }
+}

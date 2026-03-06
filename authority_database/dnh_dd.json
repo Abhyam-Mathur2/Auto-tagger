@@ -1,0 +1,12 @@
+{
+  "state_code": "DD",
+  "state_name": "Dadra & Nagar Haveli and Daman & Diu",
+  "type": "union_territory",
+  "admin": {
+    "handle": "@dddgov",
+    "name": "DNH & DD Administration",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/dddgov"
+  }
+}

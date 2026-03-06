@@ -1,0 +1,39 @@
+{
+  "state_code": "UK",
+  "state_name": "Uttarakhand",
+  "cm": {
+    "handle": "@pushkardhami",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/pushkardhami"
+  },
+  "police": {
+    "state": {
+      "handle": "@uttarakhandcops",
+      "name": "Uttarakhand Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/uttarakhandcops"
+    }
+  },
+  "electricity": {
+    "upcl": {
+      "handle": "@UPCL_PTPB",
+      "name": "Uttarakhand Power Corporation Limited",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/UPCL_PTPB"
+    }
+  },
+  "municipal": {
+    "dehradun": {
+      "handle": "@DehradunMC",
+      "name": "Dehradun Municipal Corporation",
+      "city": "Dehradun",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/DehradunMC"
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "state_code": "GJ",
+  "state_name": "Gujarat",
+  "cm": {
+    "handle": "@Bhupendrapbjp",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/Bhupendrapbjp"
+  },
+  "police": {
+    "state": {
+      "handle": "@GujaratPolice",
+      "name": "Gujarat Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/GujaratPolice"
+    }
+  },
+  "electricity": {
+    "ugvcl": {
+      "handle": "@UGVCL",
+      "name": "Uttar Gujarat Vij Company Limited",
+      "zones": ["Mehsana", "Patan", "Banaskantha", "Sabarkantha"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/UGVCL"
+    },
+    "mgvcl": {
+      "handle": "@MGVCL",
+      "name": "Madhya Gujarat Vij Company Limited",
+      "zones": ["Vadodara", "Anand", "Kheda", "Panchmahal"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MGVCL"
+    },
+    "pgvcl": {
+      "handle": "@PGVCL",
+      "name": "Paschim Gujarat Vij Company Limited",
+      "zones": ["Rajkot", "Jamnagar", "Porbandar", "Junagadh"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PGVCL"
+    },
+    "dgvcl": {
+      "handle": "@DGVCL",
+      "name": "Dakshin Gujarat Vij Company Limited",
+      "zones": ["Surat", "Valsad", "Navsari", "Tapi"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/DGVCL"
+    }
+  },
+  "water": {
+    "gwssb": {
+      "handle": "@GWSSB_Gujarat",
+      "name": "Gujarat Water Supply & Sewerage Board",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/GWSSB_Gujarat"
+    }
+  },
+  "municipal": {
+    "ahmedabad": {
+      "handle": "@AhmedabadAMC",
+      "name": "Ahmedabad Municipal Corporation",
+      "city": "Ahmedabad",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/AhmedabadAMC"
+    },
+    "surat": {
+      "handle": "@SuratMunicipal",
+      "name": "Surat Municipal Corporation",
+      "city": "Surat",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/SuratMunicipal"
+    },
+    "vadodara": {
+      "handle": "@VadodaraMC",
+      "name": "Vadodara Municipal Corporation",
+      "city": "Vadodara",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/VadodaraMC"
+    }
+  }
+}

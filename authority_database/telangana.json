@@ -1,0 +1,74 @@
+{
+  "state_code": "TG",
+  "state_name": "Telangana",
+  "cm": {
+    "handle": "@revanth_anumula",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/revanth_anumula",
+    "note": "Verify current CM"
+  },
+  "police": {
+    "state": {
+      "handle": "@TelanganaCOPS",
+      "name": "Telangana Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/TelanganaCOPS"
+    },
+    "hyderabad": {
+      "handle": "@hydcitypolice",
+      "name": "Hyderabad City Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/hydcitypolice"
+    }
+  },
+  "electricity": {
+    "tsspdcl": {
+      "handle": "@TSSPDCL",
+      "name": "Telangana State Southern Power Distribution Company",
+      "zones": ["Hyderabad", "Rangareddy", "Mahbubnagar", "Nalgonda"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/TSSPDCL"
+    },
+    "tsnpdcl": {
+      "handle": "@TSNPDCL",
+      "name": "Telangana State Northern Power Distribution Company",
+      "zones": ["Warangal", "Karimnagar", "Nizamabad", "Adilabad"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/TSNPDCL"
+    }
+  },
+  "water": {
+    "hmwssb": {
+      "handle": "@HMWSSB",
+      "name": "Hyderabad Metropolitan Water Supply and Sewerage Board",
+      "area": "Hyderabad",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/HMWSSB"
+    }
+  },
+  "municipal": {
+    "ghmc": {
+      "handle": "@GHMCOnline",
+      "name": "Greater Hyderabad Municipal Corporation",
+      "city": "Hyderabad",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/GHMCOnline"
+    },
+    "warangal": {
+      "handle": "@WMCWarangal",
+      "name": "Warangal Municipal Corporation",
+      "city": "Warangal",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/WMCWarangal"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "state_code": "PY",
+  "state_name": "Puducherry",
+  "type": "union_territory",
+  "cm": {
+    "handle": "@CMOPuducherry",
+    "name": "Chief Minister's Office",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/CMOPuducherry"
+  },
+  "police": {
+    "puducherry": {
+      "handle": "@Pondicherrypolice",
+      "name": "Puducherry Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/Pondicherrypolice"
+    }
+  },
+  "electricity": {
+    "ppcl": {
+      "handle": "@PPCL_Puducherry",
+      "name": "Puducherry Power Corporation Limited",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PPCL_Puducherry"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "state_code": "OD",
+  "state_name": "Odisha",
+  "cm": {
+    "handle": "@MohanMajhiBJP",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/MohanMajhiBJP",
+    "note": "Updated after 2024 elections"
+  },
+  "police": {
+    "state": {
+      "handle": "@odisha_police",
+      "name": "Odisha Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/odisha_police"
+    }
+  },
+  "electricity": {
+    "tpodl": {
+      "handle": "@TPODL_official",
+      "name": "TP Odisha Distribution Limited",
+      "zones": ["Southern Odisha"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/TPODL_official"
+    },
+    "nesco": {
+      "handle": "@NESCO_Utility",
+      "name": "North Eastern Electricity Supply Company",
+      "zones": ["Northern Odisha"],
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/NESCO_Utility"
+    }
+  },
+  "water": {
+    "phed": {
+      "handle": "@phed_odisha",
+      "name": "Public Health Engineering Department",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/phed_odisha"
+    }
+  },
+  "municipal": {
+    "bhubaneswar": {
+      "handle": "@bmcbbsr",
+      "name": "Bhubaneswar Municipal Corporation",
+      "city": "Bhubaneswar",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/bmcbbsr"
+    },
+    "cuttack": {
+      "handle": "@CMCCuttack",
+      "name": "Cuttack Municipal Corporation",
+      "city": "Cuttack",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/CMCCuttack"
+    }
+  }
+}

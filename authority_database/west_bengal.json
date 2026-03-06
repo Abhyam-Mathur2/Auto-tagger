@@ -1,0 +1,64 @@
+{
+  "state_code": "WB",
+  "state_name": "West Bengal",
+  "cm": {
+    "handle": "@MamataOfficial",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/MamataOfficial"
+  },
+  "police": {
+    "state": {
+      "handle": "@WBPolice",
+      "name": "West Bengal Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/WBPolice"
+    },
+    "kolkata": {
+      "handle": "@KolkataPolice",
+      "name": "Kolkata Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/KolkataPolice"
+    }
+  },
+  "electricity": {
+    "cesc": {
+      "handle": "@CESCLTD",
+      "name": "CESC Limited (Kolkata)",
+      "area": "Kolkata",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/CESCLTD"
+    },
+    "wbsedcl": {
+      "handle": "@WBSEDCL",
+      "name": "West Bengal State Electricity Distribution Company",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/WBSEDCL"
+    }
+  },
+  "water": {
+    "kmc": {
+      "handle": "@KMCGovt",
+      "name": "Kolkata Municipal Corporation",
+      "area": "Kolkata",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/KMCGovt"
+    }
+  },
+  "municipal": {
+    "kolkata": {
+      "handle": "@kmc_kolkata",
+      "name": "Kolkata Municipal Corporation",
+      "city": "Kolkata",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/kmc_kolkata"
+    }
+  }
+}

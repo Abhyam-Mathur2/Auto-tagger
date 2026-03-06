@@ -1,0 +1,48 @@
+{
+  "state_code": "BR",
+  "state_name": "Bihar",
+  "cm": {
+    "handle": "@NitishKumar",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/NitishKumar"
+  },
+  "police": {
+    "state": {
+      "handle": "@BiharPolice",
+      "name": "Bihar Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/BiharPolice"
+    }
+  },
+  "electricity": {
+    "bsphcl": {
+      "handle": "@BSPHCL_HQ",
+      "name": "Bihar State Power Holding Company Limited",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/BSPHCL_HQ"
+    }
+  },
+  "water": {
+    "phed": {
+      "handle": "@PHED_Bihar",
+      "name": "Public Health Engineering Department",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PHED_Bihar"
+    }
+  },
+  "municipal": {
+    "patna": {
+      "handle": "@PMCPatna",
+      "name": "Patna Municipal Corporation",
+      "city": "Patna",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PMCPatna"
+    }
+  }
+}

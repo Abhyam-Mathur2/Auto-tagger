@@ -1,0 +1,38 @@
+{
+  "state_code": "AR",
+  "state_name": "Arunachal Pradesh",
+  "cm": {
+    "handle": "@PemaKhanduBJP",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/PemaKhanduBJP"
+  },
+  "police": {
+    "state": {
+      "handle": "@arunachalpolice",
+      "name": "Arunachal Pradesh Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/arunachalpolice"
+    }
+  },
+  "electricity": {
+    "appdcl": {
+      "handle": "@APPDCL_official",
+      "name": "Arunachal Pradesh Power Distribution Company",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/APPDCL_official"
+    }
+  },
+  "state_handles": {
+    "govt": {
+      "handle": "@ArunachalGovt",
+      "name": "Arunachal Pradesh Government",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/ArunachalGovt"
+    }
+  }
+}

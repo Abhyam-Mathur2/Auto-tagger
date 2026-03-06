@@ -1,0 +1,39 @@
+{
+  "state_code": "CT",
+  "state_name": "Chhattisgarh",
+  "cm": {
+    "handle": "@vishnudsai",
+    "name": "Chief Minister",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/vishnudsai"
+  },
+  "police": {
+    "state": {
+      "handle": "@PoliceChhattisg",
+      "name": "Chhattisgarh Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PoliceChhattisg"
+    }
+  },
+  "electricity": {
+    "cspdcl": {
+      "handle": "@cspdcl",
+      "name": "Chhattisgarh State Power Distribution Company",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/cspdcl"
+    }
+  },
+  "municipal": {
+    "raipur": {
+      "handle": "@RaipurNagar",
+      "name": "Raipur Municipal Corporation",
+      "city": "Raipur",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/RaipurNagar"
+    }
+  }
+}

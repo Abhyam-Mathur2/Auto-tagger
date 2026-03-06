@@ -1,0 +1,30 @@
+{
+  "state_code": "AN",
+  "state_name": "Andaman & Nicobar Islands",
+  "type": "union_territory",
+  "admin": {
+    "handle": "@AndamanAdmin",
+    "name": "Andaman & Nicobar Administration",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/AndamanAdmin"
+  },
+  "police": {
+    "andaman": {
+      "handle": "@andamanpolice",
+      "name": "Andaman & Nicobar Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/andamanpolice"
+    }
+  },
+  "electricity": {
+    "andesco": {
+      "handle": "@ANDESCO_official",
+      "name": "Andaman & Nicobar Electricity Service Cooperative",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/ANDESCO_official"
+    }
+  }
+}

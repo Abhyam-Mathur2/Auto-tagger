@@ -1,0 +1,64 @@
+{
+  "state_code": "PB",
+  "state_name": "Punjab",
+  "cm": {
+    "handle": "@BhagwantMann",
+    "name": "Chief Minister (AAP)",
+    "verified": true,
+    "last_checked": "2026-03-01",
+    "source_url": "https://twitter.com/BhagwantMann"
+  },
+  "police": {
+    "state": {
+      "handle": "@PunjabPoliceInd",
+      "name": "Punjab Police",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PunjabPoliceInd"
+    }
+  },
+  "electricity": {
+    "pspcl": {
+      "handle": "@PSPCL_Official",
+      "name": "Punjab State Power Corporation Limited",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PSPCL_Official"
+    }
+  },
+  "water": {
+    "pwssb": {
+      "handle": "@PWSSB_Official",
+      "name": "Punjab Water Supply & Sewerage Board",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/PWSSB_Official"
+    }
+  },
+  "municipal": {
+    "chandigarh": {
+      "handle": "@chandigarh_mc",
+      "name": "Chandigarh Municipal Corporation",
+      "city": "Chandigarh",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/chandigarh_mc"
+    },
+    "ludhiana": {
+      "handle": "@LudhianaMC",
+      "name": "Ludhiana Municipal Corporation",
+      "city": "Ludhiana",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/LudhianaMC"
+    },
+    "amritsar": {
+      "handle": "@MCAmritsar",
+      "name": "Amritsar Municipal Corporation",
+      "city": "Amritsar",
+      "verified": true,
+      "last_checked": "2026-03-01",
+      "source_url": "https://twitter.com/MCAmritsar"
+    }
+  }
+}
