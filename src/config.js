@@ -6,7 +6,7 @@
 
 const CIVICTAG_CONFIG = {
   // ⚠️ Update this URL after running: vercel deploy --prod in CivicTag-Backend
-  BACKEND_URL: 'https://civictag-api.vercel.app',
+  BACKEND_URL: 'https://auto-tagger-backend.vercel.app',
 
   VERSION: '2.1.0',
 };
