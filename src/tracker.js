@@ -3,6 +3,17 @@
  * Handles complaint tracking, follow-ups, and accountability using IndexedDB
  */
 
+function isTrackerContextValid() {
+  if (typeof isContextValid === 'function') {
+    return isContextValid();
+  }
+  try {
+    return !!(typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.id);
+  } catch (e) {
+    return false;
+  }
+}
+
 class ComplaintTracker {
   constructor() {
     this.dbName = 'CivicTagDB';
@@ -14,6 +25,7 @@ class ComplaintTracker {
    * Initialize IndexedDB
    */
   async initialize() {
+    if (!isTrackerContextValid()) return Promise.reject(new Error('Context invalidated'));
     return new Promise((resolve, reject) => {
       const request = indexedDB.open(this.dbName, this.dbVersion);
 

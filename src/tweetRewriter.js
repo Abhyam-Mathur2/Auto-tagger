@@ -64,7 +64,7 @@ Return ONLY a JSON object with no markdown:
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          model: "llama3-8b-8192",
+          model: "llama-3.1-8b-instant",
           messages: [
             { role: "user", content: prompt }
           ],
@@ -84,17 +84,12 @@ Return ONLY a JSON object with no markdown:
       }
 
       const textResponse = data.choices[0].message.content.trim();
+      const result = this.extractAndParseJSON(textResponse);
       
-      // Parse JSON safely
-      let jsonText = textResponse;
-      if (jsonText.startsWith('```json')) {
-        jsonText = jsonText.replace(/```json\n?/g, '').replace(/```\n?/g, '');
-      } else if (jsonText.startsWith('```')) {
-        jsonText = jsonText.replace(/```\n?/g, '');
+      if (!result || !result.rewrittenTweet) {
+        return null;
       }
-      
-      const result = JSON.parse(jsonText);
-      
+
       // Don't show rewriter if suggestion is same as original
       if (result.rewrittenTweet.trim() === originalTweet.trim()) {
         return null;
@@ -105,6 +100,28 @@ Return ONLY a JSON object with no markdown:
       console.error('CivicTag: Tweet rewriting failed', err);
       return null;
     }
+  },
+
+  /**
+   * Robust JSON extraction
+   */
+  extractAndParseJSON(text) {
+    if (!text) return null;
+    try {
+      return JSON.parse(text);
+    } catch (e) {
+      const jsonMatch = text.match(/```json\s*([\s\S]*?)\s*```/) || text.match(/```\s*([\s\S]*?)\s*```/);
+      if (jsonMatch && jsonMatch[1]) {
+        try { return JSON.parse(jsonMatch[1].trim()); } catch (e2) {}
+      }
+      const firstBrace = text.indexOf('{');
+      const lastBrace = text.lastIndexOf('}');
+      if (firstBrace !== -1 && lastBrace !== -1) {
+        const candidate = text.substring(firstBrace, lastBrace + 1);
+        try { return JSON.parse(candidate); } catch (e3) {}
+      }
+    }
+    return null;
   }
 };
 

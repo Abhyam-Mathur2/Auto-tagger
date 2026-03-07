@@ -18,6 +18,13 @@ class LocationDetector {
     };
   }
 
+  /**
+   * Helper for safe storage access
+   */
+  async getSafeStorage(keys) {
+    return await safeStorageGet(keys);
+  }
+
   async initialize() {
     return true;
   }
@@ -77,7 +84,7 @@ class LocationDetector {
           }
         },
         (error) => reject(error),
-        { timeout: 10000, maximumAge: 300000 }
+        { timeout: 3000, maximumAge: 300000 }
       );
     });
   }
@@ -95,7 +102,7 @@ class LocationDetector {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          model: "llama3-8b-8192",
+          model: "llama-3.1-8b-instant",
           temperature: 0,
           max_tokens: 180,
           messages: [
@@ -116,11 +123,10 @@ class LocationDetector {
       }
 
       const data = await response.json();
-      const raw = data?.choices?.[0]?.message?.content?.trim();
-      if (!raw) return null;
+      const rawText = data?.choices?.[0]?.message?.content?.trim();
+      if (!rawText) return null;
 
-      const clean = raw.replace(/```json|```/g, "").trim();
-      const parsed = JSON.parse(clean);
+      const parsed = this.extractAndParseJSON(rawText);
       if (!parsed?.state && !parsed?.city && !parsed?.district) {
         return null;
       }
@@ -136,6 +142,28 @@ class LocationDetector {
     } catch {
       return null;
     }
+  }
+
+  /**
+   * Robust JSON extraction
+   */
+  extractAndParseJSON(text) {
+    if (!text) return null;
+    try {
+      return JSON.parse(text);
+    } catch (e) {
+      const jsonMatch = text.match(/```json\s*([\s\S]*?)\s*```/) || text.match(/```\s*([\s\S]*?)\s*```/);
+      if (jsonMatch && jsonMatch[1]) {
+        try { return JSON.parse(jsonMatch[1].trim()); } catch (e2) {}
+      }
+      const firstBrace = text.indexOf('{');
+      const lastBrace = text.lastIndexOf('}');
+      if (firstBrace !== -1 && lastBrace !== -1) {
+        const candidate = text.substring(firstBrace, lastBrace + 1);
+        try { return JSON.parse(candidate); } catch (e3) {}
+      }
+    }
+    return null;
   }
 
   getFromTwitterProfile() {
@@ -155,42 +183,48 @@ class LocationDetector {
   }
 
   async getFromSettings() {
-    return new Promise((resolve) => {
-      chrome.storage.local.get(["userState", "userCity", "userDistrict", "userSuburb"], (result) => {
-        if (!result.userState && !result.userCity) {
-          resolve(null);
-          return;
-        }
+    const result = await this.getSafeStorage(["userState", "userCity", "userDistrict", "userSuburb"]);
+    
+    if (!result.userState && !result.userCity) {
+      return null;
+    }
 
-        resolve({
-          source: "user_settings",
-          accuracy: "medium",
-          state: result.userState || null,
-          city: result.userCity || null,
-          district: result.userDistrict || null,
-          suburb: result.userSuburb || null
-        });
-      });
-    });
+    return {
+      source: "user_settings",
+      accuracy: "medium",
+      state: result.userState || null,
+      city: result.userCity || null,
+      district: result.userDistrict || null,
+      suburb: result.userSuburb || null
+    };
   }
 
   async detectLocation(tweetText, groqApiKey) {
-    try {
-      const browser = await this.getFromBrowser();
-      if (browser?.state || browser?.city) return browser;
-    } catch {}
-
+    // Try Tweet Text first (fastest and most relevant to the complaint)
     try {
       const tweet = await this.getFromTweetText(tweetText, groqApiKey);
       if (tweet?.state || tweet?.city) return tweet;
     } catch {}
 
+    // Try Settings (instant)
+    try {
+      const settings = await this.getFromSettings();
+      if (settings?.state || settings?.city) return settings;
+    } catch {}
+
+    // Try Profile (instant)
     try {
       const profile = this.getFromTwitterProfile();
       if (profile) return profile;
     } catch {}
 
-    return this.getFromSettings();
+    // Finally try Browser GPS as a fallback
+    try {
+      const browser = await this.getFromBrowser();
+      if (browser?.state || browser?.city) return browser;
+    } catch {}
+
+    return null;
   }
 
   getAllStates() {

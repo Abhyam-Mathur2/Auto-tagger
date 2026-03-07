@@ -11,10 +11,13 @@ let tracker;
 let tweetRewriter;
 
 let sidebar = null;
+let sidebarData = null;
 let composeInputBound = false;
 let runningAnalysisId = 0;
+let isInsertingTweet = false;
 
 async function initialize() {
+  if (!isContextValid()) return;
   try {
     classifier = new ComplaintClassifier();
     await classifier.initialize();
@@ -34,28 +37,65 @@ async function initialize() {
 
     observeComposeArea();
   } catch (error) {
-    console.error("CivicTag: Initialization failed", error);
+    if (isContextValid()) {
+      console.error("CivicTag: Initialization failed", error);
+    }
   }
 }
 
 function observeComposeArea() {
   const watcher = setInterval(() => {
-    const compose = findComposeBox();
+    if (!isContextValid()) {
+      clearInterval(watcher);
+      if (sidebar) removeSidebar();
+      return;
+    }
+    const compose = getComposeBox();
     if (!compose) return;
 
     injectCivicTagButton(compose);
     bindComposeInput(compose);
-  }, 1200);
+  }, 1500);
 
   // Keep watcher running because Twitter is SPA and re-renders frequently.
   void watcher;
 }
 
-function findComposeBox() {
+function getComposeBox() {
+  // Try multiple selectors in order of reliability
   return (
     document.querySelector('[data-testid="tweetTextarea_0"]') ||
-    document.querySelector('div[contenteditable="true"][role="textbox"]')
+    document.querySelector('[data-testid="tweetTextarea_0_label"]') ||
+    document.querySelector('.public-DraftEditor-content') ||
+    document.querySelector('[contenteditable="true"][role="textbox"]') ||
+    null
   );
+}
+
+function findComposeBox() {
+  return getComposeBox();
+}
+
+/**
+ * Enhanced getTweetText for Draft.js / Twitter
+ */
+function getTweetText() {
+  const compose = getComposeBox();
+  if (!compose) return "";
+  
+  // Method 1: Draft.js specific (spans with data-text)
+  const spans = compose.querySelectorAll('span[data-text="true"]');
+  if (spans.length > 0) {
+    const text = Array.from(spans).map(s => s.innerText || "").join("");
+    if (text.trim()) return text.trim();
+  }
+
+  // Method 2: innerText (usually best for contenteditable)
+  let text = compose.innerText || "";
+  if (text.trim()) return text.trim();
+
+  // Method 3: textContent fallback
+  return (compose.textContent || "").trim();
 }
 
 function injectCivicTagButton(compose) {
@@ -64,17 +104,29 @@ function injectCivicTagButton(compose) {
   const toolbar =
     compose.closest("[role='group']")?.querySelector('[data-testid="toolBar"]') ||
     document.querySelector('[data-testid="toolBar"]');
+  const fallbackHost =
+    compose.closest('[data-testid="tweetTextarea_0"]')?.parentElement ||
+    compose.closest("[role='dialog']") ||
+    compose.parentElement;
+
+  const mountPoint = toolbar || fallbackHost;
+  if (!mountPoint) return;
 
   const btn = document.createElement("button");
   btn.id = "civictag-button";
   btn.type = "button";
   btn.textContent = "CivicTag";
+  btn.className = "civictag-inject-btn"; // Use a class for potential styling
   btn.style.marginLeft = "8px";
   btn.addEventListener("click", async (e) => {
     e.preventDefault();
+    if (!isContextValid()) {
+      alert("CivicTag extension has been updated. Please refresh the page to continue.");
+      return;
+    }
     const text = getTweetText();
-    if (!text.trim()) {
-      showNotification("Write complaint text first", "warning");
+    if (!text || text.length < 5) {
+      showNotification("Please type your complaint first", "warning");
       return;
     }
     await runFullFlow(text);
@@ -82,88 +134,142 @@ function injectCivicTagButton(compose) {
 
   if (toolbar) {
     toolbar.appendChild(btn);
+    return;
   }
+
+  let fallbackContainer = document.getElementById("civictag-button-fallback");
+  if (!fallbackContainer) {
+    fallbackContainer = document.createElement("div");
+    fallbackContainer.id = "civictag-button-fallback";
+    fallbackContainer.style.display = "flex";
+    fallbackContainer.style.justifyContent = "flex-end";
+    fallbackContainer.style.marginTop = "8px";
+    fallbackContainer.style.marginBottom = "4px";
+    mountPoint.appendChild(fallbackContainer);
+  }
+
+  btn.style.marginLeft = "0";
+  fallbackContainer.appendChild(btn);
 }
 
-function bindComposeInput() {
+function bindComposeInput(compose) {
   if (composeInputBound) return;
-  const compose = findComposeBox();
-  if (!compose) return;
 
-  compose.addEventListener("input", async () => {
-    const text = getTweetText();
-    if (!text || text.trim().length < 8) {
-      removeSidebar();
-      return;
+  compose.addEventListener("input", () => {
+    if (sidebar && sidebarData) {
+      if (!isContextValid()) {
+        removeSidebar();
+        return;
+      }
+      updateCharCount(sidebarData);
     }
-    await runFullFlow(text);
   });
 
   composeInputBound = true;
 }
 
-function getTweetText() {
-  const compose = findComposeBox();
-  return compose ? (compose.innerText || compose.textContent || "") : "";
+async function getSafeStorage(key) {
+  const result = await safeStorageGet([key]);
+  return result[key] || null;
 }
 
 async function runFullFlow(tweetText) {
+  if (!isContextValid()) {
+    alert("Extension updated. Please refresh the page.");
+    return;
+  }
   const analysisId = ++runningAnalysisId;
+  const analysisInputText = tweetText;
 
-  // STEP 2: Debounced classifier (handled inside classifier.classify)
-  const classification = await classifier.classify(tweetText);
-  if (analysisId !== runningAnalysisId) return;
+  showNotification("Analyzing complaint...", "info");
 
-  if (!classification || !classification.isComplaint || Number(classification.confidence || 0) < 70) {
-    removeSidebar();
-    return;
+  try {
+    // STEP 2: Classifier
+    const classification = await classifier.classify(tweetText);
+    if (!isContextValid()) return;
+    if (analysisId !== runningAnalysisId) return;
+
+    if (!classification || !classification.isComplaint || Number(classification.confidence || 0) < 60) {
+      showNotification("No civic complaint detected in your text.", "warning");
+      removeSidebar();
+      return;
+    }
+
+    // STEP 3: Location detection
+    const groqApiKey = await getSafeStorage("groqApiKey");
+    const enableTweetRewriter = await getSafeStorage("enableTweetRewriter");
+    if (!isContextValid()) return;
+
+    let location = { city: "Unknown", state: "Unknown", source: "none" };
+    try {
+      const detected = await locationDetector.detectLocation(tweetText, groqApiKey);
+      if (!isContextValid()) return;
+      if (detected) {
+        location = {
+          city: detected.city || "Unknown",
+          state: detected.state || "Unknown",
+          source: detected.source || "none",
+          district: detected.district || null,
+          suburb: detected.suburb || null
+        };
+      }
+    } catch (locationError) {
+      console.warn("CivicTag: Location detection failed", locationError);
+    }
+
+    if (analysisId !== runningAnalysisId) return;
+
+    // STEP 4: Resolve authorities
+    let authorities = [];
+    try {
+      authorities = await authorityResolver.resolveAuthorities(classification, location);
+      if (!isContextValid()) return;
+    } catch (authorityError) {
+      console.warn("CivicTag: Authority resolution failed", authorityError);
+      authorities = [];
+    }
+
+    if (analysisId !== runningAnalysisId) return;
+
+    // STEP 5 + 6: Spam Guard and Rewriter
+    const [rateLimit, duplicate, consolidation, overload, rewrite] = await Promise.all([
+      spamGuard.checkRateLimit().catch(e => { console.error("SpamGuard checkRateLimit failed", e); return { allowed: true }; }),
+      spamGuard.checkDuplicate(classification.department, location).catch(e => { console.error("SpamGuard checkDuplicate failed", e); return { isDuplicate: false }; }),
+      spamGuard.checkConsolidation(classification.department, location).catch(e => { console.error("SpamGuard checkConsolidation failed", e); return { shouldConsolidate: false }; }),
+      spamGuard.checkAuthorityOverload(authorities, classification.department).catch(e => { console.error("SpamGuard checkAuthorityOverload failed", e); return { hasOverload: false }; }),
+      (enableTweetRewriter === false || !groqApiKey)
+        ? Promise.resolve(null)
+        : tweetRewriter.rewrite(tweetText, classification, location, groqApiKey).catch(e => { console.error("TweetRewriter rewrite failed", e); return null; })
+    ]);
+
+    if (!isContextValid()) return;
+    if (analysisId !== runningAnalysisId) return;
+
+    if (!rateLimit.allowed) {
+      showNotification(rateLimit.message || "Rate limit reached", "warning");
+    }
+
+    const hashtags = buildHashtags(classification, location || {});
+
+    renderSidebar({
+      tweetText: analysisInputText, // Original text at start of flow
+      classification,
+      location,
+      authorities: authorities || [],
+      hashtags: hashtags || [],
+      duplicate,
+      consolidation,
+      overload,
+      rewrite
+    });
+  } catch (error) {
+    if (isContextValid()) {
+      console.error("CivicTag: Analysis flow failed", error);
+      showNotification("CivicTag analysis failed. Please try again.", "error");
+    } else {
+      console.warn("CivicTag: Flow interrupted by context invalidation");
+    }
   }
-
-  // STEP 3: 4-tier location detection
-  const storage = await chrome.storage.local.get(["groqApiKey", "enableTweetRewriter"]);
-  const groqApiKey = storage.groqApiKey || null;
-
-  const location = await locationDetector.detectLocation(tweetText, groqApiKey);
-  if (analysisId !== runningAnalysisId) return;
-
-  if (!location) {
-    removeSidebar();
-    return;
-  }
-
-  // STEP 4: Resolve authorities dynamically
-  const authorities = await authorityResolver.resolveAuthorities(classification, location);
-
-  // STEP 5 + STEP 6
-  const [rateLimit, duplicate, consolidation, overload, rewrite] = await Promise.all([
-    spamGuard.checkRateLimit(),
-    spamGuard.checkDuplicate(classification.department, location),
-    spamGuard.checkConsolidation(classification.department, location),
-    spamGuard.checkAuthorityOverload(authorities, classification.department),
-    storage.enableTweetRewriter === false
-      ? Promise.resolve(null)
-      : tweetRewriter.rewrite(tweetText, classification, location, groqApiKey)
-  ]);
-
-  if (analysisId !== runningAnalysisId) return;
-
-  if (!rateLimit.allowed) {
-    showNotification(rateLimit.message || "Rate limit reached", "warning");
-  }
-
-  const hashtags = buildHashtags(classification, location);
-
-  renderSidebar({
-    tweetText,
-    classification,
-    location,
-    authorities,
-    hashtags,
-    duplicate,
-    consolidation,
-    overload,
-    rewrite
-  });
 }
 
 function buildHashtags(classification, location) {
@@ -177,7 +283,7 @@ function buildHashtags(classification, location) {
   if (d.includes("traffic")) list.push("#TrafficAlert");
   if (d.includes("crime")) list.push("#PublicSafety");
 
-  if (location.state) list.push(`#${location.state.replace(/\s+/g, "")}`);
+  if (location && location.state) list.push(`#${location.state.replace(/\s+/g, "")}`);
   return Array.from(new Set(list)).slice(0, 6);
 }
 
@@ -186,96 +292,149 @@ function accuracyBadge(location) {
   if (source === "browser_gps") return "GPS 🟢";
   if (source === "twitter_profile") return "Profile 🟡";
   if (source === "user_settings") return "Settings 🟠";
+  if (source === "tweet_text") return "AI Extracted 🔵";
   return "Manual 🔴";
 }
 
 function groupAuthorities(authorities) {
   const grouped = { local: [], state: [], central: [], other: [] };
+  const validTiers = ['local', 'state', 'central', 'other'];
+  
   (authorities || []).forEach((a) => {
+    if (!a) return;
     const level = (a.level || a.tier || "other").toLowerCase();
-    if (grouped[level]) grouped[level].push(a);
-    else grouped.other.push(a);
+    if (validTiers.includes(level)) {
+      grouped[level].push(a);
+    } else {
+      grouped.other.push(a);
+    }
   });
   return grouped;
 }
 
 function renderSidebar(data) {
+  if (!isContextValid()) return;
   removeSidebar();
+  sidebarData = data; // Store globally for live updates
 
   const groups = groupAuthorities(data.authorities);
-  const locationLabel = [data.location.city, data.location.state].filter(Boolean).join(", ") || "Location unavailable";
+  const locationLabel = [data.location.city, data.location.state].filter(Boolean).join(", ") || "Location unknown";
+  const urgencyClass = `civictag-badge-${data.classification.urgency || "medium"}`;
 
   sidebar = document.createElement("div");
   sidebar.id = "civictag-sidebar";
   sidebar.innerHTML = `
     <div class="civictag-sidebar-header">
       <h3>CivicTag</h3>
-      <button id="civictag-close" class="civictag-close" type="button">x</button>
+      <button id="civictag-close" class="civictag-close" type="button">×</button>
     </div>
 
-    <div class="civictag-section">
-      <strong>📍 ${locationLabel}</strong>
-      <div><small>${accuracyBadge(data.location)}</small></div>
-    </div>
-
-    <div class="civictag-section">
-      <strong>🏷️ Issue:</strong> ${escapeHtml(data.classification.department || "General")}
-      <div><small>Urgency: ${escapeHtml(data.classification.urgency || "medium")}</small></div>
-    </div>
-
-    ${renderAuthorityGroup("Local", groups.local)}
-    ${renderAuthorityGroup("State", groups.state)}
-    ${renderAuthorityGroup("Central", groups.central)}
-    ${renderAuthorityGroup("Other", groups.other)}
-
-    <div class="civictag-section">
-      <strong>Hashtags</strong>
-      <div>${data.hashtags.map((h) => `<label><input type="checkbox" data-hashtag="${h}" checked> ${h}</label>`).join("<br>")}</div>
-    </div>
-
-    ${data.rewrite && data.rewrite.rewrittenTweet && data.rewrite.rewrittenTweet.trim() !== data.tweetText.trim() ? `
+    <div class="civictag-sidebar-content">
       <div class="civictag-section">
-        <strong>✨ AI Suggested Tweet Wording</strong>
-        <div style="margin-top:8px;">
-          <button type="button" id="civictag-tab-original">Original</button>
-          <button type="button" id="civictag-tab-improved">Improved</button>
+        <h4>📍 Location Info</h4>
+        <div class="civictag-summary">
+          <strong>${locationLabel}</strong>
+          <div style="margin-top:4px;"><small>${accuracyBadge(data.location)}</small></div>
         </div>
-        <div id="civictag-text-original" style="margin-top:8px; display:none;">${escapeHtml(data.tweetText)}</div>
-        <div id="civictag-text-improved" style="margin-top:8px;">${escapeHtml(data.rewrite.rewrittenTweet)}</div>
-        <div style="margin-top:8px;"><label><input type="checkbox" id="civictag-use-improved" checked> Use improved wording</label></div>
       </div>
-    ` : ""}
 
-    <div class="civictag-section">
-      <div id="civictag-char"></div>
-      <button id="civictag-insert" type="button">Insert into Tweet</button>
+      <div class="civictag-section">
+        <h4>🏷️ Issue Detection</h4>
+        <div class="civictag-summary">
+          <span class="civictag-badge ${urgencyClass}">${(data.classification.urgency || "medium").toUpperCase()}</span>
+          <div><strong>Category:</strong> ${escapeHtml(data.classification.department || "General")}</div>
+        </div>
+      </div>
+
+      ${renderAuthorityGroup("Local", groups.local)}
+      ${renderAuthorityGroup("State", groups.state)}
+      ${renderAuthorityGroup("Central", groups.central)}
+      ${renderAuthorityGroup("Other", groups.other)}
+
+      <div class="civictag-section">
+        <h4># Hashtags</h4>
+        <div class="civictag-hashtags">
+          ${data.hashtags.map((h) => `
+            <label class="civictag-hashtag-item">
+              <input type="checkbox" data-hashtag="${h}" checked>
+              <span>${h}</span>
+            </label>
+          `).join("")}
+        </div>
+      </div>
+
+      ${data.rewrite && data.rewrite.rewrittenTweet ? `
+        <div class="civictag-section">
+          <h4>✨ AI Improved Wording</h4>
+          <div style="margin-bottom:12px; display:flex; gap:8px;">
+            <button type="button" id="civictag-tab-original" class="civictag-btn civictag-btn-secondary" style="padding:6px 12px; font-size:12px; opacity:0.6;">Original</button>
+            <button type="button" id="civictag-tab-improved" class="civictag-btn civictag-btn-primary" style="padding:6px 12px; font-size:12px;">✨ Improved</button>
+          </div>
+          <div id="civictag-text-original" class="civictag-summary" style="display:none; background:#f7f9f9; padding:10px; border-radius:8px; font-style:italic; white-space: pre-wrap; opacity:0.7;">${escapeHtml(data.tweetText)}</div>
+          <div id="civictag-text-improved" class="civictag-summary" style="background:#f0f7f0; padding:10px; border-radius:8px; white-space: pre-wrap; border: 2px solid #138808;">${escapeHtml(data.rewrite.rewrittenTweet)}</div>
+          <div style="margin-top:12px;">
+            <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:14px;">
+              <input type="checkbox" id="civictag-use-improved" style="width:18px; height:18px; accent-color:#138808;" checked> 
+              ✨ Use AI improved version (recommended)
+            </label>
+          </div>
+        </div>
+      ` : ""}
+
+      <div class="civictag-section" style="background: #f8fafc;">
+        <h4>📝 Full Tweet Preview</h4>
+        <div id="civictag-full-preview" style="background: white; border: 1px solid #e1e8ed; padding: 12px; border-radius: 12px; font-size: 14px; white-space: pre-wrap; line-height: 1.5; color: #0f1419;"></div>
+      </div>
+
+      <div class="civictag-section" style="border-bottom:none; padding-bottom:40px;">
+        <div id="civictag-char" style="font-weight:700; font-size:16px; margin-bottom:16px; text-align:center;"></div>
+        <button id="civictag-insert" class="civictag-btn civictag-btn-primary" style="width:100%; margin-bottom:10px;" type="button">📋 Copy &amp; Paste into Tweet</button>
+        <button id="civictag-copy" class="civictag-btn civictag-btn-secondary" style="width:100%; font-size:13px;" type="button">💾 Copy without tracking</button>
+      </div>
     </div>
   `;
 
   document.body.appendChild(sidebar);
 
   document.getElementById("civictag-close")?.addEventListener("click", removeSidebar);
-  document.getElementById("civictag-insert")?.addEventListener("click", () => insertIntoTweet(data));
+  document.getElementById("civictag-insert")?.addEventListener("click", () => insertAndTrack(data));
+  document.getElementById("civictag-copy")?.addEventListener("click", () => copyAndTrack(data));
 
-  document.getElementById("civictag-tab-original")?.addEventListener("click", () => {
-    document.getElementById("civictag-text-original").style.display = "block";
-    document.getElementById("civictag-text-improved").style.display = "none";
-    const c = document.getElementById("civictag-use-improved");
-    if (c) c.checked = false;
+  const tabOriginal = document.getElementById("civictag-tab-original");
+  const tabImproved = document.getElementById("civictag-tab-improved");
+  const textOriginal = document.getElementById("civictag-text-original");
+  const textImproved = document.getElementById("civictag-text-improved");
+  const checkImproved = document.getElementById("civictag-use-improved");
+
+  tabOriginal?.addEventListener("click", () => {
+    if (textOriginal) textOriginal.style.display = "block";
+    if (textImproved) textImproved.style.display = "none";
+    if (checkImproved) checkImproved.checked = false;
+    // Style: original active, improved inactive
+    if (tabOriginal) { tabOriginal.className = "civictag-btn civictag-btn-primary"; tabOriginal.style.opacity = "1"; tabOriginal.style.fontSize = "12px"; tabOriginal.style.padding = "6px 12px"; }
+    if (tabImproved) { tabImproved.className = "civictag-btn civictag-btn-secondary"; tabImproved.style.opacity = "0.6"; tabImproved.style.fontSize = "12px"; tabImproved.style.padding = "6px 12px"; tabImproved.textContent = "✨ Improved"; }
     updateCharCount(data);
   });
 
-  document.getElementById("civictag-tab-improved")?.addEventListener("click", () => {
-    document.getElementById("civictag-text-original").style.display = "none";
-    document.getElementById("civictag-text-improved").style.display = "block";
-    const c = document.getElementById("civictag-use-improved");
-    if (c) c.checked = true;
+  tabImproved?.addEventListener("click", () => {
+    if (textOriginal) textOriginal.style.display = "none";
+    if (textImproved) textImproved.style.display = "block";
+    if (checkImproved) checkImproved.checked = true;
+    // Style: improved active, original inactive
+    if (tabImproved) { tabImproved.className = "civictag-btn civictag-btn-primary"; tabImproved.style.opacity = "1"; tabImproved.style.fontSize = "12px"; tabImproved.style.padding = "6px 12px"; tabImproved.textContent = "✨ Improved"; }
+    if (tabOriginal) { tabOriginal.className = "civictag-btn civictag-btn-secondary"; tabOriginal.style.opacity = "0.6"; tabOriginal.style.fontSize = "12px"; tabOriginal.style.padding = "6px 12px"; tabOriginal.textContent = "Original"; }
     updateCharCount(data);
   });
 
   sidebar.querySelectorAll('input[type="checkbox"]').forEach((el) => {
     el.addEventListener("change", () => updateCharCount(data));
   });
+
+  // Set improved as default active tab on first render
+  if (data.rewrite && data.rewrite.rewrittenTweet) {
+    const checkImprovedInit = document.getElementById("civictag-use-improved");
+    if (checkImprovedInit) checkImprovedInit.checked = true;
+  }
 
   updateCharCount(data);
 }
@@ -284,106 +443,129 @@ function renderAuthorityGroup(title, items) {
   if (!items?.length) return "";
   return `
     <div class="civictag-section">
-      <strong>${title} Authorities</strong>
-      <div>
+      <h4>🏛️ ${title} Authorities</h4>
+      <div class="civictag-authorities">
         ${items
-          .map((a) => `<label><input type="checkbox" data-handle="${a.handle}" checked> ${a.handle} <small>${escapeHtml(a.name || "")}</small></label>`)
-          .join("<br>")}
+          .map((a) => `
+            <label class="civictag-authority-item">
+              <input type="checkbox" data-handle="${a.handle}" checked>
+              <div>
+                <strong>${a.handle}</strong>
+                <small>${escapeHtml(a.name || "")}</small>
+                ${a.note ? `<small class="civictag-note">${escapeHtml(a.note)}</small>` : ""}
+              </div>
+            </label>
+          `)
+          .join("")}
       </div>
     </div>
   `;
 }
 
-function selectedHandles() {
-  if (!sidebar) return [];
-  return Array.from(sidebar.querySelectorAll("input[data-handle]:checked")).map((n) => n.getAttribute("data-handle"));
-}
-
-function selectedHashtags() {
-  if (!sidebar) return [];
-  return Array.from(sidebar.querySelectorAll("input[data-hashtag]:checked")).map((n) => n.getAttribute("data-hashtag"));
-}
-
 function updateCharCount(data) {
   if (!sidebar) return;
-  const useImproved = !!document.getElementById("civictag-use-improved")?.checked;
-  const base = useImproved && data.rewrite?.rewrittenTweet ? data.rewrite.rewrittenTweet : data.tweetText;
-  const extra = [...selectedHandles(), ...selectedHashtags()].join(" ");
-  const full = `${base}\n\n${extra}`.trim();
-  const remaining = 280 - full.length;
-  const el = document.getElementById("civictag-char");
-  if (el) {
-    el.textContent = `${full.length}/280 (${remaining} left)`;
-    el.style.color = remaining < 0 ? "#c62828" : remaining < 20 ? "#f9a825" : "#2e7d32";
-  }
-}
-
-async function insertIntoTweet(data) {
-  const compose = findComposeBox();
-  if (!compose) return;
-
-  const handles = selectedHandles();
-  if (!handles.length) {
-    showNotification("Select at least one authority handle", "warning");
+  if (!isContextValid()) {
+    removeSidebar();
     return;
   }
-
-  const tags = [...handles, ...selectedHashtags()].join(" ");
-  
-  // Get current text from compose box
-  const currentText = getTweetText().trim();
-  
-  // Check if user wants to use improved version
   const useImproved = !!document.getElementById("civictag-use-improved")?.checked;
+  const liveText = getTweetText();
   
-  // Decide which base text to use
-  let baseText = currentText;
-  if (useImproved && data.rewrite?.rewrittenTweet) {
-    baseText = data.rewrite.rewrittenTweet.trim();
+  // Update the original text preview if user has typed something new
+  const textOriginal = document.getElementById("civictag-text-original");
+  if (textOriginal && !useImproved) {
+    textOriginal.textContent = liveText || data.tweetText || "";
   }
-  
-  // Build final text with tags appended
-  const finalText = baseText + "\n\n" + tags;
 
-  // Set the text in the compose box
-  compose.focus();
-  compose.textContent = finalText;
+  const tweetText = (useImproved && data.rewrite?.rewrittenTweet) ? data.rewrite.rewrittenTweet : (liveText || data.tweetText || "");
   
-  // Trigger input event so Twitter recognizes the change
-  compose.dispatchEvent(new Event('input', { bubbles: true }));
+  const selectedHandles = Array.from(sidebar.querySelectorAll("input[data-handle]:checked")).map((n) => n.getAttribute("data-handle"));
+  const selectedHashtags = Array.from(sidebar.querySelectorAll("input[data-hashtag]:checked")).map((n) => n.getAttribute("data-hashtag"));
   
-  // Move cursor to end
-  const selection = window.getSelection();
-  const range = document.createRange();
-  range.selectNodeContents(compose);
-  range.collapse(false);
-  selection.removeAllRanges();
-  selection.addRange(range);
+  const full = buildAndInsertTweet_string(tweetText, selectedHandles, selectedHashtags);
+  const remaining = 280 - full.length;
+  
+  const previewEl = document.getElementById("civictag-full-preview");
+  if (previewEl) {
+    previewEl.textContent = full;
+  }
 
-  const complaintData = {
-    tweetText: baseMessage,
-    category: data.classification.department || "General",
-    urgency: data.classification.urgency || "medium",
-    location: data.location,
-    authorities: handles.map((h) => ({ handle: h })),
-    hashtags: selectedHashtags()
-  };
-
-  await tracker.saveComplaint(complaintData);
-  await spamGuard.recordComplaint(complaintData);
-  showNotification("Complaint logged. We will remind you to follow up in 48hrs", "success");
-  removeSidebar();
+  const charEl = document.getElementById("civictag-char");
+  if (charEl) {
+    charEl.textContent = `${full.length}/280 (${remaining} left)`;
+    charEl.style.color = remaining < 0 ? "#c62828" : remaining < 20 ? "#f9a825" : "#2e7d32";
+  }
 }
 
 function removeSidebar() {
   if (sidebar) {
     sidebar.remove();
     sidebar = null;
+    sidebarData = null;
   }
 }
 
+function showPasteReminder() {
+  // Remove any existing reminder
+  document.getElementById("civictag-paste-reminder")?.remove();
+
+  const banner = document.createElement("div");
+  banner.id = "civictag-paste-reminder";
+  banner.style.cssText = `
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #1d9bf0;
+    color: white;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 999999;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    max-width: 280px;
+    line-height: 1.5;
+    cursor: pointer;
+    animation: civictag-slideup 0.3s ease;
+  `;
+  banner.innerHTML = `
+    <div style="font-size:20px; margin-bottom:6px;">📋 Text Copied!</div>
+    <div>Click in the tweet box, then press</div>
+    <div style="background:rgba(255,255,255,0.2); border-radius:6px; padding:4px 8px; margin-top:6px; font-family:monospace; font-size:16px; text-align:center;">Ctrl + V</div>
+    <div style="margin-top:6px; font-size:12px; opacity:0.8;">Click this banner to dismiss</div>
+  `;
+  banner.addEventListener("click", () => banner.remove());
+  document.body.appendChild(banner);
+
+  // Auto-dismiss after 10 seconds
+  setTimeout(() => {
+    if (banner.parentNode) {
+      banner.style.opacity = "0";
+      banner.style.transition = "opacity 0.4s";
+      setTimeout(() => banner.remove(), 400);
+    }
+  }, 10000);
+}
+
 function showNotification(message, type = "info") {
-  console.log(`CivicTag [${type}]:`, message);
+  const existing = document.querySelector(".civictag-notification");
+  if (existing) existing.remove();
+
+  const n = document.createElement("div");
+  n.className = `civictag-notification civictag-notification-${type}`;
+  
+  let icon = "ℹ️";
+  if (type === "success") icon = "✅";
+  if (type === "warning") icon = "⚠️";
+  if (type === "error") icon = "❌";
+
+  n.innerHTML = `<span style="margin-right:8px;">${icon}</span><span>${message}</span>`;
+  document.body.appendChild(n);
+
+  setTimeout(() => {
+    n.style.opacity = "0";
+    setTimeout(() => n.remove(), 300);
+  }, 4000);
 }
 
 function escapeHtml(value) {
@@ -396,3 +578,211 @@ function escapeHtml(value) {
 }
 
 initialize();
+
+function buildAndInsertTweet_string(tweetText, selectedHandles, selectedHashtags) {
+  if (!tweetText) return "";
+  
+  // USER TEXT FIRST
+  let full = tweetText.trim();
+  
+  // Add mentions AFTER text
+  if (selectedHandles && selectedHandles.length > 0) {
+    full += "\n\n" + selectedHandles.join(" ");
+  }
+  
+  // Add hashtags LAST
+  if (selectedHashtags && selectedHashtags.length > 0) {
+    full += "\n\n" + selectedHashtags.join(" ");
+  }
+  
+  return full.trim();
+}
+
+/**
+ * THE CORE FIX: Insert text into Twitter's React-controlled compose box.
+ * Twitter uses a Draft.js / React contenteditable div.
+ * You CANNOT set .innerText or .value directly — React will overwrite it.
+ * You MUST use document.execCommand('insertText') to fire React's synthetic events.
+ */
+async function insertIntoTwitterComposeBox(fullText) {
+  // Twitter/X uses React + Draft.js.
+  // execCommand("insertText") causes an input event loop — hashtags repeat endlessly.
+  // The ONLY safe method: write to clipboard, then paste.
+  // paste fires React's onPaste which correctly updates Draft.js state ONCE.
+
+  const composeBox =
+    document.querySelector('[data-testid="tweetTextarea_0"]') ||
+    document.querySelector('.public-DraftEditor-content') ||
+    document.querySelector('[contenteditable="true"][role="textbox"]');
+
+  if (!composeBox) {
+    console.error("CivicTag: Compose box not found for insertion");
+    return false;
+  }
+
+  try {
+    // Step 1: Write full tweet to clipboard
+    await navigator.clipboard.writeText(fullText);
+
+    // Step 2: Focus compose box
+    composeBox.focus();
+
+    // Step 3: Wait for React to register focus
+    await new Promise(resolve => setTimeout(resolve, 80));
+
+    // Step 4: Select all existing text in the compose box only
+    const selection = window.getSelection();
+    const range = document.createRange();
+    range.selectNodeContents(composeBox);
+    selection.removeAllRanges();
+    selection.addRange(range);
+
+    // Step 5: Paste — replaces selection with clipboard content
+    // This fires React onPaste exactly once — no loop
+    document.execCommand("paste", false, null);
+
+    return true;
+  } catch (err) {
+    console.warn("CivicTag: Clipboard insert failed", err);
+    return false;
+  }
+}
+
+async function insertAndTrack(data) {
+  if (!isContextValid()) {
+    alert("Extension updated. Please refresh the page.");
+    return;
+  }
+
+  const useImproved = !!document.getElementById("civictag-use-improved")?.checked;
+
+  // Get tweet text — prefer improved if selected, else use original captured text
+  let tweetText = "";
+  if (useImproved && data.rewrite?.rewrittenTweet) {
+    tweetText = data.rewrite.rewrittenTweet.trim();
+  } else {
+    // Use the text that was captured at analysis time (most reliable)
+    // Fall back to live compose box text only if needed
+    const liveText = getTweetText();
+    tweetText = (data.tweetText && data.tweetText.length > 3) ? data.tweetText : liveText;
+    tweetText = tweetText.trim();
+  }
+
+  if (!tweetText || tweetText.length < 3) {
+    showNotification("Could not find your complaint text. Please try again.", "error");
+    return;
+  }
+
+  // Collect only CHECKED handles and hashtags
+  const handles = Array.from(
+    sidebar.querySelectorAll("input[data-handle]:checked")
+  ).map((n) => n.getAttribute("data-handle"));
+
+  const hashtags = Array.from(
+    sidebar.querySelectorAll("input[data-hashtag]:checked")
+  ).map((n) => n.getAttribute("data-hashtag"));
+
+  // Build ONE complete string — never insert in multiple steps
+  const fullTweetString = buildAndInsertTweet_string(tweetText, handles, hashtags);
+
+  // Insert into compose box using the React-safe method (async — clipboard based)
+  const inserted = await insertIntoTwitterComposeBox(fullTweetString);
+
+  if (inserted) {
+    // Track the complaint
+    const complaintData = {
+      tweetText: tweetText,
+      category: data.classification.department || "General",
+      urgency: data.classification.urgency || "medium",
+      location: data.location,
+      authorities: handles.map((h) => ({ handle: h })),
+      hashtags: hashtags
+    };
+
+    if (isContextValid()) {
+      await tracker.saveComplaint(complaintData).catch(() => {});
+      await spamGuard.recordComplaint(complaintData).catch(() => {});
+      showNotification("📋 Copied! Now click in the tweet box and press Ctrl+V (or ⌘V on Mac) to paste.", "success");
+      // Show a persistent paste reminder banner
+      showPasteReminder();
+      removeSidebar();
+    }
+  } else {
+    // Fallback: copy to clipboard if insert failed
+    const copied = await copyToClipboard(fullTweetString);
+    if (copied) {
+      showNotification("Direct insert failed. Text copied — paste it with Ctrl+V.", "warning");
+    } else {
+      showNotification("Insert failed. Please copy the text from the preview above.", "error");
+    }
+  }
+}
+
+async function copyAndTrack(data) {
+  if (!isContextValid()) {
+    alert("Extension updated. Please refresh the page.");
+    return;
+  }
+  const useImproved = !!document.getElementById("civictag-use-improved")?.checked;
+  const liveText = getTweetText();
+  const analysisText = data.tweetText || "";
+  
+  let tweetText = "";
+  if (useImproved && data.rewrite?.rewrittenTweet) {
+    tweetText = data.rewrite.rewrittenTweet.trim();
+  } else {
+    tweetText = (liveText && liveText.length > 5) ? liveText : analysisText;
+  }
+
+  if (!tweetText || tweetText.length < 3) {
+    showNotification("Could not find complaint text to copy.", "error");
+    return;
+  }
+
+  const handles = Array.from(sidebar.querySelectorAll("input[data-handle]:checked")).map((n) => n.getAttribute("data-handle"));
+  const hashtags = Array.from(sidebar.querySelectorAll("input[data-hashtag]:checked")).map((n) => n.getAttribute("data-hashtag"));
+
+  const fullTweetString = buildAndInsertTweet_string(tweetText, handles, hashtags);
+  
+  const success = await copyToClipboard(fullTweetString);
+
+  if (success) {
+    const complaintData = {
+      tweetText: tweetText,
+      category: data.classification.department || "General",
+      urgency: data.classification.urgency || "medium",
+      location: data.location,
+      authorities: handles.map((h) => ({ handle: h })),
+      hashtags: hashtags
+    };
+
+    if (isContextValid()) {
+      await tracker.saveComplaint(complaintData).catch(() => {});
+      await spamGuard.recordComplaint(complaintData).catch(() => {});
+      showNotification("Copied! Now paste (Ctrl+V) it into the tweet box.", "success");
+      removeSidebar();
+    }
+  } else {
+    showNotification("Failed to copy text to clipboard.", "error");
+  }
+}
+
+async function copyToClipboard(text) {
+  try {
+    // Fallback for older browsers or non-secure contexts
+    if (!navigator.clipboard) {
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      const successful = document.execCommand('copy');
+      document.body.removeChild(textArea);
+      return successful;
+    }
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (err) {
+    console.error("CivicTag: Clipboard failed", err);
+    return false;
+  }
+}

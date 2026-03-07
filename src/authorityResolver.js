@@ -15,6 +15,7 @@ class AuthorityResolver {
    * Initialize the resolver by loading all databases
    */
   async initialize() {
+    if (!isContextValid()) return;
     try {
       // Load index
       this.indexDb = await this.loadJson('authority_database/index.json');
@@ -25,13 +26,16 @@ class AuthorityResolver {
       // Pre-load commonly used databases (can lazy-load others)
       const commonStates = ['karnataka', 'maharashtra', 'delhi', 'tamil_nadu', 'uttar_pradesh'];
       for (const state of commonStates) {
+        if (!isContextValid()) break;
         await this.loadStateDatabase(state);
       }
       
       this.initialized = true;
       console.log('CivicTag: Authority databases initialized');
     } catch (error) {
-      console.error('CivicTag: Failed to initialize authority databases', error);
+      if (isContextValid()) {
+        console.error('CivicTag: Failed to initialize authority databases', error);
+      }
     }
   }
 
@@ -39,9 +43,19 @@ class AuthorityResolver {
    * Load JSON file
    */
   async loadJson(path) {
-    const url = chrome.runtime.getURL(path);
-    const response = await fetch(url);
-    return await response.json();
+    if (!isContextValid()) return null;
+    try {
+      const url = chrome.runtime.getURL(path);
+      const response = await fetch(url);
+      return await response.json();
+    } catch (e) {
+      if (e.message && e.message.includes('context invalidated')) {
+        console.warn('CivicTag: Extension context invalidated.');
+      } else if (isContextValid()) {
+        console.error(`CivicTag: Failed to load ${path}`, e);
+      }
+      return null;
+    }
   }
 
   /**
@@ -58,7 +72,9 @@ class AuthorityResolver {
       this.databases[stateFileName] = db;
       return db;
     } catch (error) {
-      console.error(`CivicTag: Failed to load ${stateFileName}`, error);
+      if (isContextValid()) {
+        console.error(`CivicTag: Failed to load ${stateFileName}`, error);
+      }
       return null;
     }
   }
@@ -67,21 +83,23 @@ class AuthorityResolver {
    * Find state file from state name or code
    */
   findStateFile(stateNameOrCode) {
-    if (!this.indexDb) return null;
+    if (!this.indexDb || !stateNameOrCode || typeof stateNameOrCode !== 'string') {
+      return null;
+    }
+
+    const normalized = stateNameOrCode.trim();
+    if (!normalized) return null;
 
     const allRegions = [...this.indexDb.states, ...this.indexDb.union_territories];
     
     const region = allRegions.find(s => 
-      s.name.toLowerCase() === stateNameOrCode.toLowerCase() ||
-      s.code === stateNameOrCode.toUpperCase()
+      s.name.toLowerCase() === normalized.toLowerCase() ||
+      s.code === normalized.toUpperCase()
     );
 
     return region ? region.file.replace('.json', '') : null;
   }
 
-  /**
-   * Resolve authorities for a given complaint
-   */
   /**
    * Normalize freely identified department to canonical category
    */
@@ -133,8 +151,9 @@ class AuthorityResolver {
       'parking': 'traffic', 'vehicle': 'traffic',
       
       // Crime
+      'cyber crime': 'cyber_crime', 'cybercrime': 'cyber_crime',
       'crime': 'crime', 'theft': 'crime', 'harassment': 'crime', 'assault': 'crime',
-      'robbery': 'crime', 'violence': 'crime', 'cyber crime': 'crime', 'cybercrime': 'crime',
+      'robbery': 'crime', 'violence': 'crime',
       
       // Health
       'hospital': 'health', 'health': 'health', 'ambulance': 'health', 
@@ -156,6 +175,8 @@ class AuthorityResolver {
       
       // Railways
       'railway': 'railways', 'train': 'railways', 'station': 'railways',
+      
+      // Transport
       'metro': 'transport', 'metrorail': 'transport',
       
       // Transport (Public)
@@ -178,6 +199,7 @@ class AuthorityResolver {
    * @returns {Array} Array of suggested authority handles
    */
   async resolveAuthorities(classification, location) {
+    if (!isContextValid()) return [];
     if (!classification || !classification.isComplaint) {
       return [];
     }
@@ -190,7 +212,7 @@ class AuthorityResolver {
     // Load state database
     const stateFile = this.findStateFile(location.state);
     if (!stateFile) {
-      console.warn('CivicTag: State not found', location.state);
+      if (isContextValid()) console.warn('CivicTag: State not found', location.state);
       return this.getCentralAuthorityForCategory(category);
     }
 
@@ -213,8 +235,15 @@ class AuthorityResolver {
       case 'sanitation':
         suggestions.push(...this.resolveSanitationAuthorities(stateDb, location));
         break;
+      case 'drainage':
+      case 'flooding':
+        suggestions.push(...this.resolveDrainageAuthorities(stateDb, location));
+        break;
       case 'crime':
         suggestions.push(...this.resolveCrimeAuthorities(stateDb, location));
+        break;
+      case 'cyber_crime':
+        suggestions.push(...this.resolveCyberCrimeAuthorities());
         break;
       case 'pollution':
         suggestions.push(...this.resolvePollutionAuthorities(stateDb, location));
@@ -222,14 +251,32 @@ class AuthorityResolver {
       case 'transport':
         suggestions.push(...this.resolveTransportAuthorities(stateDb, location));
         break;
+      case 'traffic':
+        suggestions.push(...this.resolveTrafficAuthorities(stateDb, location));
+        break;
       case 'health':
         suggestions.push(...this.resolveHealthAuthorities(stateDb, location));
         break;
-      case 'cyber_crime':
-        suggestions.push(...this.resolveCyberCrimeAuthorities());
+      case 'education':
+        suggestions.push(...this.resolveEducationAuthorities(stateDb, location));
         break;
-      case 'flooding':
-        suggestions.push(...this.resolveFloodingAuthorities(stateDb, location));
+      case 'animal_control':
+        suggestions.push(...this.resolveAnimalAuthorities(stateDb, location));
+        break;
+      case 'building_dept':
+        suggestions.push(...this.resolveBuildingAuthorities(stateDb, location));
+        break;
+      case 'vigilance':
+        suggestions.push(...this.resolveVigilanceAuthorities(stateDb, location));
+        break;
+      case 'fire_dept':
+        suggestions.push(...this.resolveFireAuthorities(stateDb, location));
+        break;
+      case 'horticulture':
+        suggestions.push(...this.resolveHorticultureAuthorities(stateDb, location));
+        break;
+      case 'railways':
+        suggestions.push(...this.resolveRailwayAuthorities(stateDb, location));
         break;
       default:
         suggestions.push(...this.resolveGenericAuthorities(stateDb, location));
@@ -383,21 +430,130 @@ class AuthorityResolver {
       });
     } else if (stateDb.roads) {
       const roadAuthority = Object.values(stateDb.roads)[0];
+      if (roadAuthority) {
+        authorities.push({
+          handle: roadAuthority.handle,
+          name: roadAuthority.name,
+          level: 'state',
+          priority: 2
+        });
+      }
+    }
+
+    // NHAI for national highways (from central)
+    if (this.centralDb?.central_government?.nhai) {
       authorities.push({
-        handle: roadAuthority.handle,
-        name: roadAuthority.name,
-        level: 'state',
+        handle: this.centralDb.central_government.nhai.handle,
+        name: this.centralDb.central_government.nhai.name + ' (National Highways)',
+        level: 'central',
+        priority: 3
+      });
+    }
+
+    return authorities;
+  }
+
+  /**
+   * Resolve drainage/flooding authorities
+   */
+  resolveDrainageAuthorities(stateDb, location) {
+    const authorities = [];
+
+    // Municipal corporation
+    if (location.city && stateDb.municipal) {
+      const cityKey = location.city.toLowerCase().replace(/\s+/g, '_');
+      if (stateDb.municipal[cityKey]) {
+        authorities.push({
+          handle: stateDb.municipal[cityKey].handle,
+          name: stateDb.municipal[cityKey].name,
+          level: 'local',
+          priority: 1
+        });
+      }
+    }
+
+    // NDMA for disasters
+    if (this.centralDb?.central_government?.ndma) {
+      authorities.push({
+        handle: this.centralDb.central_government.ndma.handle,
+        name: this.centralDb.central_government.ndma.name,
+        level: 'central',
         priority: 2
       });
     }
 
-    // NHAI for national highways (from central)
-    authorities.push({
-      handle: this.centralDb.central_government.nhai.handle,
-      name: this.centralDb.central_government.nhai.name + ' (National Highways)',
-      level: 'central',
-      priority: 3
-    });
+    return authorities;
+  }
+
+  /**
+   * Resolve animal control authorities
+   */
+  resolveAnimalAuthorities(stateDb, location) {
+    const authorities = [];
+
+    // Municipal corporation (usually handles stray dogs/animals)
+    if (location.city && stateDb.municipal) {
+      const cityKey = location.city.toLowerCase().replace(/\s+/g, '_');
+      if (stateDb.municipal[cityKey]) {
+        authorities.push({
+          handle: stateDb.municipal[cityKey].handle,
+          name: stateDb.municipal[cityKey].name,
+          level: 'local',
+          priority: 1
+        });
+      }
+    }
+
+    // AWBI
+    if (this.centralDb?.central_government?.awbi) {
+      authorities.push({
+        handle: this.centralDb.central_government.awbi.handle,
+        name: this.centralDb.central_government.awbi.name,
+        level: 'central',
+        priority: 2
+      });
+    }
+
+    return authorities;
+  }
+
+  /**
+   * Resolve building/encroachment authorities
+   */
+  resolveBuildingAuthorities(stateDb, location) {
+    const authorities = [];
+
+    // Municipal corporation / Development Authority
+    if (location.city && stateDb.municipal) {
+      const cityKey = location.city.toLowerCase().replace(/\s+/g, '_');
+      if (stateDb.municipal[cityKey]) {
+        authorities.push({
+          handle: stateDb.municipal[cityKey].handle,
+          name: stateDb.municipal[cityKey].name,
+          level: 'local',
+          priority: 1
+        });
+      }
+    }
+
+    return authorities;
+  }
+
+  /**
+   * Resolve education authorities
+   */
+  resolveEducationAuthorities(stateDb, location) {
+    const authorities = [];
+
+    // Education ministry (Central)
+    if (this.centralDb?.central_government?.education_ministry) {
+      authorities.push({
+        handle: this.centralDb.central_government.education_ministry.handle,
+        name: this.centralDb.central_government.education_ministry.name,
+        level: 'central',
+        priority: 2
+      });
+    }
 
     return authorities;
   }
@@ -422,12 +578,14 @@ class AuthorityResolver {
     }
 
     // Swachh Bharat
-    authorities.push({
-      handle: this.centralDb.central_government.swachh_bharat.handle,
-      name: this.centralDb.central_government.swachh_bharat.name,
-      level: 'central',
-      priority: 3
-    });
+    if (this.centralDb?.central_government?.swachh_bharat) {
+      authorities.push({
+        handle: this.centralDb.central_government.swachh_bharat.handle,
+        name: this.centralDb.central_government.swachh_bharat.name,
+        level: 'central',
+        priority: 3
+      });
+    }
 
     return authorities;
   }
@@ -465,26 +623,63 @@ class AuthorityResolver {
   }
 
   /**
+   * Resolve traffic authorities
+   */
+  resolveTrafficAuthorities(stateDb, location) {
+    const authorities = [];
+
+    // City traffic police
+    if (location.city && stateDb.police) {
+      const cityKey = location.city.toLowerCase().replace(/\s+/g, '_') + '_traffic';
+      if (stateDb.police[cityKey]) {
+        authorities.push({
+          handle: stateDb.police[cityKey].handle,
+          name: stateDb.police[cityKey].name,
+          level: 'local',
+          priority: 1
+        });
+      } else {
+        // Fallback to general police
+        const genCityKey = location.city.toLowerCase().replace(/\s+/g, '_');
+        if (stateDb.police[genCityKey]) {
+          authorities.push({
+            handle: stateDb.police[genCityKey].handle,
+            name: stateDb.police[genCityKey].name,
+            level: 'local',
+            priority: 1
+          });
+        }
+      }
+    }
+
+    return authorities;
+  }
+
+  /**
    * Resolve pollution authorities
    */
   resolvePollutionAuthorities(stateDb, location) {
     const authorities = [];
 
     // Central Pollution Control Board
-    authorities.push({
-      handle: this.centralDb.central_government.cpcb.handle,
-      name: this.centralDb.central_government.cpcb.name,
-      level: 'central',
-      priority: 1
-    });
+    if (this.centralDb?.central_government?.cpcb) {
+      authorities.push({
+        handle: this.centralDb.central_government.cpcb.handle,
+        name: this.centralDb.central_government.cpcb.name,
+        level: 'central',
+        priority: 1
+      });
+    }
 
     // Environment ministry
-    authorities.push({
-      handle: this.centralDb.central_government.environment_ministry.handle,
-      name: this.centralDb.central_government.environment_ministry.name,
-      level: 'central',
-      priority: 2
-    });
+    if (this.centralDb?.central_government?.environment_ministry) {
+      authorities.push({
+        handle: this.centralDb.central_government.environment_ministry.handle,
+        name: this.centralDb.central_government.environment_ministry.name,
+        level: 'central',
+        priority: 2
+      });
+    }
 
     return authorities;
   }
@@ -497,12 +692,14 @@ class AuthorityResolver {
 
     if (stateDb.transport) {
       const transportAuthority = Object.values(stateDb.transport)[0];
-      authorities.push({
-        handle: transportAuthority.handle,
-        name: transportAuthority.name,
-        level: 'local',
-        priority: 1
-      });
+      if (transportAuthority) {
+        authorities.push({
+          handle: transportAuthority.handle,
+          name: transportAuthority.name,
+          level: 'local',
+          priority: 1
+        });
+      }
     }
 
     return authorities;
@@ -515,12 +712,14 @@ class AuthorityResolver {
     const authorities = [];
 
     // Health ministry
-    authorities.push({
-      handle: this.centralDb.central_government.health_ministry.handle,
-      name: this.centralDb.central_government.health_ministry.name,
-      level: 'central',
-      priority: 2
-    });
+    if (this.centralDb?.central_government?.health_ministry) {
+      authorities.push({
+        handle: this.centralDb.central_government.health_ministry.handle,
+        name: this.centralDb.central_government.health_ministry.name,
+        level: 'central',
+        priority: 2
+      });
+    }
 
     return authorities;
   }
@@ -529,18 +728,61 @@ class AuthorityResolver {
    * Resolve cyber crime authorities
    */
   resolveCyberCrimeAuthorities() {
-    return [{
-      handle: this.centralDb.central_government.cyber_crime.handle,
-      name: this.centralDb.central_government.cyber_crime.name,
-      level: 'central',
-      priority: 1
-    }];
+    if (this.centralDb?.central_government?.cyber_crime) {
+      return [{
+        handle: this.centralDb.central_government.cyber_crime.handle,
+        name: this.centralDb.central_government.cyber_crime.name,
+        level: 'central',
+        priority: 1
+      }];
+    }
+    return [];
   }
 
   /**
-   * Resolve flooding authorities
+   * Resolve vigilance authorities
    */
-  resolveFloodingAuthorities(stateDb, location) {
+  resolveVigilanceAuthorities(stateDb, location) {
+    const authorities = [];
+
+    if (this.centralDb?.central_government?.vigilance) {
+      authorities.push({
+        handle: this.centralDb.central_government.vigilance.handle,
+        name: this.centralDb.central_government.vigilance.name,
+        level: 'central',
+        priority: 2
+      });
+    }
+
+    return authorities;
+  }
+
+  /**
+   * Resolve fire department authorities
+   */
+  resolveFireAuthorities(stateDb, location) {
+    const authorities = [];
+
+    // Local police/municipal as fire is often under them
+    if (location.city && stateDb.police) {
+      const cityKey = location.city.toLowerCase().replace(/\s+/g, '_');
+      if (stateDb.police[cityKey]) {
+        authorities.push({
+          handle: stateDb.police[cityKey].handle,
+          name: stateDb.police[cityKey].name,
+          level: 'local',
+          priority: 1
+        });
+      }
+    }
+
+    return authorities;
+  }
+
+  /**
+   * Resolve horticulture authorities
+   */
+  resolveHorticultureAuthorities(stateDb, location) {
     const authorities = [];
 
     // Municipal corporation
@@ -556,13 +798,23 @@ class AuthorityResolver {
       }
     }
 
-    // NDMA for disasters
-    authorities.push({
-      handle: this.centralDb.central_government.ndma.handle,
-      name: this.centralDb.central_government.ndma.name,
-      level: 'central',
-      priority: 2
-    });
+    return authorities;
+  }
+
+  /**
+   * Resolve railway authorities
+   */
+  resolveRailwayAuthorities(stateDb, location) {
+    const authorities = [];
+
+    if (this.centralDb?.central_government?.railways) {
+      authorities.push({
+        handle: this.centralDb.central_government.railways.handle,
+        name: this.centralDb.central_government.railways.name,
+        level: 'central',
+        priority: 1
+      });
+    }
 
     return authorities;
   }
@@ -592,6 +844,8 @@ class AuthorityResolver {
    * Get central authority for category
    */
   getCentralAuthorityForCategory(category) {
+    if (!this.centralDb || !this.centralDb.central_government) return [];
+
     const mapping = {
       water: 'water_ministry',
       electricity: 'power_ministry',
@@ -599,7 +853,11 @@ class AuthorityResolver {
       health: 'health_ministry',
       pollution: 'environment_ministry',
       transport: 'road_ministry',
-      cyber_crime: 'cyber_crime'
+      cyber_crime: 'cyber_crime',
+      education: 'education_ministry',
+      railways: 'railways',
+      vigilance: 'vigilance',
+      sanitation: 'swachh_bharat'
     };
 
     const key = mapping[category] || 'grievance_portal';

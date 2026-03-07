@@ -264,8 +264,8 @@
       </div>
 
       <div class="cta">
-        <button class="btn" onclick="openTwitter()">Go to Twitter/X</button>
-        <button class="btn btn-secondary" onclick="openSettings()">Configure Settings</button>
+        <button class="btn">Go to Twitter/X</button>
+        <button class="btn btn-secondary">Configure Settings</button>
       </div>
 
       <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e1e4e8; color: #666; font-size: 14px;">
@@ -285,16 +285,6 @@
     </div>
   </div>
 
-  <script>
-    function openTwitter() {
-      chrome.tabs.create({ url: 'https://twitter.com' });
-      window.close();
-    }
-
-    function openSettings() {
-      const popupPath = chrome.runtime.getURL('popup.html');
-      chrome.tabs.create({ url: popupPath });
-    }
-  </script>
+  <script src="welcome.js"></script>
 </body>
 </html>

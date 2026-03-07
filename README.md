@@ -10,7 +10,7 @@
 ## ✨ Features
 
 ### 🤖 AI-Powered Complaint Detection
-- Uses **Google Gemini AI** to automatically detect civic complaints
+- Uses **Groq API (Llama 3.1)** to automatically detect civic complaints
 - Classifies issues into 10+ categories (water, electricity, roads, crime, etc.)
 - Detects urgency levels and confidence scores
 
@@ -68,22 +68,22 @@
 
 ## ⚙️ Setup
 
-### 1. Get Your Gemini API Key
+### 1. Get Your Groq API Key
 
-CivicTag requires a Google Gemini API key for AI-powered classification:
+CivicTag requires a Groq API key for AI-powered classification:
 
-1. Visit [Google AI Studio](https://aistudio.google.com/app/apikey)
-2. Sign in with your Google account
+1. Visit [Groq Console](https://console.groq.com/keys)
+2. Sign in or create an account
 3. Click **"Create API Key"**
 4. Copy the generated key
 
-**Note:** The Gemini API has a generous free tier. [View pricing](https://ai.google.dev/pricing)
+**Note:** Groq provides high-performance inference with a generous free tier.
 
 ### 2. Configure the Extension
 
 1. Click the **CivicTag** icon in your browser toolbar
 2. Go to the **Settings** tab
-3. Paste your Gemini API key
+3. Paste your Groq API key
 4. Set your default **State** and **City**
 5. Click **Save**
 
@@ -121,7 +121,7 @@ Click the CivicTag icon to view:
 
 ### Settings
 
-- **API Key:** Update your Gemini API key
+- **API Key:** Update your Groq API key
 - **Location:** Set default state and city
 - **Data Management:** Export or clear complaint history
 
@@ -172,7 +172,7 @@ Twitter_Extension/
 ├── popup.js                   # Dashboard logic
 ├── welcome.html               # First-time user guide
 ├── src/
-│   ├── classifier.js          # Gemini AI integration
+│   ├── classifier.js          # Groq AI integration
 │   ├── authorityResolver.js   # Authority resolution logic
 │   ├── locationDetector.js    # Location detection
 │   ├── spamGuard.js          # Spam protection
@@ -189,7 +189,7 @@ Twitter_Extension/
 ### Tech Stack
 
 - **Manifest V3** Chrome Extension API
-- **Google Gemini AI** (gemini-1.5-flash)
+- **Groq API** (llama-3.1-8b-instant)
 - **IndexedDB** for local storage
 - **Vanilla JavaScript** (ES6+)
 - **CSS3** with gradient styling
@@ -309,7 +309,7 @@ Have an idea? [Start a discussion](https://github.com/yourusername/civictag/disc
 
 ## 🙏 Acknowledgments
 
-- **Google Gemini AI** for NLP capabilities
+- **Groq API** for NLP capabilities
 - **Twitter/X** for the platform
 - **Indian Government** for maintaining official handles
 - **Contributors** who verify and update authority data

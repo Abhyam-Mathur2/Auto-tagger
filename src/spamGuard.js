@@ -13,12 +13,26 @@ class SpamGuard {
   }
 
   /**
+   * Helper for safe storage access
+   */
+  async safeGet(keys) {
+    return await safeStorageGet(keys);
+  }
+
+  /**
+   * Helper for safe storage set
+   */
+  async safeSet(data) {
+    return await safeStorageSet(data);
+  }
+
+  /**
    * Check if user can post a complaint (rate limiting)
    * @returns {Object} { allowed: boolean, remaining: number, resetTime: timestamp }
    */
   async checkRateLimit() {
     const now = Date.now();
-    const result = await chrome.storage.local.get(['complaint_history']);
+    const result = await this.safeGet(['complaint_history']);
     const history = result.complaint_history || [];
 
     // Filter complaints within the rate limit window
@@ -60,7 +74,7 @@ class SpamGuard {
     }
 
     const now = Date.now();
-    const result = await chrome.storage.local.get(['complaint_history']);
+    const result = await this.safeGet(['complaint_history']);
     const history = result.complaint_history || [];
 
     // Find similar complaints in the duplicate window
@@ -100,7 +114,7 @@ class SpamGuard {
     const now = Date.now();
     
     // Get community complaints from shared storage (simulated with local for now)
-    const result = await chrome.storage.local.get(['community_complaints']);
+    const result = await this.safeGet(['community_complaints']);
     const communityComplaints = result.community_complaints || [];
 
     // Find similar complaints from different users in consolidation window
@@ -147,7 +161,7 @@ class SpamGuard {
    */
   async checkAuthorityOverload(authorities, category) {
     const now = Date.now();
-    const result = await chrome.storage.local.get(['authority_tag_counts']);
+    const result = await this.safeGet(['authority_tag_counts']);
     const tagCounts = result.authority_tag_counts || {};
 
     const today = new Date().toDateString();
@@ -178,7 +192,7 @@ class SpamGuard {
    * @param {Object} complaint - Complaint data
    */
   async recordComplaint(complaint) {
-    const result = await chrome.storage.local.get(['complaint_history']);
+    const result = await this.safeGet(['complaint_history']);
     const history = result.complaint_history || [];
 
     const record = {
@@ -198,7 +212,7 @@ class SpamGuard {
       history.splice(0, history.length - 100);
     }
 
-    await chrome.storage.local.set({ complaint_history: history });
+    await this.safeSet({ complaint_history: history });
 
     // Also update community complaints (anonymized)
     await this.updateCommunityComplaints(record);
@@ -211,7 +225,7 @@ class SpamGuard {
    * Update community complaints (for consolidation)
    */
   async updateCommunityComplaints(complaint) {
-    const result = await chrome.storage.local.get(['community_complaints']);
+    const result = await this.safeGet(['community_complaints']);
     const communityComplaints = result.community_complaints || [];
 
     // Anonymize complaint
@@ -229,14 +243,14 @@ class SpamGuard {
     const sevenDaysAgo = Date.now() - (7 * 24 * 60 * 60 * 1000);
     const filtered = communityComplaints.filter(c => c.timestamp > sevenDaysAgo);
 
-    await chrome.storage.local.set({ community_complaints: filtered });
+    await this.safeSet({ community_complaints: filtered });
   }
 
   /**
    * Update authority tag counts
    */
   async updateAuthorityTagCounts(authorities, category) {
-    const result = await chrome.storage.local.get(['authority_tag_counts']);
+    const result = await this.safeGet(['authority_tag_counts']);
     const tagCounts = result.authority_tag_counts || {};
 
     const today = new Date().toDateString();
@@ -258,7 +272,7 @@ class SpamGuard {
       }
     }
 
-    await chrome.storage.local.set({ authority_tag_counts: filtered });
+    await this.safeSet({ authority_tag_counts: filtered });
   }
 
   /**
@@ -316,7 +330,7 @@ class SpamGuard {
    * Get user's complaint statistics
    */
   async getStatistics() {
-    const result = await chrome.storage.local.get(['complaint_history']);
+    const result = await this.safeGet(['complaint_history']);
     const history = result.complaint_history || [];
 
     const now = Date.now();

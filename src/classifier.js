@@ -1,6 +1,6 @@
 /**
  * classifier.js
- * Handles complaint detection, classification, and location extraction using Groq API (Llama 3)
+ * Handles complaint detection, classification, and location extraction using Groq API
  * Includes debouncing (1500ms), caching (5 min), and keyword fallback
  */
 
@@ -78,7 +78,7 @@ class ComplaintClassifier {
   }
 
   /**
-   * Classify using Groq API (Llama 3)
+   * Classify using Groq API
    */
   async classifyWithGroq(tweetText) {
     const systemPrompt = `You are a civic complaint classifier for India. Analyze the given tweet and return ONLY a valid JSON object with no explanation, no markdown, no backticks. Return this exact structure:
@@ -111,7 +111,7 @@ Support all Indian languages including Hindi, Tamil, Telugu, Kannada, Malayalam,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        model: 'llama3-8b-8192',
+        model: 'llama-3.1-8b-instant',
         messages: [
           { role: 'system', content: systemPrompt },
           { role: 'user', content: `Classify this tweet: ${tweetText}` }
@@ -134,23 +134,54 @@ Support all Indian languages including Hindi, Tamil, Telugu, Kannada, Malayalam,
     }
 
     const textResponse = data.choices[0].message.content.trim();
+    const classification = this.extractAndParseJSON(textResponse);
     
-    // Parse JSON from response (handle any markdown code blocks if present)
-    let jsonText = textResponse;
-    if (jsonText.startsWith('```json')) {
-      jsonText = jsonText.replace(/```json\n?/g, '').replace(/```\n?/g, '');
-    } else if (jsonText.startsWith('```')) {
-      jsonText = jsonText.replace(/```\n?/g, '');
+    if (!classification) {
+      throw new Error('Could not parse classification JSON from LLM response');
     }
     
-    const classification = JSON.parse(jsonText);
-    
     // Validate confidence threshold
-    if (classification.confidence < 70) {
+    if (classification.confidence < 60) {
       classification.isComplaint = false;
     }
 
     return classification;
+  }
+
+  /**
+   * Robust JSON extraction from LLM response
+   */
+  extractAndParseJSON(text) {
+    if (!text) return null;
+    
+    try {
+      // Direct parse
+      return JSON.parse(text);
+    } catch (e) {
+      // Try to extract from markdown blocks
+      const jsonMatch = text.match(/```json\s*([\s\S]*?)\s*```/) || 
+                        text.match(/```\s*([\s\S]*?)\s*```/);
+      
+      if (jsonMatch && jsonMatch[1]) {
+        try {
+          return JSON.parse(jsonMatch[1].trim());
+        } catch (e2) {}
+      }
+
+      // Try to find the first { and last }
+      const firstBrace = text.indexOf('{');
+      const lastBrace = text.lastIndexOf('}');
+      
+      if (firstBrace !== -1 && lastBrace !== -1) {
+        const candidate = text.substring(firstBrace, lastBrace + 1);
+        try {
+          return JSON.parse(candidate);
+        } catch (e3) {
+          console.error('CivicTag: JSON parsing failed', e3);
+        }
+      }
+    }
+    return null;
   }
 
   /**
@@ -160,28 +191,11 @@ Support all Indian languages including Hindi, Tamil, Telugu, Kannada, Malayalam,
     const text = tweetText.toLowerCase();
     const language = this.detectLanguage(tweetText);
     
-    // Complaint indicators (English + Hindi)
+    // Complaint indicators
     const complaintKeywords = [
-      'no water', 'water supply', 'water crisis', 'water pipeline', 'water leakage',
-      'power cut', 'no electricity', 'no light', 'power outage', 'transformer',
-      'pothole', 'road damage', 'broken road', 'speed breaker',
-      'garbage', 'cleanliness', 'waste', 'waste collection', 'sewage', 'gutter',
-      'theft', 'crime', 'harassment', 'assault', 'accident',
-      'pollution', 'smoke', 'air quality', 'noise pollution',
-      'traffic', 'traffic jam', 'parking', 'accident',
-      'hospital', 'emergency', 'ambulance', 'medicine',
-      'flooding', 'waterlogging', 'rain', 'drainage',
-      'stray', 'dog', 'animal', 'snake',
-      'construction', 'encroachment', 'illegal building',
-      'school', 'college', 'education', 'teacher',
-      'railway', 'station', 'train', 'bus', 'metro',
-      'fire', 'safety', 'hazard',
-      'tree', 'park', 'garden',
-      'corruption', 'bribe',
-      // Hindi keywords
-      'पानी नहीं', 'बिजली नहीं', 'गड्ढा', 'कचरा', 'साफ़-सफाई', 'सड़क',
-      'चोरी', 'अपराध', 'परेशानी', 'समस्या', 'प्रदूषण',
-      'बाढ़', 'ट्रैफिक', 'अस्पताल', 'पेड़', 'आग'
+      'no water', 'paani', 'power cut', 'electricity', 'pothole', 'road', 
+      'garbage', 'waste', 'sewage', 'crime', 'pollution', 'traffic', 
+      'hospital', 'flooding', 'stray', 'construction', 'fire'
     ];
 
     const hasComplaintKeyword = complaintKeywords.some(kw => text.includes(kw));
@@ -191,112 +205,34 @@ Support all Indian languages including Hindi, Tamil, Telugu, Kannada, Malayalam,
         isComplaint: false,
         confidence: 30,
         department: null,
-        subDepartment: null,
         urgency: 'low',
-        locationMentioned: null,
-        language: language,
-        suggestedHandles: [],
-        reasoning: 'No complaint indicators found'
+        language: language
       };
     }
-
-    // Determine department
-    let department = 'General';
-    
-    if (text.match(/water|पानी|जल|नल|वाटर/i)) department = 'Water Supply';
-    else if (text.match(/electricity|power|light|बिजली|करंट|लाइट/i)) department = 'Electricity';
-    else if (text.match(/road|pothole|गड्ढा|सड़क|हाईवे|मार्ग/i)) department = 'Roads & Potholes';
-    else if (text.match(/garbage|cleanliness|sanitation|सफाई|कचरा|कूड़ा|स्वच्छता/i)) department = 'Sanitation';
-    else if (text.match(/crime|theft|robbery|harassment|चोरी|अपराध/i)) department = 'Crime';
-    else if (text.match(/pollution|smoke|air quality|प्रदूषण|धुआं/i)) department = 'Pollution';
-    else if (text.match(/transport|bus|metro|train|सार्वजनिक परिवहन/i)) department = 'Public Transport';
-    else if (text.match(/hospital|health|doctor|emergency|अस्पताल/i)) department = 'Hospital/Health';
-    else if (text.match(/flood|waterlog|rain|बाढ़|जलभराव|बारिश/i)) department = 'Drainage';
-    else if (text.match(/stray|dog|animal|street animals|आवारा/i)) department = 'Animal Control';
-    else if (text.match(/construction|encroachment|illegal|निर्माण/i)) department = 'Building Department';
-    else if (text.match(/traffic|signal|parking|ट्रैफिक/i)) department = 'Traffic Management';
-
-    // Detect urgency
-    let urgency = 'medium';
-    if (text.match(/emergency|urgent|immediate|critical|since \d+ days|for \d+ days|दिन|तुरंत/i)) {
-      urgency = 'critical';
-    } else if (text.match(/no water|no electricity|no light|complete|total|नहीं|बंद|पूरा/i)) {
-      urgency = 'high';
-    }
-
-    // Basic location extraction
-    const locationMentioned = this.extractLocationKeywords(tweetText);
 
     return {
       isComplaint: true,
       confidence: 75,
-      department: department,
-      subDepartment: null,
-      urgency: urgency,
-      locationMentioned: locationMentioned,
+      department: 'General',
+      urgency: 'medium',
       language: language,
-      suggestedHandles: [],
-      reasoning: 'Complaint detected via keyword matching'
+      reasoning: 'Detected via keywords'
     };
-  }
-
-  /**
-   * Extract location from text using keywords
-   */
-  extractLocationKeywords(text) {
-    const majorCities = {
-      'bangalore': 'Bangalore', 'bengaluru': 'Bangalore',
-      'mumbai': 'Mumbai',
-      'delhi': 'Delhi',
-      'chennai': 'Chennai',
-      'kolkata': 'Kolkata',
-      'hyderabad': 'Hyderabad',
-      'pune': 'Pune',
-      'ahmedabad': 'Ahmedabad',
-      'jaipur': 'Jaipur',
-      'lucknow': 'Lucknow',
-      'surat': 'Surat',
-      'kanpur': 'Kanpur',
-      'nagpur': 'Nagpur',
-      'visakhapatnam': 'Visakhapatnam',
-      'ghaziabad': 'Ghaziabad',
-      'noida': 'Noida',
-      'indirapuram': 'Indirapuram'
-    };
-
-    const lowerText = text.toLowerCase();
-    for (const [key, city] of Object.entries(majorCities)) {
-      if (lowerText.includes(key)) {
-        return city;
-      }
-    }
-    
-    return null;
   }
 
   /**
    * Detect language of text
    */
   detectLanguage(text) {
-    // Simple language detection based on script
     if (/[\u0900-\u097F]/.test(text)) return 'hindi';
-    if (/[\u0C00-\u0C7F]/.test(text)) return 'telugu';
-    if (/[\u0B80-\u0BFF]/.test(text)) return 'tamil';
-    if (/[\u0C80-\u0CFF]/.test(text)) return 'kannada';
-    if (/[\u0A80-\u0AFF]/.test(text)) return 'gujarati';
-    if (/[\u0A00-\u0A7F]/.test(text)) return 'punjabi';
-    if (/[\u0B00-\u0B7F]/.test(text)) return 'oriya';
-    if (/[\u0D00-\u0D7F]/.test(text)) return 'malayalam';
-    // Hinglish detection (mix of Hindi and English)
-    if (/[\u0900-\u097F]/.test(text) && /[a-zA-Z]/.test(text)) return 'hinglish';
     return 'english';
   }
 
   /**
-   * Cache management
+   * Cache management - UTF-8 safe
    */
   getCacheKey(text) {
-    return btoa(text.substring(0, 100)).substring(0, 32);
+    return text.substring(0, 150);
   }
 
   getFromCache(key) {
@@ -309,27 +245,14 @@ Support all Indian languages including Hindi, Tamil, Telugu, Kannada, Malayalam,
   }
 
   saveToCache(key, data) {
-    this.cache.set(key, {
-      data,
-      timestamp: Date.now()
-    });
-
-    // Limit cache size to 100 entries
+    this.cache.set(key, { data, timestamp: Date.now() });
     if (this.cache.size > 100) {
       const firstKey = this.cache.keys().next().value;
       this.cache.delete(firstKey);
     }
   }
-
-  /**
-   * Clear cache
-   */
-  clearCache() {
-    this.cache.clear();
-  }
 }
 
-// Export for use in other modules
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = ComplaintClassifier;
 }

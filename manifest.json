@@ -28,6 +28,7 @@
     {
       "matches": ["https://twitter.com/*", "https://x.com/*"],
       "js": [
+        "src/utils.js",
         "src/tracker.js",
         "src/locationDetector.js",
         "src/classifier.js",
