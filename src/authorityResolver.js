@@ -305,13 +305,11 @@ class AuthorityResolver {
   }
 
   /**
-   * Groq-powered live lookup for LOCAL authority (ward, city body, commissioner).
-   * Called when the static DB has no record for this city.
+   * Backend-powered live lookup for LOCAL authority (ward, city body, commissioner).
    * Results cached 24h in chrome.storage.local.
    */
   async resolveLocalAuthorityViaGroq(category, location) {
     if (!location.city && !location.state) return null;
-    if (typeof safeStorageGet !== 'function') return null;
 
     const safeSlug = s => (s||'').toLowerCase().replace(/[^a-z0-9]/g,'_');
     const cacheKey = `dynhandle_local_${safeSlug(category)}_${safeSlug(location.city||location.state)}`;
@@ -326,57 +324,30 @@ class AuthorityResolver {
       }
     } catch {}
 
-    // Groq call
+    // Call backend
     try {
-      const { groqApiKey: apiKey } = await safeStorageGet(['groqApiKey']);
-      if (!apiKey) return null;
-
-      const categoryLabels = {
-        water:'water supply / municipal water board', electricity:'electricity DISCOM / power board',
-        roads:'municipal roads / public works department (PWD)', sanitation:'garbage collection / sanitation / solid waste management',
-        drainage:'stormwater drainage', traffic:'traffic police',
-        crime:'city police commissioner / local police station', animal_control:'stray animal control (municipal)',
-        building_dept:'building permissions / illegal construction enforcement', fire_dept:'fire department / fire station',
-        horticulture:'parks and horticulture department', transport:'local public transport authority',
-        health:'district health officer / CMO', education:'district education officer (DEO)', general:'municipal corporation'
-      };
-      const label = categoryLabels[category] || category;
-      const place = location.city ? `${location.city}, ${location.state||'India'}` : (location.state || 'India');
-
-      const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      const backendUrl = (typeof CIVICTAG_CONFIG !== 'undefined' ? CIVICTAG_CONFIG.BACKEND_URL : 'https://civictag-api.vercel.app');
+      const res = await fetch(`${backendUrl}/api/local-authority`, {
         method: 'POST',
-        headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'llama-3.1-8b-instant', temperature: 0, max_tokens: 120,
-          messages: [
-            { role: 'system', content: 'You are an expert on Indian local government Twitter/X accounts. Return ONLY valid JSON: {"handle":"@handle","name":"Authority Name","confidence":0-100}. If confidence < 75, return {"handle":null,"confidence":0}. No markdown. No explanation.' },
-            { role: 'user', content: `What is the official Twitter/X handle of the LOCAL body responsible for ${label} in ${place}? Answer with the MOST LOCAL body (ward office, city corporation, zonal authority) — NOT the CM, state ministry, or central government.` }
-          ]
-        })
+        headers: { 'Content-Type': 'application/json', 'X-CivicTag-Client': '1' },
+        body: JSON.stringify({ category, city: location.city || null, state: location.state || null })
       });
 
       if (!res.ok) return null;
       const data = await res.json();
-      const text = (data?.choices?.[0]?.message?.content || '').trim();
-      let parsed = null;
-      try { parsed = JSON.parse(text); } catch {
-        const m = text.match(/\{[\s\S]+?\}/); if (m) try { parsed = JSON.parse(m[0]); } catch {}
-      }
 
-      if (!parsed?.handle || !parsed.handle.startsWith('@') || (parsed.confidence||0) < 75) return null;
+      if (!data?.handle || !data.handle.startsWith('@') || (data.confidence||0) < 75) return null;
 
-      // Cache result
-      const entry = { handle: parsed.handle, name: parsed.name || label, confidence: parsed.confidence, cachedAt: Date.now(), expiresAt: Date.now() + 86400000 };
-      await safeStorageSet({ [cacheKey]: entry }).catch(() => {});
+      // Cache for 24h
+      await safeStorageSet({ [cacheKey]: { handle: data.handle, name: data.name, confidence: data.confidence, cachedAt: Date.now(), expiresAt: Date.now() + 86400000 } }).catch(() => {});
 
-      return { handle: parsed.handle, name: parsed.name || label, level: 'local', priority: 1,
-        isDynamic: true, isStale: false, dynamicConfidence: parsed.confidence };
+      return { handle: data.handle, name: data.name || category, level: 'local', priority: 1,
+        isDynamic: true, isStale: false, dynamicConfidence: data.confidence };
     } catch (err) {
-      console.warn('CivicTag: Groq local lookup failed', err);
+      console.warn('CivicTag: local-authority backend call failed', err);
       return null;
     }
   }
-
   /**
    * Central-only railway authority resolution (used by TIER 0 and state fallback)
    */

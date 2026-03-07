@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "CivicTag - Smart Authority Tagger",
-  "version": "2.0.0",
-  "description": "Automatically tag the right Indian government authorities for your civic complaints on Twitter/X",
+  "version": "2.1.0",
+  "description": "Tag the right Indian government authorities for civic complaints on Twitter/X. Powered by AI. No API key needed.",
   "icons": {
     "16": "assets/icon16.png",
     "48": "assets/icon48.png",
@@ -18,7 +18,7 @@
   "host_permissions": [
     "https://twitter.com/*",
     "https://x.com/*",
-    "https://api.groq.com/*",
+    "https://civictag-api.vercel.app/*",
     "https://nominatim.openstreetmap.org/*"
   ],
   "background": {
@@ -29,6 +29,7 @@
       "matches": ["https://twitter.com/*", "https://x.com/*"],
       "js": [
         "src/utils.js",
+        "src/config.js",
         "src/tracker.js",
         "src/locationDetector.js",
         "src/dynamicResolver.js",

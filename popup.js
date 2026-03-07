@@ -51,8 +51,7 @@ function setupEventListeners() {
     showNotification("Data refreshed", "success");
   });
 
-  byId("save-api-key")?.addEventListener("click", saveApiKey);
-  byId("test-connection")?.addEventListener("click", testGroqConnection);
+  byId("test-connection")?.addEventListener("click", testBackendConnection);
   byId("save-location")?.addEventListener("click", saveLocation);
   byId("use-current-location")?.addEventListener("click", useCurrentLocation);
   byId("save-preferences")?.addEventListener("click", savePreferences);
@@ -110,7 +109,6 @@ async function loadComplaints() {
 
 async function loadSettings() {
   const result = await chrome.storage.local.get([
-    "groqApiKey",
     "userState",
     "userCity",
     "userDistrict",
@@ -118,10 +116,6 @@ async function loadSettings() {
     "enable48hReminder",
     "enable7dReminder"
   ]);
-
-  if (result.groqApiKey && byId("api-key")) {
-    byId("api-key").placeholder = "••••••••••••••••";
-  }
 
   const stateSelect = byId("default-state");
   if (stateSelect) {
@@ -156,40 +150,28 @@ function updateCityOptions(state) {
   }
 }
 
-async function saveApiKey() {
-  const apiKey = byId("api-key")?.value.trim();
-  if (!apiKey) {
-    showNotification("Please enter Groq API key", "warning");
-    return;
-  }
-  await chrome.storage.local.set({ groqApiKey: apiKey });
-  byId("api-key").value = "";
-  byId("api-key").placeholder = "••••••••••••••••";
-  showNotification("Groq API key saved", "success");
-}
-
-async function testGroqConnection() {
-  const apiKey = byId("api-key")?.value.trim();
-  if (!apiKey) {
-    showNotification("Enter key first", "warning");
-    return;
-  }
+async function testBackendConnection() {
+  const btn = byId("test-connection");
+  const statusDiv = byId("backend-status");
+  if (btn) { btn.textContent = "Testing…"; btn.disabled = true; }
   try {
-    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+    const backendUrl = (typeof CIVICTAG_CONFIG !== 'undefined' ? CIVICTAG_CONFIG.BACKEND_URL : 'https://civictag-api.vercel.app');
+    const response = await fetch(`${backendUrl}/api/classify`, {
       method: "POST",
-      headers: {
-        "Authorization": `Bearer ${apiKey}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        model: "llama-3.1-8b-instant",
-        max_tokens: 6,
-        messages: [{ role: "user", content: "Reply OK" }]
-      })
+      headers: { "Content-Type": "application/json", "X-CivicTag-Client": "1" },
+      body: JSON.stringify({ tweetText: "Test connection" })
     });
-    showNotification(response.ok ? "Connection OK" : "Connection failed", response.ok ? "success" : "error");
-  } catch {
-    showNotification("Connection failed", "error");
+    if (response.ok || response.status === 400) {
+      showNotification("✅ Backend is reachable!", "success");
+      if (statusDiv) statusDiv.innerHTML = "<strong>✅ Connected — backend is online!</strong><br>CivicTag AI is ready.";
+    } else {
+      showNotification(`Backend returned ${response.status}`, "warning");
+    }
+  } catch (err) {
+    showNotification("❌ Could not reach backend", "error");
+    if (statusDiv) statusDiv.innerHTML = "<strong>❌ Backend unreachable</strong><br>Check your internet connection.";
+  } finally {
+    if (btn) { btn.textContent = "Test Connection"; btn.disabled = false; }
   }
 }
 

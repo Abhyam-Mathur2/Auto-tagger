@@ -196,13 +196,12 @@ async function runFullFlow(tweetText) {
     }
 
     // STEP 3: Location detection
-    const groqApiKey = await getSafeStorage("groqApiKey");
     const enableTweetRewriter = await getSafeStorage("enableTweetRewriter");
     if (!isContextValid()) return;
 
     let location = { city: null, state: null, source: "none" };
     try {
-      const detected = await locationDetector.detectLocation(tweetText, groqApiKey);
+      const detected = await locationDetector.detectLocation(tweetText, null);
       if (!isContextValid()) return;
       if (detected) {
         location = {
@@ -238,11 +237,11 @@ async function runFullFlow(tweetText) {
       spamGuard.checkDuplicate(classification.department, location).catch(e => { console.error("SpamGuard checkDuplicate failed", e); return { isDuplicate: false }; }),
       spamGuard.checkConsolidation(classification.department, location).catch(e => { console.error("SpamGuard checkConsolidation failed", e); return { shouldConsolidate: false }; }),
       spamGuard.checkAuthorityOverload(authorities, classification.department).catch(e => { console.error("SpamGuard checkAuthorityOverload failed", e); return { hasOverload: false }; }),
-      (enableTweetRewriter === false || !groqApiKey)
+      (enableTweetRewriter === false)
         ? Promise.resolve(null)
         : (async () => {
             const { preferredTweetLanguage } = await safeStorageGet(["preferredTweetLanguage"]).catch(() => ({}));
-            return tweetRewriter.rewrite(tweetText, classification, location, groqApiKey, preferredTweetLanguage || 'auto')
+            return tweetRewriter.rewrite(tweetText, classification, location, null, preferredTweetLanguage || 'auto')
               .catch(e => { console.error("TweetRewriter rewrite failed", e); return null; });
           })()
     ]);

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CivicTag Dashboard</title>
+  <meta name="version" content="2.1.0">
   <style>
     * {
       margin: 0;
@@ -377,14 +378,12 @@
     <!-- Settings Tab -->
     <div class="tab-content" id="settings-tab">
       <div class="settings-section">
-        <h3>API Configuration</h3>
-        <div class="form-group">
-          <label for="api-key">Groq API Key</label>
-          <input type="password" id="api-key" placeholder="Enter your Groq API key">
-          <div class="form-hint">Get your free API key from <a href="https://console.groq.com/keys" target="_blank">Groq Console</a></div>
+        <h3>🤖 AI Service</h3>
+        <div class="notification info" id="backend-status" style="margin-bottom:12px;">
+          <strong>✅ Ready — no API key needed!</strong><br>
+          CivicTag uses a shared AI backend so you can start tagging complaints immediately.
         </div>
-        <button class="btn btn-secondary" id="test-connection">Test Connection</button>
-        <button class="btn btn-primary" id="save-api-key" style="margin-top: 8px;">Save API Key</button>
+        <button class="btn btn-secondary" id="test-connection" style="width:100%;">Test Connection</button>
       </div>
 
       <div class="settings-section">
@@ -434,9 +433,9 @@
       <div class="settings-section">
         <h3>About</h3>
         <p style="font-size: 13px; line-height: 1.5; color: #536471;">
-          <strong>CivicTag v2.0.0</strong><br>
+          <strong>CivicTag v2.1.0</strong><br>
           Empowering citizens to hold authorities accountable.<br>
-          <a href="https://github.com/YOUR_USERNAME/civictag" target="_blank">GitHub</a> | 
+          <a href="https://github.com/YOUR_USERNAME/civictag" target="_blank">GitHub</a> |
           <a href="#" id="report-issue">Report Issue</a>
         </p>
       </div>
@@ -444,6 +443,7 @@
   </div>
 
   <script src="src/utils.js"></script>
+  <script src="src/config.js"></script>
   <script src="src/classifier.js"></script>
   <script src="src/authorityResolver.js"></script>
   <script src="src/locationDetector.js"></script>
