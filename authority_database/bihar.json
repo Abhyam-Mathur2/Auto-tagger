@@ -1,183 +1,185 @@
 {
-    "state_code":  "BR",
-    "state_name":  "Bihar",
-    "cm":  {
-               "handle":  "@NitishKumar",
-               "name":  "Chief Minister",
-               "verified":  true,
-               "last_checked":  "2026-03-01",
-               "source_url":  "https://twitter.com/NitishKumar"
-           },
-    "police":  {
-                   "state":  {
-                                 "handle":  "@BiharPolice",
-                                 "name":  "Bihar Police",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-01",
-                                 "source_url":  "https://twitter.com/BiharPolice"
-                             }
-               },
-    "electricity":  {
-                        "bsphcl":  {
-                                       "handle":  "@BSPHCL_HQ",
-                                       "name":  "Bihar State Power Holding Company Limited",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-01",
-                                       "source_url":  "https://twitter.com/BSPHCL_HQ"
-                                   }
-                    },
-    "water":  {
-                  "phed":  {
-                               "handle":  "@PHED_Bihar",
-                               "name":  "Public Health Engineering Department",
-                               "verified":  true,
-                               "last_checked":  "2026-03-01",
-                               "source_url":  "https://twitter.com/PHED_Bihar"
-                           }
-              },
-    "municipal":  {
-                      "patna":  {
-                                    "handle":  "@PMCPatna",
-                                    "name":  "Patna Municipal Corporation",
-                                    "city":  "Patna",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-01",
-                                    "source_url":  "https://twitter.com/PMCPatna"
-                                }
-                  },
-    "roads":  {
-                  "state":  {
-                                "handle":  "@PMCPatna",
-                                "name":  "Patna Municipal Corporation (roads)",
-                                "verified":  true,
-                                "last_checked":  "2026-03-06",
-                                "source_url":  "https://twitter.com/PMCPatna"
-                            }
-              },
-    "sanitation":  {
-                       "state":  {
-                                     "handle":  "@PMCPatna",
-                                     "name":  "Patna Municipal Corporation (sanitation)",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-06",
-                                     "source_url":  "https://twitter.com/PMCPatna"
-                                 }
-                   },
-    "animal_control":  {
-                           "state":  {
-                                         "handle":  "@PMCPatna",
-                                         "name":  "Patna Municipal Corporation (animal_control)",
-                                         "verified":  true,
-                                         "last_checked":  "2026-03-06",
-                                         "source_url":  "https://twitter.com/PMCPatna"
-                                     }
-                       },
-    "building_dept":  {
-                          "state":  {
-                                        "handle":  "@PMCPatna",
-                                        "name":  "Patna Municipal Corporation (building_dept)",
-                                        "verified":  true,
-                                        "last_checked":  "2026-03-06",
-                                        "source_url":  "https://twitter.com/PMCPatna"
-                                    }
-                      },
-    "drainage":  {
-                     "state":  {
-                                   "handle":  "@PMCPatna",
-                                   "name":  "Patna Municipal Corporation (drainage)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/PMCPatna"
-                               }
-                 },
-    "pollution":  {
-                      "state":  {
-                                    "handle":  "@PMCPatna",
-                                    "name":  "Patna Municipal Corporation (pollution)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/PMCPatna"
-                                }
-                  },
-    "traffic":  {
-                    "state":  {
-                                  "handle":  "@PMCPatna",
-                                  "name":  "Patna Municipal Corporation (traffic)",
-                                  "verified":  true,
-                                  "last_checked":  "2026-03-06",
-                                  "source_url":  "https://twitter.com/PMCPatna"
-                              }
-                },
-    "health":  {
-                   "state":  {
-                                 "handle":  "@PMCPatna",
-                                 "name":  "Patna Municipal Corporation (health)",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-06",
-                                 "source_url":  "https://twitter.com/PMCPatna"
-                             }
-               },
-    "education":  {
-                      "state":  {
-                                    "handle":  "@PMCPatna",
-                                    "name":  "Patna Municipal Corporation (education)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/PMCPatna"
-                                }
-                  },
-    "vigilance":  {
-                      "state":  {
-                                    "handle":  "@PMCPatna",
-                                    "name":  "Patna Municipal Corporation (vigilance)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/PMCPatna"
-                                }
-                  },
-    "fire_dept":  {
-                      "state":  {
-                                    "handle":  "@PMCPatna",
-                                    "name":  "Patna Municipal Corporation (fire_dept)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/PMCPatna"
-                                }
-                  },
-    "horticulture":  {
-                         "state":  {
-                                       "handle":  "@PMCPatna",
-                                       "name":  "Patna Municipal Corporation (horticulture)",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-06",
-                                       "source_url":  "https://twitter.com/PMCPatna"
-                                   }
-                     },
-    "railways":  {
-                     "state":  {
-                                   "handle":  "@PMCPatna",
-                                   "name":  "Patna Municipal Corporation (railways)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/PMCPatna"
-                               }
-                 },
-    "transport":  {
-                      "state":  {
-                                    "handle":  "@PMCPatna",
-                                    "name":  "Patna Municipal Corporation (transport)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/PMCPatna"
-                                }
-                  },
-    "municipal_general":  {
-                              "state":  {
-                                            "handle":  "@PMCPatna",
-                                            "name":  "Patna Municipal Corporation (municipal_general)",
-                                            "verified":  true,
-                                            "last_checked":  "2026-03-06",
-                                            "source_url":  "https://twitter.com/PMCPatna"
-                                        }
-                          }
+    "state_code": "BR",
+    "state_name": "Bihar",
+    "cm": {
+        "handle": "@NitishKumar",
+        "name": "Chief Minister",
+        "verified": true,
+        "last_checked": "2026-03-01",
+        "source_url": "https://twitter.com/NitishKumar",
+        "dynamic": true,
+        "role_key": "cm"
+    },
+    "police": {
+        "state": {
+            "handle": "@BiharPolice",
+            "name": "Bihar Police",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/BiharPolice"
+        }
+    },
+    "electricity": {
+        "bsphcl": {
+            "handle": "@BSPHCL_HQ",
+            "name": "Bihar State Power Holding Company Limited",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/BSPHCL_HQ"
+        }
+    },
+    "water": {
+        "phed": {
+            "handle": "@PHED_Bihar",
+            "name": "Public Health Engineering Department",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/PHED_Bihar"
+        }
+    },
+    "municipal": {
+        "patna": {
+            "handle": "@PMCPatna",
+            "name": "Patna Municipal Corporation",
+            "city": "Patna",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/PMCPatna"
+        }
+    },
+    "roads": {
+        "state": {
+            "handle": "@PMCPatna",
+            "name": "Patna Municipal Corporation (roads)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/PMCPatna"
+        }
+    },
+    "sanitation": {
+        "state": {
+            "handle": "@PMCPatna",
+            "name": "Patna Municipal Corporation (sanitation)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/PMCPatna"
+        }
+    },
+    "animal_control": {
+        "state": {
+            "handle": "@PMCPatna",
+            "name": "Patna Municipal Corporation (animal_control)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/PMCPatna"
+        }
+    },
+    "building_dept": {
+        "state": {
+            "handle": "@PMCPatna",
+            "name": "Patna Municipal Corporation (building_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/PMCPatna"
+        }
+    },
+    "drainage": {
+        "state": {
+            "handle": "@PMCPatna",
+            "name": "Patna Municipal Corporation (drainage)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/PMCPatna"
+        }
+    },
+    "pollution": {
+        "state": {
+            "handle": "@PMCPatna",
+            "name": "Patna Municipal Corporation (pollution)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/PMCPatna"
+        }
+    },
+    "traffic": {
+        "state": {
+            "handle": "@PMCPatna",
+            "name": "Patna Municipal Corporation (traffic)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/PMCPatna"
+        }
+    },
+    "health": {
+        "state": {
+            "handle": "@PMCPatna",
+            "name": "Patna Municipal Corporation (health)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/PMCPatna"
+        }
+    },
+    "education": {
+        "state": {
+            "handle": "@PMCPatna",
+            "name": "Patna Municipal Corporation (education)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/PMCPatna"
+        }
+    },
+    "vigilance": {
+        "state": {
+            "handle": "@PMCPatna",
+            "name": "Patna Municipal Corporation (vigilance)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/PMCPatna"
+        }
+    },
+    "fire_dept": {
+        "state": {
+            "handle": "@PMCPatna",
+            "name": "Patna Municipal Corporation (fire_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/PMCPatna"
+        }
+    },
+    "horticulture": {
+        "state": {
+            "handle": "@PMCPatna",
+            "name": "Patna Municipal Corporation (horticulture)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/PMCPatna"
+        }
+    },
+    "railways": {
+        "state": {
+            "handle": "@PMCPatna",
+            "name": "Patna Municipal Corporation (railways)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/PMCPatna"
+        }
+    },
+    "transport": {
+        "state": {
+            "handle": "@PMCPatna",
+            "name": "Patna Municipal Corporation (transport)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/PMCPatna"
+        }
+    },
+    "municipal_general": {
+        "state": {
+            "handle": "@PMCPatna",
+            "name": "Patna Municipal Corporation (municipal_general)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/PMCPatna"
+        }
+    }
 }

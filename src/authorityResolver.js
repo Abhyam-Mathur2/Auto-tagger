@@ -198,108 +198,195 @@ class AuthorityResolver {
    * @param {Object} location - Resolved location {state, city, district, zone}
    * @returns {Array} Array of suggested authority handles
    */
+  /**
+   * Determine which categories are eligible for CM escalation.
+   * Categories inherently handled elsewhere (cyber_crime, railways) or
+   * that go straight to central (health, education, vigilance, pollution)
+   * are excluded so CM is not tagged unnecessarily.
+   */
+  _cmEligibleCategories() {
+    return ['water','electricity','roads','sanitation','drainage','flooding',
+            'crime','traffic','animal_control','building_dept','fire_dept',
+            'horticulture','transport','general'];
+  }
+
   async resolveAuthorities(classification, location) {
     if (!isContextValid()) return [];
-    if (!classification || !classification.isComplaint) {
-      return [];
-    }
+    if (!classification || !classification.isComplaint) return [];
 
     const suggestions = [];
-    const department = classification.department || 'General';
-    const category = this.normalizeDepartment(department);
-    const urgency = classification.urgency;
+    const category  = this.normalizeDepartment(classification.department || 'General');
+    const urgency   = classification.urgency;
 
-    // Load state database
+    // ── TIER 0: Inherently-central categories — bypass state DB ──────────────
+    if (category === 'cyber_crime') {
+      return this.prioritizeAndDeduplicate(this.resolveCyberCrimeAuthorities());
+    }
+    if (category === 'railways') {
+      return this.prioritizeAndDeduplicate(this.resolveRailwayAuthoritiesCentral());
+    }
+
+    // ── Load state DB ─────────────────────────────────────────────────────────
     const stateFile = this.findStateFile(location.state);
-    if (!stateFile) {
-      if (isContextValid()) console.warn('CivicTag: State not found', location.state);
-      return this.getCentralAuthorityForCategory(category);
+    const stateDb   = stateFile ? await this.loadStateDatabase(stateFile) : null;
+
+    if (!stateFile || !stateDb) {
+      // Unknown state — ask Groq for the local authority, then fall back to central
+      const groqLocal = await this.resolveLocalAuthorityViaGroq(category, location);
+      if (groqLocal) suggestions.push(groqLocal);
+      if (suggestions.length === 0 || urgency === 'critical') {
+        suggestions.push(...(await this.getCentralAuthorityForCategory(category)));
+      }
+      return this.prioritizeAndDeduplicate(suggestions);
     }
 
-    const stateDb = await this.loadStateDatabase(stateFile);
-    if (!stateDb) {
-      return this.getCentralAuthorityForCategory(category);
-    }
-
-    // Resolve based on category
+    // ── TIER 1: Category-specific LOCAL resolution ────────────────────────────
     switch (category) {
-      case 'water':
-        suggestions.push(...this.resolveWaterAuthorities(stateDb, location));
-        break;
-      case 'electricity':
-        suggestions.push(...this.resolveElectricityAuthorities(stateDb, location));
-        break;
-      case 'roads':
-        suggestions.push(...this.resolveRoadAuthorities(stateDb, location));
-        break;
-      case 'sanitation':
-        suggestions.push(...this.resolveSanitationAuthorities(stateDb, location));
-        break;
+      case 'water':          suggestions.push(...this.resolveWaterAuthorities(stateDb, location));       break;
+      case 'electricity':    suggestions.push(...this.resolveElectricityAuthorities(stateDb, location)); break;
+      case 'roads':          suggestions.push(...this.resolveRoadAuthorities(stateDb, location));        break;
+      case 'sanitation':     suggestions.push(...this.resolveSanitationAuthorities(stateDb, location));  break;
       case 'drainage':
-      case 'flooding':
-        suggestions.push(...this.resolveDrainageAuthorities(stateDb, location));
-        break;
-      case 'crime':
-        suggestions.push(...this.resolveCrimeAuthorities(stateDb, location));
-        break;
-      case 'cyber_crime':
-        suggestions.push(...this.resolveCyberCrimeAuthorities());
-        break;
-      case 'pollution':
-        suggestions.push(...this.resolvePollutionAuthorities(stateDb, location));
-        break;
-      case 'transport':
-        suggestions.push(...this.resolveTransportAuthorities(stateDb, location));
-        break;
-      case 'traffic':
-        suggestions.push(...this.resolveTrafficAuthorities(stateDb, location));
-        break;
-      case 'health':
-        suggestions.push(...this.resolveHealthAuthorities(stateDb, location));
-        break;
-      case 'education':
-        suggestions.push(...this.resolveEducationAuthorities(stateDb, location));
-        break;
-      case 'animal_control':
-        suggestions.push(...this.resolveAnimalAuthorities(stateDb, location));
-        break;
-      case 'building_dept':
-        suggestions.push(...this.resolveBuildingAuthorities(stateDb, location));
-        break;
-      case 'vigilance':
-        suggestions.push(...this.resolveVigilanceAuthorities(stateDb, location));
-        break;
-      case 'fire_dept':
-        suggestions.push(...this.resolveFireAuthorities(stateDb, location));
-        break;
-      case 'horticulture':
-        suggestions.push(...this.resolveHorticultureAuthorities(stateDb, location));
-        break;
-      case 'railways':
-        suggestions.push(...this.resolveRailwayAuthorities(stateDb, location));
-        break;
-      default:
-        suggestions.push(...this.resolveGenericAuthorities(stateDb, location));
+      case 'flooding':       suggestions.push(...this.resolveDrainageAuthorities(stateDb, location));    break;
+      case 'crime':          suggestions.push(...this.resolveCrimeAuthorities(stateDb, location));       break;
+      case 'pollution':      suggestions.push(...this.resolvePollutionAuthorities(stateDb, location));   break;
+      case 'transport':      suggestions.push(...this.resolveTransportAuthorities(stateDb, location));   break;
+      case 'traffic':        suggestions.push(...this.resolveTrafficAuthorities(stateDb, location));     break;
+      case 'health':         suggestions.push(...this.resolveHealthAuthorities(stateDb, location));      break;
+      case 'education':      suggestions.push(...this.resolveEducationAuthorities(stateDb, location));   break;
+      case 'animal_control': suggestions.push(...this.resolveAnimalAuthorities(stateDb, location));      break;
+      case 'building_dept':  suggestions.push(...this.resolveBuildingAuthorities(stateDb, location));    break;
+      case 'vigilance':      suggestions.push(...this.resolveVigilanceAuthorities(stateDb, location));   break;
+      case 'fire_dept':      suggestions.push(...this.resolveFireAuthorities(stateDb, location));        break;
+      case 'horticulture':   suggestions.push(...this.resolveHorticultureAuthorities(stateDb, location));break;
+      default:               suggestions.push(...this.resolveGenericAuthorities(stateDb, location));     break;
     }
 
-    // Add state-level authority for high/critical urgency
-    if ((urgency === 'high' || urgency === 'critical') && stateDb.cm) {
-      suggestions.push({
-        handle: stateDb.cm.handle,
-        name: stateDb.cm.name || 'Chief Minister',
-        level: 'state',
-        priority: urgency === 'critical' ? 1 : 2
-      });
+    // ── TIER 1b: Groq fallback when city not in DB ────────────────────────────
+    const hasLocal = suggestions.some(s => s.level === 'local');
+    if (!hasLocal) {
+      const groqLocal = await this.resolveLocalAuthorityViaGroq(category, location);
+      if (groqLocal) suggestions.push(groqLocal);
     }
 
-    // Add central authorities for critical issues or as fallback
-    if (urgency === 'critical' || suggestions.length === 0) {
-      const centralAuthority = this.getCentralAuthorityForCategory(category);
-      suggestions.push(...centralAuthority);
+    // ── TIER 3: CM — ONLY for 'critical' urgency on civic issues ─────────────
+    const cmEligible = this._cmEligibleCategories().includes(category);
+    if (urgency === 'critical' && cmEligible && stateDb.cm) {
+      const cmEntry = stateDb.cm;
+      if (cmEntry.dynamic && typeof DynamicResolver !== 'undefined') {
+        const dynamic = await DynamicResolver.lookupRoleHandle(
+          cmEntry.role_key || 'cm',
+          location.state || stateDb.state_name,
+          cmEntry
+        );
+        if (dynamic) {
+          suggestions.push({
+            handle: dynamic.handle, name: dynamic.name,
+            level: 'state', priority: 2,
+            isDynamic: dynamic.isDynamic, isStale: dynamic.isStale,
+            dynamicConfidence: dynamic.confidence,
+            roleKey: cmEntry.role_key || 'cm',
+            stateName: location.state || stateDb.state_name
+          });
+        }
+      } else {
+        suggestions.push({ handle: cmEntry.handle, name: cmEntry.name || 'Chief Minister', level: 'state', priority: 2 });
+      }
     }
 
-    // Sort by priority and deduplicate
+    // ── TIER 4: Central ministry — ONLY when still no match, OR for inherently-central categories ─
+    const centralOnlyCategories = ['pollution', 'health', 'education', 'vigilance'];
+    const noMatchAtAll = suggestions.length === 0;
+    if (noMatchAtAll || centralOnlyCategories.includes(category)) {
+      suggestions.push(...(await this.getCentralAuthorityForCategory(category)));
+    }
+
     return this.prioritizeAndDeduplicate(suggestions);
+  }
+
+  /**
+   * Groq-powered live lookup for LOCAL authority (ward, city body, commissioner).
+   * Called when the static DB has no record for this city.
+   * Results cached 24h in chrome.storage.local.
+   */
+  async resolveLocalAuthorityViaGroq(category, location) {
+    if (!location.city && !location.state) return null;
+    if (typeof safeStorageGet !== 'function') return null;
+
+    const safeSlug = s => (s||'').toLowerCase().replace(/[^a-z0-9]/g,'_');
+    const cacheKey = `dynhandle_local_${safeSlug(category)}_${safeSlug(location.city||location.state)}`;
+
+    // Cache check
+    try {
+      const cached = await safeStorageGet([cacheKey]);
+      const entry = cached[cacheKey];
+      if (entry && Date.now() < entry.expiresAt) {
+        return { handle: entry.handle, name: entry.name, level: 'local', priority: 1,
+          isDynamic: true, isStale: false, dynamicConfidence: entry.confidence };
+      }
+    } catch {}
+
+    // Groq call
+    try {
+      const { groqApiKey: apiKey } = await safeStorageGet(['groqApiKey']);
+      if (!apiKey) return null;
+
+      const categoryLabels = {
+        water:'water supply / municipal water board', electricity:'electricity DISCOM / power board',
+        roads:'municipal roads / public works department (PWD)', sanitation:'garbage collection / sanitation / solid waste management',
+        drainage:'stormwater drainage', traffic:'traffic police',
+        crime:'city police commissioner / local police station', animal_control:'stray animal control (municipal)',
+        building_dept:'building permissions / illegal construction enforcement', fire_dept:'fire department / fire station',
+        horticulture:'parks and horticulture department', transport:'local public transport authority',
+        health:'district health officer / CMO', education:'district education officer (DEO)', general:'municipal corporation'
+      };
+      const label = categoryLabels[category] || category;
+      const place = location.city ? `${location.city}, ${location.state||'India'}` : (location.state || 'India');
+
+      const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'llama-3.1-8b-instant', temperature: 0, max_tokens: 120,
+          messages: [
+            { role: 'system', content: 'You are an expert on Indian local government Twitter/X accounts. Return ONLY valid JSON: {"handle":"@handle","name":"Authority Name","confidence":0-100}. If confidence < 75, return {"handle":null,"confidence":0}. No markdown. No explanation.' },
+            { role: 'user', content: `What is the official Twitter/X handle of the LOCAL body responsible for ${label} in ${place}? Answer with the MOST LOCAL body (ward office, city corporation, zonal authority) — NOT the CM, state ministry, or central government.` }
+          ]
+        })
+      });
+
+      if (!res.ok) return null;
+      const data = await res.json();
+      const text = (data?.choices?.[0]?.message?.content || '').trim();
+      let parsed = null;
+      try { parsed = JSON.parse(text); } catch {
+        const m = text.match(/\{[\s\S]+?\}/); if (m) try { parsed = JSON.parse(m[0]); } catch {}
+      }
+
+      if (!parsed?.handle || !parsed.handle.startsWith('@') || (parsed.confidence||0) < 75) return null;
+
+      // Cache result
+      const entry = { handle: parsed.handle, name: parsed.name || label, confidence: parsed.confidence, cachedAt: Date.now(), expiresAt: Date.now() + 86400000 };
+      await safeStorageSet({ [cacheKey]: entry }).catch(() => {});
+
+      return { handle: parsed.handle, name: parsed.name || label, level: 'local', priority: 1,
+        isDynamic: true, isStale: false, dynamicConfidence: parsed.confidence };
+    } catch (err) {
+      console.warn('CivicTag: Groq local lookup failed', err);
+      return null;
+    }
+  }
+
+  /**
+   * Central-only railway authority resolution (used by TIER 0 and state fallback)
+   */
+  resolveRailwayAuthoritiesCentral() {
+    if (this.centralDb?.central_government?.railways) {
+      return [{ handle: this.centralDb.central_government.railways.handle,
+                name: this.centralDb.central_government.railways.name,
+                level: 'central', priority: 1 }];
+    }
+    return [];
   }
 
   /**
@@ -540,21 +627,22 @@ class AuthorityResolver {
   }
 
   /**
-   * Resolve education authorities
+   * Resolve education authorities — LOCAL first, central added by Tier 4
    */
   resolveEducationAuthorities(stateDb, location) {
     const authorities = [];
-
-    // Education ministry (Central)
-    if (this.centralDb?.central_government?.education_ministry) {
-      authorities.push({
-        handle: this.centralDb.central_government.education_ministry.handle,
-        name: this.centralDb.central_government.education_ministry.name,
-        level: 'central',
-        priority: 2
-      });
+    // Local: municipal ward / corporation schools
+    if (location.city && stateDb.municipal) {
+      const ck = location.city.toLowerCase().replace(/\\s+/g, '_');
+      if (stateDb.municipal[ck]) {
+        authorities.push({ handle: stateDb.municipal[ck].handle, name: stateDb.municipal[ck].name + ' (Education)', level: 'local', priority: 1 });
+      }
     }
-
+    // State education dept if available
+    if (stateDb.education && typeof stateDb.education === 'object') {
+      const edu = Object.values(stateDb.education)[0];
+      if (edu?.handle) authorities.push({ handle: edu.handle, name: edu.name, level: 'state', priority: 2 });
+    }
     return authorities;
   }
 
@@ -706,21 +794,22 @@ class AuthorityResolver {
   }
 
   /**
-   * Resolve health authorities
+   * Resolve health authorities — LOCAL first, then state, central added by Tier 4
    */
   resolveHealthAuthorities(stateDb, location) {
     const authorities = [];
-
-    // Health ministry
-    if (this.centralDb?.central_government?.health_ministry) {
-      authorities.push({
-        handle: this.centralDb.central_government.health_ministry.handle,
-        name: this.centralDb.central_government.health_ministry.name,
-        level: 'central',
-        priority: 2
-      });
+    // Local: municipal health wing
+    if (location.city && stateDb.municipal) {
+      const ck = location.city.toLowerCase().replace(/\\s+/g, '_');
+      if (stateDb.municipal[ck]) {
+        authorities.push({ handle: stateDb.municipal[ck].handle, name: stateDb.municipal[ck].name + ' (Health Wing)', level: 'local', priority: 1 });
+      }
     }
-
+    // State health dept if available
+    if (stateDb.health) {
+      const h = Object.values(stateDb.health)[0];
+      if (h?.handle) authorities.push({ handle: h.handle, name: h.name, level: 'state', priority: 2 });
+    }
     return authorities;
   }
 
@@ -802,21 +891,10 @@ class AuthorityResolver {
   }
 
   /**
-   * Resolve railway authorities
+   * Resolve railway authorities (delegates to central method)
    */
   resolveRailwayAuthorities(stateDb, location) {
-    const authorities = [];
-
-    if (this.centralDb?.central_government?.railways) {
-      authorities.push({
-        handle: this.centralDb.central_government.railways.handle,
-        name: this.centralDb.central_government.railways.name,
-        level: 'central',
-        priority: 1
-      });
-    }
-
-    return authorities;
+    return this.resolveRailwayAuthoritiesCentral();
   }
 
   /**
@@ -843,7 +921,7 @@ class AuthorityResolver {
   /**
    * Get central authority for category
    */
-  getCentralAuthorityForCategory(category) {
+  async getCentralAuthorityForCategory(category) {
     if (!this.centralDb || !this.centralDb.central_government) return [];
 
     const mapping = {
@@ -864,6 +942,28 @@ class AuthorityResolver {
     const authority = this.centralDb.central_government[key];
 
     if (authority) {
+      // Check if this entry should be dynamically resolved
+      if (authority.dynamic && typeof DynamicResolver !== 'undefined') {
+        const dynamic = await DynamicResolver.lookupRoleHandle(
+          authority.role_key || key,
+          'Central Government',
+          authority
+        );
+        if (dynamic) {
+          return [{
+            handle: dynamic.handle,
+            name: dynamic.name,
+            level: 'central',
+            priority: 3,
+            isDynamic: dynamic.isDynamic,
+            isStale: dynamic.isStale,
+            dynamicConfidence: dynamic.confidence,
+            roleKey: authority.role_key || key,
+            stateName: 'Central Government'
+          }];
+        }
+      }
+
       return [{
         handle: authority.handle,
         name: authority.name,
@@ -890,8 +990,8 @@ class AuthorityResolver {
     // Sort by priority
     unique.sort((a, b) => a.priority - b.priority);
 
-    // Return top 3
-    return unique.slice(0, 3);
+    // Return top 4: local (1-2) + optional state dept + optional CM
+    return unique.slice(0, 4);
   }
 
   /**

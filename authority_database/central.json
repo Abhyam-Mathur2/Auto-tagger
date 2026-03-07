@@ -1,4 +1,4 @@
-{
+﻿{
     "central_government":  {
                                "pmo":  {
                                            "handle":  "@PMOIndia",
@@ -12,7 +12,9 @@
                                                    "name":  "Prime Minister",
                                                    "verified":  true,
                                                    "last_checked":  "2026-03-01",
-                                                   "source_url":  "https://twitter.com/narendramodi"
+                                                   "source_url":  "https://twitter.com/narendramodi",
+                                                   "dynamic":  true,
+                                                   "role_key":  "pm_personal"
                                                },
                                "home_ministry":  {
                                                      "handle":  "@HMOIndia",

@@ -1,219 +1,221 @@
 {
-    "state_code":  "TG",
-    "state_name":  "Telangana",
-    "cm":  {
-               "handle":  "@revanth_anumula",
-               "name":  "Chief Minister",
-               "verified":  true,
-               "last_checked":  "2026-03-01",
-               "source_url":  "https://twitter.com/revanth_anumula",
-               "note":  "Verify current CM"
-           },
-    "police":  {
-                   "state":  {
-                                 "handle":  "@TelanganaCOPS",
-                                 "name":  "Telangana Police",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-01",
-                                 "source_url":  "https://twitter.com/TelanganaCOPS"
-                             },
-                   "hyderabad":  {
-                                     "handle":  "@hydcitypolice",
-                                     "name":  "Hyderabad City Police",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-01",
-                                     "source_url":  "https://twitter.com/hydcitypolice"
-                                 }
-               },
-    "electricity":  {
-                        "tsspdcl":  {
-                                        "handle":  "@TSSPDCL",
-                                        "name":  "Telangana State Southern Power Distribution Company",
-                                        "zones":  [
-                                                      "Hyderabad",
-                                                      "Rangareddy",
-                                                      "Mahbubnagar",
-                                                      "Nalgonda"
-                                                  ],
-                                        "verified":  true,
-                                        "last_checked":  "2026-03-01",
-                                        "source_url":  "https://twitter.com/TSSPDCL"
-                                    },
-                        "tsnpdcl":  {
-                                        "handle":  "@TSNPDCL",
-                                        "name":  "Telangana State Northern Power Distribution Company",
-                                        "zones":  [
-                                                      "Warangal",
-                                                      "Karimnagar",
-                                                      "Nizamabad",
-                                                      "Adilabad"
-                                                  ],
-                                        "verified":  true,
-                                        "last_checked":  "2026-03-01",
-                                        "source_url":  "https://twitter.com/TSNPDCL"
-                                    }
-                    },
-    "water":  {
-                  "hmwssb":  {
-                                 "handle":  "@HMWSSB",
-                                 "name":  "Hyderabad Metropolitan Water Supply and Sewerage Board",
-                                 "area":  "Hyderabad",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-01",
-                                 "source_url":  "https://twitter.com/HMWSSB"
-                             }
-              },
-    "municipal":  {
-                      "ghmc":  {
-                                   "handle":  "@GHMCOnline",
-                                   "name":  "Greater Hyderabad Municipal Corporation",
-                                   "city":  "Hyderabad",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-01",
-                                   "source_url":  "https://twitter.com/GHMCOnline"
-                               },
-                      "warangal":  {
-                                       "handle":  "@WMCWarangal",
-                                       "name":  "Warangal Municipal Corporation",
-                                       "city":  "Warangal",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-01",
-                                       "source_url":  "https://twitter.com/WMCWarangal"
-                                   }
-                  },
-    "roads":  {
-                  "state":  {
-                                "handle":  "@GHMCOnline",
-                                "name":  "Greater Hyderabad Municipal Corporation (roads)",
-                                "verified":  true,
-                                "last_checked":  "2026-03-06",
-                                "source_url":  "https://twitter.com/GHMCOnline"
-                            }
-              },
-    "sanitation":  {
-                       "state":  {
-                                     "handle":  "@GHMCOnline",
-                                     "name":  "Greater Hyderabad Municipal Corporation (sanitation)",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-06",
-                                     "source_url":  "https://twitter.com/GHMCOnline"
-                                 }
-                   },
-    "animal_control":  {
-                           "state":  {
-                                         "handle":  "@GHMCOnline",
-                                         "name":  "Greater Hyderabad Municipal Corporation (animal_control)",
-                                         "verified":  true,
-                                         "last_checked":  "2026-03-06",
-                                         "source_url":  "https://twitter.com/GHMCOnline"
-                                     }
-                       },
-    "building_dept":  {
-                          "state":  {
-                                        "handle":  "@GHMCOnline",
-                                        "name":  "Greater Hyderabad Municipal Corporation (building_dept)",
-                                        "verified":  true,
-                                        "last_checked":  "2026-03-06",
-                                        "source_url":  "https://twitter.com/GHMCOnline"
-                                    }
-                      },
-    "drainage":  {
-                     "state":  {
-                                   "handle":  "@GHMCOnline",
-                                   "name":  "Greater Hyderabad Municipal Corporation (drainage)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/GHMCOnline"
-                               }
-                 },
-    "pollution":  {
-                      "state":  {
-                                    "handle":  "@GHMCOnline",
-                                    "name":  "Greater Hyderabad Municipal Corporation (pollution)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/GHMCOnline"
-                                }
-                  },
-    "traffic":  {
-                    "state":  {
-                                  "handle":  "@GHMCOnline",
-                                  "name":  "Greater Hyderabad Municipal Corporation (traffic)",
-                                  "verified":  true,
-                                  "last_checked":  "2026-03-06",
-                                  "source_url":  "https://twitter.com/GHMCOnline"
-                              }
-                },
-    "health":  {
-                   "state":  {
-                                 "handle":  "@GHMCOnline",
-                                 "name":  "Greater Hyderabad Municipal Corporation (health)",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-06",
-                                 "source_url":  "https://twitter.com/GHMCOnline"
-                             }
-               },
-    "education":  {
-                      "state":  {
-                                    "handle":  "@GHMCOnline",
-                                    "name":  "Greater Hyderabad Municipal Corporation (education)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/GHMCOnline"
-                                }
-                  },
-    "vigilance":  {
-                      "state":  {
-                                    "handle":  "@GHMCOnline",
-                                    "name":  "Greater Hyderabad Municipal Corporation (vigilance)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/GHMCOnline"
-                                }
-                  },
-    "fire_dept":  {
-                      "state":  {
-                                    "handle":  "@GHMCOnline",
-                                    "name":  "Greater Hyderabad Municipal Corporation (fire_dept)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/GHMCOnline"
-                                }
-                  },
-    "horticulture":  {
-                         "state":  {
-                                       "handle":  "@GHMCOnline",
-                                       "name":  "Greater Hyderabad Municipal Corporation (horticulture)",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-06",
-                                       "source_url":  "https://twitter.com/GHMCOnline"
-                                   }
-                     },
-    "railways":  {
-                     "state":  {
-                                   "handle":  "@GHMCOnline",
-                                   "name":  "Greater Hyderabad Municipal Corporation (railways)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/GHMCOnline"
-                               }
-                 },
-    "transport":  {
-                      "state":  {
-                                    "handle":  "@GHMCOnline",
-                                    "name":  "Greater Hyderabad Municipal Corporation (transport)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/GHMCOnline"
-                                }
-                  },
-    "municipal_general":  {
-                              "state":  {
-                                            "handle":  "@GHMCOnline",
-                                            "name":  "Greater Hyderabad Municipal Corporation (municipal_general)",
-                                            "verified":  true,
-                                            "last_checked":  "2026-03-06",
-                                            "source_url":  "https://twitter.com/GHMCOnline"
-                                        }
-                          }
+    "state_code": "TG",
+    "state_name": "Telangana",
+    "cm": {
+        "handle": "@revanth_anumula",
+        "name": "Chief Minister",
+        "verified": true,
+        "last_checked": "2026-03-01",
+        "source_url": "https://twitter.com/revanth_anumula",
+        "note": "Verify current CM",
+        "dynamic": true,
+        "role_key": "cm"
+    },
+    "police": {
+        "state": {
+            "handle": "@TelanganaCOPS",
+            "name": "Telangana Police",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/TelanganaCOPS"
+        },
+        "hyderabad": {
+            "handle": "@hydcitypolice",
+            "name": "Hyderabad City Police",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/hydcitypolice"
+        }
+    },
+    "electricity": {
+        "tsspdcl": {
+            "handle": "@TSSPDCL",
+            "name": "Telangana State Southern Power Distribution Company",
+            "zones": [
+                "Hyderabad",
+                "Rangareddy",
+                "Mahbubnagar",
+                "Nalgonda"
+            ],
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/TSSPDCL"
+        },
+        "tsnpdcl": {
+            "handle": "@TSNPDCL",
+            "name": "Telangana State Northern Power Distribution Company",
+            "zones": [
+                "Warangal",
+                "Karimnagar",
+                "Nizamabad",
+                "Adilabad"
+            ],
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/TSNPDCL"
+        }
+    },
+    "water": {
+        "hmwssb": {
+            "handle": "@HMWSSB",
+            "name": "Hyderabad Metropolitan Water Supply and Sewerage Board",
+            "area": "Hyderabad",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/HMWSSB"
+        }
+    },
+    "municipal": {
+        "ghmc": {
+            "handle": "@GHMCOnline",
+            "name": "Greater Hyderabad Municipal Corporation",
+            "city": "Hyderabad",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/GHMCOnline"
+        },
+        "warangal": {
+            "handle": "@WMCWarangal",
+            "name": "Warangal Municipal Corporation",
+            "city": "Warangal",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/WMCWarangal"
+        }
+    },
+    "roads": {
+        "state": {
+            "handle": "@GHMCOnline",
+            "name": "Greater Hyderabad Municipal Corporation (roads)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GHMCOnline"
+        }
+    },
+    "sanitation": {
+        "state": {
+            "handle": "@GHMCOnline",
+            "name": "Greater Hyderabad Municipal Corporation (sanitation)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GHMCOnline"
+        }
+    },
+    "animal_control": {
+        "state": {
+            "handle": "@GHMCOnline",
+            "name": "Greater Hyderabad Municipal Corporation (animal_control)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GHMCOnline"
+        }
+    },
+    "building_dept": {
+        "state": {
+            "handle": "@GHMCOnline",
+            "name": "Greater Hyderabad Municipal Corporation (building_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GHMCOnline"
+        }
+    },
+    "drainage": {
+        "state": {
+            "handle": "@GHMCOnline",
+            "name": "Greater Hyderabad Municipal Corporation (drainage)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GHMCOnline"
+        }
+    },
+    "pollution": {
+        "state": {
+            "handle": "@GHMCOnline",
+            "name": "Greater Hyderabad Municipal Corporation (pollution)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GHMCOnline"
+        }
+    },
+    "traffic": {
+        "state": {
+            "handle": "@GHMCOnline",
+            "name": "Greater Hyderabad Municipal Corporation (traffic)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GHMCOnline"
+        }
+    },
+    "health": {
+        "state": {
+            "handle": "@GHMCOnline",
+            "name": "Greater Hyderabad Municipal Corporation (health)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GHMCOnline"
+        }
+    },
+    "education": {
+        "state": {
+            "handle": "@GHMCOnline",
+            "name": "Greater Hyderabad Municipal Corporation (education)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GHMCOnline"
+        }
+    },
+    "vigilance": {
+        "state": {
+            "handle": "@GHMCOnline",
+            "name": "Greater Hyderabad Municipal Corporation (vigilance)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GHMCOnline"
+        }
+    },
+    "fire_dept": {
+        "state": {
+            "handle": "@GHMCOnline",
+            "name": "Greater Hyderabad Municipal Corporation (fire_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GHMCOnline"
+        }
+    },
+    "horticulture": {
+        "state": {
+            "handle": "@GHMCOnline",
+            "name": "Greater Hyderabad Municipal Corporation (horticulture)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GHMCOnline"
+        }
+    },
+    "railways": {
+        "state": {
+            "handle": "@GHMCOnline",
+            "name": "Greater Hyderabad Municipal Corporation (railways)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GHMCOnline"
+        }
+    },
+    "transport": {
+        "state": {
+            "handle": "@GHMCOnline",
+            "name": "Greater Hyderabad Municipal Corporation (transport)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GHMCOnline"
+        }
+    },
+    "municipal_general": {
+        "state": {
+            "handle": "@GHMCOnline",
+            "name": "Greater Hyderabad Municipal Corporation (municipal_general)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GHMCOnline"
+        }
+    }
 }

@@ -1,232 +1,234 @@
 {
-    "state_code":  "RJ",
-    "state_name":  "Rajasthan",
-    "cm":  {
-               "handle":  "@BhajanlalBjp",
-               "name":  "Chief Minister",
-               "verified":  true,
-               "last_checked":  "2026-03-01",
-               "source_url":  "https://twitter.com/BhajanlalBjp"
-           },
-    "police":  {
-                   "state":  {
-                                 "handle":  "@PoliceRajasthan",
-                                 "name":  "Rajasthan Police",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-01",
-                                 "source_url":  "https://twitter.com/PoliceRajasthan"
-                             }
-               },
-    "electricity":  {
-                        "jvvnl":  {
-                                      "handle":  "@JVVNL_Jaipur",
-                                      "name":  "Jaipur Vidyut Vitran Nigam Limited",
-                                      "zones":  [
-                                                    "Jaipur",
-                                                    "Dausa",
-                                                    "Alwar",
-                                                    "Bharatpur",
-                                                    "Dholpur"
-                                                ],
-                                      "verified":  true,
-                                      "last_checked":  "2026-03-01",
-                                      "source_url":  "https://twitter.com/JVVNL_Jaipur"
-                                  },
-                        "avvnl":  {
-                                      "handle":  "@AVVNL_Ajmer",
-                                      "name":  "Ajmer Vidyut Vitran Nigam Limited",
-                                      "zones":  [
-                                                    "Ajmer",
-                                                    "Bhilwara",
-                                                    "Chittorgarh",
-                                                    "Udaipur"
-                                                ],
-                                      "verified":  true,
-                                      "last_checked":  "2026-03-01",
-                                      "source_url":  "https://twitter.com/AVVNL_Ajmer"
-                                  },
-                        "jdvvnl":  {
-                                       "handle":  "@JdVVNL_Jodhpur",
-                                       "name":  "Jodhpur Vidyut Vitran Nigam Limited",
-                                       "zones":  [
-                                                     "Jodhpur",
-                                                     "Bikaner",
-                                                     "Jaisalmer",
-                                                     "Barmer"
-                                                 ],
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-01",
-                                       "source_url":  "https://twitter.com/JdVVNL_Jodhpur"
-                                   }
-                    },
-    "water":  {
-                  "phed":  {
-                               "handle":  "@PHED_Rajasthan",
-                               "name":  "Public Health Engineering Department",
-                               "verified":  true,
-                               "last_checked":  "2026-03-01",
-                               "source_url":  "https://twitter.com/PHED_Rajasthan"
-                           }
-              },
-    "municipal":  {
-                      "jaipur":  {
-                                     "handle":  "@JaipurMC",
-                                     "name":  "Jaipur Municipal Corporation",
-                                     "city":  "Jaipur",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-01",
-                                     "source_url":  "https://twitter.com/JaipurMC"
-                                 },
-                      "jodhpur":  {
-                                      "handle":  "@JodhpurMC",
-                                      "name":  "Jodhpur Municipal Corporation",
-                                      "city":  "Jodhpur",
-                                      "verified":  true,
-                                      "last_checked":  "2026-03-01",
-                                      "source_url":  "https://twitter.com/JodhpurMC"
-                                  },
-                      "udaipur":  {
-                                      "handle":  "@UdaipurMC",
-                                      "name":  "Udaipur Municipal Corporation",
-                                      "city":  "Udaipur",
-                                      "verified":  true,
-                                      "last_checked":  "2026-03-01",
-                                      "source_url":  "https://twitter.com/UdaipurMC"
-                                  }
-                  },
-    "roads":  {
-                  "state":  {
-                                "handle":  "@JaipurMC",
-                                "name":  "Jaipur Municipal Corporation (roads)",
-                                "verified":  true,
-                                "last_checked":  "2026-03-06",
-                                "source_url":  "https://twitter.com/JaipurMC"
-                            }
-              },
-    "sanitation":  {
-                       "state":  {
-                                     "handle":  "@JaipurMC",
-                                     "name":  "Jaipur Municipal Corporation (sanitation)",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-06",
-                                     "source_url":  "https://twitter.com/JaipurMC"
-                                 }
-                   },
-    "animal_control":  {
-                           "state":  {
-                                         "handle":  "@JaipurMC",
-                                         "name":  "Jaipur Municipal Corporation (animal_control)",
-                                         "verified":  true,
-                                         "last_checked":  "2026-03-06",
-                                         "source_url":  "https://twitter.com/JaipurMC"
-                                     }
-                       },
-    "building_dept":  {
-                          "state":  {
-                                        "handle":  "@JaipurMC",
-                                        "name":  "Jaipur Municipal Corporation (building_dept)",
-                                        "verified":  true,
-                                        "last_checked":  "2026-03-06",
-                                        "source_url":  "https://twitter.com/JaipurMC"
-                                    }
-                      },
-    "drainage":  {
-                     "state":  {
-                                   "handle":  "@JaipurMC",
-                                   "name":  "Jaipur Municipal Corporation (drainage)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/JaipurMC"
-                               }
-                 },
-    "pollution":  {
-                      "state":  {
-                                    "handle":  "@JaipurMC",
-                                    "name":  "Jaipur Municipal Corporation (pollution)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/JaipurMC"
-                                }
-                  },
-    "traffic":  {
-                    "state":  {
-                                  "handle":  "@JaipurMC",
-                                  "name":  "Jaipur Municipal Corporation (traffic)",
-                                  "verified":  true,
-                                  "last_checked":  "2026-03-06",
-                                  "source_url":  "https://twitter.com/JaipurMC"
-                              }
-                },
-    "health":  {
-                   "state":  {
-                                 "handle":  "@JaipurMC",
-                                 "name":  "Jaipur Municipal Corporation (health)",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-06",
-                                 "source_url":  "https://twitter.com/JaipurMC"
-                             }
-               },
-    "education":  {
-                      "state":  {
-                                    "handle":  "@JaipurMC",
-                                    "name":  "Jaipur Municipal Corporation (education)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/JaipurMC"
-                                }
-                  },
-    "vigilance":  {
-                      "state":  {
-                                    "handle":  "@JaipurMC",
-                                    "name":  "Jaipur Municipal Corporation (vigilance)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/JaipurMC"
-                                }
-                  },
-    "fire_dept":  {
-                      "state":  {
-                                    "handle":  "@JaipurMC",
-                                    "name":  "Jaipur Municipal Corporation (fire_dept)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/JaipurMC"
-                                }
-                  },
-    "horticulture":  {
-                         "state":  {
-                                       "handle":  "@JaipurMC",
-                                       "name":  "Jaipur Municipal Corporation (horticulture)",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-06",
-                                       "source_url":  "https://twitter.com/JaipurMC"
-                                   }
-                     },
-    "railways":  {
-                     "state":  {
-                                   "handle":  "@JaipurMC",
-                                   "name":  "Jaipur Municipal Corporation (railways)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/JaipurMC"
-                               }
-                 },
-    "transport":  {
-                      "state":  {
-                                    "handle":  "@JaipurMC",
-                                    "name":  "Jaipur Municipal Corporation (transport)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/JaipurMC"
-                                }
-                  },
-    "municipal_general":  {
-                              "state":  {
-                                            "handle":  "@JaipurMC",
-                                            "name":  "Jaipur Municipal Corporation (municipal_general)",
-                                            "verified":  true,
-                                            "last_checked":  "2026-03-06",
-                                            "source_url":  "https://twitter.com/JaipurMC"
-                                        }
-                          }
+    "state_code": "RJ",
+    "state_name": "Rajasthan",
+    "cm": {
+        "handle": "@BhajanlalBjp",
+        "name": "Chief Minister",
+        "verified": true,
+        "last_checked": "2026-03-01",
+        "source_url": "https://twitter.com/BhajanlalBjp",
+        "dynamic": true,
+        "role_key": "cm"
+    },
+    "police": {
+        "state": {
+            "handle": "@PoliceRajasthan",
+            "name": "Rajasthan Police",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/PoliceRajasthan"
+        }
+    },
+    "electricity": {
+        "jvvnl": {
+            "handle": "@JVVNL_Jaipur",
+            "name": "Jaipur Vidyut Vitran Nigam Limited",
+            "zones": [
+                "Jaipur",
+                "Dausa",
+                "Alwar",
+                "Bharatpur",
+                "Dholpur"
+            ],
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/JVVNL_Jaipur"
+        },
+        "avvnl": {
+            "handle": "@AVVNL_Ajmer",
+            "name": "Ajmer Vidyut Vitran Nigam Limited",
+            "zones": [
+                "Ajmer",
+                "Bhilwara",
+                "Chittorgarh",
+                "Udaipur"
+            ],
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/AVVNL_Ajmer"
+        },
+        "jdvvnl": {
+            "handle": "@JdVVNL_Jodhpur",
+            "name": "Jodhpur Vidyut Vitran Nigam Limited",
+            "zones": [
+                "Jodhpur",
+                "Bikaner",
+                "Jaisalmer",
+                "Barmer"
+            ],
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/JdVVNL_Jodhpur"
+        }
+    },
+    "water": {
+        "phed": {
+            "handle": "@PHED_Rajasthan",
+            "name": "Public Health Engineering Department",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/PHED_Rajasthan"
+        }
+    },
+    "municipal": {
+        "jaipur": {
+            "handle": "@JaipurMC",
+            "name": "Jaipur Municipal Corporation",
+            "city": "Jaipur",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/JaipurMC"
+        },
+        "jodhpur": {
+            "handle": "@JodhpurMC",
+            "name": "Jodhpur Municipal Corporation",
+            "city": "Jodhpur",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/JodhpurMC"
+        },
+        "udaipur": {
+            "handle": "@UdaipurMC",
+            "name": "Udaipur Municipal Corporation",
+            "city": "Udaipur",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/UdaipurMC"
+        }
+    },
+    "roads": {
+        "state": {
+            "handle": "@JaipurMC",
+            "name": "Jaipur Municipal Corporation (roads)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/JaipurMC"
+        }
+    },
+    "sanitation": {
+        "state": {
+            "handle": "@JaipurMC",
+            "name": "Jaipur Municipal Corporation (sanitation)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/JaipurMC"
+        }
+    },
+    "animal_control": {
+        "state": {
+            "handle": "@JaipurMC",
+            "name": "Jaipur Municipal Corporation (animal_control)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/JaipurMC"
+        }
+    },
+    "building_dept": {
+        "state": {
+            "handle": "@JaipurMC",
+            "name": "Jaipur Municipal Corporation (building_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/JaipurMC"
+        }
+    },
+    "drainage": {
+        "state": {
+            "handle": "@JaipurMC",
+            "name": "Jaipur Municipal Corporation (drainage)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/JaipurMC"
+        }
+    },
+    "pollution": {
+        "state": {
+            "handle": "@JaipurMC",
+            "name": "Jaipur Municipal Corporation (pollution)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/JaipurMC"
+        }
+    },
+    "traffic": {
+        "state": {
+            "handle": "@JaipurMC",
+            "name": "Jaipur Municipal Corporation (traffic)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/JaipurMC"
+        }
+    },
+    "health": {
+        "state": {
+            "handle": "@JaipurMC",
+            "name": "Jaipur Municipal Corporation (health)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/JaipurMC"
+        }
+    },
+    "education": {
+        "state": {
+            "handle": "@JaipurMC",
+            "name": "Jaipur Municipal Corporation (education)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/JaipurMC"
+        }
+    },
+    "vigilance": {
+        "state": {
+            "handle": "@JaipurMC",
+            "name": "Jaipur Municipal Corporation (vigilance)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/JaipurMC"
+        }
+    },
+    "fire_dept": {
+        "state": {
+            "handle": "@JaipurMC",
+            "name": "Jaipur Municipal Corporation (fire_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/JaipurMC"
+        }
+    },
+    "horticulture": {
+        "state": {
+            "handle": "@JaipurMC",
+            "name": "Jaipur Municipal Corporation (horticulture)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/JaipurMC"
+        }
+    },
+    "railways": {
+        "state": {
+            "handle": "@JaipurMC",
+            "name": "Jaipur Municipal Corporation (railways)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/JaipurMC"
+        }
+    },
+    "transport": {
+        "state": {
+            "handle": "@JaipurMC",
+            "name": "Jaipur Municipal Corporation (transport)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/JaipurMC"
+        }
+    },
+    "municipal_general": {
+        "state": {
+            "handle": "@JaipurMC",
+            "name": "Jaipur Municipal Corporation (municipal_general)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/JaipurMC"
+        }
+    }
 }

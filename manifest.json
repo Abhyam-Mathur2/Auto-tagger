@@ -31,6 +31,7 @@
         "src/utils.js",
         "src/tracker.js",
         "src/locationDetector.js",
+        "src/dynamicResolver.js",
         "src/classifier.js",
         "src/authorityResolver.js",
         "src/spamGuard.js",

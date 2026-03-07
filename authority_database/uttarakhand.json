@@ -1,183 +1,185 @@
 {
-    "state_code":  "UK",
-    "state_name":  "Uttarakhand",
-    "cm":  {
-               "handle":  "@pushkardhami",
-               "name":  "Chief Minister",
-               "verified":  true,
-               "last_checked":  "2026-03-01",
-               "source_url":  "https://twitter.com/pushkardhami"
-           },
-    "police":  {
-                   "state":  {
-                                 "handle":  "@uttarakhandcops",
-                                 "name":  "Uttarakhand Police",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-01",
-                                 "source_url":  "https://twitter.com/uttarakhandcops"
-                             }
-               },
-    "electricity":  {
-                        "upcl":  {
-                                     "handle":  "@UPCL_PTPB",
-                                     "name":  "Uttarakhand Power Corporation Limited",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-01",
-                                     "source_url":  "https://twitter.com/UPCL_PTPB"
-                                 }
-                    },
-    "municipal":  {
-                      "dehradun":  {
-                                       "handle":  "@DehradunMC",
-                                       "name":  "Dehradun Municipal Corporation",
-                                       "city":  "Dehradun",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-01",
-                                       "source_url":  "https://twitter.com/DehradunMC"
-                                   }
-                  },
-    "water":  {
-                  "state":  {
-                                "handle":  "@DehradunMC",
-                                "name":  "Dehradun Municipal Corporation (water)",
-                                "verified":  true,
-                                "last_checked":  "2026-03-06",
-                                "source_url":  "https://twitter.com/DehradunMC"
-                            }
-              },
-    "roads":  {
-                  "state":  {
-                                "handle":  "@DehradunMC",
-                                "name":  "Dehradun Municipal Corporation (roads)",
-                                "verified":  true,
-                                "last_checked":  "2026-03-06",
-                                "source_url":  "https://twitter.com/DehradunMC"
-                            }
-              },
-    "sanitation":  {
-                       "state":  {
-                                     "handle":  "@DehradunMC",
-                                     "name":  "Dehradun Municipal Corporation (sanitation)",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-06",
-                                     "source_url":  "https://twitter.com/DehradunMC"
-                                 }
-                   },
-    "animal_control":  {
-                           "state":  {
-                                         "handle":  "@DehradunMC",
-                                         "name":  "Dehradun Municipal Corporation (animal_control)",
-                                         "verified":  true,
-                                         "last_checked":  "2026-03-06",
-                                         "source_url":  "https://twitter.com/DehradunMC"
-                                     }
-                       },
-    "building_dept":  {
-                          "state":  {
-                                        "handle":  "@DehradunMC",
-                                        "name":  "Dehradun Municipal Corporation (building_dept)",
-                                        "verified":  true,
-                                        "last_checked":  "2026-03-06",
-                                        "source_url":  "https://twitter.com/DehradunMC"
-                                    }
-                      },
-    "drainage":  {
-                     "state":  {
-                                   "handle":  "@DehradunMC",
-                                   "name":  "Dehradun Municipal Corporation (drainage)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/DehradunMC"
-                               }
-                 },
-    "pollution":  {
-                      "state":  {
-                                    "handle":  "@DehradunMC",
-                                    "name":  "Dehradun Municipal Corporation (pollution)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/DehradunMC"
-                                }
-                  },
-    "traffic":  {
-                    "state":  {
-                                  "handle":  "@DehradunMC",
-                                  "name":  "Dehradun Municipal Corporation (traffic)",
-                                  "verified":  true,
-                                  "last_checked":  "2026-03-06",
-                                  "source_url":  "https://twitter.com/DehradunMC"
-                              }
-                },
-    "health":  {
-                   "state":  {
-                                 "handle":  "@DehradunMC",
-                                 "name":  "Dehradun Municipal Corporation (health)",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-06",
-                                 "source_url":  "https://twitter.com/DehradunMC"
-                             }
-               },
-    "education":  {
-                      "state":  {
-                                    "handle":  "@DehradunMC",
-                                    "name":  "Dehradun Municipal Corporation (education)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/DehradunMC"
-                                }
-                  },
-    "vigilance":  {
-                      "state":  {
-                                    "handle":  "@DehradunMC",
-                                    "name":  "Dehradun Municipal Corporation (vigilance)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/DehradunMC"
-                                }
-                  },
-    "fire_dept":  {
-                      "state":  {
-                                    "handle":  "@DehradunMC",
-                                    "name":  "Dehradun Municipal Corporation (fire_dept)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/DehradunMC"
-                                }
-                  },
-    "horticulture":  {
-                         "state":  {
-                                       "handle":  "@DehradunMC",
-                                       "name":  "Dehradun Municipal Corporation (horticulture)",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-06",
-                                       "source_url":  "https://twitter.com/DehradunMC"
-                                   }
-                     },
-    "railways":  {
-                     "state":  {
-                                   "handle":  "@DehradunMC",
-                                   "name":  "Dehradun Municipal Corporation (railways)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/DehradunMC"
-                               }
-                 },
-    "transport":  {
-                      "state":  {
-                                    "handle":  "@DehradunMC",
-                                    "name":  "Dehradun Municipal Corporation (transport)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/DehradunMC"
-                                }
-                  },
-    "municipal_general":  {
-                              "state":  {
-                                            "handle":  "@DehradunMC",
-                                            "name":  "Dehradun Municipal Corporation (municipal_general)",
-                                            "verified":  true,
-                                            "last_checked":  "2026-03-06",
-                                            "source_url":  "https://twitter.com/DehradunMC"
-                                        }
-                          }
+    "state_code": "UK",
+    "state_name": "Uttarakhand",
+    "cm": {
+        "handle": "@pushkardhami",
+        "name": "Chief Minister",
+        "verified": true,
+        "last_checked": "2026-03-01",
+        "source_url": "https://twitter.com/pushkardhami",
+        "dynamic": true,
+        "role_key": "cm"
+    },
+    "police": {
+        "state": {
+            "handle": "@uttarakhandcops",
+            "name": "Uttarakhand Police",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/uttarakhandcops"
+        }
+    },
+    "electricity": {
+        "upcl": {
+            "handle": "@UPCL_PTPB",
+            "name": "Uttarakhand Power Corporation Limited",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/UPCL_PTPB"
+        }
+    },
+    "municipal": {
+        "dehradun": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation",
+            "city": "Dehradun",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    },
+    "water": {
+        "state": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation (water)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    },
+    "roads": {
+        "state": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation (roads)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    },
+    "sanitation": {
+        "state": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation (sanitation)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    },
+    "animal_control": {
+        "state": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation (animal_control)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    },
+    "building_dept": {
+        "state": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation (building_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    },
+    "drainage": {
+        "state": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation (drainage)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    },
+    "pollution": {
+        "state": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation (pollution)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    },
+    "traffic": {
+        "state": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation (traffic)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    },
+    "health": {
+        "state": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation (health)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    },
+    "education": {
+        "state": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation (education)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    },
+    "vigilance": {
+        "state": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation (vigilance)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    },
+    "fire_dept": {
+        "state": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation (fire_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    },
+    "horticulture": {
+        "state": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation (horticulture)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    },
+    "railways": {
+        "state": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation (railways)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    },
+    "transport": {
+        "state": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation (transport)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    },
+    "municipal_general": {
+        "state": {
+            "handle": "@DehradunMC",
+            "name": "Dehradun Municipal Corporation (municipal_general)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/DehradunMC"
+        }
+    }
 }

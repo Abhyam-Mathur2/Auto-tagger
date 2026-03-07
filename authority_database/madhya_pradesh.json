@@ -1,216 +1,218 @@
 {
-    "state_code":  "MP",
-    "state_name":  "Madhya Pradesh",
-    "cm":  {
-               "handle":  "@DrMohanYadav_",
-               "name":  "Chief Minister",
-               "verified":  true,
-               "last_checked":  "2026-03-01",
-               "source_url":  "https://twitter.com/DrMohanYadav_"
-           },
-    "police":  {
-                   "state":  {
-                                 "handle":  "@mppolice",
-                                 "name":  "Madhya Pradesh Police",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-01",
-                                 "source_url":  "https://twitter.com/mppolice"
-                             }
-               },
-    "electricity":  {
-                        "mpez":  {
-                                     "handle":  "@MPEZ_Jabalpur",
-                                     "name":  "MP Poorv Kshetra Vidyut Vitaran Company",
-                                     "zones":  [
-                                                   "Jabalpur",
-                                                   "Rewa",
-                                                   "Satna"
-                                               ],
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-01",
-                                     "source_url":  "https://twitter.com/MPEZ_Jabalpur"
-                                 },
-                        "mpmkvvcl":  {
-                                         "handle":  "@MPMKVVCL",
-                                         "name":  "MP Madhya Kshetra Vidyut Vitaran Company",
-                                         "zones":  [
-                                                       "Bhopal",
-                                                       "Indore",
-                                                       "Gwalior"
-                                                   ],
-                                         "verified":  true,
-                                         "last_checked":  "2026-03-01",
-                                         "source_url":  "https://twitter.com/MPMKVVCL"
-                                     }
-                    },
-    "water":  {
-                  "phe":  {
-                              "handle":  "@PHE_MP",
-                              "name":  "Public Health Engineering MP",
-                              "verified":  true,
-                              "last_checked":  "2026-03-01",
-                              "source_url":  "https://twitter.com/PHE_MP"
-                          }
-              },
-    "municipal":  {
-                      "bhopal":  {
-                                     "handle":  "@BMC_Bhopal",
-                                     "name":  "Bhopal Municipal Corporation",
-                                     "city":  "Bhopal",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-01",
-                                     "source_url":  "https://twitter.com/BMC_Bhopal"
-                                 },
-                      "indore":  {
-                                     "handle":  "@IMCIndore",
-                                     "name":  "Indore Municipal Corporation",
-                                     "city":  "Indore",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-01",
-                                     "source_url":  "https://twitter.com/IMCIndore"
-                                 },
-                      "jabalpur":  {
-                                       "handle":  "@JabalpurMC",
-                                       "name":  "Jabalpur Municipal Corporation",
-                                       "city":  "Jabalpur",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-01",
-                                       "source_url":  "https://twitter.com/JabalpurMC"
-                                   }
-                  },
-    "roads":  {
-                  "state":  {
-                                "handle":  "@BMC_Bhopal",
-                                "name":  "Bhopal Municipal Corporation (roads)",
-                                "verified":  true,
-                                "last_checked":  "2026-03-06",
-                                "source_url":  "https://twitter.com/BMC_Bhopal"
-                            }
-              },
-    "sanitation":  {
-                       "state":  {
-                                     "handle":  "@BMC_Bhopal",
-                                     "name":  "Bhopal Municipal Corporation (sanitation)",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-06",
-                                     "source_url":  "https://twitter.com/BMC_Bhopal"
-                                 }
-                   },
-    "animal_control":  {
-                           "state":  {
-                                         "handle":  "@BMC_Bhopal",
-                                         "name":  "Bhopal Municipal Corporation (animal_control)",
-                                         "verified":  true,
-                                         "last_checked":  "2026-03-06",
-                                         "source_url":  "https://twitter.com/BMC_Bhopal"
-                                     }
-                       },
-    "building_dept":  {
-                          "state":  {
-                                        "handle":  "@BMC_Bhopal",
-                                        "name":  "Bhopal Municipal Corporation (building_dept)",
-                                        "verified":  true,
-                                        "last_checked":  "2026-03-06",
-                                        "source_url":  "https://twitter.com/BMC_Bhopal"
-                                    }
-                      },
-    "drainage":  {
-                     "state":  {
-                                   "handle":  "@BMC_Bhopal",
-                                   "name":  "Bhopal Municipal Corporation (drainage)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/BMC_Bhopal"
-                               }
-                 },
-    "pollution":  {
-                      "state":  {
-                                    "handle":  "@BMC_Bhopal",
-                                    "name":  "Bhopal Municipal Corporation (pollution)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/BMC_Bhopal"
-                                }
-                  },
-    "traffic":  {
-                    "state":  {
-                                  "handle":  "@BMC_Bhopal",
-                                  "name":  "Bhopal Municipal Corporation (traffic)",
-                                  "verified":  true,
-                                  "last_checked":  "2026-03-06",
-                                  "source_url":  "https://twitter.com/BMC_Bhopal"
-                              }
-                },
-    "health":  {
-                   "state":  {
-                                 "handle":  "@BMC_Bhopal",
-                                 "name":  "Bhopal Municipal Corporation (health)",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-06",
-                                 "source_url":  "https://twitter.com/BMC_Bhopal"
-                             }
-               },
-    "education":  {
-                      "state":  {
-                                    "handle":  "@BMC_Bhopal",
-                                    "name":  "Bhopal Municipal Corporation (education)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/BMC_Bhopal"
-                                }
-                  },
-    "vigilance":  {
-                      "state":  {
-                                    "handle":  "@BMC_Bhopal",
-                                    "name":  "Bhopal Municipal Corporation (vigilance)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/BMC_Bhopal"
-                                }
-                  },
-    "fire_dept":  {
-                      "state":  {
-                                    "handle":  "@BMC_Bhopal",
-                                    "name":  "Bhopal Municipal Corporation (fire_dept)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/BMC_Bhopal"
-                                }
-                  },
-    "horticulture":  {
-                         "state":  {
-                                       "handle":  "@BMC_Bhopal",
-                                       "name":  "Bhopal Municipal Corporation (horticulture)",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-06",
-                                       "source_url":  "https://twitter.com/BMC_Bhopal"
-                                   }
-                     },
-    "railways":  {
-                     "state":  {
-                                   "handle":  "@BMC_Bhopal",
-                                   "name":  "Bhopal Municipal Corporation (railways)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/BMC_Bhopal"
-                               }
-                 },
-    "transport":  {
-                      "state":  {
-                                    "handle":  "@BMC_Bhopal",
-                                    "name":  "Bhopal Municipal Corporation (transport)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/BMC_Bhopal"
-                                }
-                  },
-    "municipal_general":  {
-                              "state":  {
-                                            "handle":  "@BMC_Bhopal",
-                                            "name":  "Bhopal Municipal Corporation (municipal_general)",
-                                            "verified":  true,
-                                            "last_checked":  "2026-03-06",
-                                            "source_url":  "https://twitter.com/BMC_Bhopal"
-                                        }
-                          }
+    "state_code": "MP",
+    "state_name": "Madhya Pradesh",
+    "cm": {
+        "handle": "@DrMohanYadav_",
+        "name": "Chief Minister",
+        "verified": true,
+        "last_checked": "2026-03-01",
+        "source_url": "https://twitter.com/DrMohanYadav_",
+        "dynamic": true,
+        "role_key": "cm"
+    },
+    "police": {
+        "state": {
+            "handle": "@mppolice",
+            "name": "Madhya Pradesh Police",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/mppolice"
+        }
+    },
+    "electricity": {
+        "mpez": {
+            "handle": "@MPEZ_Jabalpur",
+            "name": "MP Poorv Kshetra Vidyut Vitaran Company",
+            "zones": [
+                "Jabalpur",
+                "Rewa",
+                "Satna"
+            ],
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/MPEZ_Jabalpur"
+        },
+        "mpmkvvcl": {
+            "handle": "@MPMKVVCL",
+            "name": "MP Madhya Kshetra Vidyut Vitaran Company",
+            "zones": [
+                "Bhopal",
+                "Indore",
+                "Gwalior"
+            ],
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/MPMKVVCL"
+        }
+    },
+    "water": {
+        "phe": {
+            "handle": "@PHE_MP",
+            "name": "Public Health Engineering MP",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/PHE_MP"
+        }
+    },
+    "municipal": {
+        "bhopal": {
+            "handle": "@BMC_Bhopal",
+            "name": "Bhopal Municipal Corporation",
+            "city": "Bhopal",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/BMC_Bhopal"
+        },
+        "indore": {
+            "handle": "@IMCIndore",
+            "name": "Indore Municipal Corporation",
+            "city": "Indore",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/IMCIndore"
+        },
+        "jabalpur": {
+            "handle": "@JabalpurMC",
+            "name": "Jabalpur Municipal Corporation",
+            "city": "Jabalpur",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/JabalpurMC"
+        }
+    },
+    "roads": {
+        "state": {
+            "handle": "@BMC_Bhopal",
+            "name": "Bhopal Municipal Corporation (roads)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/BMC_Bhopal"
+        }
+    },
+    "sanitation": {
+        "state": {
+            "handle": "@BMC_Bhopal",
+            "name": "Bhopal Municipal Corporation (sanitation)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/BMC_Bhopal"
+        }
+    },
+    "animal_control": {
+        "state": {
+            "handle": "@BMC_Bhopal",
+            "name": "Bhopal Municipal Corporation (animal_control)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/BMC_Bhopal"
+        }
+    },
+    "building_dept": {
+        "state": {
+            "handle": "@BMC_Bhopal",
+            "name": "Bhopal Municipal Corporation (building_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/BMC_Bhopal"
+        }
+    },
+    "drainage": {
+        "state": {
+            "handle": "@BMC_Bhopal",
+            "name": "Bhopal Municipal Corporation (drainage)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/BMC_Bhopal"
+        }
+    },
+    "pollution": {
+        "state": {
+            "handle": "@BMC_Bhopal",
+            "name": "Bhopal Municipal Corporation (pollution)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/BMC_Bhopal"
+        }
+    },
+    "traffic": {
+        "state": {
+            "handle": "@BMC_Bhopal",
+            "name": "Bhopal Municipal Corporation (traffic)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/BMC_Bhopal"
+        }
+    },
+    "health": {
+        "state": {
+            "handle": "@BMC_Bhopal",
+            "name": "Bhopal Municipal Corporation (health)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/BMC_Bhopal"
+        }
+    },
+    "education": {
+        "state": {
+            "handle": "@BMC_Bhopal",
+            "name": "Bhopal Municipal Corporation (education)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/BMC_Bhopal"
+        }
+    },
+    "vigilance": {
+        "state": {
+            "handle": "@BMC_Bhopal",
+            "name": "Bhopal Municipal Corporation (vigilance)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/BMC_Bhopal"
+        }
+    },
+    "fire_dept": {
+        "state": {
+            "handle": "@BMC_Bhopal",
+            "name": "Bhopal Municipal Corporation (fire_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/BMC_Bhopal"
+        }
+    },
+    "horticulture": {
+        "state": {
+            "handle": "@BMC_Bhopal",
+            "name": "Bhopal Municipal Corporation (horticulture)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/BMC_Bhopal"
+        }
+    },
+    "railways": {
+        "state": {
+            "handle": "@BMC_Bhopal",
+            "name": "Bhopal Municipal Corporation (railways)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/BMC_Bhopal"
+        }
+    },
+    "transport": {
+        "state": {
+            "handle": "@BMC_Bhopal",
+            "name": "Bhopal Municipal Corporation (transport)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/BMC_Bhopal"
+        }
+    },
+    "municipal_general": {
+        "state": {
+            "handle": "@BMC_Bhopal",
+            "name": "Bhopal Municipal Corporation (municipal_general)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/BMC_Bhopal"
+        }
+    }
 }

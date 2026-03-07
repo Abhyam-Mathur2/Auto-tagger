@@ -1,199 +1,201 @@
 {
-    "state_code":  "KL",
-    "state_name":  "Kerala",
-    "cm":  {
-               "handle":  "@vijayanpinarayi",
-               "name":  "Chief Minister",
-               "verified":  true,
-               "last_checked":  "2026-03-01",
-               "source_url":  "https://twitter.com/vijayanpinarayi"
-           },
-    "police":  {
-                   "state":  {
-                                 "handle":  "@KeralaPolice",
-                                 "name":  "Kerala Police",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-01",
-                                 "source_url":  "https://twitter.com/KeralaPolice"
-                             }
-               },
-    "electricity":  {
-                        "kseb":  {
-                                     "handle":  "@KSEB_LTD",
-                                     "name":  "Kerala State Electricity Board",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-01",
-                                     "source_url":  "https://twitter.com/KSEB_LTD"
-                                 }
-                    },
-    "water":  {
-                  "kwa":  {
-                              "handle":  "@KWA_Jal",
-                              "name":  "Kerala Water Authority",
-                              "verified":  true,
-                              "last_checked":  "2026-03-01",
-                              "source_url":  "https://twitter.com/KWA_Jal"
-                          }
-              },
-    "municipal":  {
-                      "thiruvananthapuram":  {
-                                                 "handle":  "@CorporationTvm",
-                                                 "name":  "Thiruvananthapuram Corporation",
-                                                 "city":  "Thiruvananthapuram",
-                                                 "verified":  true,
-                                                 "last_checked":  "2026-03-01",
-                                                 "source_url":  "https://twitter.com/CorporationTvm"
-                                             },
-                      "kochi":  {
-                                    "handle":  "@Kochi_Corp",
-                                    "name":  "Kochi Corporation",
-                                    "city":  "Kochi",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-01",
-                                    "source_url":  "https://twitter.com/Kochi_Corp"
-                                },
-                      "kozhikode":  {
-                                        "handle":  "@KozhikodeCorp",
-                                        "name":  "Kozhikode Corporation",
-                                        "city":  "Kozhikode",
-                                        "verified":  true,
-                                        "last_checked":  "2026-03-01",
-                                        "source_url":  "https://twitter.com/KozhikodeCorp"
-                                    }
-                  },
-    "roads":  {
-                  "state":  {
-                                "handle":  "@CorporationTvm",
-                                "name":  "Thiruvananthapuram Corporation (roads)",
-                                "verified":  true,
-                                "last_checked":  "2026-03-06",
-                                "source_url":  "https://twitter.com/CorporationTvm"
-                            }
-              },
-    "sanitation":  {
-                       "state":  {
-                                     "handle":  "@CorporationTvm",
-                                     "name":  "Thiruvananthapuram Corporation (sanitation)",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-06",
-                                     "source_url":  "https://twitter.com/CorporationTvm"
-                                 }
-                   },
-    "animal_control":  {
-                           "state":  {
-                                         "handle":  "@CorporationTvm",
-                                         "name":  "Thiruvananthapuram Corporation (animal_control)",
-                                         "verified":  true,
-                                         "last_checked":  "2026-03-06",
-                                         "source_url":  "https://twitter.com/CorporationTvm"
-                                     }
-                       },
-    "building_dept":  {
-                          "state":  {
-                                        "handle":  "@CorporationTvm",
-                                        "name":  "Thiruvananthapuram Corporation (building_dept)",
-                                        "verified":  true,
-                                        "last_checked":  "2026-03-06",
-                                        "source_url":  "https://twitter.com/CorporationTvm"
-                                    }
-                      },
-    "drainage":  {
-                     "state":  {
-                                   "handle":  "@CorporationTvm",
-                                   "name":  "Thiruvananthapuram Corporation (drainage)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/CorporationTvm"
-                               }
-                 },
-    "pollution":  {
-                      "state":  {
-                                    "handle":  "@CorporationTvm",
-                                    "name":  "Thiruvananthapuram Corporation (pollution)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/CorporationTvm"
-                                }
-                  },
-    "traffic":  {
-                    "state":  {
-                                  "handle":  "@CorporationTvm",
-                                  "name":  "Thiruvananthapuram Corporation (traffic)",
-                                  "verified":  true,
-                                  "last_checked":  "2026-03-06",
-                                  "source_url":  "https://twitter.com/CorporationTvm"
-                              }
-                },
-    "health":  {
-                   "state":  {
-                                 "handle":  "@CorporationTvm",
-                                 "name":  "Thiruvananthapuram Corporation (health)",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-06",
-                                 "source_url":  "https://twitter.com/CorporationTvm"
-                             }
-               },
-    "education":  {
-                      "state":  {
-                                    "handle":  "@CorporationTvm",
-                                    "name":  "Thiruvananthapuram Corporation (education)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/CorporationTvm"
-                                }
-                  },
-    "vigilance":  {
-                      "state":  {
-                                    "handle":  "@CorporationTvm",
-                                    "name":  "Thiruvananthapuram Corporation (vigilance)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/CorporationTvm"
-                                }
-                  },
-    "fire_dept":  {
-                      "state":  {
-                                    "handle":  "@CorporationTvm",
-                                    "name":  "Thiruvananthapuram Corporation (fire_dept)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/CorporationTvm"
-                                }
-                  },
-    "horticulture":  {
-                         "state":  {
-                                       "handle":  "@CorporationTvm",
-                                       "name":  "Thiruvananthapuram Corporation (horticulture)",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-06",
-                                       "source_url":  "https://twitter.com/CorporationTvm"
-                                   }
-                     },
-    "railways":  {
-                     "state":  {
-                                   "handle":  "@CorporationTvm",
-                                   "name":  "Thiruvananthapuram Corporation (railways)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/CorporationTvm"
-                               }
-                 },
-    "transport":  {
-                      "state":  {
-                                    "handle":  "@CorporationTvm",
-                                    "name":  "Thiruvananthapuram Corporation (transport)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/CorporationTvm"
-                                }
-                  },
-    "municipal_general":  {
-                              "state":  {
-                                            "handle":  "@CorporationTvm",
-                                            "name":  "Thiruvananthapuram Corporation (municipal_general)",
-                                            "verified":  true,
-                                            "last_checked":  "2026-03-06",
-                                            "source_url":  "https://twitter.com/CorporationTvm"
-                                        }
-                          }
+    "state_code": "KL",
+    "state_name": "Kerala",
+    "cm": {
+        "handle": "@vijayanpinarayi",
+        "name": "Chief Minister",
+        "verified": true,
+        "last_checked": "2026-03-01",
+        "source_url": "https://twitter.com/vijayanpinarayi",
+        "dynamic": true,
+        "role_key": "cm"
+    },
+    "police": {
+        "state": {
+            "handle": "@KeralaPolice",
+            "name": "Kerala Police",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/KeralaPolice"
+        }
+    },
+    "electricity": {
+        "kseb": {
+            "handle": "@KSEB_LTD",
+            "name": "Kerala State Electricity Board",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/KSEB_LTD"
+        }
+    },
+    "water": {
+        "kwa": {
+            "handle": "@KWA_Jal",
+            "name": "Kerala Water Authority",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/KWA_Jal"
+        }
+    },
+    "municipal": {
+        "thiruvananthapuram": {
+            "handle": "@CorporationTvm",
+            "name": "Thiruvananthapuram Corporation",
+            "city": "Thiruvananthapuram",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/CorporationTvm"
+        },
+        "kochi": {
+            "handle": "@Kochi_Corp",
+            "name": "Kochi Corporation",
+            "city": "Kochi",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/Kochi_Corp"
+        },
+        "kozhikode": {
+            "handle": "@KozhikodeCorp",
+            "name": "Kozhikode Corporation",
+            "city": "Kozhikode",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/KozhikodeCorp"
+        }
+    },
+    "roads": {
+        "state": {
+            "handle": "@CorporationTvm",
+            "name": "Thiruvananthapuram Corporation (roads)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/CorporationTvm"
+        }
+    },
+    "sanitation": {
+        "state": {
+            "handle": "@CorporationTvm",
+            "name": "Thiruvananthapuram Corporation (sanitation)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/CorporationTvm"
+        }
+    },
+    "animal_control": {
+        "state": {
+            "handle": "@CorporationTvm",
+            "name": "Thiruvananthapuram Corporation (animal_control)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/CorporationTvm"
+        }
+    },
+    "building_dept": {
+        "state": {
+            "handle": "@CorporationTvm",
+            "name": "Thiruvananthapuram Corporation (building_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/CorporationTvm"
+        }
+    },
+    "drainage": {
+        "state": {
+            "handle": "@CorporationTvm",
+            "name": "Thiruvananthapuram Corporation (drainage)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/CorporationTvm"
+        }
+    },
+    "pollution": {
+        "state": {
+            "handle": "@CorporationTvm",
+            "name": "Thiruvananthapuram Corporation (pollution)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/CorporationTvm"
+        }
+    },
+    "traffic": {
+        "state": {
+            "handle": "@CorporationTvm",
+            "name": "Thiruvananthapuram Corporation (traffic)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/CorporationTvm"
+        }
+    },
+    "health": {
+        "state": {
+            "handle": "@CorporationTvm",
+            "name": "Thiruvananthapuram Corporation (health)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/CorporationTvm"
+        }
+    },
+    "education": {
+        "state": {
+            "handle": "@CorporationTvm",
+            "name": "Thiruvananthapuram Corporation (education)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/CorporationTvm"
+        }
+    },
+    "vigilance": {
+        "state": {
+            "handle": "@CorporationTvm",
+            "name": "Thiruvananthapuram Corporation (vigilance)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/CorporationTvm"
+        }
+    },
+    "fire_dept": {
+        "state": {
+            "handle": "@CorporationTvm",
+            "name": "Thiruvananthapuram Corporation (fire_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/CorporationTvm"
+        }
+    },
+    "horticulture": {
+        "state": {
+            "handle": "@CorporationTvm",
+            "name": "Thiruvananthapuram Corporation (horticulture)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/CorporationTvm"
+        }
+    },
+    "railways": {
+        "state": {
+            "handle": "@CorporationTvm",
+            "name": "Thiruvananthapuram Corporation (railways)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/CorporationTvm"
+        }
+    },
+    "transport": {
+        "state": {
+            "handle": "@CorporationTvm",
+            "name": "Thiruvananthapuram Corporation (transport)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/CorporationTvm"
+        }
+    },
+    "municipal_general": {
+        "state": {
+            "handle": "@CorporationTvm",
+            "name": "Thiruvananthapuram Corporation (municipal_general)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/CorporationTvm"
+        }
+    }
 }

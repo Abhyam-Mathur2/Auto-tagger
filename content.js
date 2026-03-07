@@ -200,14 +200,15 @@ async function runFullFlow(tweetText) {
     const enableTweetRewriter = await getSafeStorage("enableTweetRewriter");
     if (!isContextValid()) return;
 
-    let location = { city: "Unknown", state: "Unknown", source: "none" };
+    let location = { city: null, state: null, source: "none" };
     try {
       const detected = await locationDetector.detectLocation(tweetText, groqApiKey);
       if (!isContextValid()) return;
       if (detected) {
         location = {
-          city: detected.city || "Unknown",
-          state: detected.state || "Unknown",
+          // Only use detected values if they look like real place names
+          city: (detected.city && detected.city !== 'Unknown') ? detected.city : null,
+          state: (detected.state && detected.state !== 'Unknown') ? detected.state : null,
           source: detected.source || "none",
           district: detected.district || null,
           suburb: detected.suburb || null
@@ -239,7 +240,11 @@ async function runFullFlow(tweetText) {
       spamGuard.checkAuthorityOverload(authorities, classification.department).catch(e => { console.error("SpamGuard checkAuthorityOverload failed", e); return { hasOverload: false }; }),
       (enableTweetRewriter === false || !groqApiKey)
         ? Promise.resolve(null)
-        : tweetRewriter.rewrite(tweetText, classification, location, groqApiKey).catch(e => { console.error("TweetRewriter rewrite failed", e); return null; })
+        : (async () => {
+            const { preferredTweetLanguage } = await safeStorageGet(["preferredTweetLanguage"]).catch(() => ({}));
+            return tweetRewriter.rewrite(tweetText, classification, location, groqApiKey, preferredTweetLanguage || 'auto')
+              .catch(e => { console.error("TweetRewriter rewrite failed", e); return null; });
+          })()
     ]);
 
     if (!isContextValid()) return;
@@ -251,6 +256,7 @@ async function runFullFlow(tweetText) {
 
     const hashtags = buildHashtags(classification, location || {});
 
+    const { preferredTweetLanguage: savedLang } = await safeStorageGet(["preferredTweetLanguage"]).catch(() => ({}));
     renderSidebar({
       tweetText: analysisInputText, // Original text at start of flow
       classification,
@@ -260,7 +266,8 @@ async function runFullFlow(tweetText) {
       duplicate,
       consolidation,
       overload,
-      rewrite
+      rewrite,
+      selectedLanguage: savedLang || 'auto'
     });
   } catch (error) {
     if (isContextValid()) {
@@ -363,6 +370,36 @@ function renderSidebar(data) {
         </div>
       </div>
 
+      <!-- Language picker is always shown when rewriter is available -->
+      <div class="civictag-section" id="civictag-lang-section">
+        <h4>🌐 Tweet Language</h4>
+        <div class="civictag-lang-row">
+          <select id="civictag-lang-select" class="civictag-lang-select">
+            ${(typeof TweetRewriter !== 'undefined' ? TweetRewriter.SUPPORTED_LANGUAGES : [
+              {key:'auto',label:'🔄 Same as original'},
+              {key:'english',label:'🇬🇧 English'},
+              {key:'hindi',label:'🇮🇳 हिंदी (Hindi)'},
+              {key:'hinglish',label:'🇮🇳 Hinglish'},
+              {key:'tamil',label:'🇮🇳 தமிழ் (Tamil)'},
+              {key:'telugu',label:'🇮🇳 తెలుగు (Telugu)'},
+              {key:'kannada',label:'🇮🇳 ಕನ್ನಡ (Kannada)'},
+              {key:'malayalam',label:'🇮🇳 മലയാളം (Malayalam)'},
+              {key:'marathi',label:'🇮🇳 मराठी (Marathi)'},
+              {key:'gujarati',label:'🇮🇳 ગુજરાતી (Gujarati)'},
+              {key:'bengali',label:'🇮🇳 বাংলা (Bengali)'},
+              {key:'punjabi',label:'🇮🇳 ਪੰਜਾਬੀ (Punjabi)'},
+              {key:'odia',label:'🇮🇳 ଓଡ଼ିଆ (Odia)'},
+              {key:'assamese',label:'🇮🇳 অসমীয়া (Assamese)'},
+              {key:'urdu',label:'🇮🇳 اردو (Urdu)'},
+            ]).map(l => `<option value="${l.key}" ${data.selectedLanguage === l.key ? 'selected' : ''}>${l.label}</option>`).join('')}
+          </select>
+          <button type="button" id="civictag-regenerate-btn" class="civictag-regenerate-btn" title="Re-generate tweet in selected language">
+            ✨ Regenerate
+          </button>
+        </div>
+        ${data.rewrite && data.rewrite.targetLanguageLabel ? `<small style="color:#536471; font-size:11px; margin-top:4px; display:block;">Currently shown in: ${escapeHtml(data.rewrite.targetLanguageLabel)}</small>` : ''}
+      </div>
+
       ${data.rewrite && data.rewrite.rewrittenTweet ? `
         <div class="civictag-section">
           <h4>✨ AI Improved Wording</h4>
@@ -374,12 +411,22 @@ function renderSidebar(data) {
           <div id="civictag-text-improved" class="civictag-summary" style="background:#f0f7f0; padding:10px; border-radius:8px; white-space: pre-wrap; border: 2px solid #138808;">${escapeHtml(data.rewrite.rewrittenTweet)}</div>
           <div style="margin-top:12px;">
             <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:14px;">
-              <input type="checkbox" id="civictag-use-improved" style="width:18px; height:18px; accent-color:#138808;" checked> 
+              <input type="checkbox" id="civictag-use-improved" style="width:18px; height:18px; accent-color:#138808;" checked>
               ✨ Use AI improved version (recommended)
             </label>
           </div>
         </div>
-      ` : ""}
+      ` : data.rewrite === null ? `
+        <div class="civictag-section" style="opacity:0.7;">
+          <small style="color:#536471;">💡 Add your Groq API key in settings to enable AI-improved wording.</small>
+        </div>
+      ` : `
+        <div class="civictag-section">
+          <div id="civictag-rewrite-loading" style="display:flex; align-items:center; gap:8px; color:#536471; font-size:13px;">
+            <span class="civictag-spinning">↻</span> Generating improved wording…
+          </div>
+        </div>
+      `}
 
       <div class="civictag-section" style="background: #f8fafc;">
         <h4>📝 Full Tweet Preview</h4>
@@ -399,6 +446,80 @@ function renderSidebar(data) {
   document.getElementById("civictag-close")?.addEventListener("click", removeSidebar);
   document.getElementById("civictag-insert")?.addEventListener("click", () => insertAndTrack(data));
   document.getElementById("civictag-copy")?.addEventListener("click", () => copyAndTrack(data));
+
+  // Wire up Refresh buttons on dynamic/stale handles
+  sidebar.querySelectorAll(".civictag-refresh-btn").forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const roleKey = btn.dataset.roleKey;
+      const stateName = btn.dataset.stateName;
+      if (!roleKey || !stateName || typeof DynamicResolver === 'undefined') return;
+
+      const iconSpan = btn;
+      iconSpan.disabled = true;
+      iconSpan.textContent = "↻ Refreshing…";
+
+      try {
+        const result = await DynamicResolver.forceRefresh(roleKey, stateName);
+        if (result) {
+          showNotification(`Updated: ${result.handle} (${result.isDynamic ? "Live" : "Static"})`, "success");
+          // Re-run the full analysis to refresh the sidebar
+          const text = getTweetText();
+          if (text) await runFullFlow(text);
+        } else {
+          showNotification("Could not fetch a fresh handle. Try again later.", "warning");
+          iconSpan.disabled = false;
+          iconSpan.textContent = "↻ Retry";
+        }
+      } catch (err) {
+        showNotification("Refresh failed: " + err.message, "error");
+        iconSpan.disabled = false;
+        iconSpan.textContent = "↻ Retry";
+      }
+    });
+  });
+
+  // ── Language picker: Regenerate button ──────────────────────────────────
+  const regenBtn = document.getElementById("civictag-regenerate-btn");
+  const langSelect = document.getElementById("civictag-lang-select");
+  if (regenBtn && langSelect) {
+    regenBtn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const selectedLang = langSelect.value;
+
+      // Persist the user's language choice so reopening the sidebar remembers it
+      try { await chrome.storage.local.set({ preferredTweetLanguage: selectedLang }); } catch {}
+
+      regenBtn.disabled = true;
+      regenBtn.textContent = "↻ Generating…";
+
+      try {
+        const { groqApiKey } = await safeStorageGet(["groqApiKey"]);
+        if (!groqApiKey) {
+          showNotification("Add your Groq API key in settings first.", "warning");
+          regenBtn.disabled = false;
+          regenBtn.textContent = "✨ Regenerate";
+          return;
+        }
+
+        const newRewrite = await tweetRewriter.rewrite(
+          data.tweetText,
+          data.classification,
+          data.location,
+          groqApiKey,
+          selectedLang
+        );
+
+        // Re-render sidebar with updated rewrite and remember language choice
+        renderSidebar(Object.assign({}, data, { rewrite: newRewrite, selectedLanguage: selectedLang }));
+      } catch (err) {
+        showNotification("Regeneration failed: " + err.message, "error");
+        regenBtn.disabled = false;
+        regenBtn.textContent = "✨ Regenerate";
+      }
+    });
+  }
 
   const tabOriginal = document.getElementById("civictag-tab-original");
   const tabImproved = document.getElementById("civictag-tab-improved");
@@ -445,18 +566,39 @@ function renderAuthorityGroup(title, items) {
     <div class="civictag-section">
       <h4>🏛️ ${title} Authorities</h4>
       <div class="civictag-authorities">
-        ${items
-          .map((a) => `
+        ${items.map((a) => {
+          let metaBadge = '';
+          if (a.isDynamic) {
+            metaBadge = `
+              <div class="civictag-handle-meta">
+                <span class="civictag-badge-dynamic" title="Resolved in real-time via AI (confidence: ${a.dynamicConfidence || 'N/A'}%)">🔄 Live</span>
+                <button type="button" class="civictag-refresh-btn"
+                  data-role-key="${a.roleKey || ''}"
+                  data-state-name="${escapeHtml(a.stateName || '')}"
+                  title="Force a fresh lookup">↻ Refresh</button>
+              </div>`;
+          } else if (a.isStale) {
+            metaBadge = `
+              <div class="civictag-handle-meta">
+                <span class="civictag-badge-stale" title="Could not verify — may be outdated">⚠️ May be outdated</span>
+                <button type="button" class="civictag-refresh-btn"
+                  data-role-key="${a.roleKey || ''}"
+                  data-state-name="${escapeHtml(a.stateName || '')}"
+                  title="Try live lookup now">↻ Try now</button>
+              </div>`;
+          }
+          return `
             <label class="civictag-authority-item">
               <input type="checkbox" data-handle="${a.handle}" checked>
               <div>
                 <strong>${a.handle}</strong>
                 <small>${escapeHtml(a.name || "")}</small>
                 ${a.note ? `<small class="civictag-note">${escapeHtml(a.note)}</small>` : ""}
+                ${metaBadge}
               </div>
             </label>
-          `)
-          .join("")}
+          `;
+        }).join("")}
       </div>
     </div>
   `;

@@ -1,183 +1,185 @@
 {
-    "state_code":  "CT",
-    "state_name":  "Chhattisgarh",
-    "cm":  {
-               "handle":  "@vishnudsai",
-               "name":  "Chief Minister",
-               "verified":  true,
-               "last_checked":  "2026-03-01",
-               "source_url":  "https://twitter.com/vishnudsai"
-           },
-    "police":  {
-                   "state":  {
-                                 "handle":  "@PoliceChhattisg",
-                                 "name":  "Chhattisgarh Police",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-01",
-                                 "source_url":  "https://twitter.com/PoliceChhattisg"
-                             }
-               },
-    "electricity":  {
-                        "cspdcl":  {
-                                       "handle":  "@cspdcl",
-                                       "name":  "Chhattisgarh State Power Distribution Company",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-01",
-                                       "source_url":  "https://twitter.com/cspdcl"
-                                   }
-                    },
-    "municipal":  {
-                      "raipur":  {
-                                     "handle":  "@RaipurNagar",
-                                     "name":  "Raipur Municipal Corporation",
-                                     "city":  "Raipur",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-01",
-                                     "source_url":  "https://twitter.com/RaipurNagar"
-                                 }
-                  },
-    "water":  {
-                  "state":  {
-                                "handle":  "@RaipurNagar",
-                                "name":  "Raipur Municipal Corporation (water)",
-                                "verified":  true,
-                                "last_checked":  "2026-03-06",
-                                "source_url":  "https://twitter.com/RaipurNagar"
-                            }
-              },
-    "roads":  {
-                  "state":  {
-                                "handle":  "@RaipurNagar",
-                                "name":  "Raipur Municipal Corporation (roads)",
-                                "verified":  true,
-                                "last_checked":  "2026-03-06",
-                                "source_url":  "https://twitter.com/RaipurNagar"
-                            }
-              },
-    "sanitation":  {
-                       "state":  {
-                                     "handle":  "@RaipurNagar",
-                                     "name":  "Raipur Municipal Corporation (sanitation)",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-06",
-                                     "source_url":  "https://twitter.com/RaipurNagar"
-                                 }
-                   },
-    "animal_control":  {
-                           "state":  {
-                                         "handle":  "@RaipurNagar",
-                                         "name":  "Raipur Municipal Corporation (animal_control)",
-                                         "verified":  true,
-                                         "last_checked":  "2026-03-06",
-                                         "source_url":  "https://twitter.com/RaipurNagar"
-                                     }
-                       },
-    "building_dept":  {
-                          "state":  {
-                                        "handle":  "@RaipurNagar",
-                                        "name":  "Raipur Municipal Corporation (building_dept)",
-                                        "verified":  true,
-                                        "last_checked":  "2026-03-06",
-                                        "source_url":  "https://twitter.com/RaipurNagar"
-                                    }
-                      },
-    "drainage":  {
-                     "state":  {
-                                   "handle":  "@RaipurNagar",
-                                   "name":  "Raipur Municipal Corporation (drainage)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/RaipurNagar"
-                               }
-                 },
-    "pollution":  {
-                      "state":  {
-                                    "handle":  "@RaipurNagar",
-                                    "name":  "Raipur Municipal Corporation (pollution)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/RaipurNagar"
-                                }
-                  },
-    "traffic":  {
-                    "state":  {
-                                  "handle":  "@RaipurNagar",
-                                  "name":  "Raipur Municipal Corporation (traffic)",
-                                  "verified":  true,
-                                  "last_checked":  "2026-03-06",
-                                  "source_url":  "https://twitter.com/RaipurNagar"
-                              }
-                },
-    "health":  {
-                   "state":  {
-                                 "handle":  "@RaipurNagar",
-                                 "name":  "Raipur Municipal Corporation (health)",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-06",
-                                 "source_url":  "https://twitter.com/RaipurNagar"
-                             }
-               },
-    "education":  {
-                      "state":  {
-                                    "handle":  "@RaipurNagar",
-                                    "name":  "Raipur Municipal Corporation (education)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/RaipurNagar"
-                                }
-                  },
-    "vigilance":  {
-                      "state":  {
-                                    "handle":  "@RaipurNagar",
-                                    "name":  "Raipur Municipal Corporation (vigilance)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/RaipurNagar"
-                                }
-                  },
-    "fire_dept":  {
-                      "state":  {
-                                    "handle":  "@RaipurNagar",
-                                    "name":  "Raipur Municipal Corporation (fire_dept)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/RaipurNagar"
-                                }
-                  },
-    "horticulture":  {
-                         "state":  {
-                                       "handle":  "@RaipurNagar",
-                                       "name":  "Raipur Municipal Corporation (horticulture)",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-06",
-                                       "source_url":  "https://twitter.com/RaipurNagar"
-                                   }
-                     },
-    "railways":  {
-                     "state":  {
-                                   "handle":  "@RaipurNagar",
-                                   "name":  "Raipur Municipal Corporation (railways)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/RaipurNagar"
-                               }
-                 },
-    "transport":  {
-                      "state":  {
-                                    "handle":  "@RaipurNagar",
-                                    "name":  "Raipur Municipal Corporation (transport)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/RaipurNagar"
-                                }
-                  },
-    "municipal_general":  {
-                              "state":  {
-                                            "handle":  "@RaipurNagar",
-                                            "name":  "Raipur Municipal Corporation (municipal_general)",
-                                            "verified":  true,
-                                            "last_checked":  "2026-03-06",
-                                            "source_url":  "https://twitter.com/RaipurNagar"
-                                        }
-                          }
+    "state_code": "CT",
+    "state_name": "Chhattisgarh",
+    "cm": {
+        "handle": "@vishnudsai",
+        "name": "Chief Minister",
+        "verified": true,
+        "last_checked": "2026-03-01",
+        "source_url": "https://twitter.com/vishnudsai",
+        "dynamic": true,
+        "role_key": "cm"
+    },
+    "police": {
+        "state": {
+            "handle": "@PoliceChhattisg",
+            "name": "Chhattisgarh Police",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/PoliceChhattisg"
+        }
+    },
+    "electricity": {
+        "cspdcl": {
+            "handle": "@cspdcl",
+            "name": "Chhattisgarh State Power Distribution Company",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/cspdcl"
+        }
+    },
+    "municipal": {
+        "raipur": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation",
+            "city": "Raipur",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    },
+    "water": {
+        "state": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation (water)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    },
+    "roads": {
+        "state": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation (roads)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    },
+    "sanitation": {
+        "state": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation (sanitation)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    },
+    "animal_control": {
+        "state": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation (animal_control)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    },
+    "building_dept": {
+        "state": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation (building_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    },
+    "drainage": {
+        "state": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation (drainage)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    },
+    "pollution": {
+        "state": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation (pollution)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    },
+    "traffic": {
+        "state": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation (traffic)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    },
+    "health": {
+        "state": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation (health)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    },
+    "education": {
+        "state": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation (education)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    },
+    "vigilance": {
+        "state": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation (vigilance)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    },
+    "fire_dept": {
+        "state": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation (fire_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    },
+    "horticulture": {
+        "state": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation (horticulture)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    },
+    "railways": {
+        "state": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation (railways)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    },
+    "transport": {
+        "state": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation (transport)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    },
+    "municipal_general": {
+        "state": {
+            "handle": "@RaipurNagar",
+            "name": "Raipur Municipal Corporation (municipal_general)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RaipurNagar"
+        }
+    }
 }

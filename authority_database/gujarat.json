@@ -1,244 +1,246 @@
 {
-    "state_code":  "GJ",
-    "state_name":  "Gujarat",
-    "cm":  {
-               "handle":  "@Bhupendrapbjp",
-               "name":  "Chief Minister",
-               "verified":  true,
-               "last_checked":  "2026-03-01",
-               "source_url":  "https://twitter.com/Bhupendrapbjp"
-           },
-    "police":  {
-                   "state":  {
-                                 "handle":  "@GujaratPolice",
-                                 "name":  "Gujarat Police",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-01",
-                                 "source_url":  "https://twitter.com/GujaratPolice"
-                             }
-               },
-    "electricity":  {
-                        "ugvcl":  {
-                                      "handle":  "@UGVCL",
-                                      "name":  "Uttar Gujarat Vij Company Limited",
-                                      "zones":  [
-                                                    "Mehsana",
-                                                    "Patan",
-                                                    "Banaskantha",
-                                                    "Sabarkantha"
-                                                ],
-                                      "verified":  true,
-                                      "last_checked":  "2026-03-01",
-                                      "source_url":  "https://twitter.com/UGVCL"
-                                  },
-                        "mgvcl":  {
-                                      "handle":  "@MGVCL",
-                                      "name":  "Madhya Gujarat Vij Company Limited",
-                                      "zones":  [
-                                                    "Vadodara",
-                                                    "Anand",
-                                                    "Kheda",
-                                                    "Panchmahal"
-                                                ],
-                                      "verified":  true,
-                                      "last_checked":  "2026-03-01",
-                                      "source_url":  "https://twitter.com/MGVCL"
-                                  },
-                        "pgvcl":  {
-                                      "handle":  "@PGVCL",
-                                      "name":  "Paschim Gujarat Vij Company Limited",
-                                      "zones":  [
-                                                    "Rajkot",
-                                                    "Jamnagar",
-                                                    "Porbandar",
-                                                    "Junagadh"
-                                                ],
-                                      "verified":  true,
-                                      "last_checked":  "2026-03-01",
-                                      "source_url":  "https://twitter.com/PGVCL"
-                                  },
-                        "dgvcl":  {
-                                      "handle":  "@DGVCL",
-                                      "name":  "Dakshin Gujarat Vij Company Limited",
-                                      "zones":  [
-                                                    "Surat",
-                                                    "Valsad",
-                                                    "Navsari",
-                                                    "Tapi"
-                                                ],
-                                      "verified":  true,
-                                      "last_checked":  "2026-03-01",
-                                      "source_url":  "https://twitter.com/DGVCL"
-                                  }
-                    },
-    "water":  {
-                  "gwssb":  {
-                                "handle":  "@GWSSB_Gujarat",
-                                "name":  "Gujarat Water Supply \u0026 Sewerage Board",
-                                "verified":  true,
-                                "last_checked":  "2026-03-01",
-                                "source_url":  "https://twitter.com/GWSSB_Gujarat"
-                            }
-              },
-    "municipal":  {
-                      "ahmedabad":  {
-                                        "handle":  "@AhmedabadAMC",
-                                        "name":  "Ahmedabad Municipal Corporation",
-                                        "city":  "Ahmedabad",
-                                        "verified":  true,
-                                        "last_checked":  "2026-03-01",
-                                        "source_url":  "https://twitter.com/AhmedabadAMC"
-                                    },
-                      "surat":  {
-                                    "handle":  "@SuratMunicipal",
-                                    "name":  "Surat Municipal Corporation",
-                                    "city":  "Surat",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-01",
-                                    "source_url":  "https://twitter.com/SuratMunicipal"
-                                },
-                      "vadodara":  {
-                                       "handle":  "@VadodaraMC",
-                                       "name":  "Vadodara Municipal Corporation",
-                                       "city":  "Vadodara",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-01",
-                                       "source_url":  "https://twitter.com/VadodaraMC"
-                                   }
-                  },
-    "roads":  {
-                  "state":  {
-                                "handle":  "@AhmedabadAMC",
-                                "name":  "Ahmedabad Municipal Corporation (roads)",
-                                "verified":  true,
-                                "last_checked":  "2026-03-06",
-                                "source_url":  "https://twitter.com/AhmedabadAMC"
-                            }
-              },
-    "sanitation":  {
-                       "state":  {
-                                     "handle":  "@AhmedabadAMC",
-                                     "name":  "Ahmedabad Municipal Corporation (sanitation)",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-06",
-                                     "source_url":  "https://twitter.com/AhmedabadAMC"
-                                 }
-                   },
-    "animal_control":  {
-                           "state":  {
-                                         "handle":  "@AhmedabadAMC",
-                                         "name":  "Ahmedabad Municipal Corporation (animal_control)",
-                                         "verified":  true,
-                                         "last_checked":  "2026-03-06",
-                                         "source_url":  "https://twitter.com/AhmedabadAMC"
-                                     }
-                       },
-    "building_dept":  {
-                          "state":  {
-                                        "handle":  "@AhmedabadAMC",
-                                        "name":  "Ahmedabad Municipal Corporation (building_dept)",
-                                        "verified":  true,
-                                        "last_checked":  "2026-03-06",
-                                        "source_url":  "https://twitter.com/AhmedabadAMC"
-                                    }
-                      },
-    "drainage":  {
-                     "state":  {
-                                   "handle":  "@AhmedabadAMC",
-                                   "name":  "Ahmedabad Municipal Corporation (drainage)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/AhmedabadAMC"
-                               }
-                 },
-    "pollution":  {
-                      "state":  {
-                                    "handle":  "@AhmedabadAMC",
-                                    "name":  "Ahmedabad Municipal Corporation (pollution)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/AhmedabadAMC"
-                                }
-                  },
-    "traffic":  {
-                    "state":  {
-                                  "handle":  "@AhmedabadAMC",
-                                  "name":  "Ahmedabad Municipal Corporation (traffic)",
-                                  "verified":  true,
-                                  "last_checked":  "2026-03-06",
-                                  "source_url":  "https://twitter.com/AhmedabadAMC"
-                              }
-                },
-    "health":  {
-                   "state":  {
-                                 "handle":  "@AhmedabadAMC",
-                                 "name":  "Ahmedabad Municipal Corporation (health)",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-06",
-                                 "source_url":  "https://twitter.com/AhmedabadAMC"
-                             }
-               },
-    "education":  {
-                      "state":  {
-                                    "handle":  "@AhmedabadAMC",
-                                    "name":  "Ahmedabad Municipal Corporation (education)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/AhmedabadAMC"
-                                }
-                  },
-    "vigilance":  {
-                      "state":  {
-                                    "handle":  "@AhmedabadAMC",
-                                    "name":  "Ahmedabad Municipal Corporation (vigilance)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/AhmedabadAMC"
-                                }
-                  },
-    "fire_dept":  {
-                      "state":  {
-                                    "handle":  "@AhmedabadAMC",
-                                    "name":  "Ahmedabad Municipal Corporation (fire_dept)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/AhmedabadAMC"
-                                }
-                  },
-    "horticulture":  {
-                         "state":  {
-                                       "handle":  "@AhmedabadAMC",
-                                       "name":  "Ahmedabad Municipal Corporation (horticulture)",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-06",
-                                       "source_url":  "https://twitter.com/AhmedabadAMC"
-                                   }
-                     },
-    "railways":  {
-                     "state":  {
-                                   "handle":  "@AhmedabadAMC",
-                                   "name":  "Ahmedabad Municipal Corporation (railways)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/AhmedabadAMC"
-                               }
-                 },
-    "transport":  {
-                      "state":  {
-                                    "handle":  "@AhmedabadAMC",
-                                    "name":  "Ahmedabad Municipal Corporation (transport)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/AhmedabadAMC"
-                                }
-                  },
-    "municipal_general":  {
-                              "state":  {
-                                            "handle":  "@AhmedabadAMC",
-                                            "name":  "Ahmedabad Municipal Corporation (municipal_general)",
-                                            "verified":  true,
-                                            "last_checked":  "2026-03-06",
-                                            "source_url":  "https://twitter.com/AhmedabadAMC"
-                                        }
-                          }
+    "state_code": "GJ",
+    "state_name": "Gujarat",
+    "cm": {
+        "handle": "@Bhupendrapbjp",
+        "name": "Chief Minister",
+        "verified": true,
+        "last_checked": "2026-03-01",
+        "source_url": "https://twitter.com/Bhupendrapbjp",
+        "dynamic": true,
+        "role_key": "cm"
+    },
+    "police": {
+        "state": {
+            "handle": "@GujaratPolice",
+            "name": "Gujarat Police",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/GujaratPolice"
+        }
+    },
+    "electricity": {
+        "ugvcl": {
+            "handle": "@UGVCL",
+            "name": "Uttar Gujarat Vij Company Limited",
+            "zones": [
+                "Mehsana",
+                "Patan",
+                "Banaskantha",
+                "Sabarkantha"
+            ],
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/UGVCL"
+        },
+        "mgvcl": {
+            "handle": "@MGVCL",
+            "name": "Madhya Gujarat Vij Company Limited",
+            "zones": [
+                "Vadodara",
+                "Anand",
+                "Kheda",
+                "Panchmahal"
+            ],
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/MGVCL"
+        },
+        "pgvcl": {
+            "handle": "@PGVCL",
+            "name": "Paschim Gujarat Vij Company Limited",
+            "zones": [
+                "Rajkot",
+                "Jamnagar",
+                "Porbandar",
+                "Junagadh"
+            ],
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/PGVCL"
+        },
+        "dgvcl": {
+            "handle": "@DGVCL",
+            "name": "Dakshin Gujarat Vij Company Limited",
+            "zones": [
+                "Surat",
+                "Valsad",
+                "Navsari",
+                "Tapi"
+            ],
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/DGVCL"
+        }
+    },
+    "water": {
+        "gwssb": {
+            "handle": "@GWSSB_Gujarat",
+            "name": "Gujarat Water Supply & Sewerage Board",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/GWSSB_Gujarat"
+        }
+    },
+    "municipal": {
+        "ahmedabad": {
+            "handle": "@AhmedabadAMC",
+            "name": "Ahmedabad Municipal Corporation",
+            "city": "Ahmedabad",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/AhmedabadAMC"
+        },
+        "surat": {
+            "handle": "@SuratMunicipal",
+            "name": "Surat Municipal Corporation",
+            "city": "Surat",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/SuratMunicipal"
+        },
+        "vadodara": {
+            "handle": "@VadodaraMC",
+            "name": "Vadodara Municipal Corporation",
+            "city": "Vadodara",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/VadodaraMC"
+        }
+    },
+    "roads": {
+        "state": {
+            "handle": "@AhmedabadAMC",
+            "name": "Ahmedabad Municipal Corporation (roads)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/AhmedabadAMC"
+        }
+    },
+    "sanitation": {
+        "state": {
+            "handle": "@AhmedabadAMC",
+            "name": "Ahmedabad Municipal Corporation (sanitation)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/AhmedabadAMC"
+        }
+    },
+    "animal_control": {
+        "state": {
+            "handle": "@AhmedabadAMC",
+            "name": "Ahmedabad Municipal Corporation (animal_control)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/AhmedabadAMC"
+        }
+    },
+    "building_dept": {
+        "state": {
+            "handle": "@AhmedabadAMC",
+            "name": "Ahmedabad Municipal Corporation (building_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/AhmedabadAMC"
+        }
+    },
+    "drainage": {
+        "state": {
+            "handle": "@AhmedabadAMC",
+            "name": "Ahmedabad Municipal Corporation (drainage)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/AhmedabadAMC"
+        }
+    },
+    "pollution": {
+        "state": {
+            "handle": "@AhmedabadAMC",
+            "name": "Ahmedabad Municipal Corporation (pollution)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/AhmedabadAMC"
+        }
+    },
+    "traffic": {
+        "state": {
+            "handle": "@AhmedabadAMC",
+            "name": "Ahmedabad Municipal Corporation (traffic)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/AhmedabadAMC"
+        }
+    },
+    "health": {
+        "state": {
+            "handle": "@AhmedabadAMC",
+            "name": "Ahmedabad Municipal Corporation (health)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/AhmedabadAMC"
+        }
+    },
+    "education": {
+        "state": {
+            "handle": "@AhmedabadAMC",
+            "name": "Ahmedabad Municipal Corporation (education)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/AhmedabadAMC"
+        }
+    },
+    "vigilance": {
+        "state": {
+            "handle": "@AhmedabadAMC",
+            "name": "Ahmedabad Municipal Corporation (vigilance)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/AhmedabadAMC"
+        }
+    },
+    "fire_dept": {
+        "state": {
+            "handle": "@AhmedabadAMC",
+            "name": "Ahmedabad Municipal Corporation (fire_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/AhmedabadAMC"
+        }
+    },
+    "horticulture": {
+        "state": {
+            "handle": "@AhmedabadAMC",
+            "name": "Ahmedabad Municipal Corporation (horticulture)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/AhmedabadAMC"
+        }
+    },
+    "railways": {
+        "state": {
+            "handle": "@AhmedabadAMC",
+            "name": "Ahmedabad Municipal Corporation (railways)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/AhmedabadAMC"
+        }
+    },
+    "transport": {
+        "state": {
+            "handle": "@AhmedabadAMC",
+            "name": "Ahmedabad Municipal Corporation (transport)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/AhmedabadAMC"
+        }
+    },
+    "municipal_general": {
+        "state": {
+            "handle": "@AhmedabadAMC",
+            "name": "Ahmedabad Municipal Corporation (municipal_general)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/AhmedabadAMC"
+        }
+    }
 }

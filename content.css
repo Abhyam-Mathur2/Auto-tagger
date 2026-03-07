@@ -349,3 +349,141 @@
     width: 100%;
   }
 }
+
+/* ── Dynamic / Stale handle badges ─────────────────────────────── */
+
+/* Small inline pill shown next to a handle */
+.civictag-handle-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+/* 🔄 Live-resolved handle */
+.civictag-badge-dynamic {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: #e3f2fd;
+  color: #1565c0;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: help;
+  white-space: nowrap;
+}
+
+/* ⚠️ Static fallback — may be outdated */
+.civictag-badge-stale {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: #fff3e0;
+  color: #e65100;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: help;
+  white-space: nowrap;
+}
+
+/* Refresh button to force a new lookup */
+.civictag-refresh-btn {
+  background: none;
+  border: 1px solid #1d9bf0;
+  color: #1d9bf0;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.civictag-refresh-btn:hover {
+  background: #1d9bf0;
+  color: white;
+}
+
+.civictag-refresh-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Subtle spin animation for the 🔄 icon during reload */
+@keyframes civictag-spin {
+  to { transform: rotate(360deg); }
+}
+.civictag-spinning {
+  display: inline-block;
+  animation: civictag-spin 1s linear infinite;
+}
+
+/* ── Language picker ─────────────────────────────────────────────── */
+
+.civictag-lang-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.civictag-lang-select {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1.5px solid #e1e8ed;
+  border-radius: 10px;
+  font-size: 13px;
+  font-family: inherit;
+  background: white;
+  color: #0f1419;
+  cursor: pointer;
+  appearance: auto;
+  transition: border-color 0.2s;
+}
+
+.civictag-lang-select:hover,
+.civictag-lang-select:focus {
+  border-color: #138808;
+  outline: none;
+}
+
+.civictag-regenerate-btn {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #FF9933, #138808);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.civictag-regenerate-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(255, 153, 51, 0.4);
+}
+
+.civictag-regenerate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .civictag-lang-select {
+    background: #192734;
+    color: #ffffff;
+    border-color: #38444d;
+  }
+}

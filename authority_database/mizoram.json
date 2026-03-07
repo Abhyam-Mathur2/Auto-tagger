@@ -1,173 +1,175 @@
 {
-    "state_code":  "MZ",
-    "state_name":  "Mizoram",
-    "cm":  {
-               "handle":  "@LalduhomaCM",
-               "name":  "Chief Minister",
-               "verified":  true,
-               "last_checked":  "2026-03-01",
-               "source_url":  "https://twitter.com/LalduhomaCM"
-           },
-    "police":  {
-                   "state":  {
-                                 "handle":  "@MizoramPolice",
-                                 "name":  "Mizoram Police",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-01",
-                                 "source_url":  "https://twitter.com/MizoramPolice"
-                             }
-               },
-    "electricity":  {
-                        "power_dept":  {
-                                           "handle":  "@PandDMizoram",
-                                           "name":  "Power \u0026 Electricity Department Mizoram",
-                                           "verified":  true,
-                                           "last_checked":  "2026-03-01",
-                                           "source_url":  "https://twitter.com/PandDMizoram"
-                                       }
-                    },
-    "water":  {
-                  "state":  {
-                                "handle":  "@LalduhomaCM",
-                                "name":  "Chief Minister (water)",
-                                "verified":  true,
-                                "last_checked":  "2026-03-06",
-                                "source_url":  "https://twitter.com/LalduhomaCM"
-                            }
-              },
-    "roads":  {
-                  "state":  {
-                                "handle":  "@LalduhomaCM",
-                                "name":  "Chief Minister (roads)",
-                                "verified":  true,
-                                "last_checked":  "2026-03-06",
-                                "source_url":  "https://twitter.com/LalduhomaCM"
-                            }
-              },
-    "sanitation":  {
-                       "state":  {
-                                     "handle":  "@LalduhomaCM",
-                                     "name":  "Chief Minister (sanitation)",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-06",
-                                     "source_url":  "https://twitter.com/LalduhomaCM"
-                                 }
-                   },
-    "animal_control":  {
-                           "state":  {
-                                         "handle":  "@LalduhomaCM",
-                                         "name":  "Chief Minister (animal_control)",
-                                         "verified":  true,
-                                         "last_checked":  "2026-03-06",
-                                         "source_url":  "https://twitter.com/LalduhomaCM"
-                                     }
-                       },
-    "building_dept":  {
-                          "state":  {
-                                        "handle":  "@LalduhomaCM",
-                                        "name":  "Chief Minister (building_dept)",
-                                        "verified":  true,
-                                        "last_checked":  "2026-03-06",
-                                        "source_url":  "https://twitter.com/LalduhomaCM"
-                                    }
-                      },
-    "drainage":  {
-                     "state":  {
-                                   "handle":  "@LalduhomaCM",
-                                   "name":  "Chief Minister (drainage)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/LalduhomaCM"
-                               }
-                 },
-    "pollution":  {
-                      "state":  {
-                                    "handle":  "@LalduhomaCM",
-                                    "name":  "Chief Minister (pollution)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/LalduhomaCM"
-                                }
-                  },
-    "traffic":  {
-                    "state":  {
-                                  "handle":  "@LalduhomaCM",
-                                  "name":  "Chief Minister (traffic)",
-                                  "verified":  true,
-                                  "last_checked":  "2026-03-06",
-                                  "source_url":  "https://twitter.com/LalduhomaCM"
-                              }
-                },
-    "health":  {
-                   "state":  {
-                                 "handle":  "@LalduhomaCM",
-                                 "name":  "Chief Minister (health)",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-06",
-                                 "source_url":  "https://twitter.com/LalduhomaCM"
-                             }
-               },
-    "education":  {
-                      "state":  {
-                                    "handle":  "@LalduhomaCM",
-                                    "name":  "Chief Minister (education)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/LalduhomaCM"
-                                }
-                  },
-    "vigilance":  {
-                      "state":  {
-                                    "handle":  "@LalduhomaCM",
-                                    "name":  "Chief Minister (vigilance)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/LalduhomaCM"
-                                }
-                  },
-    "fire_dept":  {
-                      "state":  {
-                                    "handle":  "@LalduhomaCM",
-                                    "name":  "Chief Minister (fire_dept)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/LalduhomaCM"
-                                }
-                  },
-    "horticulture":  {
-                         "state":  {
-                                       "handle":  "@LalduhomaCM",
-                                       "name":  "Chief Minister (horticulture)",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-06",
-                                       "source_url":  "https://twitter.com/LalduhomaCM"
-                                   }
-                     },
-    "railways":  {
-                     "state":  {
-                                   "handle":  "@LalduhomaCM",
-                                   "name":  "Chief Minister (railways)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/LalduhomaCM"
-                               }
-                 },
-    "transport":  {
-                      "state":  {
-                                    "handle":  "@LalduhomaCM",
-                                    "name":  "Chief Minister (transport)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/LalduhomaCM"
-                                }
-                  },
-    "municipal_general":  {
-                              "state":  {
-                                            "handle":  "@LalduhomaCM",
-                                            "name":  "Chief Minister (municipal_general)",
-                                            "verified":  true,
-                                            "last_checked":  "2026-03-06",
-                                            "source_url":  "https://twitter.com/LalduhomaCM"
-                                        }
-                          }
+    "state_code": "MZ",
+    "state_name": "Mizoram",
+    "cm": {
+        "handle": "@LalduhomaCM",
+        "name": "Chief Minister",
+        "verified": true,
+        "last_checked": "2026-03-01",
+        "source_url": "https://twitter.com/LalduhomaCM",
+        "dynamic": true,
+        "role_key": "cm"
+    },
+    "police": {
+        "state": {
+            "handle": "@MizoramPolice",
+            "name": "Mizoram Police",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/MizoramPolice"
+        }
+    },
+    "electricity": {
+        "power_dept": {
+            "handle": "@PandDMizoram",
+            "name": "Power & Electricity Department Mizoram",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/PandDMizoram"
+        }
+    },
+    "water": {
+        "state": {
+            "handle": "@LalduhomaCM",
+            "name": "Chief Minister (water)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/LalduhomaCM"
+        }
+    },
+    "roads": {
+        "state": {
+            "handle": "@LalduhomaCM",
+            "name": "Chief Minister (roads)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/LalduhomaCM"
+        }
+    },
+    "sanitation": {
+        "state": {
+            "handle": "@LalduhomaCM",
+            "name": "Chief Minister (sanitation)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/LalduhomaCM"
+        }
+    },
+    "animal_control": {
+        "state": {
+            "handle": "@LalduhomaCM",
+            "name": "Chief Minister (animal_control)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/LalduhomaCM"
+        }
+    },
+    "building_dept": {
+        "state": {
+            "handle": "@LalduhomaCM",
+            "name": "Chief Minister (building_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/LalduhomaCM"
+        }
+    },
+    "drainage": {
+        "state": {
+            "handle": "@LalduhomaCM",
+            "name": "Chief Minister (drainage)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/LalduhomaCM"
+        }
+    },
+    "pollution": {
+        "state": {
+            "handle": "@LalduhomaCM",
+            "name": "Chief Minister (pollution)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/LalduhomaCM"
+        }
+    },
+    "traffic": {
+        "state": {
+            "handle": "@LalduhomaCM",
+            "name": "Chief Minister (traffic)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/LalduhomaCM"
+        }
+    },
+    "health": {
+        "state": {
+            "handle": "@LalduhomaCM",
+            "name": "Chief Minister (health)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/LalduhomaCM"
+        }
+    },
+    "education": {
+        "state": {
+            "handle": "@LalduhomaCM",
+            "name": "Chief Minister (education)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/LalduhomaCM"
+        }
+    },
+    "vigilance": {
+        "state": {
+            "handle": "@LalduhomaCM",
+            "name": "Chief Minister (vigilance)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/LalduhomaCM"
+        }
+    },
+    "fire_dept": {
+        "state": {
+            "handle": "@LalduhomaCM",
+            "name": "Chief Minister (fire_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/LalduhomaCM"
+        }
+    },
+    "horticulture": {
+        "state": {
+            "handle": "@LalduhomaCM",
+            "name": "Chief Minister (horticulture)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/LalduhomaCM"
+        }
+    },
+    "railways": {
+        "state": {
+            "handle": "@LalduhomaCM",
+            "name": "Chief Minister (railways)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/LalduhomaCM"
+        }
+    },
+    "transport": {
+        "state": {
+            "handle": "@LalduhomaCM",
+            "name": "Chief Minister (transport)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/LalduhomaCM"
+        }
+    },
+    "municipal_general": {
+        "state": {
+            "handle": "@LalduhomaCM",
+            "name": "Chief Minister (municipal_general)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/LalduhomaCM"
+        }
+    }
 }

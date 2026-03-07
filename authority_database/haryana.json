@@ -1,211 +1,213 @@
 {
-    "state_code":  "HR",
-    "state_name":  "Haryana",
-    "cm":  {
-               "handle":  "@NayabSainiBJP",
-               "name":  "Chief Minister",
-               "verified":  true,
-               "last_checked":  "2026-03-01",
-               "source_url":  "https://twitter.com/NayabSainiBJP"
-           },
-    "police":  {
-                   "state":  {
-                                 "handle":  "@HaryanaPolice",
-                                 "name":  "Haryana Police",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-01",
-                                 "source_url":  "https://twitter.com/HaryanaPolice"
-                             }
-               },
-    "electricity":  {
-                        "dhbvn":  {
-                                      "handle":  "@DHBVN_HQ",
-                                      "name":  "Dakshin Haryana Bijli Vitran Nigam",
-                                      "zones":  [
-                                                    "Gurugram",
-                                                    "Faridabad",
-                                                    "Hisar",
-                                                    "Bhiwani"
-                                                ],
-                                      "verified":  true,
-                                      "last_checked":  "2026-03-01",
-                                      "source_url":  "https://twitter.com/DHBVN_HQ"
-                                  },
-                        "uhbvn":  {
-                                      "handle":  "@UHBVN_HQ",
-                                      "name":  "Uttar Haryana Bijli Vitran Nigam",
-                                      "zones":  [
-                                                    "Panchkula",
-                                                    "Ambala",
-                                                    "Karnal",
-                                                    "Rohtak",
-                                                    "Panipat"
-                                                ],
-                                      "verified":  true,
-                                      "last_checked":  "2026-03-01",
-                                      "source_url":  "https://twitter.com/UHBVN_HQ"
-                                  }
-                    },
-    "water":  {
-                  "hpwd":  {
-                               "handle":  "@HPWD_Haryana",
-                               "name":  "Haryana PWD",
-                               "verified":  true,
-                               "last_checked":  "2026-03-01",
-                               "source_url":  "https://twitter.com/HPWD_Haryana"
-                           }
-              },
-    "municipal":  {
-                      "gurugram":  {
-                                       "handle":  "@GurgaonMCorp",
-                                       "name":  "Municipal Corporation Gurugram",
-                                       "city":  "Gurugram",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-01",
-                                       "source_url":  "https://twitter.com/GurgaonMCorp"
-                                   },
-                      "faridabad":  {
-                                        "handle":  "@MCFaridabad",
-                                        "name":  "Municipal Corporation Faridabad",
-                                        "city":  "Faridabad",
-                                        "verified":  true,
-                                        "last_checked":  "2026-03-01",
-                                        "source_url":  "https://twitter.com/MCFaridabad"
-                                    }
-                  },
-    "roads":  {
-                  "state":  {
-                                "handle":  "@GurgaonMCorp",
-                                "name":  "Municipal Corporation Gurugram (roads)",
-                                "verified":  true,
-                                "last_checked":  "2026-03-06",
-                                "source_url":  "https://twitter.com/GurgaonMCorp"
-                            }
-              },
-    "sanitation":  {
-                       "state":  {
-                                     "handle":  "@GurgaonMCorp",
-                                     "name":  "Municipal Corporation Gurugram (sanitation)",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-06",
-                                     "source_url":  "https://twitter.com/GurgaonMCorp"
-                                 }
-                   },
-    "animal_control":  {
-                           "state":  {
-                                         "handle":  "@GurgaonMCorp",
-                                         "name":  "Municipal Corporation Gurugram (animal_control)",
-                                         "verified":  true,
-                                         "last_checked":  "2026-03-06",
-                                         "source_url":  "https://twitter.com/GurgaonMCorp"
-                                     }
-                       },
-    "building_dept":  {
-                          "state":  {
-                                        "handle":  "@GurgaonMCorp",
-                                        "name":  "Municipal Corporation Gurugram (building_dept)",
-                                        "verified":  true,
-                                        "last_checked":  "2026-03-06",
-                                        "source_url":  "https://twitter.com/GurgaonMCorp"
-                                    }
-                      },
-    "drainage":  {
-                     "state":  {
-                                   "handle":  "@GurgaonMCorp",
-                                   "name":  "Municipal Corporation Gurugram (drainage)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/GurgaonMCorp"
-                               }
-                 },
-    "pollution":  {
-                      "state":  {
-                                    "handle":  "@GurgaonMCorp",
-                                    "name":  "Municipal Corporation Gurugram (pollution)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/GurgaonMCorp"
-                                }
-                  },
-    "traffic":  {
-                    "state":  {
-                                  "handle":  "@GurgaonMCorp",
-                                  "name":  "Municipal Corporation Gurugram (traffic)",
-                                  "verified":  true,
-                                  "last_checked":  "2026-03-06",
-                                  "source_url":  "https://twitter.com/GurgaonMCorp"
-                              }
-                },
-    "health":  {
-                   "state":  {
-                                 "handle":  "@GurgaonMCorp",
-                                 "name":  "Municipal Corporation Gurugram (health)",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-06",
-                                 "source_url":  "https://twitter.com/GurgaonMCorp"
-                             }
-               },
-    "education":  {
-                      "state":  {
-                                    "handle":  "@GurgaonMCorp",
-                                    "name":  "Municipal Corporation Gurugram (education)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/GurgaonMCorp"
-                                }
-                  },
-    "vigilance":  {
-                      "state":  {
-                                    "handle":  "@GurgaonMCorp",
-                                    "name":  "Municipal Corporation Gurugram (vigilance)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/GurgaonMCorp"
-                                }
-                  },
-    "fire_dept":  {
-                      "state":  {
-                                    "handle":  "@GurgaonMCorp",
-                                    "name":  "Municipal Corporation Gurugram (fire_dept)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/GurgaonMCorp"
-                                }
-                  },
-    "horticulture":  {
-                         "state":  {
-                                       "handle":  "@GurgaonMCorp",
-                                       "name":  "Municipal Corporation Gurugram (horticulture)",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-06",
-                                       "source_url":  "https://twitter.com/GurgaonMCorp"
-                                   }
-                     },
-    "railways":  {
-                     "state":  {
-                                   "handle":  "@GurgaonMCorp",
-                                   "name":  "Municipal Corporation Gurugram (railways)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/GurgaonMCorp"
-                               }
-                 },
-    "transport":  {
-                      "state":  {
-                                    "handle":  "@GurgaonMCorp",
-                                    "name":  "Municipal Corporation Gurugram (transport)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/GurgaonMCorp"
-                                }
-                  },
-    "municipal_general":  {
-                              "state":  {
-                                            "handle":  "@GurgaonMCorp",
-                                            "name":  "Municipal Corporation Gurugram (municipal_general)",
-                                            "verified":  true,
-                                            "last_checked":  "2026-03-06",
-                                            "source_url":  "https://twitter.com/GurgaonMCorp"
-                                        }
-                          }
+    "state_code": "HR",
+    "state_name": "Haryana",
+    "cm": {
+        "handle": "@NayabSainiBJP",
+        "name": "Chief Minister",
+        "verified": true,
+        "last_checked": "2026-03-01",
+        "source_url": "https://twitter.com/NayabSainiBJP",
+        "dynamic": true,
+        "role_key": "cm"
+    },
+    "police": {
+        "state": {
+            "handle": "@HaryanaPolice",
+            "name": "Haryana Police",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/HaryanaPolice"
+        }
+    },
+    "electricity": {
+        "dhbvn": {
+            "handle": "@DHBVN_HQ",
+            "name": "Dakshin Haryana Bijli Vitran Nigam",
+            "zones": [
+                "Gurugram",
+                "Faridabad",
+                "Hisar",
+                "Bhiwani"
+            ],
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/DHBVN_HQ"
+        },
+        "uhbvn": {
+            "handle": "@UHBVN_HQ",
+            "name": "Uttar Haryana Bijli Vitran Nigam",
+            "zones": [
+                "Panchkula",
+                "Ambala",
+                "Karnal",
+                "Rohtak",
+                "Panipat"
+            ],
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/UHBVN_HQ"
+        }
+    },
+    "water": {
+        "hpwd": {
+            "handle": "@HPWD_Haryana",
+            "name": "Haryana PWD",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/HPWD_Haryana"
+        }
+    },
+    "municipal": {
+        "gurugram": {
+            "handle": "@GurgaonMCorp",
+            "name": "Municipal Corporation Gurugram",
+            "city": "Gurugram",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/GurgaonMCorp"
+        },
+        "faridabad": {
+            "handle": "@MCFaridabad",
+            "name": "Municipal Corporation Faridabad",
+            "city": "Faridabad",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/MCFaridabad"
+        }
+    },
+    "roads": {
+        "state": {
+            "handle": "@GurgaonMCorp",
+            "name": "Municipal Corporation Gurugram (roads)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GurgaonMCorp"
+        }
+    },
+    "sanitation": {
+        "state": {
+            "handle": "@GurgaonMCorp",
+            "name": "Municipal Corporation Gurugram (sanitation)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GurgaonMCorp"
+        }
+    },
+    "animal_control": {
+        "state": {
+            "handle": "@GurgaonMCorp",
+            "name": "Municipal Corporation Gurugram (animal_control)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GurgaonMCorp"
+        }
+    },
+    "building_dept": {
+        "state": {
+            "handle": "@GurgaonMCorp",
+            "name": "Municipal Corporation Gurugram (building_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GurgaonMCorp"
+        }
+    },
+    "drainage": {
+        "state": {
+            "handle": "@GurgaonMCorp",
+            "name": "Municipal Corporation Gurugram (drainage)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GurgaonMCorp"
+        }
+    },
+    "pollution": {
+        "state": {
+            "handle": "@GurgaonMCorp",
+            "name": "Municipal Corporation Gurugram (pollution)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GurgaonMCorp"
+        }
+    },
+    "traffic": {
+        "state": {
+            "handle": "@GurgaonMCorp",
+            "name": "Municipal Corporation Gurugram (traffic)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GurgaonMCorp"
+        }
+    },
+    "health": {
+        "state": {
+            "handle": "@GurgaonMCorp",
+            "name": "Municipal Corporation Gurugram (health)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GurgaonMCorp"
+        }
+    },
+    "education": {
+        "state": {
+            "handle": "@GurgaonMCorp",
+            "name": "Municipal Corporation Gurugram (education)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GurgaonMCorp"
+        }
+    },
+    "vigilance": {
+        "state": {
+            "handle": "@GurgaonMCorp",
+            "name": "Municipal Corporation Gurugram (vigilance)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GurgaonMCorp"
+        }
+    },
+    "fire_dept": {
+        "state": {
+            "handle": "@GurgaonMCorp",
+            "name": "Municipal Corporation Gurugram (fire_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GurgaonMCorp"
+        }
+    },
+    "horticulture": {
+        "state": {
+            "handle": "@GurgaonMCorp",
+            "name": "Municipal Corporation Gurugram (horticulture)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GurgaonMCorp"
+        }
+    },
+    "railways": {
+        "state": {
+            "handle": "@GurgaonMCorp",
+            "name": "Municipal Corporation Gurugram (railways)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GurgaonMCorp"
+        }
+    },
+    "transport": {
+        "state": {
+            "handle": "@GurgaonMCorp",
+            "name": "Municipal Corporation Gurugram (transport)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GurgaonMCorp"
+        }
+    },
+    "municipal_general": {
+        "state": {
+            "handle": "@GurgaonMCorp",
+            "name": "Municipal Corporation Gurugram (municipal_general)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/GurgaonMCorp"
+        }
+    }
 }

@@ -1,183 +1,185 @@
 {
-    "state_code":  "JH",
-    "state_name":  "Jharkhand",
-    "cm":  {
-               "handle":  "@HemantSorenJMM",
-               "name":  "Chief Minister",
-               "verified":  true,
-               "last_checked":  "2026-03-01",
-               "source_url":  "https://twitter.com/HemantSorenJMM"
-           },
-    "police":  {
-                   "state":  {
-                                 "handle":  "@JharkhandPolice",
-                                 "name":  "Jharkhand Police",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-01",
-                                 "source_url":  "https://twitter.com/JharkhandPolice"
-                             }
-               },
-    "electricity":  {
-                        "jbvnl":  {
-                                      "handle":  "@JBVNL_official",
-                                      "name":  "Jharkhand Bijli Vitran Nigam Limited",
-                                      "verified":  true,
-                                      "last_checked":  "2026-03-01",
-                                      "source_url":  "https://twitter.com/JBVNL_official"
-                                  }
-                    },
-    "municipal":  {
-                      "ranchi":  {
-                                     "handle":  "@RanchiMunicipal",
-                                     "name":  "Ranchi Municipal Corporation",
-                                     "city":  "Ranchi",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-01",
-                                     "source_url":  "https://twitter.com/RanchiMunicipal"
-                                 }
-                  },
-    "water":  {
-                  "state":  {
-                                "handle":  "@RanchiMunicipal",
-                                "name":  "Ranchi Municipal Corporation (water)",
-                                "verified":  true,
-                                "last_checked":  "2026-03-06",
-                                "source_url":  "https://twitter.com/RanchiMunicipal"
-                            }
-              },
-    "roads":  {
-                  "state":  {
-                                "handle":  "@RanchiMunicipal",
-                                "name":  "Ranchi Municipal Corporation (roads)",
-                                "verified":  true,
-                                "last_checked":  "2026-03-06",
-                                "source_url":  "https://twitter.com/RanchiMunicipal"
-                            }
-              },
-    "sanitation":  {
-                       "state":  {
-                                     "handle":  "@RanchiMunicipal",
-                                     "name":  "Ranchi Municipal Corporation (sanitation)",
-                                     "verified":  true,
-                                     "last_checked":  "2026-03-06",
-                                     "source_url":  "https://twitter.com/RanchiMunicipal"
-                                 }
-                   },
-    "animal_control":  {
-                           "state":  {
-                                         "handle":  "@RanchiMunicipal",
-                                         "name":  "Ranchi Municipal Corporation (animal_control)",
-                                         "verified":  true,
-                                         "last_checked":  "2026-03-06",
-                                         "source_url":  "https://twitter.com/RanchiMunicipal"
-                                     }
-                       },
-    "building_dept":  {
-                          "state":  {
-                                        "handle":  "@RanchiMunicipal",
-                                        "name":  "Ranchi Municipal Corporation (building_dept)",
-                                        "verified":  true,
-                                        "last_checked":  "2026-03-06",
-                                        "source_url":  "https://twitter.com/RanchiMunicipal"
-                                    }
-                      },
-    "drainage":  {
-                     "state":  {
-                                   "handle":  "@RanchiMunicipal",
-                                   "name":  "Ranchi Municipal Corporation (drainage)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/RanchiMunicipal"
-                               }
-                 },
-    "pollution":  {
-                      "state":  {
-                                    "handle":  "@RanchiMunicipal",
-                                    "name":  "Ranchi Municipal Corporation (pollution)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/RanchiMunicipal"
-                                }
-                  },
-    "traffic":  {
-                    "state":  {
-                                  "handle":  "@RanchiMunicipal",
-                                  "name":  "Ranchi Municipal Corporation (traffic)",
-                                  "verified":  true,
-                                  "last_checked":  "2026-03-06",
-                                  "source_url":  "https://twitter.com/RanchiMunicipal"
-                              }
-                },
-    "health":  {
-                   "state":  {
-                                 "handle":  "@RanchiMunicipal",
-                                 "name":  "Ranchi Municipal Corporation (health)",
-                                 "verified":  true,
-                                 "last_checked":  "2026-03-06",
-                                 "source_url":  "https://twitter.com/RanchiMunicipal"
-                             }
-               },
-    "education":  {
-                      "state":  {
-                                    "handle":  "@RanchiMunicipal",
-                                    "name":  "Ranchi Municipal Corporation (education)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/RanchiMunicipal"
-                                }
-                  },
-    "vigilance":  {
-                      "state":  {
-                                    "handle":  "@RanchiMunicipal",
-                                    "name":  "Ranchi Municipal Corporation (vigilance)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/RanchiMunicipal"
-                                }
-                  },
-    "fire_dept":  {
-                      "state":  {
-                                    "handle":  "@RanchiMunicipal",
-                                    "name":  "Ranchi Municipal Corporation (fire_dept)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/RanchiMunicipal"
-                                }
-                  },
-    "horticulture":  {
-                         "state":  {
-                                       "handle":  "@RanchiMunicipal",
-                                       "name":  "Ranchi Municipal Corporation (horticulture)",
-                                       "verified":  true,
-                                       "last_checked":  "2026-03-06",
-                                       "source_url":  "https://twitter.com/RanchiMunicipal"
-                                   }
-                     },
-    "railways":  {
-                     "state":  {
-                                   "handle":  "@RanchiMunicipal",
-                                   "name":  "Ranchi Municipal Corporation (railways)",
-                                   "verified":  true,
-                                   "last_checked":  "2026-03-06",
-                                   "source_url":  "https://twitter.com/RanchiMunicipal"
-                               }
-                 },
-    "transport":  {
-                      "state":  {
-                                    "handle":  "@RanchiMunicipal",
-                                    "name":  "Ranchi Municipal Corporation (transport)",
-                                    "verified":  true,
-                                    "last_checked":  "2026-03-06",
-                                    "source_url":  "https://twitter.com/RanchiMunicipal"
-                                }
-                  },
-    "municipal_general":  {
-                              "state":  {
-                                            "handle":  "@RanchiMunicipal",
-                                            "name":  "Ranchi Municipal Corporation (municipal_general)",
-                                            "verified":  true,
-                                            "last_checked":  "2026-03-06",
-                                            "source_url":  "https://twitter.com/RanchiMunicipal"
-                                        }
-                          }
+    "state_code": "JH",
+    "state_name": "Jharkhand",
+    "cm": {
+        "handle": "@HemantSorenJMM",
+        "name": "Chief Minister",
+        "verified": true,
+        "last_checked": "2026-03-01",
+        "source_url": "https://twitter.com/HemantSorenJMM",
+        "dynamic": true,
+        "role_key": "cm"
+    },
+    "police": {
+        "state": {
+            "handle": "@JharkhandPolice",
+            "name": "Jharkhand Police",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/JharkhandPolice"
+        }
+    },
+    "electricity": {
+        "jbvnl": {
+            "handle": "@JBVNL_official",
+            "name": "Jharkhand Bijli Vitran Nigam Limited",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/JBVNL_official"
+        }
+    },
+    "municipal": {
+        "ranchi": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation",
+            "city": "Ranchi",
+            "verified": true,
+            "last_checked": "2026-03-01",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    },
+    "water": {
+        "state": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation (water)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    },
+    "roads": {
+        "state": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation (roads)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    },
+    "sanitation": {
+        "state": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation (sanitation)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    },
+    "animal_control": {
+        "state": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation (animal_control)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    },
+    "building_dept": {
+        "state": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation (building_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    },
+    "drainage": {
+        "state": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation (drainage)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    },
+    "pollution": {
+        "state": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation (pollution)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    },
+    "traffic": {
+        "state": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation (traffic)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    },
+    "health": {
+        "state": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation (health)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    },
+    "education": {
+        "state": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation (education)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    },
+    "vigilance": {
+        "state": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation (vigilance)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    },
+    "fire_dept": {
+        "state": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation (fire_dept)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    },
+    "horticulture": {
+        "state": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation (horticulture)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    },
+    "railways": {
+        "state": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation (railways)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    },
+    "transport": {
+        "state": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation (transport)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    },
+    "municipal_general": {
+        "state": {
+            "handle": "@RanchiMunicipal",
+            "name": "Ranchi Municipal Corporation (municipal_general)",
+            "verified": true,
+            "last_checked": "2026-03-06",
+            "source_url": "https://twitter.com/RanchiMunicipal"
+        }
+    }
 }
